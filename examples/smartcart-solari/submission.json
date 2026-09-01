@@ -1,16 +1,31 @@
 {
-  "version": "smartcart-solari-cookbook-reference-v1",
+  "version": "smartcart-solari-cookbook-reference-v2",
   "application": {
     "repository": "https://github.com/EXO-Robotics/smartcart-solari",
     "branch": "feat/native-solari-beta",
-    "publicationCommit": "3d39dbb77a16a534a74bd031379def75360c71d4",
-    "runtimeCommit": "eee8c840b59def4428548c66203304193fa93520"
+    "publicationCommit": "34217a926339a205947bbfd42439b6edee97855e",
+    "runtimeCommit": "ced1154e76a376a7d630900f7c5f4b4317a3932d"
+  },
+  "useCase": {
+    "surface": "native SmartCart post-pantry/pre-retailer-handoff flow",
+    "requirements": [
+      "chicken 1.5 lb",
+      "penne 12 oz",
+      "Parmesan 3 oz"
+    ],
+    "policy": "minimize aggregate package surplus within USD 0.75 of the cheapest adequate basket",
+    "selectedSubtotal": 13.32,
+    "cheapestAdequateSubtotal": 12.79,
+    "premiumOverCheapest": 0.53,
+    "surplusAvoidedOunces": 16
   },
   "proof": {
-    "actionsRun": "https://github.com/EXO-Robotics/smartcart-solari/actions/runs/33519606791",
+    "actionsRun": "https://github.com/EXO-Robotics/smartcart-solari/actions/runs/33529059284",
+    "receipt": "https://github.com/EXO-Robotics/smartcart-solari/blob/main/evidence/live/smartcart-solari-v3-qualification-33529059284.json",
+    "deploymentReceipt": "https://github.com/EXO-Robotics/smartcart-solari/blob/main/evidence/live/smartcart-solari-v3-deployment-20260901.json",
     "browser": "solari-browser-provider-completed",
     "sandbox": "solari-sandbox-provider-completed",
-    "source": "SmartCart Demo Grocer synthetic catalog",
+    "source": "SmartCart Demo Grocer owned synthetic catalog",
     "fixtureReplay": false
   },
   "boundaries": {
@@ -18,9 +33,11 @@
     "solariCredentialsServerSide": true,
     "retailerAccountAccess": false,
     "cartOrCheckoutAutomation": false,
+    "demoProductsTransferToRetailerHandoff": false,
     "desktopUsed": false,
-    "signedNativeFlow": "pending",
+    "signedNativeFlow": "pending-provisioning-and-device",
     "testFlight": "pending",
+    "downloadableNativeApp": "pending",
     "authorizedRealRetailer": "pending"
   }
 }
