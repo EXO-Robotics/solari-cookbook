@@ -1,0 +1,26 @@
+{
+  "version": "smartcart-solari-cookbook-reference-v1",
+  "application": {
+    "repository": "https://github.com/EXO-Robotics/smartcart-solari",
+    "branch": "feat/native-solari-beta",
+    "publicationCommit": "3d39dbb77a16a534a74bd031379def75360c71d4",
+    "runtimeCommit": "eee8c840b59def4428548c66203304193fa93520"
+  },
+  "proof": {
+    "actionsRun": "https://github.com/EXO-Robotics/smartcart-solari/actions/runs/33519606791",
+    "browser": "solari-browser-provider-completed",
+    "sandbox": "solari-sandbox-provider-completed",
+    "source": "SmartCart Demo Grocer synthetic catalog",
+    "fixtureReplay": false
+  },
+  "boundaries": {
+    "appDuplicatedIntoCookbook": false,
+    "solariCredentialsServerSide": true,
+    "retailerAccountAccess": false,
+    "cartOrCheckoutAutomation": false,
+    "desktopUsed": false,
+    "signedNativeFlow": "pending",
+    "testFlight": "pending",
+    "authorizedRealRetailer": "pending"
+  }
+}
