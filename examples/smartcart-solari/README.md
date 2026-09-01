@@ -17,11 +17,11 @@ The credentialed V3 run selected a `$13.32` synthetic basket instead of the `$12
 
 - Implementation repository: [`EXO-Robotics/smartcart-solari`](https://github.com/EXO-Robotics/smartcart-solari)
 - Native beta branch: [`feat/native-solari-beta`](https://github.com/EXO-Robotics/smartcart-solari/tree/feat/native-solari-beta)
-- Current publication commit: [`34217a926339a205947bbfd42439b6edee97855e`](https://github.com/EXO-Robotics/smartcart-solari/commit/34217a926339a205947bbfd42439b6edee97855e)
-- Exact V3 implementation/deployment commit: [`ced1154e76a376a7d630900f7c5f4b4317a3932d`](https://github.com/EXO-Robotics/smartcart-solari/commit/ced1154e76a376a7d630900f7c5f4b4317a3932d)
-- Credentialed V3 Browser + Sandbox run: [`33529059284`](https://github.com/EXO-Robotics/smartcart-solari/actions/runs/33529059284)
-- V3 execution receipt: [`smartcart-solari-v3-qualification-33529059284.json`](https://github.com/EXO-Robotics/smartcart-solari/blob/main/evidence/live/smartcart-solari-v3-qualification-33529059284.json)
-- Protected V3 backend deployment receipt: [`smartcart-solari-v3-deployment-20260901.json`](https://github.com/EXO-Robotics/smartcart-solari/blob/main/evidence/live/smartcart-solari-v3-deployment-20260901.json)
+- Current publication commit: [`bc083d6f56405aeac7b6d223fa85bac89be8815e`](https://github.com/EXO-Robotics/smartcart-solari/commit/bc083d6f56405aeac7b6d223fa85bac89be8815e)
+- Exact qualified V3 runtime/deployment commit: [`772e65bac5cabfba8b5e8b6a9482191a715c616a`](https://github.com/EXO-Robotics/smartcart-solari/commit/772e65bac5cabfba8b5e8b6a9482191a715c616a)
+- Credentialed V3 Browser + Sandbox run: [`33533170189`](https://github.com/EXO-Robotics/smartcart-solari/actions/runs/33533170189)
+- V3 execution receipt: [`smartcart-solari-v3-qualification-33533170189.json`](https://github.com/EXO-Robotics/smartcart-solari/blob/main/evidence/live/smartcart-solari-v3-qualification-33533170189.json)
+- Protected V3 backend deployment receipt: [`smartcart-solari-v3-deployment-772e65b-20260901.json`](https://github.com/EXO-Robotics/smartcart-solari/blob/main/evidence/live/smartcart-solari-v3-deployment-772e65b-20260901.json)
 - Deployed API health: [`smartcart-solari-beta.vercel.app/health`](https://smartcart-solari-beta.vercel.app/health)
 - Owned Browser surface and supporting evidence: [`SmartCart × Solari Pages`](https://exo-robotics.github.io/smartcart-solari/website/solari-demo/)
 
@@ -31,3 +31,4 @@ The credentialed run uses the owned, synthetic Demo Grocer—not Walmart or Targ
 
 The native code path, Simulator tests, unsigned Release configuration, protected backend, and credentialed Browser/Sandbox execution are demonstrated. A signed archive is currently blocked by Personal Team capability/provisioning and Share Extension app-group profile mismatches, and the available physical iPhone is offline. Signed App Attest execution, TestFlight, App Store, downloadable-native distribution, and value from an authorized real-retailer source remain **PENDING**.
 
+The runtime receipt is pinned to `772e65b`; publication commit `bc083d6` adds only sanitized receipts, documentation, and supporting-site evidence. It is not presented as a second runtime qualification.
