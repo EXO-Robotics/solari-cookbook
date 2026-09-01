@@ -1,9 +1,10 @@
 {
-  "version": "smartcart-solari-cookbook-reference-v3",
+  "version": "smartcart-solari-cookbook-reference-v4",
   "application": {
     "repository": "https://github.com/EXO-Robotics/smartcart-solari",
     "branch": "feat/native-solari-beta",
-    "publicationCommit": "bc083d6f56405aeac7b6d223fa85bac89be8815e",
+    "publicationCommit": "42ca83232c10d858b0da759290be510427bcf69a",
+    "reviewedPublicationCommit": "bc083d6f56405aeac7b6d223fa85bac89be8815e",
     "runtimeCommit": "772e65bac5cabfba8b5e8b6a9482191a715c616a"
   },
   "useCase": {
