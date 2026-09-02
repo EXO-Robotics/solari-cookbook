@@ -44,7 +44,7 @@ past. Copy one into your project and change the parts you care about.
 Each directory is self-contained.
 
 ```bash
-git clone https://github.com/solari-sdk/solari-cookbook.git
+git clone https://github.com/EXO-Robotics/solari-cookbook.git
 cd solari-cookbook/examples/browser-quickstart-ts
 
 npm install                          # or: pip install -r requirements.txt
