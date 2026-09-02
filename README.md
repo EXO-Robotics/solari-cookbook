@@ -33,6 +33,12 @@ past. Copy one into your project and change the parts you care about.
 | --- | --- | --- |
 | [desktop-computer-use-py](examples/desktop-computer-use-py) | Python | Screenshot, click, and type on a Linux GUI |
 
+### Browser + Sandbox
+
+| Example | Language | What it shows |
+| --- | --- | --- |
+| [smartcart-basket-research-ts](examples/smartcart-basket-research-ts) | TypeScript | Observe owned product pages, then choose and verify a low-surplus package |
+
 ## Running an example
 
 Each directory is self-contained.
