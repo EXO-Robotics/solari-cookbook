@@ -1,29 +1,28 @@
 {
-  "version": "smartcart-solari-cookbook-reference-v4",
+  "version": "smartcart-solari-cookbook-reference-v5",
   "application": {
     "repository": "https://github.com/EXO-Robotics/smartcart-solari",
-    "branch": "feat/native-solari-beta",
-    "publicationCommit": "42ca83232c10d858b0da759290be510427bcf69a",
-    "reviewedPublicationCommit": "bc083d6f56405aeac7b6d223fa85bac89be8815e",
-    "runtimeCommit": "772e65bac5cabfba8b5e8b6a9482191a715c616a"
+    "branch": "main",
+    "releaseTag": "solari-submission-v1.0.0",
+    "publicationCommit": "335bc39be5227d5457679821b36d79c5cdc1e942",
+    "providerRuntimeCommit": "2dd4e6f30be8286a3a8f465c92a56427828a60e2"
   },
   "useCase": {
-    "surface": "native SmartCart post-pantry/pre-retailer-handoff flow",
-    "requirements": [
-      "chicken 1.5 lb",
-      "penne 12 oz",
-      "Parmesan 3 oz"
-    ],
-    "policy": "minimize aggregate package surplus within USD 0.75 of the cheapest adequate basket",
-    "selectedSubtotal": 13.32,
-    "cheapestAdequateSubtotal": 12.79,
-    "premiumOverCheapest": 0.53,
-    "surplusAvoidedOunces": 16
+    "surface": "native SmartCart post-pantry and pre-retailer-handoff flow",
+    "requirementCount": 8,
+    "observationCount": 16,
+    "quantityDimensions": ["mass", "volume", "count"],
+    "policy": "minimize aggregate relative package surplus within USD 0.75 of the cheapest adequate basket",
+    "selectedSubtotal": 24.2,
+    "cheapestAdequateSubtotal": 23.57,
+    "premiumOverCheapest": 0.63,
+    "excessChickenAvoidedGrams": 680
   },
   "proof": {
-    "actionsRun": "https://github.com/EXO-Robotics/smartcart-solari/actions/runs/33533170189",
-    "receipt": "https://github.com/EXO-Robotics/smartcart-solari/blob/main/evidence/live/smartcart-solari-v3-qualification-33533170189.json",
-    "deploymentReceipt": "https://github.com/EXO-Robotics/smartcart-solari/blob/main/evidence/live/smartcart-solari-v3-deployment-772e65b-20260901.json",
+    "actionsRun": "https://github.com/EXO-Robotics/smartcart-solari/actions/runs/33546912947",
+    "receipt": "https://github.com/EXO-Robotics/smartcart-solari/blob/solari-submission-v1.0.0/evidence/live/smartcart-solari-v4-qualification-33546912947.json",
+    "pagesRun": "https://github.com/EXO-Robotics/smartcart-solari/actions/runs/33583035418",
+    "caseStudy": "https://exo-robotics.github.io/smartcart-solari/",
     "browser": "solari-browser-provider-completed",
     "sandbox": "solari-sandbox-provider-completed",
     "source": "SmartCart Demo Grocer owned synthetic catalog",
@@ -36,9 +35,10 @@
     "cartOrCheckoutAutomation": false,
     "demoProductsTransferToRetailerHandoff": false,
     "desktopUsed": false,
-    "signedNativeFlow": "pending-provisioning-and-device",
+    "nativeRecordedReplay": "passed-debug-simulator",
+    "signedNativeAppAttest": "pending",
     "testFlight": "pending",
     "downloadableNativeApp": "pending",
-    "authorizedRealRetailer": "pending"
+    "authorizedCommercialRetailer": "pending"
   }
 }
