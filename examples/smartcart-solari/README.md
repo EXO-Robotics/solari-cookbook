@@ -15,16 +15,17 @@ The credentialed V4 run researched **8 requirements** from **16 Browser observat
 ## Start here
 
 - [Interactive before/after case study](https://exo-robotics.github.io/smartcart-solari/)
-- [Tagged submission](https://github.com/EXO-Robotics/smartcart-solari/releases/tag/solari-submission-v1.0.0)
+- [Frozen native snapshot](https://github.com/EXO-Robotics/smartcart-solari/releases/tag/solari-submission-v1.0.0)
 - [Implementation repository](https://github.com/EXO-Robotics/smartcart-solari)
-- [Final main commit `335bc39`](https://github.com/EXO-Robotics/smartcart-solari/commit/335bc39be5227d5457679821b36d79c5cdc1e942)
+- [Current public submission `836b8be`](https://github.com/EXO-Robotics/smartcart-solari/commit/836b8be072cb31259746f9e37731b8ac6ef18285)
+- [Public-demo runtime `0e92f40`](https://github.com/EXO-Robotics/smartcart-solari/commit/0e92f408f4884343391d95ce9ee7b2acd260e188)
 - [Credentialed Browser + Sandbox run `33546912947`](https://github.com/EXO-Robotics/smartcart-solari/actions/runs/33546912947)
-- [Sanitized V4 receipt](https://github.com/EXO-Robotics/smartcart-solari/blob/solari-submission-v1.0.0/evidence/live/smartcart-solari-v4-qualification-33546912947.json)
-- [Successful Pages release run `33583035418`](https://github.com/EXO-Robotics/smartcart-solari/actions/runs/33583035418)
+- [Sanitized public-demo receipt](https://github.com/EXO-Robotics/smartcart-solari/blob/836b8be072cb31259746f9e37731b8ac6ef18285/evidence/live/smartcart-solari-public-demo-20260902.json)
+- [Successful Pages release run `33639922712`](https://github.com/EXO-Robotics/smartcart-solari/actions/runs/33639922712)
 - [Protected backend health](https://smartcart-solari-beta.vercel.app/health)
 
 ## Evidence boundary
 
 The credentialed provider run uses the repository-owned synthetic Demo Grocer—not Walmart, Target, or another commercial retailer. Walmart remains historical fixture replay only. There is no retailer login, persistent Browser profile, cookie capture, cart mutation, checkout, payment, or autonomous purchase. Solari and state-store credentials remain server-side. Solari Desktop is absent because it has no necessary job.
 
-The native Simulator flow, unsigned beta build, protected backend, and credentialed Browser/Sandbox execution are demonstrated separately. Signed physical-device App Attest, TestFlight, App Store distribution, downloadable-native distribution, authorized commercial-retailer research, guaranteed consumer pricing, and product-market fit remain **PENDING**.
+The release tag is a frozen native snapshot; the public demo and current submission remain on `main`. The native Simulator flow, unsigned beta build, protected backend, and credentialed Browser/Sandbox execution are demonstrated separately. Signed physical-device App Attest, TestFlight, App Store distribution, downloadable-native distribution, authorized commercial-retailer research, guaranteed consumer pricing, and product-market fit remain **PENDING**.

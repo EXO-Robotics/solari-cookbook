@@ -1,11 +1,12 @@
 {
-  "version": "smartcart-solari-cookbook-reference-v5",
+  "version": "smartcart-solari-cookbook-reference-v6",
   "application": {
     "repository": "https://github.com/EXO-Robotics/smartcart-solari",
     "branch": "main",
-    "releaseTag": "solari-submission-v1.0.0",
-    "publicationCommit": "335bc39be5227d5457679821b36d79c5cdc1e942",
-    "providerRuntimeCommit": "2dd4e6f30be8286a3a8f465c92a56427828a60e2"
+    "frozenNativeTag": "solari-submission-v1.0.0",
+    "publicationCommit": "836b8be072cb31259746f9e37731b8ac6ef18285",
+    "publicDemoRuntimeCommit": "0e92f408f4884343391d95ce9ee7b2acd260e188",
+    "providerQualificationCommit": "2dd4e6f30be8286a3a8f465c92a56427828a60e2"
   },
   "useCase": {
     "surface": "native SmartCart post-pantry and pre-retailer-handoff flow",
@@ -20,8 +21,8 @@
   },
   "proof": {
     "actionsRun": "https://github.com/EXO-Robotics/smartcart-solari/actions/runs/33546912947",
-    "receipt": "https://github.com/EXO-Robotics/smartcart-solari/blob/solari-submission-v1.0.0/evidence/live/smartcart-solari-v4-qualification-33546912947.json",
-    "pagesRun": "https://github.com/EXO-Robotics/smartcart-solari/actions/runs/33583035418",
+    "receipt": "https://github.com/EXO-Robotics/smartcart-solari/blob/836b8be072cb31259746f9e37731b8ac6ef18285/evidence/live/smartcart-solari-public-demo-20260902.json",
+    "pagesRun": "https://github.com/EXO-Robotics/smartcart-solari/actions/runs/33639922712",
     "caseStudy": "https://exo-robotics.github.io/smartcart-solari/",
     "browser": "solari-browser-provider-completed",
     "sandbox": "solari-sandbox-provider-completed",
