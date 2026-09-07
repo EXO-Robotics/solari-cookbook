@@ -1,5 +1,15 @@
 # Solari Cookbook
 
+## Submission: SmartCart × Solari
+
+**Recipe + pantry → researched basket.**
+
+SmartCart is a standalone iOS product. This public cookbook fork carries the trackable submission copy; the small reproducible example isolates its Browser → evidence → Sandbox basket-decision path for Solari review.
+
+[Live demo / case study](https://exo-robotics.github.io/smartcart-solari/) · [Full standalone product](https://github.com/EXO-Robotics/smartcart-solari) · [Minimal cookbook example](examples/smartcart-basket-research-ts) · [Verified run / evidence](https://exo-robotics.github.io/smartcart-solari/verified-run.html)
+
+---
+
 Short, runnable examples for [Solari](https://getsolari.com) — cloud browsers,
 sandboxes, and desktops behind one API key.
 
