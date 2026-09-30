@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="900" viewBox="0 0 1280 900" role="img" aria-labelledby="title desc">
+  <title id="title">AionGuard: the recorded demo, the separately tested backend, and the plan</title>
+  <desc id="desc">Three separate evidence lanes. In the video: a registered Safari click leads to fresh Vercel inspection, a screenshot with confirmed virtual machine cleanup, and an explicitly disarmed controlled comparison. Earlier backend experiments in a synthetic organization, not the planned incident-response upgrade: Astra chooses bounded checks, an evidence evaluator assesses the observations, and fresh verification checks an authorized change. Planned Astra upgrade after a phishing attempt: gather incident data, draft an IT notification email, and investigate possible sandbox leaks. Not implemented. Tripwire would investigate likely harmful use of captured credentials. Continuity would use Astra to recover needed systems into secured microVMs while containing the affected device. Both remain future work.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1 7 4 1 7" fill="none" stroke="#7DADA4" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <marker id="future-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M1 1 7 4 1 7" fill="none" stroke="#F5C56C" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></marker>
+    <style>
+      text{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif}
+      .cream{fill:#F8F4E8}.muted{fill:#AFC7BF}.mint{fill:#97EDCF}.amber{fill:#F5C56C}
+      .eyebrow{font-size:17px;font-weight:700;letter-spacing:1.6px}
+      .label{font-size:23px;font-weight:650;fill:#F8F4E8}
+      .detail{font-size:19px;fill:#AFC7BF}
+      .icon{fill:none;stroke:#97EDCF;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+      .future-icon{fill:none;stroke:#F5C56C;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+      .route{fill:none;stroke:#567B73;stroke-width:1.6;marker-end:url(#arrow)}
+    </style>
+  </defs>
+  <rect width="1280" height="900" rx="20" fill="#0A2927"/>
+  <path d="M0 155H1280M0 400H1280M0 636H1280" stroke="#294943"/>
+  <path d="M0 636H1280V880Q1280 900 1260 900H20Q0 900 0 880Z" fill="#18302A"/>
+
+  <!-- One visual identity, three explicitly separate evidence lanes. -->
+  <g transform="translate(56 39)" class="icon">
+    <path d="M17 0 33 6V20C33 30 24 37 17 41 10 37 1 30 1 20V6Z"/>
+    <path d="m9 20 5 5 11-12"/>
+  </g>
+  <text x="103" y="69" class="cream" font-size="31" font-weight="750">AionGuard</text>
+  <text x="1224" y="65" text-anchor="end" class="muted eyebrow">HACKATHON BUILD</text>
+  <text x="56" y="124" class="cream" font-size="34" font-weight="600">From one suspicious click to evidence.</text>
+
+  <text x="56" y="194" class="mint eyebrow">IN THE VIDEO</text>
+  <text x="253" y="194" class="detail">Safari demonstration · one registered destination</text>
+  <g transform="translate(70 234)" class="icon">
+    <rect x="0" y="0" width="48" height="34" rx="4"/>
+    <path d="M0 9H48M8 5h1m5 0h1m5 0h1M25 20l1 24 7-6 7 11 6-4-7-10 9-3Z" fill="#0A2927"/>
+  </g>
+  <path d="M139 256H333" class="route"/>
+  <text x="70" y="310" class="label">Registered click</text>
+  <text x="70" y="340" class="detail">Safari holds the test link.</text>
+
+  <g transform="translate(365 234)" class="icon">
+    <path d="m0 13 24-13 24 13v27L24 53 0 40Z"/>
+    <path d="m0 13 24 14 24-14M24 27v26M12 6l24 14"/>
+  </g>
+  <path d="M434 256H628" class="route"/>
+  <text x="365" y="310" class="label">Fresh Vercel inspection</text>
+  <text x="365" y="340" class="detail">The page runs in isolation.</text>
+
+  <g transform="translate(660 234)" class="icon">
+    <rect x="0" y="0" width="48" height="36" rx="4"/>
+    <circle cx="13" cy="12" r="3"/>
+    <path d="m6 29 11-10 8 7 8-11 9 14"/>
+    <circle cx="42" cy="38" r="12" fill="#0A2927"/>
+    <path d="m36 38 4 4 8-9"/>
+  </g>
+  <path d="M729 256H923" class="route"/>
+  <text x="660" y="310" class="label">Screenshot + cleanup</text>
+  <text x="660" y="340" class="detail">See the captured page.</text>
+  <text x="660" y="367" class="detail">Confirm the VM is removed.</text>
+
+  <g transform="translate(955 234)" class="icon">
+    <rect x="0" y="18" width="32" height="29" rx="4"/>
+    <path d="M8 18V9a10 10 0 0 1 20-1M16 30v6M42 21h13m-5-5 5 5-5 5"/>
+  </g>
+  <text x="955" y="310" class="label">Controlled comparison</text>
+  <text x="955" y="340" class="detail">Explicitly disarm, then open</text>
+  <text x="955" y="367" class="detail">the same harmless test page.</text>
+
+  <text x="56" y="440" class="mint eyebrow">EARLIER EXPERIMENTS</text>
+  <text x="316" y="440" class="detail">Synthetic backend cases · not the planned incident-response upgrade</text>
+  <g transform="translate(70 478)" class="icon">
+    <rect x="0" y="0" width="43" height="49" rx="4"/>
+    <path d="m8 13 3 3 5-6m5 3h13M8 26h8m5 0h13M8 39h8m5 0h13"/>
+  </g>
+  <path d="M140 502H432" class="route"/>
+  <text x="70" y="555" class="label">Astra chooses bounded checks</text>
+  <text x="70" y="586" class="detail">Nine collectors. A fixed credit budget.</text>
+
+  <g transform="translate(464 478)" class="icon">
+    <path d="M24 0v43M4 10h40M11 10 0 30h22ZM37 10 26 30h22ZM12 49h24"/>
+  </g>
+  <path d="M533 502H826" class="route"/>
+  <text x="464" y="555" class="label">Evidence evaluator</text>
+  <text x="464" y="586" class="detail">Rules assess what the facts support.</text>
+
+  <g transform="translate(858 478)" class="icon">
+    <path d="M43 15A22 22 0 1 0 45 34M43 3v12H31m-14 9 7 7 13-15"/>
+  </g>
+  <text x="858" y="555" class="label">Fresh verification</text>
+  <text x="858" y="586" class="detail">Recheck an authorized change.</text>
+
+  <text x="56" y="676" class="amber eyebrow">FUTURE ASTRA UPGRADE</text>
+  <text x="375" y="676" class="detail">After a phishing attempt · not implemented or demonstrated</text>
+  <g transform="translate(70 714)" class="future-icon">
+    <rect width="43" height="49" rx="4"/><path d="M9 12h25M9 24h25M9 36h17"/>
+  </g>
+  <path d="M140 738H432" fill="none" stroke="#AD965F" stroke-width="1.6" stroke-dasharray="6 7" marker-end="url(#future-arrow)"/>
+  <text x="70" y="791" class="label">Gather incident data</text>
+  <text x="70" y="823" class="detail">Collect inspection results, logs,</text>
+  <text x="70" y="850" class="detail">and relevant evidence.</text>
+  <g transform="translate(464 714)" class="future-icon">
+    <rect y="4" width="48" height="36" rx="4"/><path d="m1 6 23 18L47 6"/>
+  </g>
+  <path d="M533 738H826" fill="none" stroke="#AD965F" stroke-width="1.6" stroke-dasharray="6 7" marker-end="url(#future-arrow)"/>
+  <text x="464" y="791" class="label">Draft an email to IT</text>
+  <text x="464" y="823" class="detail">Explain what happened and</text>
+  <text x="464" y="850" class="detail">what needs attention.</text>
+  <g transform="translate(858 714)" class="future-icon">
+    <circle cx="20" cy="20" r="18"/><path d="m33 33 16 16M20 9v13m0 6v1"/>
+  </g>
+  <text x="858" y="791" class="label">Investigate sandbox leaks</text>
+  <text x="858" y="823" class="detail">Check for boundary crossings.</text>
+  <text x="858" y="850" class="detail">Report evidence and uncertainty.</text>
+  <text x="1224" y="883" text-anchor="end" fill="#B7BE9C" font-size="17">Planned: credential-misuse detection + business continuity during containment.</text>
+</svg>

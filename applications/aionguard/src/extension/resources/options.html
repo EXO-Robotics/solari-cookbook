@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AionGuard settings</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">AIONGUARD / LOCAL PAIRING</p>
+      <h1>Connect your controller.</h1>
+      <p>
+        Enter the extension entry token (AIONGUARD_ENTRY_TOKEN) shown by the AionGuard server. It
+        stays in this extension's storage. Use the separate entry token, never the full controller
+        token.
+      </p>
+      <form id="pair">
+        <label for="token">Extension entry token</label
+        ><input
+          id="token"
+          type="password"
+          minlength="32"
+          maxlength="256"
+          autocomplete="off"
+          spellcheck="false"
+          required
+        /><button type="submit">Save pairing</button>
+      </form>
+      <label for="token-file">Or pair from the local entry-token file</label>
+      <input id="token-file" type="file" />
+      <p id="status" role="status" aria-live="polite"></p>
+      <p class="detail">
+        Controller: http://127.0.0.1:4317<br />Grant access to the registered fixture origin before
+        using a protected navigation. Device and profile coverage must be verified separately.
+      </p>
+      <button id="disarm" type="button">Turn protection off · 0000</button>
+      <p id="recovery-status" role="status" aria-live="polite">
+        Type four consecutive zeros to stop protection. Global keyboard recovery requires the
+        running Mac helper.
+      </p>
+    </main>
+    <script src="options.js"></script>
+    <script src="recovery.js"></script>
+  </body>
+</html>

@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "evidenceScope": "Synthetic browser extraction and detector integration proof only. Six local inert pages in one fresh Solari sandbox; not live website coverage or a fresh sandbox per case.",
+  "provider": "SOLARI_SANDBOX",
+  "inspectionTag": "aionguard-fixtures-6031d9c9-061f-4b9d-b572-c955b97e8954",
+  "sandboxCount": 1,
+  "startedAt": "2026-09-30T00:04:21.661Z",
+  "returnedAt": "2026-09-30T00:04:56.991Z",
+  "cleanup": "CONFIRMED",
+  "failure": null,
+  "passed": true,
+  "liveWebsiteCoverage": false,
+  "freshSandboxPerCase": false,
+  "pageAuthoredScriptsExecuted": false,
+  "casePageNetworkRequestsAllowed": false,
+  "hashes": {
+    "worker": "5bd6912c28cce8dcb2698268c1a74f89c999e6aff0784bf816a09afa24ee68f7",
+    "detector": "e2e3f868fc26e0bb6457bb8e0cf2442423ddbdee6cf5b8efea2404098df1d5aa",
+    "harness": "fd345530443cfd2e8dd7a1ec1f7462b9ca85a62af53b8466de71a163667b996d",
+    "manifest": "b867d22973354020de2e4dfe0a2f914f496337b83970b94f898989e84a2442dd",
+    "fixtures": {
+      "credential.html": "c37f44324a2dbbc25d436ac9c1b8dd992a771ae20b88a16bc6ec031bd84dd307",
+      "cross-origin.html": "c1c0a7f465f6c790217a6247bc2b6f06008d4e31f5d28f237d2c3946ef9fe0ab",
+      "download.html": "704b7eeec1fa60de862cd1fcc6ea6aec4f783eb2f20139e2799cfde11f553246",
+      "support.html": "3fe29f69b261db11c24c55f8ba983e029b8fd3ef215552694336017d89b82aad",
+      "clickfix.html": "589e1123bcd2e06d151b6f2d95a7a12c0a3c204437c083b83282157be72cf5ae",
+      "benign.html": "938c212594d2300d7cce6965a7893f7e014c024429f0cf782ecec448d1748cf0"
+    }
+  },
+  "cases": [
+    {
+      "name": "credential",
+      "expected": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "pass": true,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/credential.html",
+        "title": "Acme sign in — synthetic fixture",
+        "text": "Synthetic password-page fixture\n\nDo not enter credentials.\n\nPassword ",
+        "claimedService": "ACME",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/unused",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T00:04:54.359Z"
+      }
+    },
+    {
+      "name": "cross-origin",
+      "expected": [
+        "CREDENTIAL_PHISHING",
+        "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+      ],
+      "categories": [
+        "CREDENTIAL_PHISHING",
+        "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+      ],
+      "pass": true,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/cross-origin.html",
+        "title": "Acme form — synthetic fixture",
+        "text": "Synthetic cross-origin form fixture\n\nDo not enter credentials. The form is never submitted.\n\nPassword ",
+        "claimedService": "ACME",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://collector.aionguard.invalid/unused",
+        "formDestinationOrigin": "https://collector.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T00:04:54.419Z"
+      }
+    },
+    {
+      "name": "download",
+      "expected": [
+        "EXECUTABLE_DOWNLOAD_LURE"
+      ],
+      "categories": [
+        "EXECUTABLE_DOWNLOAD_LURE"
+      ],
+      "pass": true,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/download.html",
+        "title": "Synthetic update lure fixture",
+        "text": "Critical security update required\n\nThis harmless synthetic fixture declares a nonexistent download.\n\nDownload the update",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/nonexistent-update.exe",
+            "text": "Download the update"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T00:04:54.473Z"
+      }
+    },
+    {
+      "name": "support",
+      "expected": [
+        "TECH_SUPPORT_SCAM"
+      ],
+      "categories": [
+        "TECH_SUPPORT_SCAM"
+      ],
+      "pass": true,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/support.html",
+        "title": "Synthetic support alarm fixture",
+        "text": "Your computer is infected\n\nDo not close this page. Call support immediately.\n\nSynthetic training text only; no phone number or contact destination exists.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T00:04:54.522Z"
+      }
+    },
+    {
+      "name": "clickfix",
+      "expected": [
+        "CLICKFIX"
+      ],
+      "categories": [
+        "CLICKFIX"
+      ],
+      "pass": true,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/clickfix.html",
+        "title": "Synthetic verification fixture",
+        "text": "Verify you are human\n\nPaste this command in PowerShell: [HARMLESS TEXT PLACEHOLDER — NO COMMAND PROVIDED]\n\nSynthetic training text only. Nothing can be executed.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T00:04:54.571Z"
+      }
+    },
+    {
+      "name": "benign",
+      "expected": [],
+      "categories": [],
+      "pass": true,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/benign.html",
+        "title": "Welcome — synthetic benign control",
+        "text": "Community garden\n\nThe garden opens at nine. Bring a watering can and enjoy the flowers.\n\nRead the garden notes",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/readme.txt",
+            "text": "Read the garden notes"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T00:04:54.620Z"
+      }
+    }
+  ]
+}

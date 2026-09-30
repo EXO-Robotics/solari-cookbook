@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "evidenceScope": "Synthetic browser extraction and detector integration proof only. Six local inert pages in one fresh Solari sandbox; not live website coverage or a fresh sandbox per case.",
+  "approvedIdpOrigins": ["https://trusted.aionguard.invalid"],
+  "fixtures": [
+    {
+      "name": "credential",
+      "file": "credential.html",
+      "url": "https://owned.aionguard.invalid/credential.html",
+      "expected": ["CREDENTIAL_PHISHING"]
+    },
+    {
+      "name": "cross-origin",
+      "file": "cross-origin.html",
+      "url": "https://owned.aionguard.invalid/cross-origin.html",
+      "expected": ["CREDENTIAL_PHISHING", "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"]
+    },
+    {
+      "name": "download",
+      "file": "download.html",
+      "url": "https://owned.aionguard.invalid/download.html",
+      "expected": ["EXECUTABLE_DOWNLOAD_LURE"]
+    },
+    {
+      "name": "support",
+      "file": "support.html",
+      "url": "https://owned.aionguard.invalid/support.html",
+      "expected": ["TECH_SUPPORT_SCAM"]
+    },
+    {
+      "name": "clickfix",
+      "file": "clickfix.html",
+      "url": "https://owned.aionguard.invalid/clickfix.html",
+      "expected": ["CLICKFIX"]
+    },
+    {
+      "name": "benign",
+      "file": "benign.html",
+      "url": "https://owned.aionguard.invalid/benign.html",
+      "expected": []
+    }
+  ]
+}

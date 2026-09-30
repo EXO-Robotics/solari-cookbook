@@ -1,0 +1,312 @@
+{
+  "receiptVersion": "1.0.0",
+  "exportedAt": "2026-09-30T00:07:29.365Z",
+  "digest": "015033f079115aac346c498702779dd5c34790fb1da97ad27ac8c170fbf9baf8",
+  "snapshot": {
+    "workflow": "DETECTOR",
+    "inspectionTrigger": "OPERATOR_DIRECT",
+    "identity": {
+      "schemaVersion": "1.0.0",
+      "caseId": "PR-014",
+      "runId": "run_d58542b5-34a0-4f79-911c-bd14d52bb697",
+      "attemptId": "attempt_ed00c7f9-2d17-4fbc-b067-4916efff58c9",
+      "ledgerId": "ledger_e921b411-0512-4a2c-80df-22a331cb7322",
+      "revision": 0
+    },
+    "scenarioVersion": "acme-1",
+    "principal": "Apprentice-07",
+    "modes": {
+      "inspection": "LIVE",
+      "planner": "MOCK",
+      "organization": "SYNTHETIC_ORGANIZATION"
+    },
+    "authorization": {
+      "id": "auth_28a5bb1e-5eb4-4e69-a07f-470ad8c5a18c",
+      "at": "2026-09-30T00:06:53.342Z",
+      "principal": "Apprentice-07",
+      "scenario": "OWNED_FIXTURE_INSPECTION",
+      "assumptions": [],
+      "change": "NONE"
+    },
+    "execution": "BLOCKED",
+    "link": {
+      "execution": "SUCCEEDED",
+      "classification": "SUSPICIOUS",
+      "decision": "BLOCK",
+      "ruleIds": [
+        "AG-PHISH-001"
+      ],
+      "findings": [
+        {
+          "category": "CREDENTIAL_PHISHING",
+          "ruleId": "AG-PHISH-001",
+          "summary": "Password entry on an unapproved origin",
+          "evidence": [
+            "Password field observed on https://mfrey18.github.io",
+            "Page origin is absent from the configured identity-provider allowlist."
+          ],
+          "limitation": "An unlisted legitimate login also triggers this policy heuristic; brand impersonation is not proven."
+        }
+      ],
+      "mode": "LIVE",
+      "observation": {
+        "finalUrl": "https://mfrey18.github.io/AionPhish/",
+        "title": "AionPhish Login · Beneath the Surface | AG_PAGE_TITLE_7C92",
+        "text": "aAIONGUARDBENEATH THE SURFACE 01\n\nA QUIET DAY. A PERFECT CATCH.\n\nLooks inviting.\nAionPhish\n \nTHE PHISHING AQUARIUM\nThere’s more\nbelow the surface.\n\nEven the perfect invitation\ncan have a hook.\n\na AionPhishTHE BAIT\nSign in to AionPhish\n\nA surprise is waiting.\nUse made-up test details to unwrap it.\n\nTest usernameTest passwordUnwrap my surprise →\n\nTest details only — never use a real password.\nEntries are cleared, never stored or sent.\n\nⅡ Pause oceanWAVES \nAI investigates. Evidence decides.Controlled demonstration · no credential collectionAG_PAGE_BODY_7C92\n\nEnable JavaScript to see the animated aquarium. The demo login stays disabled.",
+        "claimedService": "AIONPHISH",
+        "downloadLinks": [
+          {
+            "href": "https://mfrey18.github.io/AionPhish/",
+            "text": "aAIONGUARD"
+          }
+        ],
+        "passwordField": true,
+        "formAction": "https://mfrey18.github.io/AionPhish/",
+        "formDestinationOrigin": "https://mfrey18.github.io",
+        "redirects": [],
+        "observedAt": "2026-09-30T00:07:27.331Z"
+      },
+      "imagePath": "/api/attempts/run_d58542b5-34a0-4f79-911c-bd14d52bb697/image",
+      "cleanup": {
+        "state": "CONFIRMED",
+        "sandboxId": "solari-97a1cf595841ec690b58cc19500102e5",
+        "stoppedAt": "2026-09-30T00:07:29.360Z",
+        "deletedAt": "2026-09-30T00:07:29.360Z"
+      },
+      "source": "SOLARI_SANDBOX",
+      "failure": null,
+      "timing": {
+        "heldAt": "2026-09-30T00:06:53.346Z",
+        "createdAt": "2026-09-30T00:06:53.928Z",
+        "collectionStartedAt": "2026-09-30T00:07:27.056Z",
+        "returnedAt": "2026-09-30T00:07:29.360Z",
+        "blockedAt": "2026-09-30T00:07:29.361Z"
+      }
+    },
+    "observations": [],
+    "assessments": [],
+    "baseline": null,
+    "change": null,
+    "verification": "NOT_REQUESTED",
+    "budget": {
+      "total": 4,
+      "spent": 0,
+      "remaining": 4
+    },
+    "catalog": [
+      {
+        "id": "INV-SECRET-METADATA",
+        "label": "Inspect additional secret metadata",
+        "cost": 1,
+        "target": "legacy-prod-secrets",
+        "coverage": [
+          "legacy_reference",
+          "artifact_metadata"
+        ],
+        "hypotheses": [
+          "HYP-001"
+        ],
+        "sourceCurrent": true,
+        "sourceComplete": true,
+        "order": 0
+      },
+      {
+        "id": "INV-PRINCIPAL-STATUS",
+        "label": "Check referenced principal status",
+        "cost": 1,
+        "target": "prod-admin-legacy",
+        "coverage": [
+          "principal_status"
+        ],
+        "hypotheses": [
+          "HYP-001"
+        ],
+        "sourceCurrent": true,
+        "sourceComplete": true,
+        "order": 1
+      },
+      {
+        "id": "INV-PRODUCTION-MAP",
+        "label": "Map Production resources",
+        "cost": 2,
+        "target": "Production",
+        "coverage": [
+          "production_map"
+        ],
+        "hypotheses": [
+          "HYP-001"
+        ],
+        "sourceCurrent": true,
+        "sourceComplete": true,
+        "order": 2
+      },
+      {
+        "id": "INV-CREDENTIAL-AGE",
+        "label": "Inspect credential age",
+        "cost": 1,
+        "target": "legacy-prod-secrets",
+        "coverage": [
+          "credential_age_days"
+        ],
+        "hypotheses": [
+          "HYP-001"
+        ],
+        "sourceCurrent": true,
+        "sourceComplete": true,
+        "order": 3
+      },
+      {
+        "id": "INV-ACTIVITY-LEDGER",
+        "label": "Review identity + workload activity",
+        "cost": 1,
+        "target": "prod-admin-legacy",
+        "coverage": [
+          "principal_status",
+          "last_auth_days",
+          "runtime_identity"
+        ],
+        "hypotheses": [
+          "HYP-001",
+          "HYP-002"
+        ],
+        "sourceCurrent": true,
+        "sourceComplete": true,
+        "order": 4
+      },
+      {
+        "id": "INV-JENKINS-PLUGINS",
+        "label": "Enumerate Jenkins plugins",
+        "cost": 1,
+        "target": "Jenkins-02",
+        "coverage": [
+          "plugins"
+        ],
+        "hypotheses": [
+          "HYP-002"
+        ],
+        "sourceCurrent": true,
+        "sourceComplete": true,
+        "order": 5
+      },
+      {
+        "id": "INV-JENKINS-CLI",
+        "label": "Check Jenkins CLI availability",
+        "cost": 1,
+        "target": "Jenkins-02",
+        "coverage": [
+          "cli_available"
+        ],
+        "hypotheses": [
+          "HYP-002"
+        ],
+        "sourceCurrent": true,
+        "sourceComplete": true,
+        "order": 6
+      },
+      {
+        "id": "INV-ASSET-INVENTORY",
+        "label": "Refresh full asset inventory",
+        "cost": 2,
+        "target": "Apprentice-07",
+        "coverage": [
+          "direct_access",
+          "product"
+        ],
+        "hypotheses": [
+          "HYP-001",
+          "HYP-002"
+        ],
+        "sourceCurrent": true,
+        "sourceComplete": true,
+        "order": 7
+      },
+      {
+        "id": "INV-JENKINS-VERSION",
+        "label": "Confirm exact Jenkins version",
+        "cost": 1,
+        "target": "Jenkins-02",
+        "coverage": [
+          "jenkins_version"
+        ],
+        "hypotheses": [
+          "HYP-002"
+        ],
+        "sourceCurrent": true,
+        "sourceComplete": true,
+        "order": 8
+      }
+    ],
+    "brokerReceipts": [],
+    "events": [
+      {
+        "sequence": 1,
+        "runId": "run_d58542b5-34a0-4f79-911c-bd14d52bb697",
+        "revision": 0,
+        "type": "ATTEMPT_CREATED",
+        "at": "2026-09-30T00:06:53.331Z",
+        "payload": {}
+      },
+      {
+        "sequence": 2,
+        "runId": "run_d58542b5-34a0-4f79-911c-bd14d52bb697",
+        "revision": 0,
+        "type": "AUTHORIZED",
+        "at": "2026-09-30T00:06:53.342Z",
+        "payload": {
+          "referenceId": "auth_28a5bb1e-5eb4-4e69-a07f-470ad8c5a18c"
+        }
+      },
+      {
+        "sequence": 3,
+        "runId": "run_d58542b5-34a0-4f79-911c-bd14d52bb697",
+        "revision": 0,
+        "type": "INSPECTION_STARTED",
+        "at": "2026-09-30T00:06:53.346Z",
+        "payload": {
+          "reason": "Operator requested remote inspection; no local navigation interception is asserted."
+        }
+      },
+      {
+        "sequence": 4,
+        "runId": "run_d58542b5-34a0-4f79-911c-bd14d52bb697",
+        "revision": 0,
+        "type": "LINK_BLOCKED",
+        "at": "2026-09-30T00:07:29.362Z",
+        "payload": {
+          "reason": "SUSPICIOUS"
+        }
+      }
+    ],
+    "access": {
+      "reachable": 0,
+      "blocked": 0
+    },
+    "summary": {
+      "retained": 0,
+      "dismissed": 0,
+      "inconclusive": 0,
+      "verifiedAfterState": false
+    }
+  },
+  "claims": {
+    "exploitAttempts": 0,
+    "credentialsSubmitted": false,
+    "compromiseObserved": false,
+    "consequenceDemonstrated": false,
+    "endpointInterceptionVerified": false,
+    "productionScaleVerified": false
+  },
+  "limitations": [
+    "Heuristics inspect a static page title, the first 1000 body characters, one password form, and up to 20 links from the first 200 anchors. Page scripts are disabled. Findings can be false positives; no findings means unknown, never safe. No payload execution, malware scanning, iframe coverage, or prevalence ranking is claimed.",
+    "Direct operator inspection is not proof of local navigation interception. Astra is not invoked.",
+    "Solari browser routing is not a verified infrastructure egress firewall. Owned inert fixtures only.",
+    "Confirmed cleanup means accepted termination plus absence from exact-tag authenticated resource inventory, not erasure of provider logs.",
+    "Synthetic organization observations are separate from remote page inspection.",
+    "No exploitation, authentication attempt, service takeover or downstream compromise was demonstrated.",
+    "A declared form destination does not establish all JavaScript network behavior.",
+    "Endpoint interception and the integrated live route require a separate measured acceptance run.",
+    "The local in-memory controller is a shared administrative authority; no multi-tenant or scale claim is verified.",
+    "The digest binds exported bytes but is not an independent signature or attestation.",
+    "MOCK/REPLAY components cannot establish live provider or Astra behavior; inspect the per-component mode and workflow."
+  ]
+}

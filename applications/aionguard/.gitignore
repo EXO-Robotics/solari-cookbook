@@ -1,0 +1,39 @@
+# Dependencies and build output
+node_modules/
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+!.env.*.example
+.vercel/
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Local sessions and generated operational artifacts
+.codex/
+.agents/
+.grok/
+.playwright/
+playwright-report/
+test-results/
+browser-profiles/
+runtime-data/
+private-artifacts/
+*.log
+
+# Operating system and editor files
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# Private demo email and media editing workspace
+boat-fairy-email/
+outputs/

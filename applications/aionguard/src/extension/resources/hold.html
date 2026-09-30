@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>AionGuard · Navigation held</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <p class="eyebrow">AIONGUARD / PROTECTED NAVIGATION</p>
+      <h1>This link is held.</h1>
+      <p id="status" role="status" aria-live="polite">
+        Contacting your local controller for an isolated inspection.
+      </p>
+      <p class="detail">
+        The registered destination stays blocked here. Inspection failure keeps this page held.
+        Emergency recovery or the test lease ending turns protection off.
+      </p>
+      <a id="controller" href="http://127.0.0.1:4317/" rel="noreferrer">Open AionGuard</a>
+      <p class="detail">
+        Only the selected registered fixture is in scope. This page alone does not prove
+        interception coverage.
+      </p>
+      <button id="disarm" type="button">Turn protection off · 0000</button>
+      <p id="recovery-status" role="status" aria-live="polite">
+        Type four consecutive zeros to stop protection. Global keyboard recovery requires the
+        running Mac helper.
+      </p>
+    </main>
+    <script src="config.js"></script>
+    <script src="hold.js"></script>
+    <script src="recovery.js"></script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+{
+  "inspection": {
+    "execution": "SUCCEEDED",
+    "mode": "LIVE",
+    "observation": {
+      "finalUrl": "https://mfrey18.github.io/AionPhish/",
+      "title": "AionPhish Login · Beneath the Surface | AG_PAGE_TITLE_7C92",
+      "text": "aAIONGUARDBENEATH THE SURFACE 01\n\nA QUIET DAY. A PERFECT CATCH.\n\nLooks inviting.\nAionPhish\n \nTHE PHISHING AQUARIUM\nThere’s more\nbelow the surface.\n\nEven the perfect invitation\ncan have a hook.\n\na AionPhishTHE BAIT\nSign in to AionPhish\n\nA surprise is waiting.\nUse made-up test details to unwrap it.\n\nTest usernameTest passwordUnwrap my surprise →\n\nTest details only — never use a real password.\nEntries are cleared, never stored or sent.\n\nⅡ Pause oceanWAVES \nAI investigates. Evidence decides.Controlled demonstration · no credential collectionAG_PAGE_BODY_7C92\n\nEnable JavaScript to see the animated aquarium. The demo login stays disabled.",
+      "claimedService": "AIONPHISH",
+      "downloadLinks": [
+        {
+          "href": "https://mfrey18.github.io/AionPhish/",
+          "text": "aAIONGUARD"
+        }
+      ],
+      "passwordField": true,
+      "formAction": "https://mfrey18.github.io/AionPhish/",
+      "formDestinationOrigin": "https://mfrey18.github.io",
+      "redirects": [],
+      "observedAt": "2026-09-29T23:59:00.679Z"
+    },
+    "source": "SOLARI_SANDBOX",
+    "sandboxId": "solari-879dd4f899e5abd061342fb167194e91",
+    "createdAt": "2026-09-29T23:58:27.538Z",
+    "collectionStartedAt": "2026-09-29T23:58:58.981Z",
+    "returnedAt": "2026-09-29T23:59:02.342Z",
+    "cleanup": {
+      "state": "CONFIRMED",
+      "sandboxId": "solari-879dd4f899e5abd061342fb167194e91",
+      "stoppedAt": "2026-09-29T23:59:02.341Z",
+      "deletedAt": "2026-09-29T23:59:02.342Z"
+    },
+    "failure": null
+  },
+  "findings": [
+    {
+      "category": "CREDENTIAL_PHISHING",
+      "ruleId": "AG-PHISH-001",
+      "summary": "Password entry on an unapproved origin",
+      "evidence": [
+        "Password field observed on https://mfrey18.github.io",
+        "Page origin is absent from the configured identity-provider allowlist."
+      ],
+      "limitation": "An unlisted legitimate login also triggers this policy heuristic; brand impersonation is not proven."
+    }
+  ],
+  "elapsedMs": 35442,
+  "endpointInterceptionVerified": false,
+  "productionScaleVerified": false,
+  "workerSha256": "5bd6912c28cce8dcb2698268c1a74f89c999e6aff0784bf816a09afa24ee68f7"
+}

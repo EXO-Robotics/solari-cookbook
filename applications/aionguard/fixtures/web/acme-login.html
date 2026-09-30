@@ -1,0 +1,9 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; form-action 'none'; base-uri 'none'">
+<title>Acme Login</title>
+<style>body{font-family:system-ui,sans-serif;background:#f3f5f7;color:#17242d;margin:0}main{max-width:400px;margin:90px auto;padding:40px;background:white;border:1px solid #d9e0e5;border-radius:12px}h1{font-weight:600;font-size:28px}label{display:block;margin:20px 0 8px}input{box-sizing:border-box;width:100%;padding:12px;border:1px solid #b8c6ce;border-radius:5px}button{width:100%;margin-top:24px;padding:12px;background:#2849c8;border:0;border-radius:5px;color:white}small{display:block;margin-top:20px;color:#647580;line-height:1.6}</style>
+</head><body><main><p>ACME / WORKSPACE</p><h1>Sign in to Acme</h1><p>Your workspace is one step away.</p>
+<form action="https://outside-idp.invalid/never-submit" method="post" autocomplete="off"><label for="user">Work email</label><input id="user" type="email" disabled placeholder="name@acme.example"><label for="password">Password</label><input id="password" type="password" disabled placeholder="Password"><button type="button" disabled>Sign in</button></form>
+<small>Inert security research fixture. No credentials are accepted or collected. The declared form action is intentionally outside the approved identity-provider inventory. Submission is disabled.</small>
+</main></body></html>
