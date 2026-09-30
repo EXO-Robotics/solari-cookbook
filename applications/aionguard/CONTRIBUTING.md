@@ -10,6 +10,8 @@ For code contributions, describe the problem, resulting behavior, relevant valid
 
 Use Node 24 and npm. Run `npm ci`, `npm run check`, and `npm run format:check`. Tests and CI use injected software providers and do not need account credentials. `npm run compare` checks deterministic policies only; do not add live model or Vercel calls to the default suite. Changes to shared contracts should update consumers together and preserve source/mode labels.
 
-Identify the component license before contributing. Existing MIT baseline components retain MIT. New source-available components must be expressly identified in [LICENSING-COVERAGE.json](LICENSING-COVERAGE.json); prospective contributors must agree in writing to the applicable outbound terms and commercial-licensing authority before those contributions are accepted. Contributors retain ownership unless separately agreed in writing. This policy does not retroactively bind past contributors or assign copyright.
+AionGuard is source-available. Before accepting a contribution, identify its author, source and applicable permissions. The contributor must agree in writing to the application license and grant sufficient authority for the covered source distribution and separate commercial licensing. Contributors retain copyright unless separately agreed; a pull request alone is not a copyright assignment or blanket commercial authorization.
 
-Preserve third-party notices and identify imported or generated material. [Commercial licensing](COMMERCIAL-LICENSING.md) · [Authorship](AUTHORS.md) · [Megan's licensing authority](docs/licensing/LICENSING-AUTHORITY.md).
+Do not import third-party material under the application license. Preserve its original notices and identify it in the scope map. Contributions with unresolved rights remain outside accepted covered material until approval. No patent grant, ownership transfer or retroactive agreement is assumed.
+
+[License](LICENSE) · [Commercial licensing](COMMERCIAL-LICENSING.md) · [Authorship](AUTHORS.md) · [Third-party notices](THIRD-PARTY-NOTICES.md).

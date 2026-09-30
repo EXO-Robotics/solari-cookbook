@@ -55,7 +55,7 @@ The current provider is Vercel Sandbox. The separate [Apple Silicon VM prototype
 
 The team originally intended to use Solari, but reported it unavailable during the hackathon build. The finished demonstration therefore uses Vercel Sandbox. This is a development-history note, not an independently verified current or service-wide outage report.
 
-We also developed [our own local Apple Silicon VM](https://github.com/EXO-Robotics/AionGuard-Local-VM) in a separate public MIT-licensed project. Both VM implementations, tests, and setup instructions are published there; provisioned guest disks and private runtime evidence are excluded. The separate-project review supplied by the team reports real browser rendering, screenshots, fresh instances, cleanup, and timeout recovery. Those results support further local-provider integration work; they do not establish the recorded AionPhish → Safari handoff → inspection → screenshot/classification → cleanup path on the local VM.
+We also developed [our own local Apple Silicon VM](https://github.com/EXO-Robotics/AionGuard-Local-VM) in a separately licensed project. Both VM implementations, tests, and setup instructions are published there; provisioned guest disks and private runtime evidence are excluded. The separate-project review supplied by the team reports real browser rendering, screenshots, fresh instances, cleanup, and timeout recovery. Those results support further local-provider integration work; they do not establish the recorded AionPhish → Safari handoff → inspection → screenshot/classification → cleanup path on the local VM.
 
 At that review, three compatibility gaps prevented a direct replacement:
 
@@ -102,4 +102,4 @@ Scaling requires durable storage, queued execution, tenant isolation, distribute
 
 ## Submission assets and license
 
-The source is public under the [MIT license](../LICENSE). The [submission video is available on YouTube](https://www.youtube.com/watch?v=UJkPWHyTg-U). It shows the scoped Safari inspection and controlled comparison described above. Linking the video and merging the code do not establish organizer submission or acceptance.
+The application is source-available under the [Personal and Internal Business Use License](../LICENSE). The [submission video is available on YouTube](https://www.youtube.com/watch?v=UJkPWHyTg-U). It shows the scoped Safari inspection and controlled comparison described above. Linking the video and merging the code do not establish organizer submission or acceptance.

@@ -47,7 +47,7 @@ Solari could package the service in either of two ways:
 - **Paid add-on:** customers add SolariGuard to an existing subscription for selected devices.
 - **Included tier feature:** a subscription tier includes a defined number of devices and an inspection allowance.
 
-AionGuard supplies the open-source inspection and navigation controller. Solari supplies the remote execution environment. Prepared sandboxes and reuse keep the service ready between clicks.
+AionGuard supplies the source-available inspection and navigation controller. Solari supplies the remote execution environment. Prepared sandboxes and reuse keep the service ready between clicks.
 
 **SolariGuard is our proposed subscription offering.** The current build includes the local dashboard and Chromium inspection flow; the product roadmap adds client distribution, device enrollment, and Solari account integration.
 
@@ -93,9 +93,7 @@ The graphic shows the earlier [baseline comparison](docs/controlled-click.md): t
 
 ## Engineering evidence
 
-**434 tests passing** cover the detector, controller, navigation handoff, release authority, advisory restrictions, and sandbox lifecycle. [CI](https://github.com/EXO-Robotics/AionGuard-Solari/actions/workflows/ci.yml) · [JSON/CSV results](docs/evidence/link-release-2026-09-30) · [Zero remaining AionGuard resources in ten post-run inventories](docs/evidence/link-release-2026-09-30/post-run-inventory.json).
-
-The [v1.2.0 submission release](https://github.com/EXO-Robotics/AionGuard-Solari/releases/tag/solari-submission-v1.2.0) remains frozen with its original 388-test verification and evidence. The open/block flow is available on the current branch. [Original verification record](docs/package-verification.md).
+**434 tests passing** cover the detector, controller, navigation handoff, release authority, advisory restrictions, and sandbox lifecycle. [CI workflow](.github/workflows/ci.yml) · [JSON/CSV results](docs/evidence/link-release-2026-09-30) · [Zero remaining AionGuard resources in ten post-run inventories](docs/evidence/link-release-2026-09-30/post-run-inventory.json).
 
 ## Build and evaluation
 
@@ -112,8 +110,8 @@ Recorded with **Vercel Sandbox at the OpenAI Astra Hackathon in New York**. The 
 Use Node 24 LTS:
 
 ```sh
-git clone https://github.com/EXO-Robotics/solari-cookbook.git
-cd solari-cookbook/applications/aionguard
+git clone https://github.com/EXO-Robotics/AionGuard-Solari.git
+cd AionGuard-Solari
 npm ci
 npm run build
 cp .env.example .env
@@ -123,6 +121,6 @@ For a preview without cloud credentials, set `AIONGUARD_MODE=MOCK` in `.env`, ru
 
 For live inspections against your own harmless test page, follow the [Solari setup guide](docs/quickstart.md). Credentials stay in the local controller.
 
-[Official Solari fork](https://github.com/EXO-Robotics/solari-cookbook/tree/main/applications/aionguard) · [Full submission record](docs/solari-submission.md) · [Run the checks](docs/quickstart.md#checks) · [Presentation kit](docs/presentation.md)
+[Run the checks](docs/quickstart.md#checks) · [Presentation kit](docs/presentation.md)
 
-[Licensing](LICENSE): published MIT components retain their permissions. Future designated additions use a source-available license: personal and internal-business use is free; resale, paid customer hosting, and commercial bundling require a separate written agreement. [Commercial licensing](COMMERCIAL-LICENSING.md) · [Authorship](AUTHORS.md).
+[License](LICENSE): **source-available**. Personal and internal-business use is free. Under this license, resale, paid hosting for external customers, and commercial bundling require a separate written agreement. [Commercial licensing](COMMERCIAL-LICENSING.md) · [Contributors](AUTHORS.md) · [Third-party notices](THIRD-PARTY-NOTICES.md).

@@ -29,7 +29,7 @@ Keep “Controlled Chromium demo · owned fixture · prepared sandbox” visible
 1. [Read the click experiment](controlled-click.md): scope, actual browser screenshots, reproduction command, request-count methodology.
 2. [Inspect its JSON](evidence/controlled-click-2026-09-30/report.json) and [CSV](evidence/controlled-click-2026-09-30/summary.csv).
 3. [Check the warm benchmark](warm-solari.md): 20 backend inspections, 1.414 s median / 1.487 s P95, with preparation measured separately.
-4. [See the implementation in the official Solari fork](https://github.com/EXO-Robotics/solari-cookbook/tree/main/applications/aionguard).
+4. [Review the source-available implementation](https://github.com/EXO-Robotics/AionGuard-Solari), its [license](../LICENSE), and [commercial-use guide](../COMMERCIAL-LICENSING.md).
 
 The [original 56-second video](https://www.youtube.com/watch?v=UJkPWHyTg-U) was recorded with Vercel Sandbox at the OpenAI Astra Hackathon in New York. It tells the project's origin story; the screenshots and measurements above document the Solari work.
 

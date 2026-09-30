@@ -4,6 +4,6 @@ Runnable, self-contained applications built with Solari, following the [upstream
 
 | Application | Language | What it does |
 | --- | --- | --- |
-| [AionGuard](aionguard) | TypeScript | Inspect an owned webpage in a fresh Solari sandbox, capture evidence, evaluate five threat heuristics, and confirm cleanup |
+| [AionGuard](aionguard) | TypeScript | Hold an external link, inspect remotely in a prepared Solari sandbox, and open, block or hold for review; [source-available application terms](aionguard/LICENSE) |
 
 The existing [SmartCart example](../examples/smartcart-basket-research-ts) and its submission links are preserved.

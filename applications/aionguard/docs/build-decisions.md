@@ -10,7 +10,7 @@ Latest instruction: consolidate the tested implementation into the default GitHu
 | Demonstration endpoint | Use the current Mac as the intended demonstration machine. |
 | Click entry point | A normal link click on a GitHub Pages page is acceptable. The controlled Apple Mail route remains an option rather than a mandatory release prerequisite. |
 | GitHub | Create the public `EXO-Robotics/AionGuard` repository and include the supplied planning material. |
-| License | MIT selected as the initial open-source license for project contributions. |
+| License | Source-available application terms; personal/internal use is free and commercial distribution requires separate permission under the application license. |
 | Provider budget | Use the existing free Vercel account until the testing allowance is exhausted or unavailable, then pause provider-backed dispatch and report the blocker to the owner. Do not purchase or upgrade a plan or enable paid overages automatically. |
 | Presentation | Present AionGuard as a product intended to scale, with this hackathon submission explicitly identified as the bounded implementation. Scalability and production readiness remain unverified until measured. |
 
@@ -52,4 +52,4 @@ The team also built a separate local Apple Silicon VM prototype. The supplied re
 
 ## Separate local VM source publication
 
-At the owner's request, the source-only local VM project is published as [EXO-Robotics/AionGuard-Local-VM](https://github.com/EXO-Robotics/AionGuard-Local-VM) under MIT. It contains the raw ARM64 monitor and macOS browser VM, tests, setup documentation, and historical reports with their evidence limits. Guest disks, credentials, approvals, binaries, quarantined state, and private runtime receipts are excluded. This publication does not integrate it into AionGuard or replace Vercel.
+At the owner's request, the source-only local VM project is published as [EXO-Robotics/AionGuard-Local-VM](https://github.com/EXO-Robotics/AionGuard-Local-VM) under its separate license. It contains the raw ARM64 monitor and macOS browser VM, tests, setup documentation, and historical reports with their evidence limits. Guest disks, credentials, approvals, binaries, quarantined state, and private runtime receipts are excluded. This publication does not integrate it into AionGuard or replace Vercel.

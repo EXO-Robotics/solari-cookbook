@@ -1,3 +1,5 @@
+> Current offering: [AionGuard-Solari](https://github.com/EXO-Robotics/AionGuard-Solari) is the canonical source-available application. The cookbook application mirrors its current license, component scope and commercial-use guide. See [application license](../LICENSE) and [commercial licensing](../COMMERCIAL-LICENSING.md). Earlier measured milestones are retained below.
+
 > Controlled click update: [one real Chromium click comparison](controlled-click.md) now shows 4 local destination HTTP requests without protection versus 0 with AionGuard, with a warning in 1.981 seconds. Automatic safe-link release remains unimplemented. The record below preserves earlier milestones.
 
 > Submission package update: the [README](../README.md) now leads with the product, visuals, and measured warm performance. New evidence includes [six Astra advisory reviews](astra-review-benchmark.md) and [direct UI click timing](click-timing.md). These are separate measurements; a later controlled intercepted-link measurement is linked above.
