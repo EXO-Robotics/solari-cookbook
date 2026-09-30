@@ -1,18 +1,20 @@
 # AionGuard × Solari
 
-**Inspect the link before you trust it.**
+**Inspect the link before your browser visits it.**
 
-AionGuard is building a checkpoint between a link and your browser: open the destination somewhere isolated, inspect it, and show the evidence before you proceed.
+An ordinary click opens the destination on your machine. Our controlled prototype holds navigation and checks the page in a prepared Solari sandbox first.
 
-The working prototype now intercepts a real link click in a controlled Chromium demo, holds the destination, and inspects our owned page in Solari. Automatic safe-link release is still future work.
+![AionGuard flow: an ordinary click sends 4 destination HTTP requests; a protected click holds navigation, inspects in Solari, and shows a warning in 1.98 seconds with 0 local destination HTTP requests. One controlled Chromium comparison.](docs/assets/click-flow.svg)
 
-### 1.41 s median · 1.49 s P95
+**4 → 0 local destination HTTP requests. 1.98 seconds from click to warning.** One baseline and one protected click against our owned fixture; the sandbox was ready beforehand. The destination stayed held.
 
-**20 live checks in one prepared Solari sandbox.** Measured backend inspection time on a controlled fixture, after browser setup.
+[**See the evidence + reproduce it →**](docs/controlled-click.md) · [Try it](#try-it) · [Original hackathon video](#watch-the-original-demo) · [Solari fork](https://github.com/EXO-Robotics/solari-cookbook/tree/main/applications/aionguard)
 
-![How AionGuard uses a prepared Solari sandbox](docs/assets/solari-overview.svg)
+## Why Solari?
 
-[▶ Watch the demo](https://www.youtube.com/watch?v=UJkPWHyTg-U) · [Try it](#try-it) · [Measured results](docs/warm-solari.md) · [Solari fork](https://github.com/EXO-Robotics/solari-cookbook/tree/main/applications/aionguard)
+**Prepare once. Inspect at click time.** Solari lets us get the sandbox ready before a click, reuse the VM between checks, and replace it after a finding. That moves browser setup out of the click path.
+
+In a separate benchmark, **20 live checks took 1.41 s median / 1.49 s P95** in a prepared sandbox. Those are backend inspection times; the **1.98 s** above measures the controlled browser click through to its warning.
 
 ## What happens to a link?
 
@@ -25,16 +27,6 @@ Checks with no findings reuse the prepared VM. **No findings means “undetermin
 The five checks cover credential phishing, external password forms, executable-download lures, tech-support scams, and ClickFix prompts that ask you to run a command.
 
 ![AionGuard showing a real Solari inspection and its finding](docs/evidence/solari-2026-09-29/detector-ui.png)
-
-## One real click, before the destination
-
-**Ordinary click: 4 local browser requests. AionGuard click: 0.**
-
-In one controlled comparison, Solari found the warning signs and the protected browser showed the warning in **1.98 seconds**. The destination stayed held. Both Chromium network recordings agreed on the request counts.
-
-![Measured controlled click comparison](docs/assets/controlled-click.svg)
-
-One owned fixture, two disposable browser profiles. This proves the tested click path, not protection across the whole web. [Screenshots, raw measurements, and reproduction →](docs/controlled-click.md)
 
 ## How fast is it?
 
@@ -84,6 +76,6 @@ For real Solari checks, add your private key and owned demo URL using the [live 
 
 The fast path stays deterministic. [Astra’s optional second opinion](docs/astra-review-benchmark.md) is measured separately; it cannot authorize navigation or take actions. The workspace also exports [direct click-to-result timings](docs/click-timing.md).
 
-[Full submission record](docs/solari-submission.md) · [Run the checks](docs/quickstart.md#checks) · [Submission post draft](docs/submission-post.md)
+[Presentation kit](docs/presentation.md) · [Full submission record](docs/solari-submission.md) · [Run the checks](docs/quickstart.md#checks) · [Submission post draft](docs/submission-post.md)
 
 MIT licensed.

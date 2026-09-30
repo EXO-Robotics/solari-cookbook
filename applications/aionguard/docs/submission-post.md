@@ -1,25 +1,39 @@
 # Submission post draft
 
-Prepared for review. Not posted to X or LinkedIn.
+Prepared for the user to post. Nothing has been posted to X or LinkedIn.
 
-## Short post
+## Main post
 
-I’m building AionGuard × Solari to inspect links before they reach your browser.
+Attach [click-social.png](assets/click-social.png).
 
-20 live controlled checks: 1.41s median, 1.49s P95 in a prepared sandbox. Flagged checks retire it and warm a replacement.
+> AionGuard × Solari: inspect the link before your browser visits it.
+>
+> Controlled test: 4 → 0 local destination HTTP requests. Click → warning: 1.98s, with Solari ready beforehand.
+>
+> Code + evidence: https://github.com/EXO-Robotics/AionGuard-Solari
+>
+> @harrychow_ @getsolari
 
-Code + evidence: https://github.com/EXO-Robotics/AionGuard-Solari
+The main post fits a standard 280-character X post when the URL is counted as 23 characters.
 
-@harrychow_ @getsolari
+## Follow-up: the story
 
-## Demo caption / follow-up
+> AionGuard started at the OpenAI Astra Hackathon in New York. The original video used Vercel Sandbox.
+>
+> We rebuilt the isolation layer around Solari, our preferred provider for speed and convenience. Preparing the sandbox before a click makes remote inspection practical.
 
-The original demo was recorded with Vercel Sandbox during the OpenAI Astra Hackathon in New York. This submission runs on Solari, our preferred provider for speed and convenience.
+Attach the original video only with that provider context. [Original 56-second demo](https://www.youtube.com/watch?v=UJkPWHyTg-U).
 
-The current prototype also demonstrates a real intercepted Chromium click against our owned fixture: 4 local destination HTTP requests without AionGuard, 0 with it, and a warning in 1.98 seconds. One controlled comparison, not a detection-rate claim. General browser deployment and safe-link release remain future work. The 1.41-second figure still refers to backend checks after preparation.
+## Follow-up: the evidence
 
-Official Solari fork: https://github.com/EXO-Robotics/solari-cookbook/tree/main/applications/aionguard
+> One owned fixture. One baseline and one protected Chromium click. Both network recordings agreed: 4 destination HTTP requests vs. 0 from the local browser.
+>
+> The destination stayed held. General browser deployment and automatic safe-link release are next.
 
-[Watch the original 56-second demo](https://www.youtube.com/watch?v=UJkPWHyTg-U).
+[Reproduction steps, screenshots, JSON, CSV, and source hashes](controlled-click.md).
 
-The short post may need splitting to fit the account’s X character limit. Provider preference is not a measured comparison with Vercel or other VMs.
+The 1.98-second result is one automated click-to-rendered-warning run, with preparation before the click; the host-automation span was 2.370 seconds. It is not a detection-rate claim. Solari preference is not a measured comparison with another provider. Zero destination HTTP requests does not mean zero DNS/TCP/TLS contact.
+
+## Image alt text
+
+AionGuard × Solari controlled click demo. Local browser HTTP requests to the destination: ordinary click 4, protected click 0. The flow is click, hold navigation, inspect in a Solari sandbox prepared beforehand, and show a warning while the destination stays held. Click to warning took 1.98 seconds in one controlled Chromium comparison against an owned fixture. Code and reproducible evidence are linked in the post.

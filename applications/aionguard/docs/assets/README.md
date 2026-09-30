@@ -1,5 +1,14 @@
 # Presentation assets
 
+## Current Solari presentation
+
+- `click-flow.svg` / `click-flow.png`: README flow chart showing an ordinary click and the controlled AionGuard click. The sandbox is prepared beforehand; navigation remains held after the finding.
+- `click-social.svg` / `click-social.png`: 1600 × 900 image for X, with the measured 4-to-0 local destination HTTP requests and 1.98-second click-to-warning result. One owned fixture, one baseline and one protected click.
+- These are evidence-based diagrams, not application screenshots. Counts and timing are read from `docs/evidence/controlled-click-2026-09-30/report.json` by `scripts/render-presentation.py`. The existing `controlled-click` comparison graph and `warm-latency` distribution remain separate measurements.
+- [Post copy, alt text](../submission-post.md) · [30-second walkthrough and evidence links](../presentation.md).
+
+## Earlier assets and provenance
+
 - `aionguard-social.jpg`: original AI-generated cover illustration, created with the built-in image-generation tool. It is conceptual artwork, not a screenshot or evidence of product behavior. The generated PNG was converted to JPEG for GitHub's social-preview upload; no scene elements or text were changed. Dimensions: 1774 × 887; under 1 MB.
 - `workflow.svg`: original editable vector diagram. It explicitly distinguishes the recorded demo, earlier synthetic Astra experiments, and the future post-phishing Astra upgrade (gather incident data, draft an IT email, investigate possible sandbox leaks). Tripwire (likely harmful use of captured credentials) and continuity (recover needed systems into secured microVMs during device containment) remain longer-term plans. Labels and icons supplement the README text; they do not add verification claims.
 - `vercel-inspection.png`: unchanged captured page image from the first recorded Vercel inspection, case `run_be77484e-073c-4459-9c52-b5600320f622`, September 10, 2026. It contains the controlled AionPhish fixture rather than private desktop/email content. The private corresponding receipt records Vercel provenance and sandbox cleanup. It is not a live remote-browser feed. The fixture artwork belongs to its respective authors; inclusion documents the owner-authorized demonstration and does not change its underlying terms.
