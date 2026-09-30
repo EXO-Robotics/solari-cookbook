@@ -109,7 +109,7 @@ export class WarmSolariInspector implements Inspector {
                     ? 'READY'
                     : 'EMPTY',
       sandboxId: this.slot?.id ?? null,
-      readyAt: this.slot?.readyAt ?? null,
+      readyAt: this.slot?.readyAt || null,
       expiresAt: this.slot ? new Date(this.slot.started + this.maxAgeMs).toISOString() : null,
       inspectionCount: this.slot?.count ?? 0,
       cleanupUnresolved: this.unresolved,

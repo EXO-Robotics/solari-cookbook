@@ -1,3 +1,4 @@
+import { WarmPoolStatusSchema } from '../src/contracts/index.ts';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { WarmSolariInspector } from '../src/server/isolation/warm-solari.ts';
 import { registeredFixture } from '../src/server/isolation/policy.ts';
@@ -189,6 +190,9 @@ describe('warm Solari lifecycle', () => {
       p = pool(f.provider);
     const prep = p.prepare();
     await started;
+    expect(p.status().state).toBe('PREPARING');
+    expect(p.status().readyAt).toBeNull();
+    expect(WarmPoolStatusSchema.safeParse(p.status()).success).toBe(true);
     const closed = p.close();
     release();
     await prep;

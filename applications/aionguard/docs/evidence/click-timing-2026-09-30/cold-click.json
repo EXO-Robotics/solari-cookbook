@@ -1,0 +1,47 @@
+{
+  "schemaVersion": "1.0.0",
+  "records": [
+    {
+      "schemaVersion": "1.0.0",
+      "interactionId": "b33c60fe-50dd-4a14-a6a6-a460cc8d910a",
+      "requestId": "b33c60fe-50dd-4a14-a6a6-a460cc8d910a",
+      "runId": "run_ee1f838c-b2e7-4c5c-9ece-1fc91265e0e2",
+      "path": "DIRECT_OPERATOR_CLICK",
+      "workflow": "DETECTOR",
+      "mode": "LIVE",
+      "provider": "SOLARI_SANDBOX",
+      "startedAt": "2026-09-30T02:51:55.388Z",
+      "finishedAt": "2026-09-30T02:52:33.456Z",
+      "visibilityAtStart": "visible",
+      "visibilityAtFinish": "visible",
+      "status": "RESULT_COMMITTED",
+      "offsetsMs": {
+        "requestDispatched": 1.5,
+        "responseParsed": 38067.6,
+        "resultCommitted": 38068.7
+      },
+      "durationsMs": {
+        "clickToResultCommit": 38068.7,
+        "requestToResponse": 38066.1,
+        "responseToCommit": 1.1,
+        "serverInspectionToDecision": 38061
+      },
+      "serverTiming": {
+        "heldAt": "2026-09-30T02:51:55.391Z",
+        "createdAt": "2026-09-30T02:51:55.592Z",
+        "collectionStartedAt": "2026-09-30T02:52:31.697Z",
+        "returnedAt": "2026-09-30T02:52:33.451Z",
+        "blockedAt": "2026-09-30T02:52:33.452Z"
+      },
+      "classification": "SUSPICIOUS",
+      "inspectionExecution": "SUCCEEDED",
+      "cleanup": "PENDING",
+      "warmSessionReused": false,
+      "astraStatus": "NOT_INVOKED",
+      "interceptionVerified": false,
+      "navigationReleased": false,
+      "screenshotLoadIncluded": false,
+      "physicalPaintVerified": false
+    }
+  ]
+}

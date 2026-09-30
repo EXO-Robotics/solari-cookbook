@@ -25,7 +25,8 @@
     "qualify:detectors": "node --import tsx scripts/qualify-detector-fixtures.ts --live",
     "benchmark:solari": "node --import tsx scripts/benchmark-solari.ts",
     "benchmark:corpus": "node --import tsx scripts/benchmark-corpus.ts",
-    "qualify:warm": "node --import tsx scripts/qualify-warm-solari.ts"
+    "qualify:warm": "node --import tsx scripts/qualify-warm-solari.ts",
+    "benchmark:astra": "node --import tsx scripts/benchmark-astra-review.ts"
   },
   "dependencies": {
     "@solarisdk/sandbox": "0.1.2",

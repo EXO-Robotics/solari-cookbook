@@ -1,0 +1,38 @@
+{
+  "sourceHashes": {
+    "src/server/planner/review.ts": "208665adcdd75f06dabfcdb5b7ca751f66546a6a9fc933ab3873dac9824965af",
+    "src/server/planner/astra.ts": "39faea5f5e415e83264d313be2c7aceaff64693122b89e492b228e7757cf777f",
+    "scripts/benchmark-astra-review.ts": "25a63ad2c64b83fd8d0b8c90a8fa509b8c00b3726179a2840f0eaa44f09ba587"
+  },
+  "schemaVersion": 1,
+  "kind": "LIVE_ASTRA_STRUCTURAL_REPLAY",
+  "model": "gpt-6-astra",
+  "reasoningEffort": "medium",
+  "requested": 6,
+  "succeeded": 6,
+  "failed": 0,
+  "medianMs": 7651.994937499997,
+  "p95Ms": 8900.537749749998,
+  "percentileMethod": "linear interpolation at (n-1)*p, successful calls only; failures reported separately",
+  "perCase": [
+    {
+      "caseId": "benign-shaped",
+      "count": 2
+    },
+    {
+      "caseId": "credential-shaped",
+      "count": 2
+    },
+    {
+      "caseId": "ambiguous-shaped",
+      "count": 2
+    }
+  ],
+  "boundary": "Local request serialization through restricted CLI response validation and temporary-file cleanup. CLI round trip includes process startup, authentication/transport, model service, and CLI exit; it is not pure model reasoning time.",
+  "limitations": [
+    "Three authored structural cases repeated; not fresh browser observations.",
+    "No automatic escalation in the default detector.",
+    "No Safari interception, navigation release, threat accuracy, or host containment measured.",
+    "Advisory verdicts never authorize navigation."
+  ]
+}

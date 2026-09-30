@@ -1,0 +1,210 @@
+{
+  "schemaVersion": 1,
+  "kind": "LIVE_ASTRA_STRUCTURAL_REPLAY",
+  "model": "gpt-6-astra",
+  "cases": [
+    {
+      "id": "benign-shaped",
+      "description": "No password form or heuristic indicators; expected uncertainty, not a safety verdict.",
+      "evidence": {
+        "schemaVersion": "1",
+        "passwordField": false,
+        "pageOrigin": "APPROVED",
+        "formDestination": "NONE",
+        "redirected": false,
+        "downloadLinkCount": 0,
+        "heuristicCategories": [],
+        "collection": "STATIC_SCRIPTS_DISABLED"
+      }
+    },
+    {
+      "id": "credential-shaped",
+      "description": "Unapproved password page with an unapproved external form destination.",
+      "evidence": {
+        "schemaVersion": "1",
+        "passwordField": true,
+        "pageOrigin": "UNAPPROVED",
+        "formDestination": "UNAPPROVED_EXTERNAL",
+        "redirected": false,
+        "downloadLinkCount": 0,
+        "heuristicCategories": [
+          "CREDENTIAL_PHISHING",
+          "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+        ],
+        "collection": "STATIC_SCRIPTS_DISABLED"
+      }
+    },
+    {
+      "id": "ambiguous-shaped",
+      "description": "Approved login redirects to another approved identity-provider origin.",
+      "evidence": {
+        "schemaVersion": "1",
+        "passwordField": true,
+        "pageOrigin": "APPROVED",
+        "formDestination": "APPROVED_EXTERNAL",
+        "redirected": true,
+        "downloadLinkCount": 0,
+        "heuristicCategories": [],
+        "collection": "STATIC_SCRIPTS_DISABLED"
+      }
+    }
+  ],
+  "rows": [
+    {
+      "run": 1,
+      "caseId": "benign-shaped",
+      "result": {
+        "verdict": "UNDETERMINED",
+        "rationale": "The static inspection found an approved origin, no password field, form destination, redirect, download links, or heuristic matches. These findings do not establish safety, particularly with scripts disabled."
+      },
+      "trace": {
+        "model": "gpt-6-astra",
+        "reasoningEffort": "medium",
+        "requestSha256": "fda94fe4b4859c5b835c1804576ea0d9a4e06ed1bf0fa201645f74de99427202",
+        "requestBytes": 733,
+        "responseBytes": 249,
+        "outcome": "SUCCEEDED",
+        "startedAt": "2026-09-30T02:51:10.607Z",
+        "invocationStartedAt": "2026-09-30T02:51:10.610Z",
+        "responseReceivedAt": "2026-09-30T02:51:19.075Z",
+        "validatedAt": "2026-09-30T02:51:19.076Z",
+        "returnedAt": "2026-09-30T02:51:19.078Z",
+        "setupMs": 2.9244580000000013,
+        "cliRoundTripMs": 8465.234542,
+        "validationMs": 1.2185829999998532,
+        "totalMs": 8470.5805
+      },
+      "failure": null
+    },
+    {
+      "run": 2,
+      "caseId": "credential-shaped",
+      "result": {
+        "verdict": "SUSPICIOUS",
+        "rationale": "A password field on an unapproved origin submits to an unapproved external destination, supporting concern about cross-origin credential submission. The heuristic matches reinforce concern, but static inspection with scripts disabled does not establish malicious intent or observed credential theft."
+      },
+      "trace": {
+        "model": "gpt-6-astra",
+        "reasoningEffort": "medium",
+        "requestSha256": "dcc009ce500d41fab3350fef1696c460f8703d5bf6dce7c79b646f06aea8d764",
+        "requestBytes": 807,
+        "responseBytes": 338,
+        "outcome": "SUCCEEDED",
+        "startedAt": "2026-09-30T02:51:19.079Z",
+        "invocationStartedAt": "2026-09-30T02:51:19.079Z",
+        "responseReceivedAt": "2026-09-30T02:51:26.914Z",
+        "validatedAt": "2026-09-30T02:51:26.915Z",
+        "returnedAt": "2026-09-30T02:51:26.916Z",
+        "setupMs": 0.7414170000010927,
+        "cliRoundTripMs": 7835.2006249999995,
+        "validationMs": 0.5258329999996931,
+        "totalMs": 7837.127291999999
+      },
+      "failure": null
+    },
+    {
+      "run": 3,
+      "caseId": "ambiguous-shaped",
+      "result": {
+        "verdict": "UNDETERMINED",
+        "rationale": "The password field and redirect do not alone justify concern given the approved page origin and approved external form destination. No heuristic matches or download links were reported; static inspection with scripts disabled does not establish safety."
+      },
+      "trace": {
+        "model": "gpt-6-astra",
+        "reasoningEffort": "medium",
+        "requestSha256": "63fcb7a1fc981dc48900a1acd359265d3c3b8d20c2242e5ce27edbcfa44c02e0",
+        "requestBytes": 744,
+        "responseBytes": 293,
+        "outcome": "SUCCEEDED",
+        "startedAt": "2026-09-30T02:51:26.916Z",
+        "invocationStartedAt": "2026-09-30T02:51:26.917Z",
+        "responseReceivedAt": "2026-09-30T02:51:35.958Z",
+        "validatedAt": "2026-09-30T02:51:35.959Z",
+        "returnedAt": "2026-09-30T02:51:35.960Z",
+        "setupMs": 0.6834579999995185,
+        "cliRoundTripMs": 9041.625124999999,
+        "validationMs": 0.5465000000003783,
+        "totalMs": 9043.856832999998
+      },
+      "failure": null
+    },
+    {
+      "run": 4,
+      "caseId": "benign-shaped",
+      "result": {
+        "verdict": "UNDETERMINED",
+        "rationale": "The origin is approved, with no password field, form destination, redirect, download links, or heuristic matches. These static observations with scripts disabled do not establish safety."
+      },
+      "trace": {
+        "model": "gpt-6-astra",
+        "reasoningEffort": "medium",
+        "requestSha256": "fda94fe4b4859c5b835c1804576ea0d9a4e06ed1bf0fa201645f74de99427202",
+        "requestBytes": 733,
+        "responseBytes": 227,
+        "outcome": "SUCCEEDED",
+        "startedAt": "2026-09-30T02:51:35.961Z",
+        "invocationStartedAt": "2026-09-30T02:51:35.961Z",
+        "responseReceivedAt": "2026-09-30T02:51:42.564Z",
+        "validatedAt": "2026-09-30T02:51:42.564Z",
+        "returnedAt": "2026-09-30T02:51:42.565Z",
+        "setupMs": 0.7735830000019632,
+        "cliRoundTripMs": 6602.187834,
+        "validationMs": 0.5633749999979045,
+        "totalMs": 6604.281625
+      },
+      "failure": null
+    },
+    {
+      "run": 5,
+      "caseId": "credential-shaped",
+      "result": {
+        "verdict": "SUSPICIOUS",
+        "rationale": "A password field on an unapproved origin with an unapproved external form destination raises concern, supported by credential-phishing and cross-origin-submission heuristic matches. Static inspection with scripts disabled does not establish malicious intent or observed credential theft; these indicators can be legitimate."
+      },
+      "trace": {
+        "model": "gpt-6-astra",
+        "reasoningEffort": "medium",
+        "requestSha256": "dcc009ce500d41fab3350fef1696c460f8703d5bf6dce7c79b646f06aea8d764",
+        "requestBytes": 807,
+        "responseBytes": 362,
+        "outcome": "SUCCEEDED",
+        "startedAt": "2026-09-30T02:51:42.566Z",
+        "invocationStartedAt": "2026-09-30T02:51:42.566Z",
+        "responseReceivedAt": "2026-09-30T02:51:49.829Z",
+        "validatedAt": "2026-09-30T02:51:49.829Z",
+        "returnedAt": "2026-09-30T02:51:49.830Z",
+        "setupMs": 0.7804999999971187,
+        "cliRoundTripMs": 7262.258125000004,
+        "validationMs": 0.5450839999975869,
+        "totalMs": 7264.324249999998
+      },
+      "failure": null
+    },
+    {
+      "run": 6,
+      "caseId": "ambiguous-shaped",
+      "result": {
+        "verdict": "UNDETERMINED",
+        "rationale": "The password field is on an approved origin with an approved external form destination. Redirection alone does not justify concern; no download links or heuristic matches were reported. Static inspection with scripts disabled does not establish safety."
+      },
+      "trace": {
+        "model": "gpt-6-astra",
+        "reasoningEffort": "medium",
+        "requestSha256": "63fcb7a1fc981dc48900a1acd359265d3c3b8d20c2242e5ce27edbcfa44c02e0",
+        "requestBytes": 744,
+        "responseBytes": 293,
+        "outcome": "SUCCEEDED",
+        "startedAt": "2026-09-30T02:51:49.831Z",
+        "invocationStartedAt": "2026-09-30T02:51:49.832Z",
+        "responseReceivedAt": "2026-09-30T02:51:57.296Z",
+        "validatedAt": "2026-09-30T02:51:57.296Z",
+        "returnedAt": "2026-09-30T02:51:57.297Z",
+        "setupMs": 0.9292079999941052,
+        "cliRoundTripMs": 7464.070458000002,
+        "validationMs": 0.7834169999987353,
+        "totalMs": 7466.862582999995
+      },
+      "failure": null
+    }
+  ]
+}

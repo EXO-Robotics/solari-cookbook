@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="790" viewBox="0 0 1200 790" role="img" aria-labelledby="title desc">
+  <title id="title">AionGuard × Solari: inspect the link before exposure</title>
+  <desc id="desc">Product vision: hold external links before the user's browser navigates. Implemented today: a prepared Solari VM runs a fresh browser and five checks, then returns evidence. No finding retains the VM but is not a safe verdict. A finding or error retires it, confirms cleanup, and prepares a replacement. Twenty controlled backend checks measured 1.41 seconds median and 1.49 seconds P95.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 1 L 8 5 L 0 9" fill="none" stroke="#b9efcc" stroke-width="1.5"/></marker>
+    <style>text {font-family:Inter,Arial,Helvetica,sans-serif} .label {font-size:14px;font-weight:700;letter-spacing:2px;fill:#a8b9aa} .body {font-size:20px;fill:#f1f7f1} .small {font-size:17px;fill:#a8b9aa} .node {fill:#19251e;stroke:#34463b;stroke-width:1.5} .arrow {fill:none;stroke:#b9efcc;stroke-width:2;marker-end:url(#arrow)}</style>
+  </defs>
+  <rect width="1200" height="790" rx="24" fill="#101813"/>
+  <path d="M48 42 66 32 84 42v21L66 74 48 63z" fill="#b9efcc"/>
+  <text x="66" y="61" text-anchor="middle" font-size="24" font-weight="800" fill="#101813">A</text>
+  <text x="101" y="61" font-size="26" font-weight="700" fill="#f1f7f1">AionGuard <tspan fill="#a8b9aa">× Solari</tspan></text>
+  <text x="48" y="116" class="label">PRODUCT VISION</text>
+  <text x="48" y="167" font-size="43" font-weight="700" fill="#f1f7f1">Inspect the link. Keep the risk away.</text>
+  <text x="48" y="204" class="body" fill="#a8b9aa">Hold external links. Check the destination before the user's browser visits it.</text>
+  <text x="48" y="234" class="small">Browser interception and automatic safe-link release are not yet demonstrated.</text>
+
+  <line x1="48" y1="268" x2="1152" y2="268" stroke="#34463b"/>
+  <text x="48" y="309" class="label">WORKING TODAY</text>
+  <text x="1152" y="309" text-anchor="end" class="small">Prepared ahead of the check</text>
+  <rect x="48" y="336" width="240" height="114" rx="12" class="node"/>
+  <text x="70" y="369" class="label">01 / READY</text>
+  <text x="70" y="404" class="body" font-weight="700">Prepared Solari VM</text>
+  <text x="70" y="430" class="small">Warm VM, ready to reuse</text>
+  <path d="M300 393H327" class="arrow"/>
+  <rect x="340" y="336" width="240" height="114" rx="12" class="node"/>
+  <text x="362" y="369" class="label">02 / INSPECT</text>
+  <text x="362" y="404" class="body" font-weight="700">Fresh browser</text>
+  <text x="362" y="430" class="small">Open the registered fixture</text>
+  <path d="M592 393H619" class="arrow"/>
+  <rect x="632" y="336" width="240" height="114" rx="12" class="node"/>
+  <text x="654" y="369" class="label">03 / CHECK</text>
+  <text x="654" y="404" class="body" font-weight="700">Five threat patterns</text>
+  <text x="654" y="430" class="small">Rules inspect observed facts</text>
+  <path d="M884 393H911" class="arrow"/>
+  <rect x="924" y="336" width="228" height="114" rx="12" class="node"/>
+  <text x="946" y="369" class="label">04 / EXPLAIN</text>
+  <text x="946" y="404" class="body" font-weight="700">Evidence + findings</text>
+  <text x="946" y="430" class="small">A reviewable result</text>
+
+  <rect x="48" y="478" width="537" height="92" rx="12" fill="#19251e"/>
+  <circle cx="73" cy="506" r="5" fill="#b9efcc"/>
+  <text x="90" y="513" class="body" font-weight="700">No finding: keep the VM ready</text>
+  <text x="70" y="546" class="small">Result stays undetermined. No finding does not mean safe.</text>
+  <rect x="607" y="478" width="545" height="92" rx="12" fill="#19251e"/>
+  <circle cx="632" cy="506" r="5" fill="#efce91"/>
+  <text x="649" y="513" class="body" font-weight="700">Finding or error: retire the VM</text>
+  <text x="629" y="546" class="small">Confirm cleanup, then prepare a fresh replacement.</text>
+
+  <text x="48" y="624" class="label">MEASURED / CONTROLLED BACKEND CHECKS</text>
+  <text x="48" y="689" font-size="54" font-weight="700" fill="#b9efcc">1.41s</text>
+  <text x="224" y="685" class="body">median</text>
+  <text x="410" y="689" font-size="54" font-weight="700" fill="#b9efcc">1.49s</text>
+  <text x="586" y="685" class="body">P95</text>
+  <text x="810" y="686" font-size="39" font-weight="700" fill="#f1f7f1">20 live checks</text>
+  <text x="48" y="735" class="small">Owned fixture · after prewarming · not end-to-end click latency or detection accuracy</text>
+</svg>

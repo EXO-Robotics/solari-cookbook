@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "mode": "LIVE",
+  "path": "DIRECT_OPERATOR_CLICK",
+  "warmClickMs": 1764.8,
+  "coldClickMs": 38068.7,
+  "sampleCountPerCondition": 1,
+  "interceptionVerified": false,
+  "astraInvoked": false,
+  "screenshotLoadIncluded": false,
+  "physicalPaintVerified": false,
+  "warmReadyBeforeClick": true,
+  "limits": [
+    "Automation clicked the real local Inspect button; this is not a physical Safari external-link interception.",
+    "One sample per condition, no percentile or performance-generalization claim.",
+    "Cold sample occurred after idle eviction; it included preparation.",
+    "Warm sample uses fresh browser in already prepared VM, with original trust policy and phishing finding.",
+    "Historical receipt cleanup is PENDING because retirement runs asynchronously."
+  ],
+  "sourceHashes": {
+    "src/ui/App.tsx": "34d090e8c0b10c2963f1b228c1d56725bb917e38beb2bb5f0eb93710622780d2",
+    "src/ui/api.ts": "3ae672364b7a8a5aad3245ad8f6b081e2707ac1c0e856938af0d97872ad4a20e",
+    "src/ui/interaction-timing.ts": "2d04fcd1baac3850edff417eb21c99f77825d73561cc1e2e42813492ec08d299",
+    "src/server/isolation/warm-solari.ts": "50686c6dc36908784baf949ec3fc4d1453761cd6f27bb5b3948cf396c770da57"
+  }
+}

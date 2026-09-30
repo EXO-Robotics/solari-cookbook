@@ -1,0 +1,192 @@
+{
+  "schemaVersion": 1,
+  "kind": "LIVE_ASTRA_STRUCTURAL_REPLAY",
+  "model": "gpt-6-astra",
+  "cases": [
+    {
+      "id": "benign-shaped",
+      "description": "No password form or heuristic indicators; expected uncertainty, not a safety verdict.",
+      "evidence": {
+        "schemaVersion": "1",
+        "passwordField": false,
+        "pageOrigin": "APPROVED",
+        "formDestination": "NONE",
+        "redirected": false,
+        "downloadLinkCount": 0,
+        "heuristicCategories": [],
+        "collection": "STATIC_SCRIPTS_DISABLED"
+      }
+    },
+    {
+      "id": "credential-shaped",
+      "description": "Unapproved password page with an unapproved external form destination.",
+      "evidence": {
+        "schemaVersion": "1",
+        "passwordField": true,
+        "pageOrigin": "UNAPPROVED",
+        "formDestination": "UNAPPROVED_EXTERNAL",
+        "redirected": false,
+        "downloadLinkCount": 0,
+        "heuristicCategories": [
+          "CREDENTIAL_PHISHING",
+          "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+        ],
+        "collection": "STATIC_SCRIPTS_DISABLED"
+      }
+    },
+    {
+      "id": "ambiguous-shaped",
+      "description": "Approved login redirects to another approved identity-provider origin.",
+      "evidence": {
+        "schemaVersion": "1",
+        "passwordField": true,
+        "pageOrigin": "APPROVED",
+        "formDestination": "APPROVED_EXTERNAL",
+        "redirected": true,
+        "downloadLinkCount": 0,
+        "heuristicCategories": [],
+        "collection": "STATIC_SCRIPTS_DISABLED"
+      }
+    }
+  ],
+  "rows": [
+    {
+      "run": 1,
+      "caseId": "benign-shaped",
+      "result": null,
+      "trace": {
+        "model": "gpt-6-astra",
+        "reasoningEffort": "medium",
+        "requestSha256": "fda94fe4b4859c5b835c1804576ea0d9a4e06ed1bf0fa201645f74de99427202",
+        "requestBytes": 733,
+        "responseBytes": 0,
+        "outcome": "NOT_AVAILABLE",
+        "startedAt": "2026-09-30T02:49:33.507Z",
+        "invocationStartedAt": "2026-09-30T02:49:33.510Z",
+        "responseReceivedAt": null,
+        "validatedAt": null,
+        "returnedAt": "2026-09-30T02:49:33.513Z",
+        "setupMs": 3.050207999999998,
+        "cliRoundTripMs": null,
+        "validationMs": null,
+        "totalMs": 6.476042000000007
+      },
+      "failure": "NOT_AVAILABLE"
+    },
+    {
+      "run": 2,
+      "caseId": "credential-shaped",
+      "result": null,
+      "trace": {
+        "model": "gpt-6-astra",
+        "reasoningEffort": "medium",
+        "requestSha256": "dcc009ce500d41fab3350fef1696c460f8703d5bf6dce7c79b646f06aea8d764",
+        "requestBytes": 807,
+        "responseBytes": 0,
+        "outcome": "NOT_AVAILABLE",
+        "startedAt": "2026-09-30T02:49:33.514Z",
+        "invocationStartedAt": "2026-09-30T02:49:33.514Z",
+        "responseReceivedAt": null,
+        "validatedAt": null,
+        "returnedAt": "2026-09-30T02:49:33.515Z",
+        "setupMs": 0.3704170000000033,
+        "cliRoundTripMs": null,
+        "validationMs": null,
+        "totalMs": 1.3262919999999951
+      },
+      "failure": "NOT_AVAILABLE"
+    },
+    {
+      "run": 3,
+      "caseId": "ambiguous-shaped",
+      "result": null,
+      "trace": {
+        "model": "gpt-6-astra",
+        "reasoningEffort": "medium",
+        "requestSha256": "63fcb7a1fc981dc48900a1acd359265d3c3b8d20c2242e5ce27edbcfa44c02e0",
+        "requestBytes": 744,
+        "responseBytes": 0,
+        "outcome": "NOT_AVAILABLE",
+        "startedAt": "2026-09-30T02:49:33.515Z",
+        "invocationStartedAt": "2026-09-30T02:49:33.516Z",
+        "responseReceivedAt": null,
+        "validatedAt": null,
+        "returnedAt": "2026-09-30T02:49:33.516Z",
+        "setupMs": 0.3104590000000087,
+        "cliRoundTripMs": null,
+        "validationMs": null,
+        "totalMs": 0.9720840000000237
+      },
+      "failure": "NOT_AVAILABLE"
+    },
+    {
+      "run": 4,
+      "caseId": "benign-shaped",
+      "result": null,
+      "trace": {
+        "model": "gpt-6-astra",
+        "reasoningEffort": "medium",
+        "requestSha256": "fda94fe4b4859c5b835c1804576ea0d9a4e06ed1bf0fa201645f74de99427202",
+        "requestBytes": 733,
+        "responseBytes": 0,
+        "outcome": "NOT_AVAILABLE",
+        "startedAt": "2026-09-30T02:49:33.516Z",
+        "invocationStartedAt": "2026-09-30T02:49:33.517Z",
+        "responseReceivedAt": null,
+        "validatedAt": null,
+        "returnedAt": "2026-09-30T02:49:33.517Z",
+        "setupMs": 0.30187499999999545,
+        "cliRoundTripMs": null,
+        "validationMs": null,
+        "totalMs": 0.9830419999999833
+      },
+      "failure": "NOT_AVAILABLE"
+    },
+    {
+      "run": 5,
+      "caseId": "credential-shaped",
+      "result": null,
+      "trace": {
+        "model": "gpt-6-astra",
+        "reasoningEffort": "medium",
+        "requestSha256": "dcc009ce500d41fab3350fef1696c460f8703d5bf6dce7c79b646f06aea8d764",
+        "requestBytes": 807,
+        "responseBytes": 0,
+        "outcome": "NOT_AVAILABLE",
+        "startedAt": "2026-09-30T02:49:33.518Z",
+        "invocationStartedAt": "2026-09-30T02:49:33.518Z",
+        "responseReceivedAt": null,
+        "validatedAt": null,
+        "returnedAt": "2026-09-30T02:49:33.519Z",
+        "setupMs": 0.2826249999999959,
+        "cliRoundTripMs": null,
+        "validationMs": null,
+        "totalMs": 0.8629170000000101
+      },
+      "failure": "NOT_AVAILABLE"
+    },
+    {
+      "run": 6,
+      "caseId": "ambiguous-shaped",
+      "result": null,
+      "trace": {
+        "model": "gpt-6-astra",
+        "reasoningEffort": "medium",
+        "requestSha256": "63fcb7a1fc981dc48900a1acd359265d3c3b8d20c2242e5ce27edbcfa44c02e0",
+        "requestBytes": 744,
+        "responseBytes": 0,
+        "outcome": "NOT_AVAILABLE",
+        "startedAt": "2026-09-30T02:49:33.519Z",
+        "invocationStartedAt": "2026-09-30T02:49:33.519Z",
+        "responseReceivedAt": null,
+        "validatedAt": null,
+        "returnedAt": "2026-09-30T02:49:33.520Z",
+        "setupMs": 0.2928330000000017,
+        "cliRoundTripMs": null,
+        "validationMs": null,
+        "totalMs": 0.9405419999999935
+      },
+      "failure": "NOT_AVAILABLE"
+    }
+  ]
+}

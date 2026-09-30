@@ -1,4 +1,4 @@
-import { useEffect, useState, type FormEvent } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState, type FormEvent } from 'react';
 import {
   ASSUMPTIONS,
   CaseSnapshotSchema,
@@ -6,13 +6,16 @@ import {
   type WarmPoolStatus,
   type CaseSnapshot,
 } from '../contracts/index.js';
-import { request, caseRequest, exportReceipt } from './api.js';
+import { request, caseRequest, exportReceipt, exportClickTimings } from './api.js';
+import { ClickTiming, type ClickTimingRecord } from './interaction-timing.js';
 import { EvidenceGraph } from './EvidenceGraph.js';
 import { ComparisonStrip } from './ComparisonStrip.js';
 import { ProtectionControls } from './ProtectionControls.js';
 import { DetectorPanel } from './DetectorPanel.js';
 
 export function App() {
+  const pendingClickTiming = useRef<ClickTiming | null>(null);
+  const [clickTimings, setClickTimings] = useState<ClickTimingRecord[]>([]);
   const [requestedRun] = useState(() => {
     const value = new URLSearchParams(location.search).get('run');
     return value && /^[a-zA-Z0-9_-]{1,128}$/.test(value) ? value : null;
@@ -35,6 +38,16 @@ export function App() {
   const runId = snapshot?.identity.runId;
   const imagePath = snapshot?.link.imagePath;
   const detector = (snapshot?.workflow ?? workflow) === 'DETECTOR';
+
+  useLayoutEffect(() => {
+    if (!snapshot || !pendingClickTiming.current) return;
+    // This runs after React commits the result DOM; it does not prove physical paint or image load.
+    const record = pendingClickTiming.current.commit(snapshot);
+    if (record) {
+      pendingClickTiming.current = null;
+      setClickTimings((records) => [...records.slice(-99), record]);
+    }
+  }, [snapshot]);
 
   useEffect(() => {
     void fetch('/api/health')
@@ -142,6 +155,17 @@ export function App() {
   async function command(action: string) {
     if (!snapshot) return;
     const current = snapshot;
+    const requestId = crypto.randomUUID();
+    const timing =
+      current.workflow === 'DETECTOR' && ['inspect', 'software-check'].includes(action)
+        ? new ClickTiming(
+            current.identity.runId,
+            requestId,
+            current.modes.inspection,
+            current.link.source,
+          )
+        : null;
+    if (timing) pendingClickTiming.current = timing;
     await act(async () => {
       const body =
         action === 'authorize'
@@ -152,10 +176,24 @@ export function App() {
                 assumptions: ASSUMPTIONS,
                 change: 'jenkins.cli_enabled:true->false',
               }
-          : { requestId: crypto.randomUUID(), revision: current.identity.revision };
-      setSnapshot(
-        await caseRequest(`/api/attempts/${current.identity.runId}/${action}`, token, body),
-      );
+          : { requestId, revision: current.identity.revision };
+      timing?.dispatch();
+      try {
+        const next = await caseRequest(
+          `/api/attempts/${current.identity.runId}/${action}`,
+          token,
+          body,
+        );
+        timing?.responseParsed(next);
+        setSnapshot(next);
+      } catch (e) {
+        const record = timing?.fail();
+        if (record) {
+          pendingClickTiming.current = null;
+          setClickTimings((records) => [...records.slice(-99), record]);
+        }
+        throw e;
+      }
     });
   }
   async function prepareSandbox() {
@@ -277,6 +315,33 @@ export function App() {
                 {preparingSandbox ? 'Preparing…' : 'Prepare sandbox'}
               </button>
             ) : null}
+          </section>
+        ) : null}
+        {connected && detector && clickTimings.length > 0 ? (
+          <section className="ready-banner" aria-label="Click to result timing">
+            <div>
+              <strong>Click to result</strong>
+              <p>
+                {clickTimings.at(-1)?.durationsMs.clickToResultCommit != null
+                  ? `${(clickTimings.at(-1)!.durationsMs.clickToResultCommit! / 1000).toFixed(3)} s from Inspect to result in this workspace.`
+                  : 'The last inspection request failed; no completed result timing.'}
+              </p>
+              <p className="subtle">
+                {clickTimings.at(-1)?.mode} · Direct operator click · Astra not invoked. This does
+                not measure an intercepted browser link or screenshot loading.
+              </p>
+            </div>
+            <div className="heading-actions">
+              <button
+                className="secondary"
+                onClick={() => exportClickTimings(clickTimings, 'json')}
+              >
+                Timing JSON ↓
+              </button>
+              <button className="secondary" onClick={() => exportClickTimings(clickTimings, 'csv')}>
+                Timing CSV ↓
+              </button>
+            </div>
           </section>
         ) : null}
         {error ? (

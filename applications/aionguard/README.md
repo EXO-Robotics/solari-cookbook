@@ -1,36 +1,58 @@
 # AionGuard × Solari
 
-This is the runnable AionGuard application inside `EXO-Robotics/solari-cookbook`, a GitHub fork of `solari-sdk/solari-cookbook`. The [polished standalone submission](https://github.com/EXO-Robotics/AionGuard-Solari) remains the primary project presentation. This copy matches standalone commit `1263b6fbd476e3bea800a1abce72e61d158dcefa`; application source, tests and recorded evidence are unchanged.
+Runnable app in the official Solari cookbook fork. Matches [standalone submission](https://github.com/EXO-Robotics/AionGuard-Solari) commit `62efa40016ef815fbad0ae0aa3047c55e5bdcf19`.
 
-**Inspect a suspicious link in Solari. Show the warning signs and the evidence.**
+**Inspect the link before you trust it.**
 
-[Submission and verification](docs/solari-submission.md) · [Download the release](https://github.com/EXO-Robotics/AionGuard-Solari/releases/latest) · [Six-case detector evidence](docs/evidence/solari-2026-09-29/synthetic-fixtures.json)
+AionGuard is building a checkpoint between a link and your browser: open the destination somewhere isolated, inspect it, and show the evidence before you proceed.
 
-![AionGuard showing a live Solari inspection and its finding](docs/evidence/solari-2026-09-29/detector-ui.png)
+The working prototype checks an administrator-owned demo page in Solari. Full browser interception and automatic release of safe links are the next step.
 
-This is the standalone Solari submission edition of AionGuard, derived from tested candidate `4a2e6e876def9827f252acc2741d61ef93195348`. It is an independent repository with a reviewed source snapshot, rather than the original repository's private Git history.
+### 1.41 s median · 1.49 s P95
 
-AionGuard is a small, local web-threat detector backed by a prepared Solari sandbox. It inspects one administrator-registered, owned demo URL, captures the page with scripts disabled, and explains which of five deterministic rules matched. The local VM is outside this submission.
+**20 live checks in one prepared Solari sandbox.** Measured backend inspection time on a controlled fixture, after browser setup.
 
-| Detector | Observed warning sign |
-| --- | --- |
-| Credential phishing | A password field on an origin outside the trusted-login list |
-| External password form | A password form targeting an unapproved external origin |
-| Executable download lure | An executable link paired with update or urgency language |
-| Tech-support scam | Urgent infected-device warnings plus contact-support instructions |
-| ClickFix | Verification or repair instructions asking the visitor to run an OS command |
+![How AionGuard uses a prepared Solari sandbox](docs/assets/solari-overview.svg)
 
-These are five practical heuristics, not a ranked list of the world's most common attacks. They can produce false positives and miss attacks. **No matches means undetermined, never safe.** The detector does not execute page scripts, enter credentials, download payloads, or claim that compromise occurred.
+[▶ Watch the demo](https://www.youtube.com/watch?v=UJkPWHyTg-U) · [Try it](#try-it) · [Measured results](docs/warm-solari.md) · [Solari fork](https://github.com/EXO-Robotics/solari-cookbook/tree/main/applications/aionguard)
 
-## Demo video and provider choice
+## What happens to a link?
 
-[Watch the AionGuard demo](https://www.youtube.com/watch?v=UJkPWHyTg-U). This video was recorded using **Vercel Sandbox during the OpenAI Astra Hackathon in New York**. It shows the earlier Vercel version; the current submission runs on Solari, with separate [Solari verification evidence](docs/solari-submission.md).
+1. **Prepare ahead.** Solari gets a sandbox ready before the first check.
+2. **Inspect remotely.** A fresh browser captures the page and five rules look for warning signs.
+3. **Show the evidence.** AionGuard returns the findings and a screenshot. A flagged check retires the sandbox and prepares a replacement.
 
-**Solari is our preferred provider for speed and convenience.** This is our provider preference, not a measured speed comparison. AionGuard uses provider adapters; additional VM providers can be supported by implementing and validating an adapter.
+Checks with no findings reuse the prepared VM. **No findings means “undetermined,” not “safe.”** The current prototype does not automatically release navigation.
 
-[Submission post draft](docs/submission-post.md).
+The five checks cover credential phishing, external password forms, executable-download lures, tech-support scams, and ClickFix prompts that ask you to run a command.
 
-## Run
+![AionGuard showing a real Solari inspection and its finding](docs/evidence/solari-2026-09-29/detector-ui.png)
+
+## How fast is it?
+
+![All twenty measured warm inspection times, with median and P95](docs/assets/warm-latency.svg)
+
+| Path | Median | P95 | What was measured |
+| --- | ---: | ---: | --- |
+| Prepared sandbox inspection | **1.414 s** | **1.487 s** | 20 controlled checks |
+| Finding → retirement initiated | **1.552 s*** | — | One separate phishing-finding run |
+| Astra advisory review | **7.652 s** | **8.901 s** | 6 calls on authored structural evidence |
+| Inspect button → result | **1.765 s*** | — | One live ready-sandbox UI check |
+| Intercepted click → final decision | Not measured | Not measured | Requires an installed browser test |
+
+\*Single runs, not medians or percentiles. Retirement finished asynchronously. [UI timing and cold fallback →](docs/click-timing.md)
+
+The VM was created in **653 ms**. Browser preparation took **36.965 s**, before the measured checks. Preparing once removes that setup from subsequent checks. The flagged VM was replaced, and the final inventory audit found no remaining AionGuard resources.
+
+These are repeated checks of one owned fixture, with trust deliberately adjusted for the reuse test. They measure speed and lifecycle behavior—not real-world detection accuracy. [CSV, JSON, and test details →](docs/warm-solari.md)
+
+## Watch the original demo
+
+The video was recorded with **Vercel Sandbox at the OpenAI Astra Hackathon in New York**. This submission runs on **Solari**, our preferred provider for speed and convenience. Other VM providers can be supported through adapters.
+
+[▶ Watch the 56-second AionGuard demo](https://www.youtube.com/watch?v=UJkPWHyTg-U)
+
+## Try it
 
 Use Node 24 LTS:
 
@@ -38,58 +60,22 @@ Use Node 24 LTS:
 git clone https://github.com/EXO-Robotics/solari-cookbook.git
 cd solari-cookbook/applications/aionguard
 npm ci
-npm run check
 npm run build
 cp .env.example .env
 ```
 
-For a software-only preview, set `AIONGUARD_MODE=MOCK` in `.env` and run `npm start`. No provider calls occur. The screen identifies mock evidence.
+Set `AIONGUARD_MODE=MOCK` in `.env` for a preview without cloud credentials. Then run `npm start` and open **http://127.0.0.1:4317**. Connect with the private token in `runtime-data/controller-token`.
 
-For Solari, set these private values in `.env`:
+For real Solari checks, add your private key and owned demo URL using the [live setup guide](docs/quickstart.md). Credentials stay in the local controller.
 
-```dotenv
-AIONGUARD_MODE=LIVE
-AIONGUARD_PROVIDER=SOLARI
-AIONGUARD_WORKFLOW=DETECTOR
-SOLARI_API_KEY=your-private-key
-AIONGUARD_FIXTURE_URL=https://your-owned-host.example/demo/
-AIONGUARD_IDP_ORIGINS=https://your-trusted-login.example
-```
+## What is ready—and what is next?
 
-Alternatively set `AIONGUARD_SOLARI_ENV_PATH` to an existing private env file containing `SOLARI_API_KEY`. Never use a `VITE_` prefix for credentials. Do not commit `.env` or `runtime-data`.
+**Working:** remote page inspection, five warning-sign checks, screenshots, prepared VM reuse, flagged retirement, automatic replacement, and downloadable evidence.
 
-Run `npm start`, open `http://127.0.0.1:4317`, and connect using the private token in `runtime-data/controller-token`. Create an inspection, confirm authorization for the registered owned fixture, then select **Inspect registered URL**. Export its receipt afterward. The token stays local; Solari credentials remain in the server.
+**Still to prove:** installed Solari browser interception, safe-link release, hostile-page containment, and detection accuracy on unseen real-world pages. Use harmless owned fixtures only. The challenge corpus exposed misses and false positives; an earlier cold benchmark also found inconsistent cleanup responses. [Evidence and limitations →](docs/benchmark.md)
 
-With the default `AIONGUARD_SOLARI_SESSION=WARM`, startup prepares a browser-ready sandbox before the first check. Subsequent no-finding checks reuse that VM with a fresh browser process. A finding or error retires it and prepares a replacement after cleanup reconciliation. The UI shows readiness; a click during cold preparation still waits for setup. Use `FRESH` for one VM per inspection.
+The fast path stays deterministic. [Astra’s optional second opinion](docs/astra-review-benchmark.md) is measured separately; it cannot authorize navigation or take actions. The workspace also exports [direct click-to-result timings](docs/click-timing.md).
 
-Only one inspection can run at a time. Idle sandboxes expire after two minutes and maximum age is four minutes. Unresolved cleanup blocks replacement. Cases are held in memory; export before stopping. A durable ownership journal blocks unsafe restart after interruption. See [warm lifecycle and qualification](docs/warm-solari.md).
+[Full submission record](docs/solari-submission.md) · [Run the checks](docs/quickstart.md#checks) · [Submission post draft](docs/submission-post.md)
 
-**Warm-path measurement:** 20 repeated owned-fixture checks in one prewarmed VM: **1.41 s median / 1.49 s P95**. Trust was intentionally calibrated for the reuse test; this is backend latency, not detection accuracy or click-to-navigation latency. Flagged retirement and automatic replacement were separately verified. [Data and limits](docs/warm-solari.md).
-
-## What this submission proves
-
-**Latest benchmark finding:** 50 inspections and 150 controlled cases completed, but a later full-inventory audit contradicted immediate cleanup receipts. Additional termination and reconciliation cleared the listed resources. Per-run cleanup assurance remains unverified; see the [benchmark evidence and limitations](docs/benchmark.md). The current detector also showed substantial misses and false positives in its authored challenge corpus.
-
-The September 29 candidate has live Solari inspection evidence against the owned AionPhish demo: page observation, screenshot, a phishing heuristic finding and confirmed resource cleanup. See [the submission record](docs/solari-submission.md) for exact checks, failures and remaining limits.
-
-The bare-bones UI initiates direct remote inspection. It does **not** prove Safari interception or suppression of local requests. It accepts a fixed administrator-owned URL, not arbitrary public URLs. Network restrictions are browser routing rules; no Solari infrastructure egress firewall has been qualified. Use harmless owned fixtures only.
-
-The default detector stops after classification. It does not invoke Astra or execute synthetic organizational changes. Astra incident response, IT notifications, Tripwire, continuity, general browsing protection and production-scale operation are outside this submission.
-
-## Checks and evidence
-
-[Benchmark protocol and raw-data harnesses](docs/benchmark.md) separate cold backend latency from controlled detection coverage.
-
-```sh
-npm run check
-npm run format:check
-# Explicit live provider usage; supply the private environment first:
-npm run qualify:solari
-npm run qualify:detectors
-```
-
-The first live command inspects the configured owned URL. The second checks six inert synthetic HTML fixtures inside a Solari browser; it tests extraction and all five rules, not real-world detection accuracy. Neither is a Safari acceptance test.
-
-[Original Vercel integration evidence](docs/integration-verification.md), [historical submission](docs/submission.md), and [planning](docs/planning/plan.md) remain available with their original provider identity. `AIONGUARD_PROVIDER=VERCEL` and `AIONGUARD_WORKFLOW=SYNTHETIC` retain the earlier experimental path; it requires its separate credentials, snapshot approval and setup.
-
-MIT licensed. Provider services retain their own terms.
+MIT licensed.
