@@ -1,0 +1,76 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  background: #0c1017;
+  color: #edf5f5;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(ellipse at 70% 0%, #173234 0, transparent 60%);
+}
+main {
+  width: min(760px, 100%);
+  padding: 64px 40px;
+}
+.eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  color: #92b0b1;
+}
+.mark {
+  margin-top: 60px;
+  width: 64px;
+  height: 64px;
+  border: 1px solid #4e9a91;
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  font-size: 40px;
+  color: #9df1d8;
+}
+h1 {
+  font-size: clamp(36px, 5vw, 58px);
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+  margin: 28px 0 24px;
+}
+#status {
+  font-size: 21px;
+  line-height: 1.5;
+  max-width: 620px;
+}
+.explanation {
+  font-size: 16px;
+  line-height: 1.6;
+  max-width: 540px;
+  color: #a3b3bd;
+}
+a {
+  display: inline-block;
+  margin-top: 22px;
+  color: #a5f7df;
+  font-weight: 600;
+  text-underline-offset: 5px;
+}
+[hidden] {
+  display: none;
+}
+.scope {
+  margin-top: 70px;
+  padding-top: 22px;
+  border-top: 1px solid #26353f;
+  color: #82949e;
+  font-size: 12px;
+  letter-spacing: 0.03em;
+}
+body[data-classification='SUSPICIOUS'] .mark {
+  color: #ffc981;
+  border-color: #806646;
+}

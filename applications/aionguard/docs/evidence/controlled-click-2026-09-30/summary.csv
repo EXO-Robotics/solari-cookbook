@@ -1,0 +1,3 @@
+path,destination_http_requests_sent,cdp_destination_request_count,click_to_warning_ms,host_dispatch_to_warning_observed_ms
+baseline,4,4,,
+protected,0,0,1981.39990234375,2370.0593750000044

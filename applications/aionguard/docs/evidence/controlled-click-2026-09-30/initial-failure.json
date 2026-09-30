@@ -1,0 +1,67 @@
+{
+  "status": "FAIL",
+  "stage": "PROTECTED_CLICK",
+  "reason": "Chrome rejected the redirect with ERR_BLOCKED_BY_CLIENT in a subsequent local reproduction. No completed inspection or latency claim is derived from this attempt.",
+  "sourceManifestSha256": "b4d99de00c43ae30c49ff7b2f6d6d1adc78620a56d3f16e718a9ed7a1c87951f",
+  "rawNetLogSha256": {
+    "baseline": "d72ebb26db68cc321989c1d95ad074ebb7436302ecbf1f6af455ce323fe7d444",
+    "protected": "c0e6222dcf9df15ca8666d079e39f084a1fa79b7e7bcb23d13fa78b0db4146a9"
+  },
+  "ownershipJournalAbsent": true,
+  "postRunInventory": {
+    "meaning": "Ten post-run complete unfiltered inventories; control-plane observation, not physical erasure proof.",
+    "samples": [
+      {
+        "at": "2026-09-30T03:47:01.506Z",
+        "complete": true,
+        "owned": []
+      },
+      {
+        "at": "2026-09-30T03:47:01.883Z",
+        "complete": true,
+        "owned": []
+      },
+      {
+        "at": "2026-09-30T03:47:02.279Z",
+        "complete": true,
+        "owned": []
+      },
+      {
+        "at": "2026-09-30T03:47:02.687Z",
+        "complete": true,
+        "owned": []
+      },
+      {
+        "at": "2026-09-30T03:47:03.237Z",
+        "complete": true,
+        "owned": []
+      },
+      {
+        "at": "2026-09-30T03:47:03.622Z",
+        "complete": true,
+        "owned": []
+      },
+      {
+        "at": "2026-09-30T03:47:03.985Z",
+        "complete": true,
+        "owned": []
+      },
+      {
+        "at": "2026-09-30T03:47:04.396Z",
+        "complete": true,
+        "owned": []
+      },
+      {
+        "at": "2026-09-30T03:47:04.787Z",
+        "complete": true,
+        "owned": []
+      },
+      {
+        "at": "2026-09-30T03:47:05.164Z",
+        "complete": true,
+        "owned": []
+      }
+    ]
+  },
+  "resolution": "Added the exact local source origin to the holding-page access list. Real Chromium testing also required live extension-document validation via runtime.getContexts and POST status polling so Chrome supplies the required Origin header. A separate local mock-controller run reached the warning before the corrected Solari rerun."
+}

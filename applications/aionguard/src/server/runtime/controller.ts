@@ -54,7 +54,7 @@ interface Attempt {
   change: Change | null;
   verification: CaseSnapshot['verification'];
   events: CaseEvent[];
-  trigger: 'NOT_STARTED' | 'OPERATOR_DIRECT' | 'SAFARI_HANDOFF' | 'MOCK';
+  trigger: 'NOT_STARTED' | 'OPERATOR_DIRECT' | 'SAFARI_HANDOFF' | 'CHROME_HANDOFF' | 'MOCK';
   busy: boolean;
   commands: Map<string, { signature: string; result: Promise<CaseSnapshot> }>;
 }
@@ -210,7 +210,7 @@ export class CaseController {
       a.trigger = this.options.inspectionMode === 'MOCK' ? 'MOCK' : trigger;
       a.execution = 'INSPECTING';
       a.link.timing.heldAt = iso();
-      if (a.trigger === 'SAFARI_HANDOFF')
+      if (a.trigger === 'SAFARI_HANDOFF' || a.trigger === 'CHROME_HANDOFF')
         this.event(a, 'NAVIGATION_HELD', {
           reason: 'Trusted handoff reported; endpoint interception requires separate measurement.',
         });

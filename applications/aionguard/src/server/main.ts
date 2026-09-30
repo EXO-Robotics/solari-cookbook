@@ -112,6 +112,11 @@ const server = createHttpServer({
   recoveryToken,
   protection,
   sandbox: warmInspector,
+  controlledClickDemo:
+    config.AIONGUARD_CONTROLLED_CLICK_DEMO === 'true' &&
+    config.AIONGUARD_MODE === 'LIVE' &&
+    config.AIONGUARD_PROVIDER === 'SOLARI' &&
+    config.AIONGUARD_WORKFLOW === 'DETECTOR',
   port: config.AIONGUARD_PORT,
   mode: config.AIONGUARD_MODE,
   workflow: config.AIONGUARD_WORKFLOW,

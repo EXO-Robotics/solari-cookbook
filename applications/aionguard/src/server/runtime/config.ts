@@ -2,6 +2,7 @@ import { existsSync } from 'node:fs';
 import { z } from 'zod';
 
 export const ConfigSchema = z.object({
+  AIONGUARD_CONTROLLED_CLICK_DEMO: z.enum(['true', 'false']).default('false'),
   AIONGUARD_PROVIDER: z.enum(['SOLARI', 'VERCEL']).default('SOLARI'),
   AIONGUARD_SOLARI_SESSION: z.enum(['WARM', 'FRESH']).default('WARM'),
   AIONGUARD_SOLARI_IDLE_MS: z.coerce.number().int().min(1000).max(240000).default(120000),

@@ -12,7 +12,7 @@
   <text x="48" y="116" class="label">PRODUCT VISION</text>
   <text x="48" y="167" font-size="43" font-weight="700" fill="#f1f7f1">Inspect the link. Keep the risk away.</text>
   <text x="48" y="204" class="body" fill="#a8b9aa">Hold external links. Check the destination before the user's browser visits it.</text>
-  <text x="48" y="234" class="small">Browser interception and automatic safe-link release are not yet demonstrated.</text>
+  <text x="48" y="234" class="small">Controlled Chromium interception is demonstrated. Automatic safe-link release remains future work.</text>
 
   <line x1="48" y1="268" x2="1152" y2="268" stroke="#34463b"/>
   <text x="48" y="309" class="label">WORKING TODAY</text>

@@ -553,7 +553,7 @@ export const CaseSnapshotSchema = z
   .object({
     workflow: z.enum(['DETECTOR', 'SYNTHETIC']).default('SYNTHETIC'),
     inspectionTrigger: z
-      .enum(['NOT_STARTED', 'OPERATOR_DIRECT', 'SAFARI_HANDOFF', 'MOCK'])
+      .enum(['NOT_STARTED', 'OPERATOR_DIRECT', 'SAFARI_HANDOFF', 'CHROME_HANDOFF', 'MOCK'])
       .default('NOT_STARTED'),
     identity: CaseIdentitySchema,
     scenarioVersion: z.literal(SCENARIO_VERSION),

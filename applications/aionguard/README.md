@@ -1,12 +1,10 @@
 # AionGuard × Solari
 
-Runnable app in the official Solari cookbook fork. Matches [standalone submission](https://github.com/EXO-Robotics/AionGuard-Solari) commit `62efa40016ef815fbad0ae0aa3047c55e5bdcf19`.
-
 **Inspect the link before you trust it.**
 
 AionGuard is building a checkpoint between a link and your browser: open the destination somewhere isolated, inspect it, and show the evidence before you proceed.
 
-The working prototype checks an administrator-owned demo page in Solari. Full browser interception and automatic release of safe links are the next step.
+The working prototype now intercepts a real link click in a controlled Chromium demo, holds the destination, and inspects our owned page in Solari. Automatic safe-link release is still future work.
 
 ### 1.41 s median · 1.49 s P95
 
@@ -28,6 +26,16 @@ The five checks cover credential phishing, external password forms, executable-d
 
 ![AionGuard showing a real Solari inspection and its finding](docs/evidence/solari-2026-09-29/detector-ui.png)
 
+## One real click, before the destination
+
+**Ordinary click: 4 local browser requests. AionGuard click: 0.**
+
+In one controlled comparison, Solari found the warning signs and the protected browser showed the warning in **1.98 seconds**. The destination stayed held. Both Chromium network recordings agreed on the request counts.
+
+![Measured controlled click comparison](docs/assets/controlled-click.svg)
+
+One owned fixture, two disposable browser profiles. This proves the tested click path, not protection across the whole web. [Screenshots, raw measurements, and reproduction →](docs/controlled-click.md)
+
 ## How fast is it?
 
 ![All twenty measured warm inspection times, with median and P95](docs/assets/warm-latency.svg)
@@ -38,7 +46,7 @@ The five checks cover credential phishing, external password forms, executable-d
 | Finding → retirement initiated | **1.552 s*** | — | One separate phishing-finding run |
 | Astra advisory review | **7.652 s** | **8.901 s** | 6 calls on authored structural evidence |
 | Inspect button → result | **1.765 s*** | — | One live ready-sandbox UI check |
-| Intercepted click → final decision | Not measured | Not measured | Requires an installed browser test |
+| Intercepted click → warning | **1.981 s*** | — | One controlled Chromium click; 2.370 s including host automation |
 
 \*Single runs, not medians or percentiles. Retirement finished asynchronously. [UI timing and cold fallback →](docs/click-timing.md)
 
@@ -70,9 +78,9 @@ For real Solari checks, add your private key and owned demo URL using the [live 
 
 ## What is ready—and what is next?
 
-**Working:** remote page inspection, five warning-sign checks, screenshots, prepared VM reuse, flagged retirement, automatic replacement, and downloadable evidence.
+**Working:** controlled Chromium click interception, remote page inspection, five warning-sign checks, screenshots, prepared VM reuse, flagged retirement, automatic replacement, and downloadable evidence.
 
-**Still to prove:** installed Solari browser interception, safe-link release, hostile-page containment, and detection accuracy on unseen real-world pages. Use harmless owned fixtures only. The challenge corpus exposed misses and false positives; an earlier cold benchmark also found inconsistent cleanup responses. [Evidence and limitations →](docs/benchmark.md)
+**Still to prove:** general browser deployment, safe-link release, hostile-page containment, and detection accuracy on unseen real-world pages. Use harmless owned fixtures only. The challenge corpus exposed misses and false positives; an earlier cold benchmark also found inconsistent cleanup responses. [Evidence and limitations →](docs/benchmark.md)
 
 The fast path stays deterministic. [Astra’s optional second opinion](docs/astra-review-benchmark.md) is measured separately; it cannot authorize navigation or take actions. The workspace also exports [direct click-to-result timings](docs/click-timing.md).
 

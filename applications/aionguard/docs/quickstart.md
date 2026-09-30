@@ -50,3 +50,7 @@ The first checks your configured owned URL; the second checks six inert rule fix
 For the optional read-only Astra timing harness, see [Astra review](astra-review-benchmark.md). Select your installed CLI with `AIONGUARD_CODEX_PATH` if needed; it sends only structural fields to the model service.
 
 The default detector never invokes Astra or changes an external system. No-match results remain undetermined. Browser routing restrictions are not proof of a provider-level egress firewall. Use harmless owned fixtures only.
+
+## Controlled browser click
+
+The [controlled Chromium demonstration](controlled-click.md) runs one unprotected and one protected click in disposable profiles, using the owned fixture and real Solari. It records HTTP request counts and click-to-warning timing. It does not change your regular browser or automatically release links.

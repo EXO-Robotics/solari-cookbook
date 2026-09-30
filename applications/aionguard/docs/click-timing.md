@@ -2,7 +2,7 @@
 
 AionGuard can now time a click on **Inspect registered URL** through to the result appearing in the workspace. Use **Timing JSON** or **Timing CSV** to download the last 100 checks from the current tab. This export stays local and contains no controller token, page text, screenshot, or destination URL.
 
-This is a **direct operator click** measurement. The full intercepted-link experience is still unmeasured. We do not call a hold-page arrival the original link click, and have not changed the extension or its protection lease.
+This is a **direct operator click** measurement. A later [controlled Chromium comparison](controlled-click.md) measures an actual intercepted link separately. We do not call a hold-page arrival the original link click, and have not changed the extension or its protection lease.
 
 ## What the clock measures
 

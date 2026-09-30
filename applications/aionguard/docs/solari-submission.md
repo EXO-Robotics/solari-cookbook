@@ -1,4 +1,6 @@
-> Submission package update: the [README](../README.md) now leads with the product, visuals, and measured warm performance. New evidence includes [six Astra advisory reviews](astra-review-benchmark.md) and [direct UI click timing](click-timing.md). These are separate measurements; actual intercepted-link latency remains unmeasured.
+> Controlled click update: [one real Chromium click comparison](controlled-click.md) now shows 4 local destination HTTP requests without protection versus 0 with AionGuard, with a warning in 1.981 seconds. Automatic safe-link release remains unimplemented. The record below preserves earlier milestones.
+
+> Submission package update: the [README](../README.md) now leads with the product, visuals, and measured warm performance. New evidence includes [six Astra advisory reviews](astra-review-benchmark.md) and [direct UI click timing](click-timing.md). These are separate measurements; a later controlled intercepted-link measurement is linked above.
 
 > Current lifecycle update: the default Solari detector now prewarms and reuses a bounded sandbox until a finding/error, then retires and replaces it. See [warm qualification](warm-solari.md) for the measured 1.41-second median / 1.49-second P95 and separate cleanup audit. Earlier evidence below describes its original fresh-sandbox candidate.
 

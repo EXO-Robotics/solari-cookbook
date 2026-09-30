@@ -16,7 +16,7 @@ Code + evidence: https://github.com/EXO-Robotics/AionGuard-Solari
 
 The original demo was recorded with Vercel Sandbox during the OpenAI Astra Hackathon in New York. This submission runs on Solari, our preferred provider for speed and convenience.
 
-The current prototype inspects owned demo pages and shows the findings. Full browser interception, safe-link release, and real-world accuracy still need qualification. The speed figures measure backend checks after preparation, not a complete intercepted click.
+The current prototype also demonstrates a real intercepted Chromium click against our owned fixture: 4 local destination HTTP requests without AionGuard, 0 with it, and a warning in 1.98 seconds. One controlled comparison, not a detection-rate claim. General browser deployment and safe-link release remain future work. The 1.41-second figure still refers to backend checks after preparation.
 
 Official Solari fork: https://github.com/EXO-Robotics/solari-cookbook/tree/main/applications/aionguard
 

@@ -1,0 +1,258 @@
+{
+  "sourceManifestSha256": "8cf56cd6ec3b44890d90cfb74879ff57520da71d20131454559b17774158db2d",
+  "schemaVersion": "1.0.0",
+  "status": "PASS",
+  "fixture": "https://mfrey18.github.io/AionPhish/",
+  "capturedAt": "2026-09-30T10:06:43.662Z",
+  "observationEndedAt": "2026-09-30T10:06:43.374Z",
+  "browser": {
+    "name": "Chromium",
+    "version": "Chrome/145.0.7632.6",
+    "headless": true,
+    "isolatedProfiles": true,
+    "http2Enabled": false,
+    "quicEnabled": false
+  },
+  "baseline": {
+    "destinationOrigin": "https://mfrey18.github.io",
+    "destinationRequestsSent": 4,
+    "destinationDocumentRequestsSent": 1,
+    "canaryRequestsSent": 2,
+    "totalRequestsSent": 10,
+    "events": [
+      {
+        "sourceId": 85,
+        "event": "HTTP_TRANSACTION_SEND_REQUEST_HEADERS",
+        "url": "https://mfrey18.github.io/AionPhish/"
+      },
+      {
+        "sourceId": 108,
+        "event": "HTTP_TRANSACTION_SEND_REQUEST_HEADERS",
+        "url": "https://mfrey18.github.io/AionPhish/aquarium.css"
+      },
+      {
+        "sourceId": 112,
+        "event": "HTTP_TRANSACTION_SEND_REQUEST_HEADERS",
+        "url": "https://mfrey18.github.io/AionPhish/demo-login.js"
+      },
+      {
+        "sourceId": 130,
+        "event": "HTTP_TRANSACTION_SEND_REQUEST_HEADERS",
+        "url": "https://mfrey18.github.io/AionPhish/aquarium.js"
+      }
+    ],
+    "method": "CHROMIUM_NETLOG_HTTP_TRANSACTION_HEADER_SEND",
+    "finalUrl": "https://mfrey18.github.io/AionPhish/",
+    "clickToLoadMs": 444.3140840000001,
+    "rawNetLogSha256": "17e9b784fe37395bc5029b81d7b9fd50fe1c46a063eed65ee8ac455d5ddea203",
+    "cdp": {
+      "method": "CDP_REQUEST_EXTRA_INFO_AUTHORITY_AND_REQUEST_ID",
+      "destinationRequestsSent": 4,
+      "canaryRequestsSent": 2,
+      "totalRequestExtraInfoEvents": 6
+    },
+    "argv": [
+      "<pinned-playwright-chromium>",
+      "--disable-field-trial-config",
+      "--disable-background-networking",
+      "--disable-background-timer-throttling",
+      "--disable-backgrounding-occluded-windows",
+      "--disable-back-forward-cache",
+      "--disable-breakpad",
+      "--disable-client-side-phishing-detection",
+      "--disable-component-extensions-with-background-pages",
+      "--disable-component-update",
+      "--no-default-browser-check",
+      "--disable-default-apps",
+      "--disable-dev-shm-usage",
+      "--disable-extensions",
+      "--disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints",
+      "--enable-features=CDPScreenshotNewSurface",
+      "--allow-pre-commit-input",
+      "--disable-hang-monitor",
+      "--disable-ipc-flooding-protection",
+      "--disable-popup-blocking",
+      "--disable-prompt-on-repost",
+      "--disable-renderer-backgrounding",
+      "--force-color-profile=srgb",
+      "--metrics-recording-only",
+      "--no-first-run",
+      "--password-store=basic",
+      "--use-mock-keychain",
+      "--no-service-autorun",
+      "--export-tagged-pdf",
+      "--disable-search-engine-choice-screen",
+      "--unsafely-disable-devtools-self-xss-warnings",
+      "--edge-skip-compat-layer-relaunch",
+      "--enable-automation",
+      "--disable-infobars",
+      "--disable-search-engine-choice-screen",
+      "--disable-sync",
+      "--headless",
+      "--hide-scrollbars",
+      "--mute-audio",
+      "--blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4",
+      "--no-sandbox",
+      "--log-net-log=<private-output>/baseline-netlog.private.json",
+      "--net-log-capture-mode=Default",
+      "--disable-quic",
+      "--disable-http2",
+      "--disable-background-networking",
+      "--user-data-dir=<private-output>/baseline-profile",
+      "--remote-debugging-pipe",
+      "--noerrdialogs",
+      "--flag-switches-begin",
+      "--flag-switches-end",
+      "about:blank"
+    ]
+  },
+  "protected": {
+    "destinationOrigin": "https://mfrey18.github.io",
+    "destinationRequestsSent": 0,
+    "destinationDocumentRequestsSent": 0,
+    "canaryRequestsSent": 2,
+    "totalRequestsSent": 30,
+    "events": [],
+    "method": "CHROMIUM_NETLOG_HTTP_TRANSACTION_HEADER_SEND",
+    "finalUrl": "chrome-extension://<disposable-demo>/hold.html",
+    "clickToWarningMs": 1981.39990234375,
+    "dispatchToDecisionObservedMs": 2370.0593750000044,
+    "bindingReceiptDeltaMs": 1966.4254590000055,
+    "trustedAutomatedClick": true,
+    "warmStatusBeforeClick": {
+      "state": "READY",
+      "sandboxId": "solari-b007e2e8cf2be22e44c6defd1b17e692",
+      "readyAt": "2026-09-30T10:06:38.334Z",
+      "expiresAt": "2026-09-30T10:10:01.265Z",
+      "inspectionCount": 0,
+      "cleanupUnresolved": 0,
+      "lastError": null
+    },
+    "inspectionTrigger": "CHROME_HANDOFF",
+    "classification": "SUSPICIOUS",
+    "inspectionTiming": {
+      "heldAt": "2026-09-30T10:06:39.010Z",
+      "createdAt": "2026-09-30T10:06:02.504Z",
+      "collectionStartedAt": "2026-09-30T10:06:39.089Z",
+      "returnedAt": "2026-09-30T10:06:40.818Z",
+      "blockedAt": "2026-09-30T10:06:40.819Z"
+    },
+    "cleanupAtDecision": {
+      "state": "PENDING",
+      "sandboxId": "solari-b007e2e8cf2be22e44c6defd1b17e692",
+      "stoppedAt": null,
+      "deletedAt": null
+    },
+    "session": {
+      "mode": "WARM",
+      "readyAt": "2026-09-30T10:06:38.334Z",
+      "acquiredAt": "2026-09-30T10:06:39.010Z",
+      "reused": false,
+      "inspectionCount": 1,
+      "disposition": "RETIRED"
+    },
+    "rawNetLogSha256": "98c3e841960764852323ec149f1cb81333e8680f42935ec436c45231248ff899",
+    "cdp": {
+      "method": "CDP_REQUEST_EXTRA_INFO_AUTHORITY_AND_REQUEST_ID",
+      "destinationRequestsSent": 0,
+      "canaryRequestsSent": 2,
+      "totalRequestExtraInfoEvents": 2
+    },
+    "argv": [
+      "<pinned-playwright-chromium>",
+      "--disable-field-trial-config",
+      "--disable-background-networking",
+      "--disable-background-timer-throttling",
+      "--disable-backgrounding-occluded-windows",
+      "--disable-back-forward-cache",
+      "--disable-breakpad",
+      "--disable-client-side-phishing-detection",
+      "--disable-component-extensions-with-background-pages",
+      "--disable-component-update",
+      "--no-default-browser-check",
+      "--disable-default-apps",
+      "--disable-dev-shm-usage",
+      "--disable-extensions",
+      "--disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints",
+      "--enable-features=CDPScreenshotNewSurface",
+      "--allow-pre-commit-input",
+      "--disable-hang-monitor",
+      "--disable-ipc-flooding-protection",
+      "--disable-popup-blocking",
+      "--disable-prompt-on-repost",
+      "--disable-renderer-backgrounding",
+      "--force-color-profile=srgb",
+      "--metrics-recording-only",
+      "--no-first-run",
+      "--password-store=basic",
+      "--use-mock-keychain",
+      "--no-service-autorun",
+      "--export-tagged-pdf",
+      "--disable-search-engine-choice-screen",
+      "--unsafely-disable-devtools-self-xss-warnings",
+      "--edge-skip-compat-layer-relaunch",
+      "--enable-automation",
+      "--disable-infobars",
+      "--disable-search-engine-choice-screen",
+      "--disable-sync",
+      "--headless",
+      "--hide-scrollbars",
+      "--mute-audio",
+      "--blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4",
+      "--no-sandbox",
+      "--log-net-log=<private-output>/protected-netlog.private.json",
+      "--net-log-capture-mode=Default",
+      "--disable-quic",
+      "--disable-http2",
+      "--disable-background-networking",
+      "--disable-extensions-except=<private-output>/extension",
+      "--load-extension=<private-output>/extension",
+      "--user-data-dir=<private-output>/protected-profile",
+      "--remote-debugging-pipe",
+      "--noerrdialogs",
+      "--flag-switches-begin",
+      "--flag-switches-end",
+      "about:blank"
+    ],
+    "installedRules": {
+      "expectedRuleSha256": "fa46e0cce56e5386a1c39c6740ab99e86afc1f8c0ada44be7bdb8c60328e3881",
+      "installedRuleSha256": "fa46e0cce56e5386a1c39c6740ab99e86afc1f8c0ada44be7bdb8c60328e3881",
+      "rules": [
+        {
+          "action": {
+            "redirect": {
+              "extensionPath": "/hold.html"
+            },
+            "type": "redirect"
+          },
+          "condition": {
+            "isUrlFilterCaseSensitive": true,
+            "regexFilter": "^https://mfrey18\\.github\\.io/AionPhish/(?:[?#].*)?$",
+            "resourceTypes": [
+              "main_frame"
+            ]
+          },
+          "id": 7101,
+          "priority": 20
+        },
+        {
+          "action": {
+            "type": "block"
+          },
+          "condition": {
+            "isUrlFilterCaseSensitive": true,
+            "regexFilter": "^https://mfrey18\\.github\\.io/AionPhish(?:[/?#].*)?$"
+          },
+          "id": 7102,
+          "priority": 10
+        }
+      ]
+    }
+  },
+  "scope": "One baseline and one protected normal anchor click to one owned fixture in disposable automated Chromium profiles. NetLog counts HTTP request headers sent to the destination origin. It does not establish zero DNS/TCP/TLS contact, arbitrary-site protection, Safari interception, automatic safe release, hostile-page containment, or detection accuracy. No Playwright request routing or mocked network response is used.",
+  "netLogReference": "https://chromium.googlesource.com/chromium/src/+/main/net/log/net_log_event_type_list.h",
+  "controllerShutdown": {
+    "exitCode": 0,
+    "ownershipJournalAbsent": true
+  }
+}

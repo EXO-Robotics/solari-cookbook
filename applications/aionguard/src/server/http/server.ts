@@ -12,6 +12,7 @@ import {
   type WarmPoolStatus,
 } from '../../contracts/index.js';
 import { CaseController, CommandError } from '../runtime/controller.js';
+import { ControlledClickDemo } from '../runtime/controlled-click.js';
 import { ProtectionLease } from '../runtime/protection.js';
 
 export interface HttpOptions {
@@ -25,6 +26,7 @@ export interface HttpOptions {
   workflow?: 'DETECTOR' | 'SYNTHETIC';
   protection?: ProtectionLease;
   recoveryToken?: string;
+  controlledClickDemo?: boolean;
   sandbox?: { status(): WarmPoolStatus; prepare(): Promise<void> };
 }
 const EntrySchema = z.object({ fixtureId: z.literal('acme-login'), requestId: IdSchema }).strict();
@@ -71,7 +73,20 @@ export function createHttpServer(options: HttpOptions) {
       return normalized;
     }),
   ]);
-  return createServer(async (req, res) => {
+  const chromeOrigins = (options.allowedExtensionOrigins ?? [])
+    .map(normalizedExtensionOrigin)
+    .filter((value): value is string => !!value?.startsWith('chrome-extension://'));
+  if (
+    options.controlledClickDemo &&
+    (options.workflow !== 'DETECTOR' || chromeOrigins.length !== 1)
+  )
+    throw new Error(
+      'Controlled click demo requires detector mode and exactly one Chrome extension origin',
+    );
+  const controlledClick = options.controlledClickDemo
+    ? new ControlledClickDemo(options.controller)
+    : null;
+  const server = createServer(async (req, res) => {
     securityHeaders(res);
     try {
       if (!hosts.has(req.headers.host ?? '')) throw new CommandError('HOST_DENIED', 403);
@@ -101,6 +116,53 @@ export function createHttpServer(options: HttpOptions) {
         return;
       }
       if (url.pathname.startsWith('/api/')) {
+        if (url.pathname.startsWith('/api/controlled-click/')) {
+          if (!controlledClick) throw new CommandError('NOT_FOUND', 404);
+          if (url.pathname === '/api/controlled-click/arm' && req.method === 'POST') {
+            if (!authenticate(req, options.token))
+              throw new CommandError('AUTHENTICATION_REQUIRED', 401);
+            const command = z
+              .object({
+                runId: IdSchema,
+                durationMs: z.number().int().min(1000).max(120000).optional(),
+              })
+              .strict()
+              .parse(await body(req));
+            json(res, 200, controlledClick.arm(command.runId, command.durationMs));
+            return;
+          }
+          if (url.pathname === '/api/controlled-click/disarm' && req.method === 'POST') {
+            if (!authenticate(req, options.token))
+              throw new CommandError('AUTHENTICATION_REQUIRED', 401);
+            z.object({})
+              .strict()
+              .parse(await body(req));
+            json(res, 200, controlledClick.disarm());
+            return;
+          }
+          if (!origin || normalizedExtensionOrigin(origin) !== chromeOrigins[0])
+            throw new CommandError('CHROME_ORIGIN_REQUIRED', 403);
+          if (!authenticate(req, options.entryToken))
+            throw new CommandError('AUTHENTICATION_REQUIRED', 401);
+          if (url.pathname === '/api/controlled-click/entry' && req.method === 'POST') {
+            const command = z
+              .object({ fixtureId: z.literal('acme-login'), requestId: z.uuid() })
+              .strict()
+              .parse(await body(req));
+            json(res, 202, controlledClick.entry(command.fixtureId, command.requestId));
+            return;
+          }
+          if (url.pathname === '/api/controlled-click/status' && req.method === 'POST') {
+            if (url.search) throw new CommandError('INVALID_COMMAND', 400);
+            const { requestId } = z
+              .object({ requestId: z.uuid() })
+              .strict()
+              .parse(await body(req));
+            json(res, 200, controlledClick.status(requestId));
+            return;
+          }
+          throw new CommandError('NOT_FOUND', 404);
+        }
         if (url.pathname.startsWith('/api/protection')) {
           const operator = authenticate(req, options.token);
           const entry = authenticate(req, options.entryToken);
@@ -322,6 +384,12 @@ export function createHttpServer(options: HttpOptions) {
       else json(res, 500, { error: 'INTERNAL_ERROR' });
     }
   });
+  const close = server.close.bind(server);
+  server.close = (callback) => {
+    controlledClick?.close();
+    return close(callback);
+  };
+  return server;
 }
 function authenticate(req: IncomingMessage, token: string): boolean {
   const value = req.headers.authorization ?? '';
