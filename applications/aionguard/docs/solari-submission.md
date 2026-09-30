@@ -8,6 +8,12 @@ A local authenticated operator UI inspects one configured, owned HTTPS fixture i
 
 Five implemented categories: credential phishing, external password forms, executable download lures, tech-support scams, and ClickFix command lures. Categories can overlap. They are practical coverage choices, not an empirically established ranking of the five most common attacks. No model is required. Astra, IT email, Tripwire, continuity and local-VM integration are excluded.
 
+## Video context and provider choice
+
+The [demo video](https://www.youtube.com/watch?v=UJkPWHyTg-U) was recorded using Vercel Sandbox during the OpenAI Astra Hackathon in New York. It shows the earlier Vercel build. The current submission runs on Solari; the evidence below documents that integration separately.
+
+Solari is our preferred provider for speed and convenience, not a benchmarked speed claim. Additional VM providers can be supported through implemented and validated adapters. See the [submission post draft](submission-post.md).
+
 ## Verification
 
 - **286 tests passed across 17 files** under Node 24.19.0, plus TypeScript and production build. Formatting and Git whitespace checks passed.

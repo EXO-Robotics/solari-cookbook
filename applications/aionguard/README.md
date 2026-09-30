@@ -22,6 +22,14 @@ AionGuard is a small, local web-threat detector backed by a fresh Solari sandbox
 
 These are five practical heuristics, not a ranked list of the world's most common attacks. They can produce false positives and miss attacks. **No matches means undetermined, never safe.** The detector does not execute page scripts, enter credentials, download payloads, or claim that compromise occurred.
 
+## Demo video and provider choice
+
+[Watch the AionGuard demo](https://www.youtube.com/watch?v=UJkPWHyTg-U). This video was recorded using **Vercel Sandbox during the OpenAI Astra Hackathon in New York**. It shows the earlier Vercel version; the current submission runs on Solari, with separate [Solari verification evidence](docs/solari-submission.md).
+
+**Solari is our preferred provider for speed and convenience.** This is our provider preference, not a measured speed comparison. AionGuard uses provider adapters; additional VM providers can be supported by implementing and validating an adapter.
+
+[Submission post draft](docs/submission-post.md).
+
 ## Run
 
 Use Node 24 LTS:
