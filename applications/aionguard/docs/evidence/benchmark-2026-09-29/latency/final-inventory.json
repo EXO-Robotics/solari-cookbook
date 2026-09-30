@@ -1,0 +1,26 @@
+{
+  "checkedAt": "2026-09-30T02:01:25.365Z",
+  "scope": "Authenticated inventory filtered by application=aionguard and application=aionguard-corpus",
+  "corpusCount": 1,
+  "corpusPaginated": false,
+  "count": 2,
+  "paginated": false,
+  "resources": [
+    {
+      "idHash": "01dabb54505211fce1ca07e8eab89ac2661130c4d96f9a50937dceb93cab0aa6",
+      "state": "running",
+      "metadata": {
+        "application": "aionguard",
+        "inspection": "aionguard-67cd0171-b14b-413b-aa10-1769447f832b"
+      }
+    },
+    {
+      "idHash": "ccc361dc9d46b0acc8b87ae563d86b18c4f0b1f719315b2fe145c520c1e40e67",
+      "state": "running",
+      "metadata": {
+        "application": "aionguard",
+        "inspection": "aionguard-9b855764-c761-4430-b7bd-597106881a76"
+      }
+    }
+  ]
+}

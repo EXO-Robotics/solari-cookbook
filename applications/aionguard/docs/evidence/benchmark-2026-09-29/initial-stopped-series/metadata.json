@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-09-30T01:24:32.901Z",
+  "requested": 50,
+  "expectedCategory": "CREDENTIAL_PHISHING",
+  "sourceCommit": "ebe860395a3a446b3038da773d66b878504af03b",
+  "sourceDirty": true,
+  "hashes": {
+    "src/server/isolation/worker.mjs": "baf52d6b2f501b50ab2d377ea92e807e475e05c787f1762bb6210451ef08f8d5",
+    "src/server/detection/index.ts": "e2e3f868fc26e0bb6457bb8e0cf2442423ddbdee6cf5b8efea2404098df1d5aa",
+    "src/server/isolation/solari.ts": "14e82e216a1d8309c7db032dbb34edf1e6d33cdff3d5f527edae11e735898d5a",
+    "scripts/benchmark-solari.ts": "0181714c0481b34d9d3cc270a3f70711d2ff5a1c350fa3f011b5d7ed216b342c",
+    "scripts/benchmark-metrics.ts": "c0a6e0ee443e55fd49bdd55e3489583b0579a47668847c26a6e05be59f591421"
+  },
+  "scope": "Sequential cold fresh Solari sandbox inspections of one configured owned fixture; backend harness timings, not click-to-navigation latency.",
+  "fixtureUrlSha256": "2740195243bb25715458a2f3491a2cee655aee0fdfe23b7b10755fbacbe2e5ca",
+  "astraInvoked": false,
+  "astraMeasured": false,
+  "endpointInterceptionVerified": false,
+  "hostIsolationVerified": false,
+  "limitations": [
+    "No ALLOW decision is produced.",
+    "Observer event serialization and synchronous checkpoint I/O add host measurement overhead; worker timing payload serialization adds guest overhead.",
+    "Rules execute after inspection returns and cleanup completes.",
+    "Browser setup includes dependency installation on each fresh sandbox.",
+    "Guest stage intervals use guest monotonic offsets only; host and guest clocks are never subtracted.",
+    "A repeated fixture is not a detection-rate dataset.",
+    "Observation hashes normalize observedAt to null so content drift can be compared across repeated runs.",
+    "Partial stage durations remain measured even on failed runs; backendDecision is measured only for usable successful evidence."
+  ]
+}

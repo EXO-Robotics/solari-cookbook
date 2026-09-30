@@ -1,0 +1,173 @@
+{
+  "startedAt": "2026-09-30T02:02:37.529Z",
+  "scope": "Only identities matched to 50-run benchmark or exact corpus tag",
+  "rows": [
+    {
+      "idHash": "1ba8f4e438b35c140e6d89db7e74df1202260228693b84bb840cbd8f75077718",
+      "metadata": {
+        "application": "aionguard",
+        "inspection": "aionguard-f4e33cea-49f0-4fb9-bcf2-085865df5f62"
+      },
+      "state": "running",
+      "expiresAt": "2026-09-30T02:01:32.575Z",
+      "getState": "UNAVAILABLE",
+      "combinedFilterCount": 1,
+      "inspectionFilterCount": 1,
+      "killAcknowledged": true
+    }
+  ],
+  "snapshots": [
+    {
+      "checkedAt": "2026-09-30T02:02:39.099Z",
+      "remaining": [
+        {
+          "idHash": "1ba8f4e438b35c140e6d89db7e74df1202260228693b84bb840cbd8f75077718",
+          "state": "running",
+          "expiresAt": "2026-09-30T02:01:32.575Z"
+        }
+      ]
+    },
+    {
+      "checkedAt": "2026-09-30T02:02:40.274Z",
+      "remaining": [
+        {
+          "idHash": "01dabb54505211fce1ca07e8eab89ac2661130c4d96f9a50937dceb93cab0aa6",
+          "state": "running",
+          "expiresAt": "2026-09-30T02:02:10.152Z"
+        },
+        {
+          "idHash": "ccc361dc9d46b0acc8b87ae563d86b18c4f0b1f719315b2fe145c520c1e40e67",
+          "state": "running",
+          "expiresAt": "2026-09-30T02:03:27.130Z"
+        },
+        {
+          "idHash": "a5ded4211bf791a9fe8ddcbffd06d51ccdd6e54e25ba218416634da649d1bade",
+          "state": "running",
+          "expiresAt": "2026-09-30T02:09:41.137Z"
+        }
+      ]
+    },
+    {
+      "checkedAt": "2026-09-30T02:02:41.399Z",
+      "remaining": [
+        {
+          "idHash": "1ba8f4e438b35c140e6d89db7e74df1202260228693b84bb840cbd8f75077718",
+          "state": "running",
+          "expiresAt": "2026-09-30T02:01:32.575Z"
+        }
+      ]
+    },
+    {
+      "checkedAt": "2026-09-30T02:02:42.524Z",
+      "remaining": [
+        {
+          "idHash": "01dabb54505211fce1ca07e8eab89ac2661130c4d96f9a50937dceb93cab0aa6",
+          "state": "running",
+          "expiresAt": "2026-09-30T02:02:10.152Z"
+        },
+        {
+          "idHash": "ccc361dc9d46b0acc8b87ae563d86b18c4f0b1f719315b2fe145c520c1e40e67",
+          "state": "running",
+          "expiresAt": "2026-09-30T02:03:27.130Z"
+        },
+        {
+          "idHash": "a5ded4211bf791a9fe8ddcbffd06d51ccdd6e54e25ba218416634da649d1bade",
+          "state": "running",
+          "expiresAt": "2026-09-30T02:09:41.137Z"
+        }
+      ]
+    },
+    {
+      "checkedAt": "2026-09-30T02:02:43.654Z",
+      "remaining": [
+        {
+          "idHash": "01dabb54505211fce1ca07e8eab89ac2661130c4d96f9a50937dceb93cab0aa6",
+          "state": "running",
+          "expiresAt": "2026-09-30T02:02:10.152Z"
+        },
+        {
+          "idHash": "ccc361dc9d46b0acc8b87ae563d86b18c4f0b1f719315b2fe145c520c1e40e67",
+          "state": "running",
+          "expiresAt": "2026-09-30T02:03:27.130Z"
+        },
+        {
+          "idHash": "a5ded4211bf791a9fe8ddcbffd06d51ccdd6e54e25ba218416634da649d1bade",
+          "state": "running",
+          "expiresAt": "2026-09-30T02:09:41.137Z"
+        }
+      ]
+    },
+    {
+      "checkedAt": "2026-09-30T02:02:44.772Z",
+      "remaining": [
+        {
+          "idHash": "1ba8f4e438b35c140e6d89db7e74df1202260228693b84bb840cbd8f75077718",
+          "state": "running",
+          "expiresAt": "2026-09-30T02:01:32.575Z"
+        }
+      ]
+    },
+    {
+      "checkedAt": "2026-09-30T02:02:45.916Z",
+      "remaining": [
+        {
+          "idHash": "01dabb54505211fce1ca07e8eab89ac2661130c4d96f9a50937dceb93cab0aa6",
+          "state": "running",
+          "expiresAt": "2026-09-30T02:02:10.152Z"
+        },
+        {
+          "idHash": "ccc361dc9d46b0acc8b87ae563d86b18c4f0b1f719315b2fe145c520c1e40e67",
+          "state": "running",
+          "expiresAt": "2026-09-30T02:03:27.130Z"
+        },
+        {
+          "idHash": "a5ded4211bf791a9fe8ddcbffd06d51ccdd6e54e25ba218416634da649d1bade",
+          "state": "running",
+          "expiresAt": "2026-09-30T02:09:41.137Z"
+        }
+      ]
+    },
+    {
+      "checkedAt": "2026-09-30T02:02:47.073Z",
+      "remaining": [
+        {
+          "idHash": "1ba8f4e438b35c140e6d89db7e74df1202260228693b84bb840cbd8f75077718",
+          "state": "running",
+          "expiresAt": "2026-09-30T02:01:32.575Z"
+        }
+      ]
+    },
+    {
+      "checkedAt": "2026-09-30T02:02:48.194Z",
+      "remaining": [
+        {
+          "idHash": "1ba8f4e438b35c140e6d89db7e74df1202260228693b84bb840cbd8f75077718",
+          "state": "running",
+          "expiresAt": "2026-09-30T02:01:32.575Z"
+        }
+      ]
+    },
+    {
+      "checkedAt": "2026-09-30T02:02:49.302Z",
+      "remaining": [
+        {
+          "idHash": "01dabb54505211fce1ca07e8eab89ac2661130c4d96f9a50937dceb93cab0aa6",
+          "state": "running",
+          "expiresAt": "2026-09-30T02:02:10.152Z"
+        },
+        {
+          "idHash": "ccc361dc9d46b0acc8b87ae563d86b18c4f0b1f719315b2fe145c520c1e40e67",
+          "state": "running",
+          "expiresAt": "2026-09-30T02:03:27.130Z"
+        },
+        {
+          "idHash": "a5ded4211bf791a9fe8ddcbffd06d51ccdd6e54e25ba218416634da649d1bade",
+          "state": "running",
+          "expiresAt": "2026-09-30T02:09:41.137Z"
+        }
+      ]
+    }
+  ],
+  "finishedAt": "2026-09-30T02:02:50.304Z",
+  "remainingCount": 3
+}

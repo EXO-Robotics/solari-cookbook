@@ -14,6 +14,10 @@ The [demo video](https://www.youtube.com/watch?v=UJkPWHyTg-U) was recorded using
 
 Solari is our preferred provider for speed and convenience, not a benchmarked speed claim. Additional VM providers can be supported through implemented and validated adapters. See the [submission post draft](submission-post.md).
 
+## Latest benchmark qualification
+
+The [September 29 benchmark](benchmark.md) adds 50 cold backend inspections and 150 authored detection cases. Its later inventory audit contradicted the original cleanup confirmation method. Treat the historical `CONFIRMED` receipts below as recorded observations, not independently established immediate resource destruction. The benchmark retains raw receipts, contradictory inventory records, and a later reconciliation audit. Per-run lifecycle assurance remains unverified.
+
 ## Verification
 
 - **286 tests passed across 17 files** under Node 24.19.0, plus TypeScript and production build. Formatting and Git whitespace checks passed.

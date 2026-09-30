@@ -1,0 +1,1502 @@
+[
+  {
+    "id": "news-1",
+    "template": "news",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/news-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/news-1.html",
+    "html": "<!doctype html><html><head><title>Scenario news-1</title></head><body><h1>Case 1</h1>Community news and upcoming events.<p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "news-2",
+    "template": "news",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/news-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/news-2.html",
+    "html": "<!doctype html><html><head><title>Scenario news-2</title></head><body><h1>Case 2</h1>Community news and upcoming events.<p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "news-3",
+    "template": "news",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/news-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/news-3.html",
+    "html": "<!doctype html><html><head><title>Scenario news-3</title></head><body><h1>Case 3</h1>Community news and upcoming events.<p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "news-4",
+    "template": "news",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/news-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/news-4.html",
+    "html": "<!doctype html><html><head><title>Scenario news-4</title></head><body><h1>Case 4</h1>Community news and upcoming events.<p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "news-5",
+    "template": "news",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/news-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/news-5.html",
+    "html": "<!doctype html><html><head><title>Scenario news-5</title></head><body><h1>Case 5</h1>Community news and upcoming events.<p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "docs-1",
+    "template": "docs",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/docs-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/docs-1.html",
+    "html": "<!doctype html><html><head><title>Scenario docs-1</title></head><body><h1>Case 1</h1>Read the API reference and integration guide.<p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "docs-2",
+    "template": "docs",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/docs-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/docs-2.html",
+    "html": "<!doctype html><html><head><title>Scenario docs-2</title></head><body><h1>Case 2</h1>Read the API reference and integration guide.<p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "docs-3",
+    "template": "docs",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/docs-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/docs-3.html",
+    "html": "<!doctype html><html><head><title>Scenario docs-3</title></head><body><h1>Case 3</h1>Read the API reference and integration guide.<p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "docs-4",
+    "template": "docs",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/docs-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/docs-4.html",
+    "html": "<!doctype html><html><head><title>Scenario docs-4</title></head><body><h1>Case 4</h1>Read the API reference and integration guide.<p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "docs-5",
+    "template": "docs",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/docs-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/docs-5.html",
+    "html": "<!doctype html><html><head><title>Scenario docs-5</title></head><body><h1>Case 5</h1>Read the API reference and integration guide.<p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "store-1",
+    "template": "store",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/store-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/store-1.html",
+    "html": "<!doctype html><html><head><title>Scenario store-1</title></head><body><h1>Case 1</h1>Browse our catalog. Shipping information.<p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "store-2",
+    "template": "store",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/store-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/store-2.html",
+    "html": "<!doctype html><html><head><title>Scenario store-2</title></head><body><h1>Case 2</h1>Browse our catalog. Shipping information.<p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "store-3",
+    "template": "store",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/store-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/store-3.html",
+    "html": "<!doctype html><html><head><title>Scenario store-3</title></head><body><h1>Case 3</h1>Browse our catalog. Shipping information.<p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "store-4",
+    "template": "store",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/store-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/store-4.html",
+    "html": "<!doctype html><html><head><title>Scenario store-4</title></head><body><h1>Case 4</h1>Browse our catalog. Shipping information.<p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "store-5",
+    "template": "store",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/store-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/store-5.html",
+    "html": "<!doctype html><html><head><title>Scenario store-5</title></head><body><h1>Case 5</h1>Browse our catalog. Shipping information.<p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "trusted-login-1",
+    "template": "trusted-login",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 1,
+    "url": "https://trusted.aionguard.invalid/trusted-login-1.html",
+    "finalUrl": "https://trusted.aionguard.invalid/trusted-login-1.html",
+    "html": "<!doctype html><html><head><title>Scenario trusted-login-1</title></head><body><h1>Case 1</h1><form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "trusted-login-2",
+    "template": "trusted-login",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 2,
+    "url": "https://trusted.aionguard.invalid/trusted-login-2.html",
+    "finalUrl": "https://trusted.aionguard.invalid/trusted-login-2.html",
+    "html": "<!doctype html><html><head><title>Scenario trusted-login-2</title></head><body><h1>Case 2</h1><form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "trusted-login-3",
+    "template": "trusted-login",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 3,
+    "url": "https://trusted.aionguard.invalid/trusted-login-3.html",
+    "finalUrl": "https://trusted.aionguard.invalid/trusted-login-3.html",
+    "html": "<!doctype html><html><head><title>Scenario trusted-login-3</title></head><body><h1>Case 3</h1><form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "trusted-login-4",
+    "template": "trusted-login",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 4,
+    "url": "https://trusted.aionguard.invalid/trusted-login-4.html",
+    "finalUrl": "https://trusted.aionguard.invalid/trusted-login-4.html",
+    "html": "<!doctype html><html><head><title>Scenario trusted-login-4</title></head><body><h1>Case 4</h1><form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "trusted-login-5",
+    "template": "trusted-login",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 5,
+    "url": "https://trusted.aionguard.invalid/trusted-login-5.html",
+    "finalUrl": "https://trusted.aionguard.invalid/trusted-login-5.html",
+    "html": "<!doctype html><html><head><title>Scenario trusted-login-5</title></head><body><h1>Case 5</h1><form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "unlisted-login-1",
+    "template": "unlisted-login",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/unlisted-login-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/unlisted-login-1.html",
+    "html": "<!doctype html><html><head><title>Scenario unlisted-login-1</title></head><body><h1>Case 1</h1>Legitimate small business member portal.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "unlisted-login-2",
+    "template": "unlisted-login",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/unlisted-login-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/unlisted-login-2.html",
+    "html": "<!doctype html><html><head><title>Scenario unlisted-login-2</title></head><body><h1>Case 2</h1>Legitimate small business member portal.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "unlisted-login-3",
+    "template": "unlisted-login",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/unlisted-login-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/unlisted-login-3.html",
+    "html": "<!doctype html><html><head><title>Scenario unlisted-login-3</title></head><body><h1>Case 3</h1>Legitimate small business member portal.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "unlisted-login-4",
+    "template": "unlisted-login",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/unlisted-login-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/unlisted-login-4.html",
+    "html": "<!doctype html><html><head><title>Scenario unlisted-login-4</title></head><body><h1>Case 4</h1>Legitimate small business member portal.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "unlisted-login-5",
+    "template": "unlisted-login",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/unlisted-login-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/unlisted-login-5.html",
+    "html": "<!doctype html><html><head><title>Scenario unlisted-login-5</title></head><body><h1>Case 5</h1>Legitimate small business member portal.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "external-sso-1",
+    "template": "external-sso",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/external-sso-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/external-sso-1.html",
+    "html": "<!doctype html><html><head><title>Scenario external-sso-1</title></head><body><h1>Case 1</h1>Legitimate enterprise single sign on.<form action=\"https://collector.aionguard.invalid/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "external-sso-2",
+    "template": "external-sso",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/external-sso-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/external-sso-2.html",
+    "html": "<!doctype html><html><head><title>Scenario external-sso-2</title></head><body><h1>Case 2</h1>Legitimate enterprise single sign on.<form action=\"https://collector.aionguard.invalid/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "external-sso-3",
+    "template": "external-sso",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/external-sso-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/external-sso-3.html",
+    "html": "<!doctype html><html><head><title>Scenario external-sso-3</title></head><body><h1>Case 3</h1>Legitimate enterprise single sign on.<form action=\"https://collector.aionguard.invalid/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "external-sso-4",
+    "template": "external-sso",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/external-sso-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/external-sso-4.html",
+    "html": "<!doctype html><html><head><title>Scenario external-sso-4</title></head><body><h1>Case 4</h1>Legitimate enterprise single sign on.<form action=\"https://collector.aionguard.invalid/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "external-sso-5",
+    "template": "external-sso",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/external-sso-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/external-sso-5.html",
+    "html": "<!doctype html><html><head><title>Scenario external-sso-5</title></head><body><h1>Case 5</h1>Legitimate enterprise single sign on.<form action=\"https://collector.aionguard.invalid/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "support-education-1",
+    "template": "support-education",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/support-education-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/support-education-1.html",
+    "html": "<!doctype html><html><head><title>Scenario support-education-1</title></head><body><h1>Case 1</h1>Training example: Your computer is infected. Call support immediately. This is a scam example; do not call.<p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "support-education-2",
+    "template": "support-education",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/support-education-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/support-education-2.html",
+    "html": "<!doctype html><html><head><title>Scenario support-education-2</title></head><body><h1>Case 2</h1>Training example: Your computer is infected. Call support immediately. This is a scam example; do not call.<p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "support-education-3",
+    "template": "support-education",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/support-education-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/support-education-3.html",
+    "html": "<!doctype html><html><head><title>Scenario support-education-3</title></head><body><h1>Case 3</h1>Training example: Your computer is infected. Call support immediately. This is a scam example; do not call.<p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "support-education-4",
+    "template": "support-education",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/support-education-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/support-education-4.html",
+    "html": "<!doctype html><html><head><title>Scenario support-education-4</title></head><body><h1>Case 4</h1>Training example: Your computer is infected. Call support immediately. This is a scam example; do not call.<p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "support-education-5",
+    "template": "support-education",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/support-education-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/support-education-5.html",
+    "html": "<!doctype html><html><head><title>Scenario support-education-5</title></head><body><h1>Case 5</h1>Training example: Your computer is infected. Call support immediately. This is a scam example; do not call.<p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "command-tutorial-1",
+    "template": "command-tutorial",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/command-tutorial-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/command-tutorial-1.html",
+    "html": "<!doctype html><html><head><title>Scenario command-tutorial-1</title></head><body><h1>Case 1</h1>Developer tutorial: to fix the error, run this command in terminal. This is documentation.<p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "command-tutorial-2",
+    "template": "command-tutorial",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/command-tutorial-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/command-tutorial-2.html",
+    "html": "<!doctype html><html><head><title>Scenario command-tutorial-2</title></head><body><h1>Case 2</h1>Developer tutorial: to fix the error, run this command in terminal. This is documentation.<p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "command-tutorial-3",
+    "template": "command-tutorial",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/command-tutorial-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/command-tutorial-3.html",
+    "html": "<!doctype html><html><head><title>Scenario command-tutorial-3</title></head><body><h1>Case 3</h1>Developer tutorial: to fix the error, run this command in terminal. This is documentation.<p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "command-tutorial-4",
+    "template": "command-tutorial",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/command-tutorial-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/command-tutorial-4.html",
+    "html": "<!doctype html><html><head><title>Scenario command-tutorial-4</title></head><body><h1>Case 4</h1>Developer tutorial: to fix the error, run this command in terminal. This is documentation.<p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "command-tutorial-5",
+    "template": "command-tutorial",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/command-tutorial-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/command-tutorial-5.html",
+    "html": "<!doctype html><html><head><title>Scenario command-tutorial-5</title></head><body><h1>Case 5</h1>Developer tutorial: to fix the error, run this command in terminal. This is documentation.<p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "legitimate-installer-1",
+    "template": "legitimate-installer",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/legitimate-installer-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/legitimate-installer-1.html",
+    "html": "<!doctype html><html><head><title>Scenario legitimate-installer-1</title></head><body><h1>Case 1</h1>Required security update for our legitimate application.<a href=\"/package.exe\">Download</a><p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "legitimate-installer-2",
+    "template": "legitimate-installer",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/legitimate-installer-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/legitimate-installer-2.html",
+    "html": "<!doctype html><html><head><title>Scenario legitimate-installer-2</title></head><body><h1>Case 2</h1>Required security update for our legitimate application.<a href=\"/package.exe\">Download</a><p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "legitimate-installer-3",
+    "template": "legitimate-installer",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/legitimate-installer-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/legitimate-installer-3.html",
+    "html": "<!doctype html><html><head><title>Scenario legitimate-installer-3</title></head><body><h1>Case 3</h1>Required security update for our legitimate application.<a href=\"/package.exe\">Download</a><p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "legitimate-installer-4",
+    "template": "legitimate-installer",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/legitimate-installer-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/legitimate-installer-4.html",
+    "html": "<!doctype html><html><head><title>Scenario legitimate-installer-4</title></head><body><h1>Case 4</h1>Required security update for our legitimate application.<a href=\"/package.exe\">Download</a><p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "legitimate-installer-5",
+    "template": "legitimate-installer",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/legitimate-installer-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/legitimate-installer-5.html",
+    "html": "<!doctype html><html><head><title>Scenario legitimate-installer-5</title></head><body><h1>Case 5</h1>Required security update for our legitimate application.<a href=\"/package.exe\">Download</a><p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "plain-support-1",
+    "template": "plain-support",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/plain-support-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/plain-support-1.html",
+    "html": "<!doctype html><html><head><title>Scenario plain-support-1</title></head><body><h1>Case 1</h1>Contact support for help with your subscription.<p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "plain-support-2",
+    "template": "plain-support",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/plain-support-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/plain-support-2.html",
+    "html": "<!doctype html><html><head><title>Scenario plain-support-2</title></head><body><h1>Case 2</h1>Contact support for help with your subscription.<p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "plain-support-3",
+    "template": "plain-support",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/plain-support-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/plain-support-3.html",
+    "html": "<!doctype html><html><head><title>Scenario plain-support-3</title></head><body><h1>Case 3</h1>Contact support for help with your subscription.<p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "plain-support-4",
+    "template": "plain-support",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/plain-support-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/plain-support-4.html",
+    "html": "<!doctype html><html><head><title>Scenario plain-support-4</title></head><body><h1>Case 4</h1>Contact support for help with your subscription.<p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "plain-support-5",
+    "template": "plain-support",
+    "group": "benign",
+    "expected": "BENIGN",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/plain-support-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/plain-support-5.html",
+    "html": "<!doctype html><html><head><title>Scenario plain-support-5</title></head><body><h1>Case 5</h1>Contact support for help with your subscription.<p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "credential-mail-1",
+    "template": "credential-mail",
+    "group": "credential",
+    "expected": "MALICIOUS",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/credential-mail-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/credential-mail-1.html",
+    "html": "<!doctype html><html><head><title>Scenario credential-mail-1</title></head><body><h1>Case 1</h1>Mailbox expired. Enter your password.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "credential-mail-2",
+    "template": "credential-mail",
+    "group": "credential",
+    "expected": "MALICIOUS",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/credential-mail-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/credential-mail-2.html",
+    "html": "<!doctype html><html><head><title>Scenario credential-mail-2</title></head><body><h1>Case 2</h1>Mailbox expired. Enter your password.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "credential-mail-3",
+    "template": "credential-mail",
+    "group": "credential",
+    "expected": "MALICIOUS",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/credential-mail-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/credential-mail-3.html",
+    "html": "<!doctype html><html><head><title>Scenario credential-mail-3</title></head><body><h1>Case 3</h1>Mailbox expired. Enter your password.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "credential-mail-4",
+    "template": "credential-mail",
+    "group": "credential",
+    "expected": "MALICIOUS",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/credential-mail-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/credential-mail-4.html",
+    "html": "<!doctype html><html><head><title>Scenario credential-mail-4</title></head><body><h1>Case 4</h1>Mailbox expired. Enter your password.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "credential-mail-5",
+    "template": "credential-mail",
+    "group": "credential",
+    "expected": "MALICIOUS",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/credential-mail-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/credential-mail-5.html",
+    "html": "<!doctype html><html><head><title>Scenario credential-mail-5</title></head><body><h1>Case 5</h1>Mailbox expired. Enter your password.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "credential-payroll-1",
+    "template": "credential-payroll",
+    "group": "credential",
+    "expected": "MALICIOUS",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/credential-payroll-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/credential-payroll-1.html",
+    "html": "<!doctype html><html><head><title>Scenario credential-payroll-1</title></head><body><h1>Case 1</h1>Payroll access verification.<form action=\"https://collector.aionguard.invalid/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "credential-payroll-2",
+    "template": "credential-payroll",
+    "group": "credential",
+    "expected": "MALICIOUS",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/credential-payroll-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/credential-payroll-2.html",
+    "html": "<!doctype html><html><head><title>Scenario credential-payroll-2</title></head><body><h1>Case 2</h1>Payroll access verification.<form action=\"https://collector.aionguard.invalid/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "credential-payroll-3",
+    "template": "credential-payroll",
+    "group": "credential",
+    "expected": "MALICIOUS",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/credential-payroll-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/credential-payroll-3.html",
+    "html": "<!doctype html><html><head><title>Scenario credential-payroll-3</title></head><body><h1>Case 3</h1>Payroll access verification.<form action=\"https://collector.aionguard.invalid/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "credential-payroll-4",
+    "template": "credential-payroll",
+    "group": "credential",
+    "expected": "MALICIOUS",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/credential-payroll-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/credential-payroll-4.html",
+    "html": "<!doctype html><html><head><title>Scenario credential-payroll-4</title></head><body><h1>Case 4</h1>Payroll access verification.<form action=\"https://collector.aionguard.invalid/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "credential-payroll-5",
+    "template": "credential-payroll",
+    "group": "credential",
+    "expected": "MALICIOUS",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/credential-payroll-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/credential-payroll-5.html",
+    "html": "<!doctype html><html><head><title>Scenario credential-payroll-5</title></head><body><h1>Case 5</h1>Payroll access verification.<form action=\"https://collector.aionguard.invalid/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "credential-shared-file-1",
+    "template": "credential-shared-file",
+    "group": "credential",
+    "expected": "MALICIOUS",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/credential-shared-file-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/credential-shared-file-1.html",
+    "html": "<!doctype html><html><head><title>Scenario credential-shared-file-1</title></head><body><h1>Case 1</h1>Sign in to view a confidential shared document.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "credential-shared-file-2",
+    "template": "credential-shared-file",
+    "group": "credential",
+    "expected": "MALICIOUS",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/credential-shared-file-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/credential-shared-file-2.html",
+    "html": "<!doctype html><html><head><title>Scenario credential-shared-file-2</title></head><body><h1>Case 2</h1>Sign in to view a confidential shared document.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "credential-shared-file-3",
+    "template": "credential-shared-file",
+    "group": "credential",
+    "expected": "MALICIOUS",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/credential-shared-file-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/credential-shared-file-3.html",
+    "html": "<!doctype html><html><head><title>Scenario credential-shared-file-3</title></head><body><h1>Case 3</h1>Sign in to view a confidential shared document.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "credential-shared-file-4",
+    "template": "credential-shared-file",
+    "group": "credential",
+    "expected": "MALICIOUS",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/credential-shared-file-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/credential-shared-file-4.html",
+    "html": "<!doctype html><html><head><title>Scenario credential-shared-file-4</title></head><body><h1>Case 4</h1>Sign in to view a confidential shared document.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "credential-shared-file-5",
+    "template": "credential-shared-file",
+    "group": "credential",
+    "expected": "MALICIOUS",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/credential-shared-file-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/credential-shared-file-5.html",
+    "html": "<!doctype html><html><head><title>Scenario credential-shared-file-5</title></head><body><h1>Case 5</h1>Sign in to view a confidential shared document.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "credential-text-only-1",
+    "template": "credential-text-only",
+    "group": "credential",
+    "expected": "MALICIOUS",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/credential-text-only-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/credential-text-only-1.html",
+    "html": "<!doctype html><html><head><title>Scenario credential-text-only-1</title></head><body><h1>Case 1</h1>Send your account password to the administrator to restore access.<p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "credential-text-only-2",
+    "template": "credential-text-only",
+    "group": "credential",
+    "expected": "MALICIOUS",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/credential-text-only-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/credential-text-only-2.html",
+    "html": "<!doctype html><html><head><title>Scenario credential-text-only-2</title></head><body><h1>Case 2</h1>Send your account password to the administrator to restore access.<p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "credential-text-only-3",
+    "template": "credential-text-only",
+    "group": "credential",
+    "expected": "MALICIOUS",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/credential-text-only-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/credential-text-only-3.html",
+    "html": "<!doctype html><html><head><title>Scenario credential-text-only-3</title></head><body><h1>Case 3</h1>Send your account password to the administrator to restore access.<p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "credential-text-only-4",
+    "template": "credential-text-only",
+    "group": "credential",
+    "expected": "MALICIOUS",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/credential-text-only-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/credential-text-only-4.html",
+    "html": "<!doctype html><html><head><title>Scenario credential-text-only-4</title></head><body><h1>Case 4</h1>Send your account password to the administrator to restore access.<p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "credential-text-only-5",
+    "template": "credential-text-only",
+    "group": "credential",
+    "expected": "MALICIOUS",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/credential-text-only-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/credential-text-only-5.html",
+    "html": "<!doctype html><html><head><title>Scenario credential-text-only-5</title></head><body><h1>Case 5</h1>Send your account password to the administrator to restore access.<p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "brand-mail-login-1",
+    "template": "brand-mail-login",
+    "group": "brand-mismatch",
+    "expected": "MALICIOUS",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/brand-mail-login-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/brand-mail-login-1.html",
+    "html": "<!doctype html><html><head><title>Scenario brand-mail-login-1</title></head><body><h1>Case 1</h1>ExampleMail official secure account center.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "brand-mail-login-2",
+    "template": "brand-mail-login",
+    "group": "brand-mismatch",
+    "expected": "MALICIOUS",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/brand-mail-login-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/brand-mail-login-2.html",
+    "html": "<!doctype html><html><head><title>Scenario brand-mail-login-2</title></head><body><h1>Case 2</h1>ExampleMail official secure account center.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "brand-mail-login-3",
+    "template": "brand-mail-login",
+    "group": "brand-mismatch",
+    "expected": "MALICIOUS",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/brand-mail-login-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/brand-mail-login-3.html",
+    "html": "<!doctype html><html><head><title>Scenario brand-mail-login-3</title></head><body><h1>Case 3</h1>ExampleMail official secure account center.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "brand-mail-login-4",
+    "template": "brand-mail-login",
+    "group": "brand-mismatch",
+    "expected": "MALICIOUS",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/brand-mail-login-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/brand-mail-login-4.html",
+    "html": "<!doctype html><html><head><title>Scenario brand-mail-login-4</title></head><body><h1>Case 4</h1>ExampleMail official secure account center.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "brand-mail-login-5",
+    "template": "brand-mail-login",
+    "group": "brand-mismatch",
+    "expected": "MALICIOUS",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/brand-mail-login-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/brand-mail-login-5.html",
+    "html": "<!doctype html><html><head><title>Scenario brand-mail-login-5</title></head><body><h1>Case 5</h1>ExampleMail official secure account center.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "brand-bank-login-1",
+    "template": "brand-bank-login",
+    "group": "brand-mismatch",
+    "expected": "MALICIOUS",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/brand-bank-login-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/brand-bank-login-1.html",
+    "html": "<!doctype html><html><head><title>Scenario brand-bank-login-1</title></head><body><h1>Case 1</h1>ExampleBank account verification.<form action=\"https://collector.aionguard.invalid/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "brand-bank-login-2",
+    "template": "brand-bank-login",
+    "group": "brand-mismatch",
+    "expected": "MALICIOUS",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/brand-bank-login-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/brand-bank-login-2.html",
+    "html": "<!doctype html><html><head><title>Scenario brand-bank-login-2</title></head><body><h1>Case 2</h1>ExampleBank account verification.<form action=\"https://collector.aionguard.invalid/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "brand-bank-login-3",
+    "template": "brand-bank-login",
+    "group": "brand-mismatch",
+    "expected": "MALICIOUS",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/brand-bank-login-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/brand-bank-login-3.html",
+    "html": "<!doctype html><html><head><title>Scenario brand-bank-login-3</title></head><body><h1>Case 3</h1>ExampleBank account verification.<form action=\"https://collector.aionguard.invalid/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "brand-bank-login-4",
+    "template": "brand-bank-login",
+    "group": "brand-mismatch",
+    "expected": "MALICIOUS",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/brand-bank-login-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/brand-bank-login-4.html",
+    "html": "<!doctype html><html><head><title>Scenario brand-bank-login-4</title></head><body><h1>Case 4</h1>ExampleBank account verification.<form action=\"https://collector.aionguard.invalid/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "brand-bank-login-5",
+    "template": "brand-bank-login",
+    "group": "brand-mismatch",
+    "expected": "MALICIOUS",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/brand-bank-login-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/brand-bank-login-5.html",
+    "html": "<!doctype html><html><head><title>Scenario brand-bank-login-5</title></head><body><h1>Case 5</h1>ExampleBank account verification.<form action=\"https://collector.aionguard.invalid/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "brand-mail-text-1",
+    "template": "brand-mail-text",
+    "group": "brand-mismatch",
+    "expected": "MALICIOUS",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/brand-mail-text-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/brand-mail-text-1.html",
+    "html": "<!doctype html><html><head><title>Scenario brand-mail-text-1</title></head><body><h1>Case 1</h1>ExampleMail official account recovery. Contact our agent with your recovery code.<p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "brand-mail-text-2",
+    "template": "brand-mail-text",
+    "group": "brand-mismatch",
+    "expected": "MALICIOUS",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/brand-mail-text-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/brand-mail-text-2.html",
+    "html": "<!doctype html><html><head><title>Scenario brand-mail-text-2</title></head><body><h1>Case 2</h1>ExampleMail official account recovery. Contact our agent with your recovery code.<p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "brand-mail-text-3",
+    "template": "brand-mail-text",
+    "group": "brand-mismatch",
+    "expected": "MALICIOUS",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/brand-mail-text-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/brand-mail-text-3.html",
+    "html": "<!doctype html><html><head><title>Scenario brand-mail-text-3</title></head><body><h1>Case 3</h1>ExampleMail official account recovery. Contact our agent with your recovery code.<p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "brand-mail-text-4",
+    "template": "brand-mail-text",
+    "group": "brand-mismatch",
+    "expected": "MALICIOUS",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/brand-mail-text-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/brand-mail-text-4.html",
+    "html": "<!doctype html><html><head><title>Scenario brand-mail-text-4</title></head><body><h1>Case 4</h1>ExampleMail official account recovery. Contact our agent with your recovery code.<p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "brand-mail-text-5",
+    "template": "brand-mail-text",
+    "group": "brand-mismatch",
+    "expected": "MALICIOUS",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/brand-mail-text-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/brand-mail-text-5.html",
+    "html": "<!doctype html><html><head><title>Scenario brand-mail-text-5</title></head><body><h1>Case 5</h1>ExampleMail official account recovery. Contact our agent with your recovery code.<p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "brand-bank-text-1",
+    "template": "brand-bank-text",
+    "group": "brand-mismatch",
+    "expected": "MALICIOUS",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/brand-bank-text-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/brand-bank-text-1.html",
+    "html": "<!doctype html><html><head><title>Scenario brand-bank-text-1</title></head><body><h1>Case 1</h1>ExampleBank secure verification. Transfer funds to the replacement account.<p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "brand-bank-text-2",
+    "template": "brand-bank-text",
+    "group": "brand-mismatch",
+    "expected": "MALICIOUS",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/brand-bank-text-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/brand-bank-text-2.html",
+    "html": "<!doctype html><html><head><title>Scenario brand-bank-text-2</title></head><body><h1>Case 2</h1>ExampleBank secure verification. Transfer funds to the replacement account.<p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "brand-bank-text-3",
+    "template": "brand-bank-text",
+    "group": "brand-mismatch",
+    "expected": "MALICIOUS",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/brand-bank-text-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/brand-bank-text-3.html",
+    "html": "<!doctype html><html><head><title>Scenario brand-bank-text-3</title></head><body><h1>Case 3</h1>ExampleBank secure verification. Transfer funds to the replacement account.<p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "brand-bank-text-4",
+    "template": "brand-bank-text",
+    "group": "brand-mismatch",
+    "expected": "MALICIOUS",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/brand-bank-text-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/brand-bank-text-4.html",
+    "html": "<!doctype html><html><head><title>Scenario brand-bank-text-4</title></head><body><h1>Case 4</h1>ExampleBank secure verification. Transfer funds to the replacement account.<p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "brand-bank-text-5",
+    "template": "brand-bank-text",
+    "group": "brand-mismatch",
+    "expected": "MALICIOUS",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/brand-bank-text-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/brand-bank-text-5.html",
+    "html": "<!doctype html><html><head><title>Scenario brand-bank-text-5</title></head><body><h1>Case 5</h1>ExampleBank secure verification. Transfer funds to the replacement account.<p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "redirect-login-1",
+    "template": "redirect-login",
+    "group": "redirect",
+    "expected": "MALICIOUS",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/redirect-login-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/redirect-login-1-destination.html",
+    "html": "<!doctype html><html><head><title>Scenario redirect-login-1</title></head><body><h1>Case 1</h1>Redirect destination: account verification.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "redirect-login-2",
+    "template": "redirect-login",
+    "group": "redirect",
+    "expected": "MALICIOUS",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/redirect-login-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/redirect-login-2-destination.html",
+    "html": "<!doctype html><html><head><title>Scenario redirect-login-2</title></head><body><h1>Case 2</h1>Redirect destination: account verification.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "redirect-login-3",
+    "template": "redirect-login",
+    "group": "redirect",
+    "expected": "MALICIOUS",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/redirect-login-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/redirect-login-3-destination.html",
+    "html": "<!doctype html><html><head><title>Scenario redirect-login-3</title></head><body><h1>Case 3</h1>Redirect destination: account verification.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "redirect-login-4",
+    "template": "redirect-login",
+    "group": "redirect",
+    "expected": "MALICIOUS",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/redirect-login-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/redirect-login-4-destination.html",
+    "html": "<!doctype html><html><head><title>Scenario redirect-login-4</title></head><body><h1>Case 4</h1>Redirect destination: account verification.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "redirect-login-5",
+    "template": "redirect-login",
+    "group": "redirect",
+    "expected": "MALICIOUS",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/redirect-login-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/redirect-login-5-destination.html",
+    "html": "<!doctype html><html><head><title>Scenario redirect-login-5</title></head><body><h1>Case 5</h1>Redirect destination: account verification.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "redirect-external-form-1",
+    "template": "redirect-external-form",
+    "group": "redirect",
+    "expected": "MALICIOUS",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/redirect-external-form-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/redirect-external-form-1-destination.html",
+    "html": "<!doctype html><html><head><title>Scenario redirect-external-form-1</title></head><body><h1>Case 1</h1>Redirect destination: shared file.<form action=\"https://collector.aionguard.invalid/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "redirect-external-form-2",
+    "template": "redirect-external-form",
+    "group": "redirect",
+    "expected": "MALICIOUS",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/redirect-external-form-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/redirect-external-form-2-destination.html",
+    "html": "<!doctype html><html><head><title>Scenario redirect-external-form-2</title></head><body><h1>Case 2</h1>Redirect destination: shared file.<form action=\"https://collector.aionguard.invalid/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "redirect-external-form-3",
+    "template": "redirect-external-form",
+    "group": "redirect",
+    "expected": "MALICIOUS",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/redirect-external-form-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/redirect-external-form-3-destination.html",
+    "html": "<!doctype html><html><head><title>Scenario redirect-external-form-3</title></head><body><h1>Case 3</h1>Redirect destination: shared file.<form action=\"https://collector.aionguard.invalid/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "redirect-external-form-4",
+    "template": "redirect-external-form",
+    "group": "redirect",
+    "expected": "MALICIOUS",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/redirect-external-form-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/redirect-external-form-4-destination.html",
+    "html": "<!doctype html><html><head><title>Scenario redirect-external-form-4</title></head><body><h1>Case 4</h1>Redirect destination: shared file.<form action=\"https://collector.aionguard.invalid/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "redirect-external-form-5",
+    "template": "redirect-external-form",
+    "group": "redirect",
+    "expected": "MALICIOUS",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/redirect-external-form-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/redirect-external-form-5-destination.html",
+    "html": "<!doctype html><html><head><title>Scenario redirect-external-form-5</title></head><body><h1>Case 5</h1>Redirect destination: shared file.<form action=\"https://collector.aionguard.invalid/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "redirect-text-1",
+    "template": "redirect-text",
+    "group": "redirect",
+    "expected": "MALICIOUS",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/redirect-text-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/redirect-text-1-destination.html",
+    "html": "<!doctype html><html><head><title>Scenario redirect-text-1</title></head><body><h1>Case 1</h1>Redirect destination: send your recovery code to our agent.<p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "redirect-text-2",
+    "template": "redirect-text",
+    "group": "redirect",
+    "expected": "MALICIOUS",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/redirect-text-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/redirect-text-2-destination.html",
+    "html": "<!doctype html><html><head><title>Scenario redirect-text-2</title></head><body><h1>Case 2</h1>Redirect destination: send your recovery code to our agent.<p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "redirect-text-3",
+    "template": "redirect-text",
+    "group": "redirect",
+    "expected": "MALICIOUS",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/redirect-text-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/redirect-text-3-destination.html",
+    "html": "<!doctype html><html><head><title>Scenario redirect-text-3</title></head><body><h1>Case 3</h1>Redirect destination: send your recovery code to our agent.<p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "redirect-text-4",
+    "template": "redirect-text",
+    "group": "redirect",
+    "expected": "MALICIOUS",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/redirect-text-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/redirect-text-4-destination.html",
+    "html": "<!doctype html><html><head><title>Scenario redirect-text-4</title></head><body><h1>Case 4</h1>Redirect destination: send your recovery code to our agent.<p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "redirect-text-5",
+    "template": "redirect-text",
+    "group": "redirect",
+    "expected": "MALICIOUS",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/redirect-text-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/redirect-text-5-destination.html",
+    "html": "<!doctype html><html><head><title>Scenario redirect-text-5</title></head><body><h1>Case 5</h1>Redirect destination: send your recovery code to our agent.<p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "redirect-payload-1",
+    "template": "redirect-payload",
+    "group": "redirect",
+    "expected": "MALICIOUS",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/redirect-payload-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/redirect-payload-1-destination.html",
+    "html": "<!doctype html><html><head><title>Scenario redirect-payload-1</title></head><body><h1>Case 1</h1>Redirect destination: download this file.<a href=\"/package.exe\">Download</a><p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "redirect-payload-2",
+    "template": "redirect-payload",
+    "group": "redirect",
+    "expected": "MALICIOUS",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/redirect-payload-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/redirect-payload-2-destination.html",
+    "html": "<!doctype html><html><head><title>Scenario redirect-payload-2</title></head><body><h1>Case 2</h1>Redirect destination: download this file.<a href=\"/package.exe\">Download</a><p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "redirect-payload-3",
+    "template": "redirect-payload",
+    "group": "redirect",
+    "expected": "MALICIOUS",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/redirect-payload-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/redirect-payload-3-destination.html",
+    "html": "<!doctype html><html><head><title>Scenario redirect-payload-3</title></head><body><h1>Case 3</h1>Redirect destination: download this file.<a href=\"/package.exe\">Download</a><p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "redirect-payload-4",
+    "template": "redirect-payload",
+    "group": "redirect",
+    "expected": "MALICIOUS",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/redirect-payload-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/redirect-payload-4-destination.html",
+    "html": "<!doctype html><html><head><title>Scenario redirect-payload-4</title></head><body><h1>Case 4</h1>Redirect destination: download this file.<a href=\"/package.exe\">Download</a><p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "redirect-payload-5",
+    "template": "redirect-payload",
+    "group": "redirect",
+    "expected": "MALICIOUS",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/redirect-payload-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/redirect-payload-5-destination.html",
+    "html": "<!doctype html><html><head><title>Scenario redirect-payload-5</title></head><body><h1>Case 5</h1>Redirect destination: download this file.<a href=\"/package.exe\">Download</a><p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "download-update-1",
+    "template": "download-update",
+    "group": "download",
+    "expected": "MALICIOUS",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/download-update-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/download-update-1.html",
+    "html": "<!doctype html><html><head><title>Scenario download-update-1</title></head><body><h1>Case 1</h1>Urgent security update required.<a href=\"/package.exe\">Download</a><p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "download-update-2",
+    "template": "download-update",
+    "group": "download",
+    "expected": "MALICIOUS",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/download-update-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/download-update-2.html",
+    "html": "<!doctype html><html><head><title>Scenario download-update-2</title></head><body><h1>Case 2</h1>Urgent security update required.<a href=\"/package.exe\">Download</a><p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "download-update-3",
+    "template": "download-update",
+    "group": "download",
+    "expected": "MALICIOUS",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/download-update-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/download-update-3.html",
+    "html": "<!doctype html><html><head><title>Scenario download-update-3</title></head><body><h1>Case 3</h1>Urgent security update required.<a href=\"/package.exe\">Download</a><p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "download-update-4",
+    "template": "download-update",
+    "group": "download",
+    "expected": "MALICIOUS",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/download-update-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/download-update-4.html",
+    "html": "<!doctype html><html><head><title>Scenario download-update-4</title></head><body><h1>Case 4</h1>Urgent security update required.<a href=\"/package.exe\">Download</a><p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "download-update-5",
+    "template": "download-update",
+    "group": "download",
+    "expected": "MALICIOUS",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/download-update-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/download-update-5.html",
+    "html": "<!doctype html><html><head><title>Scenario download-update-5</title></head><body><h1>Case 5</h1>Urgent security update required.<a href=\"/package.exe\">Download</a><p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "download-codec-1",
+    "template": "download-codec",
+    "group": "download",
+    "expected": "MALICIOUS",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/download-codec-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/download-codec-1.html",
+    "html": "<!doctype html><html><head><title>Scenario download-codec-1</title></head><body><h1>Case 1</h1>Install the codec to watch this video.<a href=\"/codec.msi\">Install</a><p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "download-codec-2",
+    "template": "download-codec",
+    "group": "download",
+    "expected": "MALICIOUS",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/download-codec-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/download-codec-2.html",
+    "html": "<!doctype html><html><head><title>Scenario download-codec-2</title></head><body><h1>Case 2</h1>Install the codec to watch this video.<a href=\"/codec.msi\">Install</a><p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "download-codec-3",
+    "template": "download-codec",
+    "group": "download",
+    "expected": "MALICIOUS",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/download-codec-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/download-codec-3.html",
+    "html": "<!doctype html><html><head><title>Scenario download-codec-3</title></head><body><h1>Case 3</h1>Install the codec to watch this video.<a href=\"/codec.msi\">Install</a><p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "download-codec-4",
+    "template": "download-codec",
+    "group": "download",
+    "expected": "MALICIOUS",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/download-codec-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/download-codec-4.html",
+    "html": "<!doctype html><html><head><title>Scenario download-codec-4</title></head><body><h1>Case 4</h1>Install the codec to watch this video.<a href=\"/codec.msi\">Install</a><p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "download-codec-5",
+    "template": "download-codec",
+    "group": "download",
+    "expected": "MALICIOUS",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/download-codec-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/download-codec-5.html",
+    "html": "<!doctype html><html><head><title>Scenario download-codec-5</title></head><body><h1>Case 5</h1>Install the codec to watch this video.<a href=\"/codec.msi\">Install</a><p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "download-plain-1",
+    "template": "download-plain",
+    "group": "download",
+    "expected": "MALICIOUS",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/download-plain-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/download-plain-1.html",
+    "html": "<!doctype html><html><head><title>Scenario download-plain-1</title></head><body><h1>Case 1</h1>Your shared invoice.<a href=\"/invoice.exe\">View file</a><p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "download-plain-2",
+    "template": "download-plain",
+    "group": "download",
+    "expected": "MALICIOUS",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/download-plain-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/download-plain-2.html",
+    "html": "<!doctype html><html><head><title>Scenario download-plain-2</title></head><body><h1>Case 2</h1>Your shared invoice.<a href=\"/invoice.exe\">View file</a><p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "download-plain-3",
+    "template": "download-plain",
+    "group": "download",
+    "expected": "MALICIOUS",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/download-plain-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/download-plain-3.html",
+    "html": "<!doctype html><html><head><title>Scenario download-plain-3</title></head><body><h1>Case 3</h1>Your shared invoice.<a href=\"/invoice.exe\">View file</a><p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "download-plain-4",
+    "template": "download-plain",
+    "group": "download",
+    "expected": "MALICIOUS",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/download-plain-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/download-plain-4.html",
+    "html": "<!doctype html><html><head><title>Scenario download-plain-4</title></head><body><h1>Case 4</h1>Your shared invoice.<a href=\"/invoice.exe\">View file</a><p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "download-plain-5",
+    "template": "download-plain",
+    "group": "download",
+    "expected": "MALICIOUS",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/download-plain-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/download-plain-5.html",
+    "html": "<!doctype html><html><head><title>Scenario download-plain-5</title></head><body><h1>Case 5</h1>Your shared invoice.<a href=\"/invoice.exe\">View file</a><p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "download-extensionless-1",
+    "template": "download-extensionless",
+    "group": "download",
+    "expected": "MALICIOUS",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/download-extensionless-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/download-extensionless-1.html",
+    "html": "<!doctype html><html><head><title>Scenario download-extensionless-1</title></head><body><h1>Case 1</h1>Critical update required.<a href=\"/download\">Get update</a><p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "download-extensionless-2",
+    "template": "download-extensionless",
+    "group": "download",
+    "expected": "MALICIOUS",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/download-extensionless-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/download-extensionless-2.html",
+    "html": "<!doctype html><html><head><title>Scenario download-extensionless-2</title></head><body><h1>Case 2</h1>Critical update required.<a href=\"/download\">Get update</a><p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "download-extensionless-3",
+    "template": "download-extensionless",
+    "group": "download",
+    "expected": "MALICIOUS",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/download-extensionless-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/download-extensionless-3.html",
+    "html": "<!doctype html><html><head><title>Scenario download-extensionless-3</title></head><body><h1>Case 3</h1>Critical update required.<a href=\"/download\">Get update</a><p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "download-extensionless-4",
+    "template": "download-extensionless",
+    "group": "download",
+    "expected": "MALICIOUS",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/download-extensionless-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/download-extensionless-4.html",
+    "html": "<!doctype html><html><head><title>Scenario download-extensionless-4</title></head><body><h1>Case 4</h1>Critical update required.<a href=\"/download\">Get update</a><p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "download-extensionless-5",
+    "template": "download-extensionless",
+    "group": "download",
+    "expected": "MALICIOUS",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/download-extensionless-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/download-extensionless-5.html",
+    "html": "<!doctype html><html><head><title>Scenario download-extensionless-5</title></head><body><h1>Case 5</h1>Critical update required.<a href=\"/download\">Get update</a><p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "mixed-clickfix-1",
+    "template": "mixed-clickfix",
+    "group": "mixed",
+    "expected": "MALICIOUS",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/mixed-clickfix-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/mixed-clickfix-1.html",
+    "html": "<!doctype html><html><head><title>Scenario mixed-clickfix-1</title></head><body><h1>Case 1</h1>Verify you are human: paste this command into terminal.<p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "mixed-clickfix-2",
+    "template": "mixed-clickfix",
+    "group": "mixed",
+    "expected": "MALICIOUS",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/mixed-clickfix-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/mixed-clickfix-2.html",
+    "html": "<!doctype html><html><head><title>Scenario mixed-clickfix-2</title></head><body><h1>Case 2</h1>Verify you are human: paste this command into terminal.<p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "mixed-clickfix-3",
+    "template": "mixed-clickfix",
+    "group": "mixed",
+    "expected": "MALICIOUS",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/mixed-clickfix-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/mixed-clickfix-3.html",
+    "html": "<!doctype html><html><head><title>Scenario mixed-clickfix-3</title></head><body><h1>Case 3</h1>Verify you are human: paste this command into terminal.<p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "mixed-clickfix-4",
+    "template": "mixed-clickfix",
+    "group": "mixed",
+    "expected": "MALICIOUS",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/mixed-clickfix-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/mixed-clickfix-4.html",
+    "html": "<!doctype html><html><head><title>Scenario mixed-clickfix-4</title></head><body><h1>Case 4</h1>Verify you are human: paste this command into terminal.<p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "mixed-clickfix-5",
+    "template": "mixed-clickfix",
+    "group": "mixed",
+    "expected": "MALICIOUS",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/mixed-clickfix-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/mixed-clickfix-5.html",
+    "html": "<!doctype html><html><head><title>Scenario mixed-clickfix-5</title></head><body><h1>Case 5</h1>Verify you are human: paste this command into terminal.<p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "mixed-support-1",
+    "template": "mixed-support",
+    "group": "mixed",
+    "expected": "MALICIOUS",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/mixed-support-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/mixed-support-1.html",
+    "html": "<!doctype html><html><head><title>Scenario mixed-support-1</title></head><body><h1>Case 1</h1>Your device is locked. Call support immediately.<p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "mixed-support-2",
+    "template": "mixed-support",
+    "group": "mixed",
+    "expected": "MALICIOUS",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/mixed-support-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/mixed-support-2.html",
+    "html": "<!doctype html><html><head><title>Scenario mixed-support-2</title></head><body><h1>Case 2</h1>Your device is locked. Call support immediately.<p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "mixed-support-3",
+    "template": "mixed-support",
+    "group": "mixed",
+    "expected": "MALICIOUS",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/mixed-support-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/mixed-support-3.html",
+    "html": "<!doctype html><html><head><title>Scenario mixed-support-3</title></head><body><h1>Case 3</h1>Your device is locked. Call support immediately.<p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "mixed-support-4",
+    "template": "mixed-support",
+    "group": "mixed",
+    "expected": "MALICIOUS",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/mixed-support-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/mixed-support-4.html",
+    "html": "<!doctype html><html><head><title>Scenario mixed-support-4</title></head><body><h1>Case 4</h1>Your device is locked. Call support immediately.<p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "mixed-support-5",
+    "template": "mixed-support",
+    "group": "mixed",
+    "expected": "MALICIOUS",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/mixed-support-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/mixed-support-5.html",
+    "html": "<!doctype html><html><head><title>Scenario mixed-support-5</title></head><body><h1>Case 5</h1>Your device is locked. Call support immediately.<p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "ambiguous-login-1",
+    "template": "ambiguous-login",
+    "group": "mixed",
+    "expected": "AMBIGUOUS",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/ambiguous-login-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/ambiguous-login-1.html",
+    "html": "<!doctype html><html><head><title>Scenario ambiguous-login-1</title></head><body><h1>Case 1</h1>Unknown community login with insufficient ownership evidence.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "ambiguous-login-2",
+    "template": "ambiguous-login",
+    "group": "mixed",
+    "expected": "AMBIGUOUS",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/ambiguous-login-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/ambiguous-login-2.html",
+    "html": "<!doctype html><html><head><title>Scenario ambiguous-login-2</title></head><body><h1>Case 2</h1>Unknown community login with insufficient ownership evidence.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "ambiguous-login-3",
+    "template": "ambiguous-login",
+    "group": "mixed",
+    "expected": "AMBIGUOUS",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/ambiguous-login-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/ambiguous-login-3.html",
+    "html": "<!doctype html><html><head><title>Scenario ambiguous-login-3</title></head><body><h1>Case 3</h1>Unknown community login with insufficient ownership evidence.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "ambiguous-login-4",
+    "template": "ambiguous-login",
+    "group": "mixed",
+    "expected": "AMBIGUOUS",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/ambiguous-login-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/ambiguous-login-4.html",
+    "html": "<!doctype html><html><head><title>Scenario ambiguous-login-4</title></head><body><h1>Case 4</h1>Unknown community login with insufficient ownership evidence.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "ambiguous-login-5",
+    "template": "ambiguous-login",
+    "group": "mixed",
+    "expected": "AMBIGUOUS",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/ambiguous-login-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/ambiguous-login-5.html",
+    "html": "<!doctype html><html><head><title>Scenario ambiguous-login-5</title></head><body><h1>Case 5</h1>Unknown community login with insufficient ownership evidence.<form action=\"/session\"><input type=\"password\"><button>Sign in</button></form><p>Reference 104; locale en; sample 5.</p></body></html>"
+  },
+  {
+    "id": "ambiguous-update-1",
+    "template": "ambiguous-update",
+    "group": "mixed",
+    "expected": "AMBIGUOUS",
+    "variant": 1,
+    "url": "https://owned.aionguard.invalid/ambiguous-update-1.html",
+    "finalUrl": "https://owned.aionguard.invalid/ambiguous-update-1.html",
+    "html": "<!doctype html><html><head><title>Scenario ambiguous-update-1</title></head><body><h1>Case 1</h1>Required application update; publisher ownership is unknown.<a href=\"/package.exe\">Download</a><p>Reference 100; locale en; sample 1.</p></body></html>"
+  },
+  {
+    "id": "ambiguous-update-2",
+    "template": "ambiguous-update",
+    "group": "mixed",
+    "expected": "AMBIGUOUS",
+    "variant": 2,
+    "url": "https://owned.aionguard.invalid/ambiguous-update-2.html",
+    "finalUrl": "https://owned.aionguard.invalid/ambiguous-update-2.html",
+    "html": "<!doctype html><html><head><title>Scenario ambiguous-update-2</title></head><body><h1>Case 2</h1>Required application update; publisher ownership is unknown.<a href=\"/package.exe\">Download</a><p>Reference 101; locale en; sample 2.</p></body></html>"
+  },
+  {
+    "id": "ambiguous-update-3",
+    "template": "ambiguous-update",
+    "group": "mixed",
+    "expected": "AMBIGUOUS",
+    "variant": 3,
+    "url": "https://owned.aionguard.invalid/ambiguous-update-3.html",
+    "finalUrl": "https://owned.aionguard.invalid/ambiguous-update-3.html",
+    "html": "<!doctype html><html><head><title>Scenario ambiguous-update-3</title></head><body><h1>Case 3</h1>Required application update; publisher ownership is unknown.<a href=\"/package.exe\">Download</a><p>Reference 102; locale en; sample 3.</p></body></html>"
+  },
+  {
+    "id": "ambiguous-update-4",
+    "template": "ambiguous-update",
+    "group": "mixed",
+    "expected": "AMBIGUOUS",
+    "variant": 4,
+    "url": "https://owned.aionguard.invalid/ambiguous-update-4.html",
+    "finalUrl": "https://owned.aionguard.invalid/ambiguous-update-4.html",
+    "html": "<!doctype html><html><head><title>Scenario ambiguous-update-4</title></head><body><h1>Case 4</h1>Required application update; publisher ownership is unknown.<a href=\"/package.exe\">Download</a><p>Reference 103; locale en; sample 4.</p></body></html>"
+  },
+  {
+    "id": "ambiguous-update-5",
+    "template": "ambiguous-update",
+    "group": "mixed",
+    "expected": "AMBIGUOUS",
+    "variant": 5,
+    "url": "https://owned.aionguard.invalid/ambiguous-update-5.html",
+    "finalUrl": "https://owned.aionguard.invalid/ambiguous-update-5.html",
+    "html": "<!doctype html><html><head><title>Scenario ambiguous-update-5</title></head><body><h1>Case 5</h1>Required application update; publisher ownership is unknown.<a href=\"/package.exe\">Download</a><p>Reference 104; locale en; sample 5.</p></body></html>"
+  }
+]

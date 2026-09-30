@@ -64,6 +64,9 @@ The first browser setup in each fresh sandbox may take up to a few minutes. Only
 
 ## What this submission proves
 
+**Latest benchmark finding:** 50 inspections and 150 controlled cases completed, but a later full-inventory audit contradicted immediate cleanup receipts. Additional termination and reconciliation cleared the listed resources. Per-run cleanup assurance remains unverified; see the [benchmark evidence and limitations](docs/benchmark.md). The current detector also showed substantial misses and false positives in its authored challenge corpus.
+
+
 The September 29 candidate has live Solari inspection evidence against the owned AionPhish demo: page observation, screenshot, a phishing heuristic finding and confirmed resource cleanup. See [the submission record](docs/solari-submission.md) for exact checks, failures and remaining limits.
 
 The bare-bones UI initiates direct remote inspection. It does **not** prove Safari interception or suppression of local requests. It accepts a fixed administrator-owned URL, not arbitrary public URLs. Network restrictions are browser routing rules; no Solari infrastructure egress firewall has been qualified. Use harmless owned fixtures only.
@@ -71,6 +74,8 @@ The bare-bones UI initiates direct remote inspection. It does **not** prove Safa
 The default detector stops after classification. It does not invoke Astra or execute synthetic organizational changes. Astra incident response, IT notifications, Tripwire, continuity, general browsing protection and production-scale operation are outside this submission.
 
 ## Checks and evidence
+
+[Benchmark protocol and raw-data harnesses](docs/benchmark.md) separate cold backend latency from controlled detection coverage.
 
 ```sh
 npm run check

@@ -107,11 +107,18 @@ export function pageFacts() {
 }
 
 export async function main() {
+  const startedAt = new Date().toISOString();
+  const origin = performance.now();
+  const events = { workerStarted: 0 };
+  const mark = (name) => {
+    events[name] = performance.now() - origin;
+  };
   const request = JSON.parse(await readFile('/vercel/sandbox/aionguard-request.json', 'utf8'));
   const expectedPath = new URL(request.url).pathname.replace(/[^/]*$/, '');
   if (request.requestPath !== expectedPath) throw new Error('INVALID_REQUEST_SCOPE');
   const { chromium } = await import('/vercel/sandbox/node_modules/playwright/index.mjs');
   const browser = await chromium.launch({ headless: true, timeout: request.navigationTimeoutMs });
+  mark('browserReady');
   let context;
   try {
     context = await browser.newContext({
@@ -155,10 +162,12 @@ export async function main() {
     });
     page.setDefaultTimeout(request.navigationTimeoutMs);
     try {
+      mark('navigationStarted');
       const response = await page.goto(request.url, {
         waitUntil: 'domcontentloaded',
         timeout: request.navigationTimeoutMs,
       });
+      mark('pageLoaded');
       if (deniedNavigation) throw new Error('NAVIGATION_DENIED');
       if (!response || !response.ok()) throw new Error('INVALID_EVIDENCE');
       const finalUrl = page.url();
@@ -166,12 +175,14 @@ export async function main() {
         throw new Error('NAVIGATION_DENIED');
       const observedRevision = documentRevision;
       const facts = await page.evaluate(pageFacts);
+      mark('factsCollected');
       const png = await page.screenshot({
         type: 'png',
         fullPage: false,
         animations: 'disabled',
         timeout: request.navigationTimeoutMs,
       });
+      mark('screenshotCollected');
       if (
         png.length > 2_500_000 ||
         finalUrl.length > 2048 ||
@@ -183,6 +194,7 @@ export async function main() {
       await writeFile(
         '/vercel/sandbox/aionguard-result.json',
         JSON.stringify({
+          ...(request.benchmarkTiming === true ? { benchmarkTiming: { startedAt, events } } : {}),
           observation: { ...facts, finalUrl, redirects, observedAt: new Date().toISOString() },
           pngBase64: png.toString('base64'),
         }),

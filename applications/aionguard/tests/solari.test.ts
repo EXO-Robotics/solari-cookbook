@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   SolariInspector,
   solariConfigFromEnv,
+  waitForInventoryAbsence,
   type SolariProvider,
 } from '../src/server/isolation/solari.ts';
 import { IsolationError, type InspectionVm } from '../src/server/isolation/provider.ts';
@@ -76,6 +77,58 @@ describe('Solari inspector lifecycle', () => {
     await inspector.inspect('acme-login');
     expect(f.events.filter((x) => x === 'create')).toHaveLength(2);
   });
+  it('captures measurement order without exposing capabilities or breaking cleanup on observer errors', async () => {
+    const events: string[] = [];
+    const f = fake();
+    const result = await new SolariInspector(config, f.provider, (event) => {
+      events.push(event);
+      if (event === 'evidence_received') throw new Error('observer failed');
+    }).inspect('acme-login');
+    expect(result.execution).toBe('SUCCEEDED');
+    expect(result.cleanup.state).toBe('CONFIRMED');
+    expect(events).toEqual([
+      'inspection_started',
+      'provision_started',
+      'provision_complete',
+      'setup_started',
+      'setup_complete',
+      'collection_started',
+      'evidence_received',
+      'evidence_validated',
+      'cleanup_started',
+      'cleanup_complete',
+      'inspection_returned',
+    ]);
+    expect(JSON.stringify(events)).not.toContain(rawId);
+    const request = f.files.find((file) => file.path.endsWith('request.json'))!;
+    expect(JSON.parse(request.content).benchmarkTiming).toBe(true);
+  });
+  it('rejects impossible guest timing and still confirms cleanup', async () => {
+    const f = fake({
+      async readResult() {
+        return Buffer.from(
+          JSON.stringify({
+            ...payload(),
+            benchmarkTiming: {
+              startedAt: new Date().toISOString(),
+              events: {
+                workerStarted: 0,
+                browserReady: 100,
+                navigationStarted: 200,
+                pageLoaded: 150,
+                factsCollected: 300,
+                screenshotCollected: 400,
+              },
+            },
+          }),
+        );
+      },
+    });
+    const result = await new SolariInspector(config, f.provider).inspect('acme-login');
+    expect(result.execution).toBe('UNAVAILABLE');
+    expect(result.failure).toBe('INVALID_EVIDENCE');
+    expect(result.cleanup.state).toBe('CONFIRMED');
+  });
   it('denies arbitrary targets and missing credentials without creation', async () => {
     const f = fake();
     expect(
@@ -145,5 +198,38 @@ describe('Solari inspector lifecycle', () => {
     expect(
       solariConfigFromEnv({ ...env, AIONGUARD_FIXTURE_ORIGIN: 'https://other.example' }),
     ).toBeNull();
+  });
+});
+
+describe('Solari inventory convergence', () => {
+  it('waits for delayed removal without accepting a nonempty or paginated inventory', async () => {
+    const states = [{ sandboxes: [{}] }, { sandboxes: [], nextCursor: 'more' }, { sandboxes: [] }];
+    let calls = 0;
+    const absent = await waitForInventoryAbsence(
+      async () => states[calls++]!,
+      new AbortController().signal,
+      async () => {},
+    );
+    expect(absent).toBe(true);
+    expect(calls).toBe(3);
+  });
+  it('keeps unresolved resources bounded and obeys cancellation', async () => {
+    let calls = 0;
+    expect(
+      await waitForInventoryAbsence(
+        async () => {
+          calls++;
+          return { sandboxes: [{}] };
+        },
+        new AbortController().signal,
+        async () => {},
+      ),
+    ).toBe(false);
+    expect(calls).toBe(10);
+    const controller = new AbortController();
+    controller.abort();
+    await expect(
+      waitForInventoryAbsence(async () => ({ sandboxes: [] }), controller.signal),
+    ).rejects.toThrow();
   });
 });

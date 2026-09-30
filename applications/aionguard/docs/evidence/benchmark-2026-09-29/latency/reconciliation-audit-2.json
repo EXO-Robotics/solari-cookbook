@@ -1,0 +1,102 @@
+{
+  "startedAt": "2026-09-30T02:03:33.965Z",
+  "scope": "Only identities matched to 50-run benchmark or exact corpus tag",
+  "rows": [
+    {
+      "idHash": "1ba8f4e438b35c140e6d89db7e74df1202260228693b84bb840cbd8f75077718",
+      "metadata": {
+        "application": "aionguard",
+        "inspection": "aionguard-f4e33cea-49f0-4fb9-bcf2-085865df5f62"
+      },
+      "state": "running",
+      "expiresAt": "2026-09-30T02:01:32.575Z",
+      "getState": "running",
+      "combinedFilterCount": 0,
+      "inspectionFilterCount": 0,
+      "killAcknowledged": true
+    },
+    {
+      "idHash": "01dabb54505211fce1ca07e8eab89ac2661130c4d96f9a50937dceb93cab0aa6",
+      "metadata": {
+        "application": "aionguard",
+        "inspection": "aionguard-67cd0171-b14b-413b-aa10-1769447f832b"
+      },
+      "state": "running",
+      "expiresAt": "2026-09-30T02:02:10.152Z",
+      "getState": "UNAVAILABLE_HTTP_404",
+      "combinedFilterCount": 1,
+      "inspectionFilterCount": 0,
+      "killAcknowledged": true
+    },
+    {
+      "idHash": "ccc361dc9d46b0acc8b87ae563d86b18c4f0b1f719315b2fe145c520c1e40e67",
+      "metadata": {
+        "application": "aionguard",
+        "inspection": "aionguard-9b855764-c761-4430-b7bd-597106881a76"
+      },
+      "state": "running",
+      "expiresAt": "2026-09-30T02:03:27.130Z",
+      "getState": "running",
+      "combinedFilterCount": 1,
+      "inspectionFilterCount": 0,
+      "killAcknowledged": true
+    },
+    {
+      "idHash": "a5ded4211bf791a9fe8ddcbffd06d51ccdd6e54e25ba218416634da649d1bade",
+      "metadata": {
+        "application": "aionguard-corpus",
+        "inspection": "aionguard-corpus-7c2e5975-fef1-4825-9837-3896490c94dc"
+      },
+      "state": "running",
+      "expiresAt": "2026-09-30T02:09:41.137Z",
+      "getState": "running",
+      "combinedFilterCount": 0,
+      "inspectionFilterCount": 0,
+      "killAcknowledged": true
+    }
+  ],
+  "snapshots": [
+    {
+      "checkedAt": "2026-09-30T02:03:43.906Z",
+      "remaining": []
+    },
+    {
+      "checkedAt": "2026-09-30T02:03:45.024Z",
+      "remaining": []
+    },
+    {
+      "checkedAt": "2026-09-30T02:03:46.211Z",
+      "remaining": []
+    },
+    {
+      "checkedAt": "2026-09-30T02:03:47.367Z",
+      "remaining": []
+    },
+    {
+      "checkedAt": "2026-09-30T02:03:48.486Z",
+      "remaining": []
+    },
+    {
+      "checkedAt": "2026-09-30T02:03:49.601Z",
+      "remaining": []
+    },
+    {
+      "checkedAt": "2026-09-30T02:03:50.723Z",
+      "remaining": []
+    },
+    {
+      "checkedAt": "2026-09-30T02:03:51.834Z",
+      "remaining": []
+    },
+    {
+      "checkedAt": "2026-09-30T02:03:53.025Z",
+      "remaining": []
+    },
+    {
+      "checkedAt": "2026-09-30T02:03:54.179Z",
+      "remaining": []
+    }
+  ],
+  "finishedAt": "2026-09-30T02:03:55.181Z",
+  "remainingCount": 0
+}

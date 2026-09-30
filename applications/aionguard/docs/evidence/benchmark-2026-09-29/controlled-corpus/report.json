@@ -1,0 +1,4821 @@
+{
+  "schemaVersion": 1,
+  "evidenceScope": "150 controlled authored scenarios from 30 templates with five correlated surface variants each; not representative web accuracy, held-out validation, or link-release performance.",
+  "provider": "SOLARI_SANDBOX",
+  "inspectionTag": "aionguard-corpus-7c2e5975-fef1-4825-9837-3896490c94dc",
+  "sandboxCount": 1,
+  "startedAt": "2026-09-30T01:58:53.907Z",
+  "returnedAt": "2026-09-30T01:59:41.969Z",
+  "cleanup": "CONFIRMED",
+  "failure": null,
+  "completed": true,
+  "liveWebsiteCoverage": false,
+  "freshSandboxPerCase": false,
+  "pageAuthoredScriptsExecuted": false,
+  "casePageNetworkRequestsAllowed": false,
+  "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR",
+  "classificationPolicy": "Any heuristic finding is FLAGGED; no finding is UNDETERMINED, never safe or ALLOW.",
+  "isolationScope": "Browser route fulfillment blocks external case-page requests; this does not prove provider egress isolation or host protection. Setup downloads browser packages.",
+  "timingScope": "Case extraction timestamps use one shared sandbox and browser, fresh context per case; these are not nominal click-path latency measurements.",
+  "attemptedCount": 150,
+  "attemptedCountPolicy": "Null means extraction artifact unavailable; zero attempts cannot be inferred from a provider failure.",
+  "unfinishedCount": 0,
+  "hashes": {
+    "benchmarkSource": "c53cd0f33c8217b2788f2c5349d77449c93121caefe239eb0905a11102d13b40",
+    "worker": "baf52d6b2f501b50ab2d377ea92e807e475e05c787f1762bb6210451ef08f8d5",
+    "inspector": "eb2d7a08e7f17b9d0b81de2512e7042f1c79a15981c3266b5d8f08d2d698a2dd",
+    "detector": "e2e3f868fc26e0bb6457bb8e0cf2442423ddbdee6cf5b8efea2404098df1d5aa",
+    "harness": "00c178770c33d39d2985e4719cd612922192c04e808274e1a44fb57bfad9c83e",
+    "corpusSource": "8062357f4d555f78740db8a4baf7364044d5f07bbabaf23e7576c6839c892229",
+    "manifest": "c6e2954f9647b0434b30ef155e9df595fcafaafa5c00b158e683ca59bf70d5d3",
+    "fixtures": {
+      "news-1": "caaabee6d3198906e9a47adf8a8db6c3752a1ae3796679991e1aed6f64a29e8b",
+      "news-2": "87f93ac1fd0915d6a2d41d59172b305d138dea677a5bca1b2149a124cdb816a5",
+      "news-3": "f67ce55bca685c6838f16030fed32d33234dd09addb2347e5fdc794245b24251",
+      "news-4": "fa9521b84f4f1149904c9ba73fba778031f2606c8020b0b2137301abb1390d27",
+      "news-5": "46695f89e72a9c62344f4737278b8c126f437636ec5840e84f8da0a30fb96ec4",
+      "docs-1": "ae539324f500ffaf958b947e88dffbc8590b85c00633d19f4f3bdec13fe14fc7",
+      "docs-2": "c7e655aa283012ee813b0640da9fb4d00a723b68372c5f77a8c77ea15063554a",
+      "docs-3": "b7feba606ba86b05ca71955b153790c93afd40502f7ef688e815cb99c6664cf9",
+      "docs-4": "dd57e2093093dc68582f80915beceb26bae9b20d92bc315cbb7d83f836371a4e",
+      "docs-5": "c24e08be0afd9f4df8541914cd58724a6698175740676f84c008c75c8e6a67a2",
+      "store-1": "c82d470f28f45757f4698c18a4ad368afb9532272884ec0ec0fff4a574d0b1cb",
+      "store-2": "f4eb3e6a4e6e11e3470e0908f9cec136db9a8318cb8eac79b7886a4e9489dc1a",
+      "store-3": "e92ffeac3b110a21025702964b5724edac3e5f4e72eeacb26dfe60006046fb25",
+      "store-4": "2be578936a24f861a0a8e719e716848c6e056b723c19b4ee29d3dfc5792f2a74",
+      "store-5": "de282c6bcffdde75dc7c9150ed2f972b75600082f713dd439e95668bbf9f8632",
+      "trusted-login-1": "5afd3658c8f240dc4d7f634222829d0820080a0ce6ed1df626c08f217aede99d",
+      "trusted-login-2": "9a3d2d8815093c4e7ed935626259f3c4cb0885729a27c86fb0cab5c03bfd71d0",
+      "trusted-login-3": "a14a462a5097d1341a186e810cc192aeaac18b5f8eccca8e9fc7ff0d8057fc49",
+      "trusted-login-4": "52fdc0ddd08c2e320a2b13e8c7eacb21aee5cf5e2eedf8eed240108b77f75d1e",
+      "trusted-login-5": "ac620e830330b8f564435ff8f7e6473867b7852d79d843838323ecd08bd3cf89",
+      "unlisted-login-1": "038e159c00f355265dad794cc6c95d1736890dbc1dc6b3c92e69be3ffa07f6a3",
+      "unlisted-login-2": "b10ce7b5a4a99f0c3f64e55322bb045bf3a86ca70d40588101349d2f94ed2673",
+      "unlisted-login-3": "df1781d55d727c4fed0bb5595b60194154ef6f14c91711bab833047a70ca6293",
+      "unlisted-login-4": "69c880f6df0f54de9c3ddbde5392692a7eae14e751132bcc8ab8252084e16b0e",
+      "unlisted-login-5": "fd8311328ae734a7bc58cd94818878f29a2de860dd8380cec9ad31879a566c11",
+      "external-sso-1": "dd0d1bf85f716b62cbb313fc4e28c003d8d2d392d1c276587100065d95288d9c",
+      "external-sso-2": "f64eb89bee6f0835276ebd34b4b0ac9940532e3e89a2456e7a74df87b1296cfc",
+      "external-sso-3": "e0bbe1a763d641b39f5bc655e8652c4de93764f93e563017fa29a8e96b3a8965",
+      "external-sso-4": "19070570f5b6e8d88c6a05cbcdec4e4e57647859bdde297623429f17d1ea31d5",
+      "external-sso-5": "c437c3b897a9b11ebcb84c5f7997a49e6a88bf7b8356210137102025b9c777c0",
+      "support-education-1": "86675edb23ce67ce13b3378a5e6b951912f11d6ca346e6d9b1f8a5fe8df2ab95",
+      "support-education-2": "c32fe744484f19a2aa11a3253eef2d073899ec75b7d54b533527e64e62535ee8",
+      "support-education-3": "5107eda8629fbc542b4c7b033fb2c17b1d9c9c9d63458275fb0b852ab61e3bb0",
+      "support-education-4": "7791cebfee4ca38809273da71d154ca9acd1f69635f09c80034e2a5561d98a57",
+      "support-education-5": "559ec5d7adca4c42aef92dd60996688b1e64fb4facd6eed473aa23600da1cd56",
+      "command-tutorial-1": "feb4b3fa70cfdb9c78e42065cc629f746dddfa3ab43a001045bc24a310faa5a2",
+      "command-tutorial-2": "933ce20b302743433678b543dd122f110ac562b8e3ea81e246fb191670d5b429",
+      "command-tutorial-3": "60c06e30e66b3139ec7d8c61cae27c125203a7f40f98e1fc38b7ab82cd27ab9f",
+      "command-tutorial-4": "cb321b0f3fd573442047fe063f91370e100d93e4f7429428a515c94dbc7f639b",
+      "command-tutorial-5": "47d0313de3341b2d990969955921f3adc8c4eef781a414afc9d0eac00e47dca5",
+      "legitimate-installer-1": "96b6f86398233a0cea60b3170bdba863646bc8af76ed1b49f3e726a749644f08",
+      "legitimate-installer-2": "136fde1458a1dde555fb5bb78457a59bfcd2bd621f8db919ef392a3fc87ade1f",
+      "legitimate-installer-3": "565494a73277e554ba281edf5377a2f949ac37f26845e799b3d53990136568a2",
+      "legitimate-installer-4": "282085efaf73c90d9c265d70f50351b5cd039fb1b08619c0b5891376d61343b3",
+      "legitimate-installer-5": "4499a9d6d883576f2253732c049f622593310aeb3a37aabfc208116244feff6f",
+      "plain-support-1": "1581a42f43619ec00003de9e88a7a7b03615ffb2ef085317e07858615a6d06d9",
+      "plain-support-2": "a4e9b528579518902d4afb3cf8f4ea38e709637c0ab13578bd7b6d5472e84b49",
+      "plain-support-3": "0a66085d4a00541abd86fc619a931f42b9c743d1093d23123a6ecfdea663b1e0",
+      "plain-support-4": "09ab5144b113d7028b6d1992e55d185c2d6d921ab6a5c99d83f91878af6f8465",
+      "plain-support-5": "acf19795a76700fb67d497fca03ebabf7ea1db1956715ade347c2493b0b8b411",
+      "credential-mail-1": "ffd9b6562f38a7780dcc20be9fe8eca4d16af88a72631466f12f41ac83c3c11f",
+      "credential-mail-2": "26bbd8d0b8075dacd3b6f350e8ced62eae048affa1bc279eee58a20b95f932e8",
+      "credential-mail-3": "7f6ec4f653849e19834e26b09f2f445604503de1dd58b820050d97c69b9dd038",
+      "credential-mail-4": "74091707fb4763d07e74ad34a5271d59151b7db37193dd1ad1225cbb5a0486f2",
+      "credential-mail-5": "8abd57a26ffc707b9d122abe640067a567a30781205ce5493bf5cc7afe475e3f",
+      "credential-payroll-1": "cd592cf0c1d07dc19557dfd9596d01831004d5dd3ed455a803cd3244ca4952fe",
+      "credential-payroll-2": "f6f7647904aa737996fd06a58da4c074320c5dfd328a3d01e2ce6becb928c7d0",
+      "credential-payroll-3": "0babbdc591a39318cc4552eeaffd7f1eb709a94415d2d2dcaaaed1a4b56dbd37",
+      "credential-payroll-4": "cc3f929fea3f0164872fe4a9b2ab494c11adca92a09ace94b14fe562025237fa",
+      "credential-payroll-5": "bb3abf493faf5d9a70e90005ce25bcc27a16e132ec3ce4a2a85813cd4be01873",
+      "credential-shared-file-1": "cc5c0b87aeddd57a9634a131b7235128083a0b6cd389c0d17ea5eb0d3a3fcb07",
+      "credential-shared-file-2": "70d7f69d9ab41abc2eb04971474aff2f5be93acc90e7542cafecde7495a90201",
+      "credential-shared-file-3": "8d70e4ceac0a3a4a27fae927d0e3abf2eb5f56533166336450e506c752a24294",
+      "credential-shared-file-4": "83bf44d385d7f07ca20f69f12acee43925078d7566021c54647dcec611f2f676",
+      "credential-shared-file-5": "e1f6727315d3611e72d504d848e294171a322ae9e004816eb1e77c6421018b77",
+      "credential-text-only-1": "5eb9b9551a043c740ef392e07b77a13f8bbbe9fc8bdaa229db38ded17c1d2da4",
+      "credential-text-only-2": "22403d562f1854cc59b4cddf3fef939308c6d5bb3f17c8478d9508f95d52d556",
+      "credential-text-only-3": "a52b01246be529208fa16884718aba808a664df9eba212c972eb603b0d6277ef",
+      "credential-text-only-4": "fa707d1a6af67ead9f69245708b5540f4969801b064c43a29058f14d3dba3d83",
+      "credential-text-only-5": "1b5c1e3a9ac8278f542527ee460ae446ec553e66b1d0908225bd609b4a536b86",
+      "brand-mail-login-1": "baf34d3497abb0fead92d3159cf1d50a419a8bfcec33e81eba4dad35158b2691",
+      "brand-mail-login-2": "ae8e0a4631b3e3751dfbb4d07734c28885e3fcff6602f2b0281a7c16c00d8f3b",
+      "brand-mail-login-3": "d5f49be0dc0dd75268af1b32209269e4aac9166015b5b295f6dc62ac8453a9db",
+      "brand-mail-login-4": "b8b1ea14755281de2ad046dd65eff9c66be0f61b2106471b24b45b6fc66fb714",
+      "brand-mail-login-5": "473bff71b1bef9b5ef4363a3137f16749fea22b4857777a1adfd1eec48ee96dd",
+      "brand-bank-login-1": "642102153384629ac54f9ce1e8e6c83824203aa15b96cf2a91a86971facab7a5",
+      "brand-bank-login-2": "3e5f6cf9aebbe34091d5253e247bfea20e325f1227ba0ecb2281051ce62f077e",
+      "brand-bank-login-3": "b355c5a99a74d99d8f2dedee4961288ce91a97bbaf709f576a6bf983b2ad9978",
+      "brand-bank-login-4": "af2c7abb0b6e109d745097996288929e82ec3c74f7b6896e9f268955f4fa598c",
+      "brand-bank-login-5": "a6b55921de5004815eec698d818bd7a298adb692d55527f7ea04b22e8c1554af",
+      "brand-mail-text-1": "1e2f9298f8f25fd54424ae177d16293b8ff8f0cb38e01836a627cd0ecc75dd39",
+      "brand-mail-text-2": "a1ce890ad489fe3a8db34f6800b12467714ffcaa4dd6b048c2f4cd18377e3c9b",
+      "brand-mail-text-3": "c5ab10f8b1ae0e13bcfe1e44ce66aee0d540fea50ffe6e279dfcc915335fa2fe",
+      "brand-mail-text-4": "0c3b899fee0be1e1b9d15f3655e1837c431f1264698f93762482b7c8ee341187",
+      "brand-mail-text-5": "4477219990ed776404423d8004afe490df7b3d10c1dd528593e41296281e3775",
+      "brand-bank-text-1": "513f13246d1a2cb70f9f4377c1fd8daba52ad95b0a95f812600986d6327dc6d2",
+      "brand-bank-text-2": "ed6fff295d02f0452badf356304518fcaa242098fbadc22de98cb12b0720e205",
+      "brand-bank-text-3": "0da955abb62b19bfee0c5239f9adaff6ad41929489e8b485337ab18d3dca087e",
+      "brand-bank-text-4": "d5092a29976cff5c9b487238f982254ce16792925c593a16ac20e8e671223d03",
+      "brand-bank-text-5": "29c085179dfa65dd5b6680f286ecb6921de6a228ba14749257d8ea8c0818dd1c",
+      "redirect-login-1": "04bb21cb53c2e4ab11e9c709fd461d13278493f660fd2479f1873c21e45d0e07",
+      "redirect-login-2": "18ef02b07a3d66df4b1a3bdbdad716635179bb377b706b1355de3187ffc2e9a2",
+      "redirect-login-3": "697e58d59d61e720bc80fdb5f6e9f6ecee09bf759cab7332b8df9830835c1796",
+      "redirect-login-4": "df409a732a0ebca5e7bdc271922a616a02efaa1b07f8a9a0fdc018f85bf02268",
+      "redirect-login-5": "eca883609d46bca83fde74fd59c931e68a9e7b4116b329a47b39a0b526ef089a",
+      "redirect-external-form-1": "886a2ecc918fa384b7e3875267746ba058059a463d5bfe030060ac822203d991",
+      "redirect-external-form-2": "b9af31e1e7057541b242a8ff80c4db1302482dcc9c2278e54ff18cdf5bfe4cbb",
+      "redirect-external-form-3": "6a8402f0d32e99f7aff5b9262b74eab99b2e62482a861528ec1abfe7f94d8fe5",
+      "redirect-external-form-4": "30fc5e7570bf13d7945a61a5ba8f0465cdcb678c6ddd54656714194f509d44b2",
+      "redirect-external-form-5": "302f77b44d9bd6cf2dbfa20afd7b71ecbc2c1a047167372d5760d6e53acb8635",
+      "redirect-text-1": "882dad2ff9e38135c99d690d5cb04f113d3f972d8619449059ca76b19a583b3b",
+      "redirect-text-2": "06837d00da4386040fbabed575c7bb7118d2c94531c145fc86d49508438fa2f6",
+      "redirect-text-3": "ca99aa18f5e75447b714841cb0c434b82e65c1f44c7559ffa469c6ad4696cd70",
+      "redirect-text-4": "0aa1b41455127a5fa2ee6e63eecd11360a743a6667b3ac4979d90e64a02f0aa7",
+      "redirect-text-5": "f0e93f4fdda4d6d689d2c58d118e7becf8a33193e1377bec33a24c49feb2320a",
+      "redirect-payload-1": "2e6020fd1207bd67b6f33caf9d26c9989ef20b279a1ddba5f2f9ca94f0fa1187",
+      "redirect-payload-2": "84b47b6102d5182208f02362d71024c3a932d17a591f062ab8cae251d7454bc9",
+      "redirect-payload-3": "4237d1d90a8697c6d7ad888afcaedf181515a083b9c95250a26d020021d82d4f",
+      "redirect-payload-4": "b2d75c42cba3376401f0ee945ec3f01915de78cc08f46c3c6f5627d43276a1d3",
+      "redirect-payload-5": "122ea0a828efa740675e208661b846f77b0c65a75abb9eed3b0a589c6deb92ab",
+      "download-update-1": "2fc6745e00045f005e3a821a86b5be37478bf7664f7f1d7a45927f5862cbae39",
+      "download-update-2": "20af1b4bc2545ebc7e4b39ee619c59d23e3fcd426088cbda925eefdbec836552",
+      "download-update-3": "efe44ecc0a38ba313d27758e2e014ed0bc7b8fcceca9a7bee7d2feedda5cc6df",
+      "download-update-4": "2929c5004a3cb98d788522dad7d0d7d2e965460daf6c22dbce0206eabaa8b2b0",
+      "download-update-5": "2b9fb13df84a6ba146c06910b3d06b101873b834fc5c06bcb0708313a60111aa",
+      "download-codec-1": "eea940b3a5ee667d6e45b884575f3e195628ffdf7f19a0ba52036dd0d66fe184",
+      "download-codec-2": "a10151235adc8bbf4f5cc2607a1e3aeacb588b185571a3a56d1694f1269532ee",
+      "download-codec-3": "ddcffc2849115a38b6aef60d91851758ba0ec2c7321aa020a3c8a0f3f2564aea",
+      "download-codec-4": "394840c64f3e2dad00eda95e8cba308d7fc5cd047851857c10ceffb13fe97483",
+      "download-codec-5": "7377a17c6603de530c40c8290ac2a2b634b4c769664bd2cf27e8d6d9f69c585e",
+      "download-plain-1": "8658b8ca827e520edc849d6e1630762ade9a7b015e6f25a967d63d8a735dbc9e",
+      "download-plain-2": "dd069f1e76b90b3e4ec875b39bcbf93dfc4a3638fb1eb603f211b7ef6dc7a899",
+      "download-plain-3": "48eece976e2dc3905f22e8fc907318e78a4ea2e7c3fbb99a32042435899ddb4f",
+      "download-plain-4": "88f8314f199be830dbd1a44f94b2713373fad372bd87257e9d42fba74002a9c6",
+      "download-plain-5": "ca128908cdf43baf97736ea7a21d094bdbea98a6db2a05ba2d30b4ed37fb1988",
+      "download-extensionless-1": "d241a6d5e7909401cc667eeeb89bd0c820584a5fe76f78e698463df66cd06d4a",
+      "download-extensionless-2": "94e94c9ac01a5b8436e71deae4322f4aabfbf44e28215f9cb64c53dad99a94ea",
+      "download-extensionless-3": "9b06b26a3d6798301240c244e2ebdd0978ae58f13a9d931d1c190d16b99661ea",
+      "download-extensionless-4": "199373c735fd5f92374a877e25672f7e33a658128c79eef593066c9bc4c17545",
+      "download-extensionless-5": "af3c0321200a258a22c4666c5f5b7a32c833939dcf5fcdf4d86eb3b27822ec47",
+      "mixed-clickfix-1": "31f7469d7b0ad5fb099ac4f2b576888081a7cdf5f0534ad0b516a521b345afac",
+      "mixed-clickfix-2": "c00359b24174e1ff8d34b83ae21ff6c4ced35ec95f142ab32de8378f59f245d7",
+      "mixed-clickfix-3": "29a05ada8f2275b9c701e164aa1463760aeba2af59b35dcc358a4d353507cdda",
+      "mixed-clickfix-4": "d16e5cf7ce849e13d53cbe6adff3eebc541f783f900b910db223c7ddaeaaab35",
+      "mixed-clickfix-5": "95d6a6a270d61e1be02dac5221f9205838a64ca63ac134d48fbaaa1b1c66b100",
+      "mixed-support-1": "cffb2c1dee4823ad76b6d9964017b2bba2552367dfd404db165e91284d597ba5",
+      "mixed-support-2": "03bd5c24f6f5883c232d475a86a6fceaa444018e8dc7232efbbf88e8c9ec859f",
+      "mixed-support-3": "f5d34dbbfb4708b8fc211c5b14790e8c9f4cded4b72d7a2393caec1a3ebfca84",
+      "mixed-support-4": "84efe52fa6e563826ef5c3d3c7cefd1621a9884a247a237100fa10980af82f80",
+      "mixed-support-5": "43f56c2ec96e7f29fd631a3c58e53ce0a846e2e1b789936074bf40e08f815b39",
+      "ambiguous-login-1": "f7ca474b687d6c782bfdce03f6fa10f6771d715d2b4191a022d3d53976c9d982",
+      "ambiguous-login-2": "25ddf8a49bf452e5bc56fec2ac159d5210428c518d65c51652b5e2dd636c3d6d",
+      "ambiguous-login-3": "d165922d9748a20065101f8dabbd28012cac374ed22e2f778002fbfb0326ce0a",
+      "ambiguous-login-4": "b80b5449965705873d9dd44fc5432c28fcab9459bdb4d581e83d506008dc6cbe",
+      "ambiguous-login-5": "72b0c78f676f2fa8956c7968587f76b3bfe4fb148895735498b0a31ee4ca3c74",
+      "ambiguous-update-1": "cfe9ee057979993e1eba8997c40868f7c5bcdb7e59bdaf67b1f41b21aba44632",
+      "ambiguous-update-2": "fc7a54dafa6c4b256eabdc1091abd358fe76fdba491a13b0080854afba649cf9",
+      "ambiguous-update-3": "2a47fb81cc74eb72c79310f4508d53f67613cf368432bed484b0792e25cd50c5",
+      "ambiguous-update-4": "8678f4a7469658422b859308a146268ed1c6661c700dc64c4c327012e28b2916",
+      "ambiguous-update-5": "44a704fe9bfad16135b12b2537feb8e081cd911cc77881b79a4671a7aa717fd1"
+    }
+  },
+  "summary": {
+    "allByExpected": {
+      "MALICIOUS": 90,
+      "BENIGN": 50,
+      "AMBIGUOUS": 10
+    },
+    "errorsByExpected": {
+      "MALICIOUS": 0,
+      "BENIGN": 0,
+      "AMBIGUOUS": 0
+    },
+    "conservativeMaliciousDetectionYield": 0.6111111111111112,
+    "tp": 55,
+    "fn": 35,
+    "fp": 25,
+    "tn": 25,
+    "ambiguous": 10,
+    "errors": 0,
+    "evaluatedBinary": 140,
+    "tpr": 0.6111111111111112,
+    "fpr": 0.5,
+    "precision": 0.6875,
+    "denominatorPolicy": "Only successfully extracted non-ambiguous cases; errors are reported separately. Findings are not ALLOW/BLOCK decisions."
+  },
+  "byGroup": {
+    "benign": {
+      "allByExpected": {
+        "MALICIOUS": 0,
+        "BENIGN": 50,
+        "AMBIGUOUS": 0
+      },
+      "errorsByExpected": {
+        "MALICIOUS": 0,
+        "BENIGN": 0,
+        "AMBIGUOUS": 0
+      },
+      "conservativeMaliciousDetectionYield": null,
+      "tp": 0,
+      "fn": 0,
+      "fp": 25,
+      "tn": 25,
+      "ambiguous": 0,
+      "errors": 0,
+      "evaluatedBinary": 50,
+      "tpr": null,
+      "fpr": 0.5,
+      "precision": 0,
+      "denominatorPolicy": "Only successfully extracted non-ambiguous cases; errors are reported separately. Findings are not ALLOW/BLOCK decisions."
+    },
+    "credential": {
+      "allByExpected": {
+        "MALICIOUS": 20,
+        "BENIGN": 0,
+        "AMBIGUOUS": 0
+      },
+      "errorsByExpected": {
+        "MALICIOUS": 0,
+        "BENIGN": 0,
+        "AMBIGUOUS": 0
+      },
+      "conservativeMaliciousDetectionYield": 0.75,
+      "tp": 15,
+      "fn": 5,
+      "fp": 0,
+      "tn": 0,
+      "ambiguous": 0,
+      "errors": 0,
+      "evaluatedBinary": 20,
+      "tpr": 0.75,
+      "fpr": null,
+      "precision": 1,
+      "denominatorPolicy": "Only successfully extracted non-ambiguous cases; errors are reported separately. Findings are not ALLOW/BLOCK decisions."
+    },
+    "brand-mismatch": {
+      "allByExpected": {
+        "MALICIOUS": 20,
+        "BENIGN": 0,
+        "AMBIGUOUS": 0
+      },
+      "errorsByExpected": {
+        "MALICIOUS": 0,
+        "BENIGN": 0,
+        "AMBIGUOUS": 0
+      },
+      "conservativeMaliciousDetectionYield": 0.5,
+      "tp": 10,
+      "fn": 10,
+      "fp": 0,
+      "tn": 0,
+      "ambiguous": 0,
+      "errors": 0,
+      "evaluatedBinary": 20,
+      "tpr": 0.5,
+      "fpr": null,
+      "precision": 1,
+      "denominatorPolicy": "Only successfully extracted non-ambiguous cases; errors are reported separately. Findings are not ALLOW/BLOCK decisions."
+    },
+    "redirect": {
+      "allByExpected": {
+        "MALICIOUS": 20,
+        "BENIGN": 0,
+        "AMBIGUOUS": 0
+      },
+      "errorsByExpected": {
+        "MALICIOUS": 0,
+        "BENIGN": 0,
+        "AMBIGUOUS": 0
+      },
+      "conservativeMaliciousDetectionYield": 0.5,
+      "tp": 10,
+      "fn": 10,
+      "fp": 0,
+      "tn": 0,
+      "ambiguous": 0,
+      "errors": 0,
+      "evaluatedBinary": 20,
+      "tpr": 0.5,
+      "fpr": null,
+      "precision": 1,
+      "denominatorPolicy": "Only successfully extracted non-ambiguous cases; errors are reported separately. Findings are not ALLOW/BLOCK decisions."
+    },
+    "download": {
+      "allByExpected": {
+        "MALICIOUS": 20,
+        "BENIGN": 0,
+        "AMBIGUOUS": 0
+      },
+      "errorsByExpected": {
+        "MALICIOUS": 0,
+        "BENIGN": 0,
+        "AMBIGUOUS": 0
+      },
+      "conservativeMaliciousDetectionYield": 0.5,
+      "tp": 10,
+      "fn": 10,
+      "fp": 0,
+      "tn": 0,
+      "ambiguous": 0,
+      "errors": 0,
+      "evaluatedBinary": 20,
+      "tpr": 0.5,
+      "fpr": null,
+      "precision": 1,
+      "denominatorPolicy": "Only successfully extracted non-ambiguous cases; errors are reported separately. Findings are not ALLOW/BLOCK decisions."
+    },
+    "mixed": {
+      "allByExpected": {
+        "MALICIOUS": 10,
+        "BENIGN": 0,
+        "AMBIGUOUS": 10
+      },
+      "errorsByExpected": {
+        "MALICIOUS": 0,
+        "BENIGN": 0,
+        "AMBIGUOUS": 0
+      },
+      "conservativeMaliciousDetectionYield": 1,
+      "tp": 10,
+      "fn": 0,
+      "fp": 0,
+      "tn": 0,
+      "ambiguous": 10,
+      "errors": 0,
+      "evaluatedBinary": 10,
+      "tpr": 1,
+      "fpr": null,
+      "precision": 1,
+      "denominatorPolicy": "Only successfully extracted non-ambiguous cases; errors are reported separately. Findings are not ALLOW/BLOCK decisions."
+    }
+  },
+  "cases": [
+    {
+      "id": "news-1",
+      "template": "news",
+      "group": "benign",
+      "variant": 1,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:27.333Z",
+      "endedAt": "2026-09-30T01:59:28.139Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/news-1.html",
+        "title": "Scenario news-1",
+        "text": "Case 1\nCommunity news and upcoming events.\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:28.139Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "news-2",
+      "template": "news",
+      "group": "benign",
+      "variant": 2,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:28.171Z",
+      "endedAt": "2026-09-30T01:59:28.316Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/news-2.html",
+        "title": "Scenario news-2",
+        "text": "Case 2\nCommunity news and upcoming events.\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:28.316Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "news-3",
+      "template": "news",
+      "group": "benign",
+      "variant": 3,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:28.365Z",
+      "endedAt": "2026-09-30T01:59:28.522Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/news-3.html",
+        "title": "Scenario news-3",
+        "text": "Case 3\nCommunity news and upcoming events.\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:28.522Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "news-4",
+      "template": "news",
+      "group": "benign",
+      "variant": 4,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:28.560Z",
+      "endedAt": "2026-09-30T01:59:28.762Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/news-4.html",
+        "title": "Scenario news-4",
+        "text": "Case 4\nCommunity news and upcoming events.\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:28.762Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "news-5",
+      "template": "news",
+      "group": "benign",
+      "variant": 5,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:28.771Z",
+      "endedAt": "2026-09-30T01:59:28.992Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/news-5.html",
+        "title": "Scenario news-5",
+        "text": "Case 5\nCommunity news and upcoming events.\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:28.992Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "docs-1",
+      "template": "docs",
+      "group": "benign",
+      "variant": 1,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:29.041Z",
+      "endedAt": "2026-09-30T01:59:29.197Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/docs-1.html",
+        "title": "Scenario docs-1",
+        "text": "Case 1\nRead the API reference and integration guide.\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:29.197Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "docs-2",
+      "template": "docs",
+      "group": "benign",
+      "variant": 2,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:29.260Z",
+      "endedAt": "2026-09-30T01:59:29.433Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/docs-2.html",
+        "title": "Scenario docs-2",
+        "text": "Case 2\nRead the API reference and integration guide.\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:29.433Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "docs-3",
+      "template": "docs",
+      "group": "benign",
+      "variant": 3,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:29.442Z",
+      "endedAt": "2026-09-30T01:59:29.511Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/docs-3.html",
+        "title": "Scenario docs-3",
+        "text": "Case 3\nRead the API reference and integration guide.\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:29.511Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "docs-4",
+      "template": "docs",
+      "group": "benign",
+      "variant": 4,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:29.519Z",
+      "endedAt": "2026-09-30T01:59:29.582Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/docs-4.html",
+        "title": "Scenario docs-4",
+        "text": "Case 4\nRead the API reference and integration guide.\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:29.582Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "docs-5",
+      "template": "docs",
+      "group": "benign",
+      "variant": 5,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:29.589Z",
+      "endedAt": "2026-09-30T01:59:29.653Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/docs-5.html",
+        "title": "Scenario docs-5",
+        "text": "Case 5\nRead the API reference and integration guide.\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:29.653Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "store-1",
+      "template": "store",
+      "group": "benign",
+      "variant": 1,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:29.661Z",
+      "endedAt": "2026-09-30T01:59:29.724Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/store-1.html",
+        "title": "Scenario store-1",
+        "text": "Case 1\nBrowse our catalog. Shipping information.\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:29.724Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "store-2",
+      "template": "store",
+      "group": "benign",
+      "variant": 2,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:29.734Z",
+      "endedAt": "2026-09-30T01:59:29.795Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/store-2.html",
+        "title": "Scenario store-2",
+        "text": "Case 2\nBrowse our catalog. Shipping information.\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:29.795Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "store-3",
+      "template": "store",
+      "group": "benign",
+      "variant": 3,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:29.804Z",
+      "endedAt": "2026-09-30T01:59:29.891Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/store-3.html",
+        "title": "Scenario store-3",
+        "text": "Case 3\nBrowse our catalog. Shipping information.\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:29.891Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "store-4",
+      "template": "store",
+      "group": "benign",
+      "variant": 4,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:29.927Z",
+      "endedAt": "2026-09-30T01:59:29.989Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/store-4.html",
+        "title": "Scenario store-4",
+        "text": "Case 4\nBrowse our catalog. Shipping information.\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:29.989Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "store-5",
+      "template": "store",
+      "group": "benign",
+      "variant": 5,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:29.998Z",
+      "endedAt": "2026-09-30T01:59:30.057Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/store-5.html",
+        "title": "Scenario store-5",
+        "text": "Case 5\nBrowse our catalog. Shipping information.\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:30.057Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "trusted-login-1",
+      "template": "trusted-login",
+      "group": "benign",
+      "variant": 1,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:30.065Z",
+      "endedAt": "2026-09-30T01:59:30.125Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://trusted.aionguard.invalid/trusted-login-1.html",
+        "title": "Scenario trusted-login-1",
+        "text": "Case 1\nSign in\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://trusted.aionguard.invalid/session",
+        "formDestinationOrigin": "https://trusted.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:30.125Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "trusted-login-2",
+      "template": "trusted-login",
+      "group": "benign",
+      "variant": 2,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:30.134Z",
+      "endedAt": "2026-09-30T01:59:30.201Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://trusted.aionguard.invalid/trusted-login-2.html",
+        "title": "Scenario trusted-login-2",
+        "text": "Case 2\nSign in\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://trusted.aionguard.invalid/session",
+        "formDestinationOrigin": "https://trusted.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:30.201Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "trusted-login-3",
+      "template": "trusted-login",
+      "group": "benign",
+      "variant": 3,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:30.209Z",
+      "endedAt": "2026-09-30T01:59:30.271Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://trusted.aionguard.invalid/trusted-login-3.html",
+        "title": "Scenario trusted-login-3",
+        "text": "Case 3\nSign in\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://trusted.aionguard.invalid/session",
+        "formDestinationOrigin": "https://trusted.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:30.271Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "trusted-login-4",
+      "template": "trusted-login",
+      "group": "benign",
+      "variant": 4,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:30.278Z",
+      "endedAt": "2026-09-30T01:59:30.340Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://trusted.aionguard.invalid/trusted-login-4.html",
+        "title": "Scenario trusted-login-4",
+        "text": "Case 4\nSign in\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://trusted.aionguard.invalid/session",
+        "formDestinationOrigin": "https://trusted.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:30.340Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "trusted-login-5",
+      "template": "trusted-login",
+      "group": "benign",
+      "variant": 5,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:30.349Z",
+      "endedAt": "2026-09-30T01:59:30.408Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://trusted.aionguard.invalid/trusted-login-5.html",
+        "title": "Scenario trusted-login-5",
+        "text": "Case 5\nSign in\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://trusted.aionguard.invalid/session",
+        "formDestinationOrigin": "https://trusted.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:30.408Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "unlisted-login-1",
+      "template": "unlisted-login",
+      "group": "benign",
+      "variant": 1,
+      "expected": "BENIGN",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:30.418Z",
+      "endedAt": "2026-09-30T01:59:30.480Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/unlisted-login-1.html",
+        "title": "Scenario unlisted-login-1",
+        "text": "Case 1\nLegitimate small business member portal.\nSign in\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:30.480Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "unlisted-login-2",
+      "template": "unlisted-login",
+      "group": "benign",
+      "variant": 2,
+      "expected": "BENIGN",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:30.490Z",
+      "endedAt": "2026-09-30T01:59:30.554Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/unlisted-login-2.html",
+        "title": "Scenario unlisted-login-2",
+        "text": "Case 2\nLegitimate small business member portal.\nSign in\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:30.554Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "unlisted-login-3",
+      "template": "unlisted-login",
+      "group": "benign",
+      "variant": 3,
+      "expected": "BENIGN",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:30.562Z",
+      "endedAt": "2026-09-30T01:59:30.625Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/unlisted-login-3.html",
+        "title": "Scenario unlisted-login-3",
+        "text": "Case 3\nLegitimate small business member portal.\nSign in\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:30.625Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "unlisted-login-4",
+      "template": "unlisted-login",
+      "group": "benign",
+      "variant": 4,
+      "expected": "BENIGN",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:30.634Z",
+      "endedAt": "2026-09-30T01:59:30.704Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/unlisted-login-4.html",
+        "title": "Scenario unlisted-login-4",
+        "text": "Case 4\nLegitimate small business member portal.\nSign in\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:30.704Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "unlisted-login-5",
+      "template": "unlisted-login",
+      "group": "benign",
+      "variant": 5,
+      "expected": "BENIGN",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:30.713Z",
+      "endedAt": "2026-09-30T01:59:30.774Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/unlisted-login-5.html",
+        "title": "Scenario unlisted-login-5",
+        "text": "Case 5\nLegitimate small business member portal.\nSign in\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:30.774Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "external-sso-1",
+      "template": "external-sso",
+      "group": "benign",
+      "variant": 1,
+      "expected": "BENIGN",
+      "categories": [
+        "CREDENTIAL_PHISHING",
+        "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:30.783Z",
+      "endedAt": "2026-09-30T01:59:30.847Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/external-sso-1.html",
+        "title": "Scenario external-sso-1",
+        "text": "Case 1\nLegitimate enterprise single sign on.\nSign in\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://collector.aionguard.invalid/session",
+        "formDestinationOrigin": "https://collector.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:30.847Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "external-sso-2",
+      "template": "external-sso",
+      "group": "benign",
+      "variant": 2,
+      "expected": "BENIGN",
+      "categories": [
+        "CREDENTIAL_PHISHING",
+        "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:30.855Z",
+      "endedAt": "2026-09-30T01:59:30.917Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/external-sso-2.html",
+        "title": "Scenario external-sso-2",
+        "text": "Case 2\nLegitimate enterprise single sign on.\nSign in\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://collector.aionguard.invalid/session",
+        "formDestinationOrigin": "https://collector.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:30.917Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "external-sso-3",
+      "template": "external-sso",
+      "group": "benign",
+      "variant": 3,
+      "expected": "BENIGN",
+      "categories": [
+        "CREDENTIAL_PHISHING",
+        "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:30.927Z",
+      "endedAt": "2026-09-30T01:59:30.989Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/external-sso-3.html",
+        "title": "Scenario external-sso-3",
+        "text": "Case 3\nLegitimate enterprise single sign on.\nSign in\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://collector.aionguard.invalid/session",
+        "formDestinationOrigin": "https://collector.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:30.989Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "external-sso-4",
+      "template": "external-sso",
+      "group": "benign",
+      "variant": 4,
+      "expected": "BENIGN",
+      "categories": [
+        "CREDENTIAL_PHISHING",
+        "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:30.999Z",
+      "endedAt": "2026-09-30T01:59:31.058Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/external-sso-4.html",
+        "title": "Scenario external-sso-4",
+        "text": "Case 4\nLegitimate enterprise single sign on.\nSign in\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://collector.aionguard.invalid/session",
+        "formDestinationOrigin": "https://collector.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:31.058Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "external-sso-5",
+      "template": "external-sso",
+      "group": "benign",
+      "variant": 5,
+      "expected": "BENIGN",
+      "categories": [
+        "CREDENTIAL_PHISHING",
+        "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:31.065Z",
+      "endedAt": "2026-09-30T01:59:31.138Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/external-sso-5.html",
+        "title": "Scenario external-sso-5",
+        "text": "Case 5\nLegitimate enterprise single sign on.\nSign in\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://collector.aionguard.invalid/session",
+        "formDestinationOrigin": "https://collector.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:31.138Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "support-education-1",
+      "template": "support-education",
+      "group": "benign",
+      "variant": 1,
+      "expected": "BENIGN",
+      "categories": [
+        "TECH_SUPPORT_SCAM"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:31.145Z",
+      "endedAt": "2026-09-30T01:59:31.222Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/support-education-1.html",
+        "title": "Scenario support-education-1",
+        "text": "Case 1\nTraining example: Your computer is infected. Call support immediately. This is a scam example; do not call.\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:31.222Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "support-education-2",
+      "template": "support-education",
+      "group": "benign",
+      "variant": 2,
+      "expected": "BENIGN",
+      "categories": [
+        "TECH_SUPPORT_SCAM"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:31.230Z",
+      "endedAt": "2026-09-30T01:59:31.296Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/support-education-2.html",
+        "title": "Scenario support-education-2",
+        "text": "Case 2\nTraining example: Your computer is infected. Call support immediately. This is a scam example; do not call.\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:31.296Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "support-education-3",
+      "template": "support-education",
+      "group": "benign",
+      "variant": 3,
+      "expected": "BENIGN",
+      "categories": [
+        "TECH_SUPPORT_SCAM"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:31.304Z",
+      "endedAt": "2026-09-30T01:59:31.367Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/support-education-3.html",
+        "title": "Scenario support-education-3",
+        "text": "Case 3\nTraining example: Your computer is infected. Call support immediately. This is a scam example; do not call.\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:31.367Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "support-education-4",
+      "template": "support-education",
+      "group": "benign",
+      "variant": 4,
+      "expected": "BENIGN",
+      "categories": [
+        "TECH_SUPPORT_SCAM"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:31.374Z",
+      "endedAt": "2026-09-30T01:59:31.437Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/support-education-4.html",
+        "title": "Scenario support-education-4",
+        "text": "Case 4\nTraining example: Your computer is infected. Call support immediately. This is a scam example; do not call.\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:31.437Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "support-education-5",
+      "template": "support-education",
+      "group": "benign",
+      "variant": 5,
+      "expected": "BENIGN",
+      "categories": [
+        "TECH_SUPPORT_SCAM"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:31.447Z",
+      "endedAt": "2026-09-30T01:59:31.507Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/support-education-5.html",
+        "title": "Scenario support-education-5",
+        "text": "Case 5\nTraining example: Your computer is infected. Call support immediately. This is a scam example; do not call.\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:31.507Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "command-tutorial-1",
+      "template": "command-tutorial",
+      "group": "benign",
+      "variant": 1,
+      "expected": "BENIGN",
+      "categories": [
+        "CLICKFIX"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:31.516Z",
+      "endedAt": "2026-09-30T01:59:31.575Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/command-tutorial-1.html",
+        "title": "Scenario command-tutorial-1",
+        "text": "Case 1\nDeveloper tutorial: to fix the error, run this command in terminal. This is documentation.\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:31.575Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "command-tutorial-2",
+      "template": "command-tutorial",
+      "group": "benign",
+      "variant": 2,
+      "expected": "BENIGN",
+      "categories": [
+        "CLICKFIX"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:31.586Z",
+      "endedAt": "2026-09-30T01:59:31.643Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/command-tutorial-2.html",
+        "title": "Scenario command-tutorial-2",
+        "text": "Case 2\nDeveloper tutorial: to fix the error, run this command in terminal. This is documentation.\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:31.643Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "command-tutorial-3",
+      "template": "command-tutorial",
+      "group": "benign",
+      "variant": 3,
+      "expected": "BENIGN",
+      "categories": [
+        "CLICKFIX"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:31.655Z",
+      "endedAt": "2026-09-30T01:59:31.720Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/command-tutorial-3.html",
+        "title": "Scenario command-tutorial-3",
+        "text": "Case 3\nDeveloper tutorial: to fix the error, run this command in terminal. This is documentation.\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:31.720Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "command-tutorial-4",
+      "template": "command-tutorial",
+      "group": "benign",
+      "variant": 4,
+      "expected": "BENIGN",
+      "categories": [
+        "CLICKFIX"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:31.728Z",
+      "endedAt": "2026-09-30T01:59:31.790Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/command-tutorial-4.html",
+        "title": "Scenario command-tutorial-4",
+        "text": "Case 4\nDeveloper tutorial: to fix the error, run this command in terminal. This is documentation.\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:31.790Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "command-tutorial-5",
+      "template": "command-tutorial",
+      "group": "benign",
+      "variant": 5,
+      "expected": "BENIGN",
+      "categories": [
+        "CLICKFIX"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:31.801Z",
+      "endedAt": "2026-09-30T01:59:31.863Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/command-tutorial-5.html",
+        "title": "Scenario command-tutorial-5",
+        "text": "Case 5\nDeveloper tutorial: to fix the error, run this command in terminal. This is documentation.\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:31.863Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "legitimate-installer-1",
+      "template": "legitimate-installer",
+      "group": "benign",
+      "variant": 1,
+      "expected": "BENIGN",
+      "categories": [
+        "EXECUTABLE_DOWNLOAD_LURE"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:31.873Z",
+      "endedAt": "2026-09-30T01:59:31.941Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/legitimate-installer-1.html",
+        "title": "Scenario legitimate-installer-1",
+        "text": "Case 1\nRequired security update for our legitimate application.Download\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/package.exe",
+            "text": "Download"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:31.941Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "legitimate-installer-2",
+      "template": "legitimate-installer",
+      "group": "benign",
+      "variant": 2,
+      "expected": "BENIGN",
+      "categories": [
+        "EXECUTABLE_DOWNLOAD_LURE"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:31.952Z",
+      "endedAt": "2026-09-30T01:59:32.015Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/legitimate-installer-2.html",
+        "title": "Scenario legitimate-installer-2",
+        "text": "Case 2\nRequired security update for our legitimate application.Download\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/package.exe",
+            "text": "Download"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:32.015Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "legitimate-installer-3",
+      "template": "legitimate-installer",
+      "group": "benign",
+      "variant": 3,
+      "expected": "BENIGN",
+      "categories": [
+        "EXECUTABLE_DOWNLOAD_LURE"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:32.027Z",
+      "endedAt": "2026-09-30T01:59:32.095Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/legitimate-installer-3.html",
+        "title": "Scenario legitimate-installer-3",
+        "text": "Case 3\nRequired security update for our legitimate application.Download\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/package.exe",
+            "text": "Download"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:32.095Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "legitimate-installer-4",
+      "template": "legitimate-installer",
+      "group": "benign",
+      "variant": 4,
+      "expected": "BENIGN",
+      "categories": [
+        "EXECUTABLE_DOWNLOAD_LURE"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:32.105Z",
+      "endedAt": "2026-09-30T01:59:32.162Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/legitimate-installer-4.html",
+        "title": "Scenario legitimate-installer-4",
+        "text": "Case 4\nRequired security update for our legitimate application.Download\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/package.exe",
+            "text": "Download"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:32.162Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "legitimate-installer-5",
+      "template": "legitimate-installer",
+      "group": "benign",
+      "variant": 5,
+      "expected": "BENIGN",
+      "categories": [
+        "EXECUTABLE_DOWNLOAD_LURE"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:32.172Z",
+      "endedAt": "2026-09-30T01:59:32.238Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/legitimate-installer-5.html",
+        "title": "Scenario legitimate-installer-5",
+        "text": "Case 5\nRequired security update for our legitimate application.Download\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/package.exe",
+            "text": "Download"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:32.238Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "plain-support-1",
+      "template": "plain-support",
+      "group": "benign",
+      "variant": 1,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:32.246Z",
+      "endedAt": "2026-09-30T01:59:32.306Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/plain-support-1.html",
+        "title": "Scenario plain-support-1",
+        "text": "Case 1\nContact support for help with your subscription.\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:32.306Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "plain-support-2",
+      "template": "plain-support",
+      "group": "benign",
+      "variant": 2,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:32.314Z",
+      "endedAt": "2026-09-30T01:59:32.375Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/plain-support-2.html",
+        "title": "Scenario plain-support-2",
+        "text": "Case 2\nContact support for help with your subscription.\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:32.375Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "plain-support-3",
+      "template": "plain-support",
+      "group": "benign",
+      "variant": 3,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:32.384Z",
+      "endedAt": "2026-09-30T01:59:32.444Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/plain-support-3.html",
+        "title": "Scenario plain-support-3",
+        "text": "Case 3\nContact support for help with your subscription.\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:32.444Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "plain-support-4",
+      "template": "plain-support",
+      "group": "benign",
+      "variant": 4,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:32.455Z",
+      "endedAt": "2026-09-30T01:59:32.519Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/plain-support-4.html",
+        "title": "Scenario plain-support-4",
+        "text": "Case 4\nContact support for help with your subscription.\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:32.519Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "plain-support-5",
+      "template": "plain-support",
+      "group": "benign",
+      "variant": 5,
+      "expected": "BENIGN",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:32.528Z",
+      "endedAt": "2026-09-30T01:59:32.589Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/plain-support-5.html",
+        "title": "Scenario plain-support-5",
+        "text": "Case 5\nContact support for help with your subscription.\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:32.589Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "credential-mail-1",
+      "template": "credential-mail",
+      "group": "credential",
+      "variant": 1,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:32.600Z",
+      "endedAt": "2026-09-30T01:59:32.662Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/credential-mail-1.html",
+        "title": "Scenario credential-mail-1",
+        "text": "Case 1\nMailbox expired. Enter your password.\nSign in\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:32.662Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "credential-mail-2",
+      "template": "credential-mail",
+      "group": "credential",
+      "variant": 2,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:32.673Z",
+      "endedAt": "2026-09-30T01:59:32.737Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/credential-mail-2.html",
+        "title": "Scenario credential-mail-2",
+        "text": "Case 2\nMailbox expired. Enter your password.\nSign in\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:32.737Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "credential-mail-3",
+      "template": "credential-mail",
+      "group": "credential",
+      "variant": 3,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:32.746Z",
+      "endedAt": "2026-09-30T01:59:32.806Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/credential-mail-3.html",
+        "title": "Scenario credential-mail-3",
+        "text": "Case 3\nMailbox expired. Enter your password.\nSign in\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:32.806Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "credential-mail-4",
+      "template": "credential-mail",
+      "group": "credential",
+      "variant": 4,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:32.816Z",
+      "endedAt": "2026-09-30T01:59:32.878Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/credential-mail-4.html",
+        "title": "Scenario credential-mail-4",
+        "text": "Case 4\nMailbox expired. Enter your password.\nSign in\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:32.878Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "credential-mail-5",
+      "template": "credential-mail",
+      "group": "credential",
+      "variant": 5,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:32.892Z",
+      "endedAt": "2026-09-30T01:59:32.960Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/credential-mail-5.html",
+        "title": "Scenario credential-mail-5",
+        "text": "Case 5\nMailbox expired. Enter your password.\nSign in\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:32.960Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "credential-payroll-1",
+      "template": "credential-payroll",
+      "group": "credential",
+      "variant": 1,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING",
+        "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:32.972Z",
+      "endedAt": "2026-09-30T01:59:33.039Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/credential-payroll-1.html",
+        "title": "Scenario credential-payroll-1",
+        "text": "Case 1\nPayroll access verification.\nSign in\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://collector.aionguard.invalid/session",
+        "formDestinationOrigin": "https://collector.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:33.039Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "credential-payroll-2",
+      "template": "credential-payroll",
+      "group": "credential",
+      "variant": 2,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING",
+        "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:33.048Z",
+      "endedAt": "2026-09-30T01:59:33.121Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/credential-payroll-2.html",
+        "title": "Scenario credential-payroll-2",
+        "text": "Case 2\nPayroll access verification.\nSign in\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://collector.aionguard.invalid/session",
+        "formDestinationOrigin": "https://collector.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:33.121Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "credential-payroll-3",
+      "template": "credential-payroll",
+      "group": "credential",
+      "variant": 3,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING",
+        "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:33.132Z",
+      "endedAt": "2026-09-30T01:59:33.201Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/credential-payroll-3.html",
+        "title": "Scenario credential-payroll-3",
+        "text": "Case 3\nPayroll access verification.\nSign in\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://collector.aionguard.invalid/session",
+        "formDestinationOrigin": "https://collector.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:33.201Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "credential-payroll-4",
+      "template": "credential-payroll",
+      "group": "credential",
+      "variant": 4,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING",
+        "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:33.209Z",
+      "endedAt": "2026-09-30T01:59:33.282Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/credential-payroll-4.html",
+        "title": "Scenario credential-payroll-4",
+        "text": "Case 4\nPayroll access verification.\nSign in\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://collector.aionguard.invalid/session",
+        "formDestinationOrigin": "https://collector.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:33.282Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "credential-payroll-5",
+      "template": "credential-payroll",
+      "group": "credential",
+      "variant": 5,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING",
+        "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:33.290Z",
+      "endedAt": "2026-09-30T01:59:33.352Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/credential-payroll-5.html",
+        "title": "Scenario credential-payroll-5",
+        "text": "Case 5\nPayroll access verification.\nSign in\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://collector.aionguard.invalid/session",
+        "formDestinationOrigin": "https://collector.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:33.352Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "credential-shared-file-1",
+      "template": "credential-shared-file",
+      "group": "credential",
+      "variant": 1,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:33.360Z",
+      "endedAt": "2026-09-30T01:59:33.422Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/credential-shared-file-1.html",
+        "title": "Scenario credential-shared-file-1",
+        "text": "Case 1\nSign in to view a confidential shared document.\nSign in\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:33.422Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "credential-shared-file-2",
+      "template": "credential-shared-file",
+      "group": "credential",
+      "variant": 2,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:33.431Z",
+      "endedAt": "2026-09-30T01:59:33.491Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/credential-shared-file-2.html",
+        "title": "Scenario credential-shared-file-2",
+        "text": "Case 2\nSign in to view a confidential shared document.\nSign in\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:33.491Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "credential-shared-file-3",
+      "template": "credential-shared-file",
+      "group": "credential",
+      "variant": 3,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:33.499Z",
+      "endedAt": "2026-09-30T01:59:33.564Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/credential-shared-file-3.html",
+        "title": "Scenario credential-shared-file-3",
+        "text": "Case 3\nSign in to view a confidential shared document.\nSign in\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:33.564Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "credential-shared-file-4",
+      "template": "credential-shared-file",
+      "group": "credential",
+      "variant": 4,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:33.571Z",
+      "endedAt": "2026-09-30T01:59:33.635Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/credential-shared-file-4.html",
+        "title": "Scenario credential-shared-file-4",
+        "text": "Case 4\nSign in to view a confidential shared document.\nSign in\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:33.635Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "credential-shared-file-5",
+      "template": "credential-shared-file",
+      "group": "credential",
+      "variant": 5,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:33.643Z",
+      "endedAt": "2026-09-30T01:59:33.704Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/credential-shared-file-5.html",
+        "title": "Scenario credential-shared-file-5",
+        "text": "Case 5\nSign in to view a confidential shared document.\nSign in\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:33.704Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "credential-text-only-1",
+      "template": "credential-text-only",
+      "group": "credential",
+      "variant": 1,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:33.712Z",
+      "endedAt": "2026-09-30T01:59:33.777Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/credential-text-only-1.html",
+        "title": "Scenario credential-text-only-1",
+        "text": "Case 1\nSend your account password to the administrator to restore access.\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:33.777Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "credential-text-only-2",
+      "template": "credential-text-only",
+      "group": "credential",
+      "variant": 2,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:33.784Z",
+      "endedAt": "2026-09-30T01:59:33.842Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/credential-text-only-2.html",
+        "title": "Scenario credential-text-only-2",
+        "text": "Case 2\nSend your account password to the administrator to restore access.\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:33.842Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "credential-text-only-3",
+      "template": "credential-text-only",
+      "group": "credential",
+      "variant": 3,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:33.851Z",
+      "endedAt": "2026-09-30T01:59:33.908Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/credential-text-only-3.html",
+        "title": "Scenario credential-text-only-3",
+        "text": "Case 3\nSend your account password to the administrator to restore access.\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:33.908Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "credential-text-only-4",
+      "template": "credential-text-only",
+      "group": "credential",
+      "variant": 4,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:33.920Z",
+      "endedAt": "2026-09-30T01:59:33.985Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/credential-text-only-4.html",
+        "title": "Scenario credential-text-only-4",
+        "text": "Case 4\nSend your account password to the administrator to restore access.\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:33.985Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "credential-text-only-5",
+      "template": "credential-text-only",
+      "group": "credential",
+      "variant": 5,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:33.993Z",
+      "endedAt": "2026-09-30T01:59:34.058Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/credential-text-only-5.html",
+        "title": "Scenario credential-text-only-5",
+        "text": "Case 5\nSend your account password to the administrator to restore access.\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:34.058Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "brand-mail-login-1",
+      "template": "brand-mail-login",
+      "group": "brand-mismatch",
+      "variant": 1,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:34.069Z",
+      "endedAt": "2026-09-30T01:59:34.125Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/brand-mail-login-1.html",
+        "title": "Scenario brand-mail-login-1",
+        "text": "Case 1\nExampleMail official secure account center.\nSign in\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:34.125Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "brand-mail-login-2",
+      "template": "brand-mail-login",
+      "group": "brand-mismatch",
+      "variant": 2,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:34.137Z",
+      "endedAt": "2026-09-30T01:59:34.196Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/brand-mail-login-2.html",
+        "title": "Scenario brand-mail-login-2",
+        "text": "Case 2\nExampleMail official secure account center.\nSign in\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:34.196Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "brand-mail-login-3",
+      "template": "brand-mail-login",
+      "group": "brand-mismatch",
+      "variant": 3,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:34.205Z",
+      "endedAt": "2026-09-30T01:59:34.264Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/brand-mail-login-3.html",
+        "title": "Scenario brand-mail-login-3",
+        "text": "Case 3\nExampleMail official secure account center.\nSign in\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:34.264Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "brand-mail-login-4",
+      "template": "brand-mail-login",
+      "group": "brand-mismatch",
+      "variant": 4,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:34.274Z",
+      "endedAt": "2026-09-30T01:59:34.352Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/brand-mail-login-4.html",
+        "title": "Scenario brand-mail-login-4",
+        "text": "Case 4\nExampleMail official secure account center.\nSign in\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:34.352Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "brand-mail-login-5",
+      "template": "brand-mail-login",
+      "group": "brand-mismatch",
+      "variant": 5,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:34.364Z",
+      "endedAt": "2026-09-30T01:59:34.424Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/brand-mail-login-5.html",
+        "title": "Scenario brand-mail-login-5",
+        "text": "Case 5\nExampleMail official secure account center.\nSign in\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:34.424Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "brand-bank-login-1",
+      "template": "brand-bank-login",
+      "group": "brand-mismatch",
+      "variant": 1,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING",
+        "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:34.438Z",
+      "endedAt": "2026-09-30T01:59:34.502Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/brand-bank-login-1.html",
+        "title": "Scenario brand-bank-login-1",
+        "text": "Case 1\nExampleBank account verification.\nSign in\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://collector.aionguard.invalid/session",
+        "formDestinationOrigin": "https://collector.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:34.502Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "brand-bank-login-2",
+      "template": "brand-bank-login",
+      "group": "brand-mismatch",
+      "variant": 2,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING",
+        "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:34.510Z",
+      "endedAt": "2026-09-30T01:59:34.570Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/brand-bank-login-2.html",
+        "title": "Scenario brand-bank-login-2",
+        "text": "Case 2\nExampleBank account verification.\nSign in\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://collector.aionguard.invalid/session",
+        "formDestinationOrigin": "https://collector.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:34.570Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "brand-bank-login-3",
+      "template": "brand-bank-login",
+      "group": "brand-mismatch",
+      "variant": 3,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING",
+        "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:34.578Z",
+      "endedAt": "2026-09-30T01:59:34.638Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/brand-bank-login-3.html",
+        "title": "Scenario brand-bank-login-3",
+        "text": "Case 3\nExampleBank account verification.\nSign in\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://collector.aionguard.invalid/session",
+        "formDestinationOrigin": "https://collector.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:34.638Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "brand-bank-login-4",
+      "template": "brand-bank-login",
+      "group": "brand-mismatch",
+      "variant": 4,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING",
+        "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:34.646Z",
+      "endedAt": "2026-09-30T01:59:34.704Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/brand-bank-login-4.html",
+        "title": "Scenario brand-bank-login-4",
+        "text": "Case 4\nExampleBank account verification.\nSign in\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://collector.aionguard.invalid/session",
+        "formDestinationOrigin": "https://collector.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:34.704Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "brand-bank-login-5",
+      "template": "brand-bank-login",
+      "group": "brand-mismatch",
+      "variant": 5,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING",
+        "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:34.711Z",
+      "endedAt": "2026-09-30T01:59:34.774Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/brand-bank-login-5.html",
+        "title": "Scenario brand-bank-login-5",
+        "text": "Case 5\nExampleBank account verification.\nSign in\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://collector.aionguard.invalid/session",
+        "formDestinationOrigin": "https://collector.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:34.774Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "brand-mail-text-1",
+      "template": "brand-mail-text",
+      "group": "brand-mismatch",
+      "variant": 1,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:34.783Z",
+      "endedAt": "2026-09-30T01:59:34.841Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/brand-mail-text-1.html",
+        "title": "Scenario brand-mail-text-1",
+        "text": "Case 1\nExampleMail official account recovery. Contact our agent with your recovery code.\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:34.841Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "brand-mail-text-2",
+      "template": "brand-mail-text",
+      "group": "brand-mismatch",
+      "variant": 2,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:34.849Z",
+      "endedAt": "2026-09-30T01:59:34.914Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/brand-mail-text-2.html",
+        "title": "Scenario brand-mail-text-2",
+        "text": "Case 2\nExampleMail official account recovery. Contact our agent with your recovery code.\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:34.914Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "brand-mail-text-3",
+      "template": "brand-mail-text",
+      "group": "brand-mismatch",
+      "variant": 3,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:34.926Z",
+      "endedAt": "2026-09-30T01:59:34.990Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/brand-mail-text-3.html",
+        "title": "Scenario brand-mail-text-3",
+        "text": "Case 3\nExampleMail official account recovery. Contact our agent with your recovery code.\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:34.990Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "brand-mail-text-4",
+      "template": "brand-mail-text",
+      "group": "brand-mismatch",
+      "variant": 4,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:34.999Z",
+      "endedAt": "2026-09-30T01:59:35.056Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/brand-mail-text-4.html",
+        "title": "Scenario brand-mail-text-4",
+        "text": "Case 4\nExampleMail official account recovery. Contact our agent with your recovery code.\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:35.057Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "brand-mail-text-5",
+      "template": "brand-mail-text",
+      "group": "brand-mismatch",
+      "variant": 5,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:35.065Z",
+      "endedAt": "2026-09-30T01:59:35.124Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/brand-mail-text-5.html",
+        "title": "Scenario brand-mail-text-5",
+        "text": "Case 5\nExampleMail official account recovery. Contact our agent with your recovery code.\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:35.124Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "brand-bank-text-1",
+      "template": "brand-bank-text",
+      "group": "brand-mismatch",
+      "variant": 1,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:35.132Z",
+      "endedAt": "2026-09-30T01:59:35.190Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/brand-bank-text-1.html",
+        "title": "Scenario brand-bank-text-1",
+        "text": "Case 1\nExampleBank secure verification. Transfer funds to the replacement account.\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:35.190Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "brand-bank-text-2",
+      "template": "brand-bank-text",
+      "group": "brand-mismatch",
+      "variant": 2,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:35.201Z",
+      "endedAt": "2026-09-30T01:59:35.258Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/brand-bank-text-2.html",
+        "title": "Scenario brand-bank-text-2",
+        "text": "Case 2\nExampleBank secure verification. Transfer funds to the replacement account.\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:35.258Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "brand-bank-text-3",
+      "template": "brand-bank-text",
+      "group": "brand-mismatch",
+      "variant": 3,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:35.266Z",
+      "endedAt": "2026-09-30T01:59:35.337Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/brand-bank-text-3.html",
+        "title": "Scenario brand-bank-text-3",
+        "text": "Case 3\nExampleBank secure verification. Transfer funds to the replacement account.\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:35.337Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "brand-bank-text-4",
+      "template": "brand-bank-text",
+      "group": "brand-mismatch",
+      "variant": 4,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:35.352Z",
+      "endedAt": "2026-09-30T01:59:35.435Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/brand-bank-text-4.html",
+        "title": "Scenario brand-bank-text-4",
+        "text": "Case 4\nExampleBank secure verification. Transfer funds to the replacement account.\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:35.435Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "brand-bank-text-5",
+      "template": "brand-bank-text",
+      "group": "brand-mismatch",
+      "variant": 5,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:35.444Z",
+      "endedAt": "2026-09-30T01:59:35.506Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/brand-bank-text-5.html",
+        "title": "Scenario brand-bank-text-5",
+        "text": "Case 5\nExampleBank secure verification. Transfer funds to the replacement account.\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:35.506Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "redirect-login-1",
+      "template": "redirect-login",
+      "group": "redirect",
+      "variant": 1,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:35.516Z",
+      "endedAt": "2026-09-30T01:59:35.594Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/redirect-login-1-destination.html",
+        "title": "Scenario redirect-login-1",
+        "text": "Case 1\nRedirect destination: account verification.\nSign in\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [
+          "https://owned.aionguard.invalid/redirect-login-1.html"
+        ],
+        "observedAt": "2026-09-30T01:59:35.594Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "redirect-login-2",
+      "template": "redirect-login",
+      "group": "redirect",
+      "variant": 2,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:35.602Z",
+      "endedAt": "2026-09-30T01:59:35.674Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/redirect-login-2-destination.html",
+        "title": "Scenario redirect-login-2",
+        "text": "Case 2\nRedirect destination: account verification.\nSign in\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [
+          "https://owned.aionguard.invalid/redirect-login-2.html"
+        ],
+        "observedAt": "2026-09-30T01:59:35.674Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "redirect-login-3",
+      "template": "redirect-login",
+      "group": "redirect",
+      "variant": 3,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:35.685Z",
+      "endedAt": "2026-09-30T01:59:35.759Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/redirect-login-3-destination.html",
+        "title": "Scenario redirect-login-3",
+        "text": "Case 3\nRedirect destination: account verification.\nSign in\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [
+          "https://owned.aionguard.invalid/redirect-login-3.html"
+        ],
+        "observedAt": "2026-09-30T01:59:35.759Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "redirect-login-4",
+      "template": "redirect-login",
+      "group": "redirect",
+      "variant": 4,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:35.770Z",
+      "endedAt": "2026-09-30T01:59:35.848Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/redirect-login-4-destination.html",
+        "title": "Scenario redirect-login-4",
+        "text": "Case 4\nRedirect destination: account verification.\nSign in\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [
+          "https://owned.aionguard.invalid/redirect-login-4.html"
+        ],
+        "observedAt": "2026-09-30T01:59:35.848Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "redirect-login-5",
+      "template": "redirect-login",
+      "group": "redirect",
+      "variant": 5,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:35.859Z",
+      "endedAt": "2026-09-30T01:59:35.937Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/redirect-login-5-destination.html",
+        "title": "Scenario redirect-login-5",
+        "text": "Case 5\nRedirect destination: account verification.\nSign in\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [
+          "https://owned.aionguard.invalid/redirect-login-5.html"
+        ],
+        "observedAt": "2026-09-30T01:59:35.937Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "redirect-external-form-1",
+      "template": "redirect-external-form",
+      "group": "redirect",
+      "variant": 1,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING",
+        "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:35.948Z",
+      "endedAt": "2026-09-30T01:59:36.024Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/redirect-external-form-1-destination.html",
+        "title": "Scenario redirect-external-form-1",
+        "text": "Case 1\nRedirect destination: shared file.\nSign in\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://collector.aionguard.invalid/session",
+        "formDestinationOrigin": "https://collector.aionguard.invalid",
+        "redirects": [
+          "https://owned.aionguard.invalid/redirect-external-form-1.html"
+        ],
+        "observedAt": "2026-09-30T01:59:36.024Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "redirect-external-form-2",
+      "template": "redirect-external-form",
+      "group": "redirect",
+      "variant": 2,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING",
+        "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:36.037Z",
+      "endedAt": "2026-09-30T01:59:36.106Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/redirect-external-form-2-destination.html",
+        "title": "Scenario redirect-external-form-2",
+        "text": "Case 2\nRedirect destination: shared file.\nSign in\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://collector.aionguard.invalid/session",
+        "formDestinationOrigin": "https://collector.aionguard.invalid",
+        "redirects": [
+          "https://owned.aionguard.invalid/redirect-external-form-2.html"
+        ],
+        "observedAt": "2026-09-30T01:59:36.106Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "redirect-external-form-3",
+      "template": "redirect-external-form",
+      "group": "redirect",
+      "variant": 3,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING",
+        "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:36.115Z",
+      "endedAt": "2026-09-30T01:59:36.190Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/redirect-external-form-3-destination.html",
+        "title": "Scenario redirect-external-form-3",
+        "text": "Case 3\nRedirect destination: shared file.\nSign in\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://collector.aionguard.invalid/session",
+        "formDestinationOrigin": "https://collector.aionguard.invalid",
+        "redirects": [
+          "https://owned.aionguard.invalid/redirect-external-form-3.html"
+        ],
+        "observedAt": "2026-09-30T01:59:36.190Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "redirect-external-form-4",
+      "template": "redirect-external-form",
+      "group": "redirect",
+      "variant": 4,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING",
+        "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:36.200Z",
+      "endedAt": "2026-09-30T01:59:36.272Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/redirect-external-form-4-destination.html",
+        "title": "Scenario redirect-external-form-4",
+        "text": "Case 4\nRedirect destination: shared file.\nSign in\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://collector.aionguard.invalid/session",
+        "formDestinationOrigin": "https://collector.aionguard.invalid",
+        "redirects": [
+          "https://owned.aionguard.invalid/redirect-external-form-4.html"
+        ],
+        "observedAt": "2026-09-30T01:59:36.272Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "redirect-external-form-5",
+      "template": "redirect-external-form",
+      "group": "redirect",
+      "variant": 5,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING",
+        "CROSS_ORIGIN_CREDENTIAL_SUBMISSION"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:36.281Z",
+      "endedAt": "2026-09-30T01:59:36.355Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/redirect-external-form-5-destination.html",
+        "title": "Scenario redirect-external-form-5",
+        "text": "Case 5\nRedirect destination: shared file.\nSign in\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://collector.aionguard.invalid/session",
+        "formDestinationOrigin": "https://collector.aionguard.invalid",
+        "redirects": [
+          "https://owned.aionguard.invalid/redirect-external-form-5.html"
+        ],
+        "observedAt": "2026-09-30T01:59:36.355Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "redirect-text-1",
+      "template": "redirect-text",
+      "group": "redirect",
+      "variant": 1,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:36.364Z",
+      "endedAt": "2026-09-30T01:59:36.440Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/redirect-text-1-destination.html",
+        "title": "Scenario redirect-text-1",
+        "text": "Case 1\nRedirect destination: send your recovery code to our agent.\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [
+          "https://owned.aionguard.invalid/redirect-text-1.html"
+        ],
+        "observedAt": "2026-09-30T01:59:36.440Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "redirect-text-2",
+      "template": "redirect-text",
+      "group": "redirect",
+      "variant": 2,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:36.449Z",
+      "endedAt": "2026-09-30T01:59:36.523Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/redirect-text-2-destination.html",
+        "title": "Scenario redirect-text-2",
+        "text": "Case 2\nRedirect destination: send your recovery code to our agent.\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [
+          "https://owned.aionguard.invalid/redirect-text-2.html"
+        ],
+        "observedAt": "2026-09-30T01:59:36.523Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "redirect-text-3",
+      "template": "redirect-text",
+      "group": "redirect",
+      "variant": 3,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:36.533Z",
+      "endedAt": "2026-09-30T01:59:36.604Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/redirect-text-3-destination.html",
+        "title": "Scenario redirect-text-3",
+        "text": "Case 3\nRedirect destination: send your recovery code to our agent.\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [
+          "https://owned.aionguard.invalid/redirect-text-3.html"
+        ],
+        "observedAt": "2026-09-30T01:59:36.604Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "redirect-text-4",
+      "template": "redirect-text",
+      "group": "redirect",
+      "variant": 4,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:36.614Z",
+      "endedAt": "2026-09-30T01:59:36.685Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/redirect-text-4-destination.html",
+        "title": "Scenario redirect-text-4",
+        "text": "Case 4\nRedirect destination: send your recovery code to our agent.\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [
+          "https://owned.aionguard.invalid/redirect-text-4.html"
+        ],
+        "observedAt": "2026-09-30T01:59:36.685Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "redirect-text-5",
+      "template": "redirect-text",
+      "group": "redirect",
+      "variant": 5,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:36.694Z",
+      "endedAt": "2026-09-30T01:59:36.769Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/redirect-text-5-destination.html",
+        "title": "Scenario redirect-text-5",
+        "text": "Case 5\nRedirect destination: send your recovery code to our agent.\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [
+          "https://owned.aionguard.invalid/redirect-text-5.html"
+        ],
+        "observedAt": "2026-09-30T01:59:36.769Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "redirect-payload-1",
+      "template": "redirect-payload",
+      "group": "redirect",
+      "variant": 1,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:36.777Z",
+      "endedAt": "2026-09-30T01:59:36.848Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/redirect-payload-1-destination.html",
+        "title": "Scenario redirect-payload-1",
+        "text": "Case 1\nRedirect destination: download this file.Download\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/package.exe",
+            "text": "Download"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [
+          "https://owned.aionguard.invalid/redirect-payload-1.html"
+        ],
+        "observedAt": "2026-09-30T01:59:36.848Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "redirect-payload-2",
+      "template": "redirect-payload",
+      "group": "redirect",
+      "variant": 2,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:36.857Z",
+      "endedAt": "2026-09-30T01:59:36.927Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/redirect-payload-2-destination.html",
+        "title": "Scenario redirect-payload-2",
+        "text": "Case 2\nRedirect destination: download this file.Download\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/package.exe",
+            "text": "Download"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [
+          "https://owned.aionguard.invalid/redirect-payload-2.html"
+        ],
+        "observedAt": "2026-09-30T01:59:36.927Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "redirect-payload-3",
+      "template": "redirect-payload",
+      "group": "redirect",
+      "variant": 3,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:36.938Z",
+      "endedAt": "2026-09-30T01:59:37.006Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/redirect-payload-3-destination.html",
+        "title": "Scenario redirect-payload-3",
+        "text": "Case 3\nRedirect destination: download this file.Download\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/package.exe",
+            "text": "Download"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [
+          "https://owned.aionguard.invalid/redirect-payload-3.html"
+        ],
+        "observedAt": "2026-09-30T01:59:37.006Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "redirect-payload-4",
+      "template": "redirect-payload",
+      "group": "redirect",
+      "variant": 4,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:37.015Z",
+      "endedAt": "2026-09-30T01:59:37.088Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/redirect-payload-4-destination.html",
+        "title": "Scenario redirect-payload-4",
+        "text": "Case 4\nRedirect destination: download this file.Download\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/package.exe",
+            "text": "Download"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [
+          "https://owned.aionguard.invalid/redirect-payload-4.html"
+        ],
+        "observedAt": "2026-09-30T01:59:37.088Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "redirect-payload-5",
+      "template": "redirect-payload",
+      "group": "redirect",
+      "variant": 5,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:37.097Z",
+      "endedAt": "2026-09-30T01:59:37.179Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/redirect-payload-5-destination.html",
+        "title": "Scenario redirect-payload-5",
+        "text": "Case 5\nRedirect destination: download this file.Download\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/package.exe",
+            "text": "Download"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [
+          "https://owned.aionguard.invalid/redirect-payload-5.html"
+        ],
+        "observedAt": "2026-09-30T01:59:37.179Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "download-update-1",
+      "template": "download-update",
+      "group": "download",
+      "variant": 1,
+      "expected": "MALICIOUS",
+      "categories": [
+        "EXECUTABLE_DOWNLOAD_LURE"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:37.189Z",
+      "endedAt": "2026-09-30T01:59:37.253Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/download-update-1.html",
+        "title": "Scenario download-update-1",
+        "text": "Case 1\nUrgent security update required.Download\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/package.exe",
+            "text": "Download"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:37.253Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "download-update-2",
+      "template": "download-update",
+      "group": "download",
+      "variant": 2,
+      "expected": "MALICIOUS",
+      "categories": [
+        "EXECUTABLE_DOWNLOAD_LURE"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:37.265Z",
+      "endedAt": "2026-09-30T01:59:37.325Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/download-update-2.html",
+        "title": "Scenario download-update-2",
+        "text": "Case 2\nUrgent security update required.Download\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/package.exe",
+            "text": "Download"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:37.325Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "download-update-3",
+      "template": "download-update",
+      "group": "download",
+      "variant": 3,
+      "expected": "MALICIOUS",
+      "categories": [
+        "EXECUTABLE_DOWNLOAD_LURE"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:37.336Z",
+      "endedAt": "2026-09-30T01:59:37.400Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/download-update-3.html",
+        "title": "Scenario download-update-3",
+        "text": "Case 3\nUrgent security update required.Download\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/package.exe",
+            "text": "Download"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:37.400Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "download-update-4",
+      "template": "download-update",
+      "group": "download",
+      "variant": 4,
+      "expected": "MALICIOUS",
+      "categories": [
+        "EXECUTABLE_DOWNLOAD_LURE"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:37.409Z",
+      "endedAt": "2026-09-30T01:59:37.470Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/download-update-4.html",
+        "title": "Scenario download-update-4",
+        "text": "Case 4\nUrgent security update required.Download\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/package.exe",
+            "text": "Download"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:37.470Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "download-update-5",
+      "template": "download-update",
+      "group": "download",
+      "variant": 5,
+      "expected": "MALICIOUS",
+      "categories": [
+        "EXECUTABLE_DOWNLOAD_LURE"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:37.481Z",
+      "endedAt": "2026-09-30T01:59:37.546Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/download-update-5.html",
+        "title": "Scenario download-update-5",
+        "text": "Case 5\nUrgent security update required.Download\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/package.exe",
+            "text": "Download"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:37.546Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "download-codec-1",
+      "template": "download-codec",
+      "group": "download",
+      "variant": 1,
+      "expected": "MALICIOUS",
+      "categories": [
+        "EXECUTABLE_DOWNLOAD_LURE"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:37.557Z",
+      "endedAt": "2026-09-30T01:59:37.628Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/download-codec-1.html",
+        "title": "Scenario download-codec-1",
+        "text": "Case 1\nInstall the codec to watch this video.Install\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/codec.msi",
+            "text": "Install"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:37.628Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "download-codec-2",
+      "template": "download-codec",
+      "group": "download",
+      "variant": 2,
+      "expected": "MALICIOUS",
+      "categories": [
+        "EXECUTABLE_DOWNLOAD_LURE"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:37.639Z",
+      "endedAt": "2026-09-30T01:59:37.698Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/download-codec-2.html",
+        "title": "Scenario download-codec-2",
+        "text": "Case 2\nInstall the codec to watch this video.Install\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/codec.msi",
+            "text": "Install"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:37.698Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "download-codec-3",
+      "template": "download-codec",
+      "group": "download",
+      "variant": 3,
+      "expected": "MALICIOUS",
+      "categories": [
+        "EXECUTABLE_DOWNLOAD_LURE"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:37.709Z",
+      "endedAt": "2026-09-30T01:59:37.769Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/download-codec-3.html",
+        "title": "Scenario download-codec-3",
+        "text": "Case 3\nInstall the codec to watch this video.Install\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/codec.msi",
+            "text": "Install"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:37.769Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "download-codec-4",
+      "template": "download-codec",
+      "group": "download",
+      "variant": 4,
+      "expected": "MALICIOUS",
+      "categories": [
+        "EXECUTABLE_DOWNLOAD_LURE"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:37.777Z",
+      "endedAt": "2026-09-30T01:59:37.841Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/download-codec-4.html",
+        "title": "Scenario download-codec-4",
+        "text": "Case 4\nInstall the codec to watch this video.Install\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/codec.msi",
+            "text": "Install"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:37.841Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "download-codec-5",
+      "template": "download-codec",
+      "group": "download",
+      "variant": 5,
+      "expected": "MALICIOUS",
+      "categories": [
+        "EXECUTABLE_DOWNLOAD_LURE"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:37.851Z",
+      "endedAt": "2026-09-30T01:59:37.910Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/download-codec-5.html",
+        "title": "Scenario download-codec-5",
+        "text": "Case 5\nInstall the codec to watch this video.Install\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/codec.msi",
+            "text": "Install"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:37.910Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "download-plain-1",
+      "template": "download-plain",
+      "group": "download",
+      "variant": 1,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:37.924Z",
+      "endedAt": "2026-09-30T01:59:37.988Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/download-plain-1.html",
+        "title": "Scenario download-plain-1",
+        "text": "Case 1\nYour shared invoice.View file\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/invoice.exe",
+            "text": "View file"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:37.988Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "download-plain-2",
+      "template": "download-plain",
+      "group": "download",
+      "variant": 2,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:37.997Z",
+      "endedAt": "2026-09-30T01:59:38.055Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/download-plain-2.html",
+        "title": "Scenario download-plain-2",
+        "text": "Case 2\nYour shared invoice.View file\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/invoice.exe",
+            "text": "View file"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:38.055Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "download-plain-3",
+      "template": "download-plain",
+      "group": "download",
+      "variant": 3,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:38.065Z",
+      "endedAt": "2026-09-30T01:59:38.128Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/download-plain-3.html",
+        "title": "Scenario download-plain-3",
+        "text": "Case 3\nYour shared invoice.View file\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/invoice.exe",
+            "text": "View file"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:38.128Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "download-plain-4",
+      "template": "download-plain",
+      "group": "download",
+      "variant": 4,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:38.138Z",
+      "endedAt": "2026-09-30T01:59:38.200Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/download-plain-4.html",
+        "title": "Scenario download-plain-4",
+        "text": "Case 4\nYour shared invoice.View file\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/invoice.exe",
+            "text": "View file"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:38.200Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "download-plain-5",
+      "template": "download-plain",
+      "group": "download",
+      "variant": 5,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:38.208Z",
+      "endedAt": "2026-09-30T01:59:38.269Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/download-plain-5.html",
+        "title": "Scenario download-plain-5",
+        "text": "Case 5\nYour shared invoice.View file\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/invoice.exe",
+            "text": "View file"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:38.269Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "download-extensionless-1",
+      "template": "download-extensionless",
+      "group": "download",
+      "variant": 1,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:38.278Z",
+      "endedAt": "2026-09-30T01:59:38.335Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/download-extensionless-1.html",
+        "title": "Scenario download-extensionless-1",
+        "text": "Case 1\nCritical update required.Get update\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/download",
+            "text": "Get update"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:38.335Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "download-extensionless-2",
+      "template": "download-extensionless",
+      "group": "download",
+      "variant": 2,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:38.345Z",
+      "endedAt": "2026-09-30T01:59:38.409Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/download-extensionless-2.html",
+        "title": "Scenario download-extensionless-2",
+        "text": "Case 2\nCritical update required.Get update\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/download",
+            "text": "Get update"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:38.409Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "download-extensionless-3",
+      "template": "download-extensionless",
+      "group": "download",
+      "variant": 3,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:38.419Z",
+      "endedAt": "2026-09-30T01:59:38.484Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/download-extensionless-3.html",
+        "title": "Scenario download-extensionless-3",
+        "text": "Case 3\nCritical update required.Get update\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/download",
+            "text": "Get update"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:38.484Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "download-extensionless-4",
+      "template": "download-extensionless",
+      "group": "download",
+      "variant": 4,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:38.492Z",
+      "endedAt": "2026-09-30T01:59:38.553Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/download-extensionless-4.html",
+        "title": "Scenario download-extensionless-4",
+        "text": "Case 4\nCritical update required.Get update\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/download",
+            "text": "Get update"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:38.553Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "download-extensionless-5",
+      "template": "download-extensionless",
+      "group": "download",
+      "variant": 5,
+      "expected": "MALICIOUS",
+      "categories": [],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:38.561Z",
+      "endedAt": "2026-09-30T01:59:38.621Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/download-extensionless-5.html",
+        "title": "Scenario download-extensionless-5",
+        "text": "Case 5\nCritical update required.Get update\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/download",
+            "text": "Get update"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:38.621Z"
+      },
+      "classification": "UNDETERMINED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "mixed-clickfix-1",
+      "template": "mixed-clickfix",
+      "group": "mixed",
+      "variant": 1,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CLICKFIX"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:38.631Z",
+      "endedAt": "2026-09-30T01:59:38.690Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/mixed-clickfix-1.html",
+        "title": "Scenario mixed-clickfix-1",
+        "text": "Case 1\nVerify you are human: paste this command into terminal.\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:38.690Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "mixed-clickfix-2",
+      "template": "mixed-clickfix",
+      "group": "mixed",
+      "variant": 2,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CLICKFIX"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:38.699Z",
+      "endedAt": "2026-09-30T01:59:38.758Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/mixed-clickfix-2.html",
+        "title": "Scenario mixed-clickfix-2",
+        "text": "Case 2\nVerify you are human: paste this command into terminal.\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:38.758Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "mixed-clickfix-3",
+      "template": "mixed-clickfix",
+      "group": "mixed",
+      "variant": 3,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CLICKFIX"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:38.770Z",
+      "endedAt": "2026-09-30T01:59:38.845Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/mixed-clickfix-3.html",
+        "title": "Scenario mixed-clickfix-3",
+        "text": "Case 3\nVerify you are human: paste this command into terminal.\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:38.845Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "mixed-clickfix-4",
+      "template": "mixed-clickfix",
+      "group": "mixed",
+      "variant": 4,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CLICKFIX"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:38.856Z",
+      "endedAt": "2026-09-30T01:59:38.934Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/mixed-clickfix-4.html",
+        "title": "Scenario mixed-clickfix-4",
+        "text": "Case 4\nVerify you are human: paste this command into terminal.\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:38.934Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "mixed-clickfix-5",
+      "template": "mixed-clickfix",
+      "group": "mixed",
+      "variant": 5,
+      "expected": "MALICIOUS",
+      "categories": [
+        "CLICKFIX"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:38.942Z",
+      "endedAt": "2026-09-30T01:59:39.005Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/mixed-clickfix-5.html",
+        "title": "Scenario mixed-clickfix-5",
+        "text": "Case 5\nVerify you are human: paste this command into terminal.\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:39.005Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "mixed-support-1",
+      "template": "mixed-support",
+      "group": "mixed",
+      "variant": 1,
+      "expected": "MALICIOUS",
+      "categories": [
+        "TECH_SUPPORT_SCAM"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:39.020Z",
+      "endedAt": "2026-09-30T01:59:39.080Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/mixed-support-1.html",
+        "title": "Scenario mixed-support-1",
+        "text": "Case 1\nYour device is locked. Call support immediately.\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:39.080Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "mixed-support-2",
+      "template": "mixed-support",
+      "group": "mixed",
+      "variant": 2,
+      "expected": "MALICIOUS",
+      "categories": [
+        "TECH_SUPPORT_SCAM"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:39.091Z",
+      "endedAt": "2026-09-30T01:59:39.150Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/mixed-support-2.html",
+        "title": "Scenario mixed-support-2",
+        "text": "Case 2\nYour device is locked. Call support immediately.\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:39.150Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "mixed-support-3",
+      "template": "mixed-support",
+      "group": "mixed",
+      "variant": 3,
+      "expected": "MALICIOUS",
+      "categories": [
+        "TECH_SUPPORT_SCAM"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:39.161Z",
+      "endedAt": "2026-09-30T01:59:39.220Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/mixed-support-3.html",
+        "title": "Scenario mixed-support-3",
+        "text": "Case 3\nYour device is locked. Call support immediately.\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:39.220Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "mixed-support-4",
+      "template": "mixed-support",
+      "group": "mixed",
+      "variant": 4,
+      "expected": "MALICIOUS",
+      "categories": [
+        "TECH_SUPPORT_SCAM"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:39.230Z",
+      "endedAt": "2026-09-30T01:59:39.292Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/mixed-support-4.html",
+        "title": "Scenario mixed-support-4",
+        "text": "Case 4\nYour device is locked. Call support immediately.\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:39.292Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "mixed-support-5",
+      "template": "mixed-support",
+      "group": "mixed",
+      "variant": 5,
+      "expected": "MALICIOUS",
+      "categories": [
+        "TECH_SUPPORT_SCAM"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:39.302Z",
+      "endedAt": "2026-09-30T01:59:39.357Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/mixed-support-5.html",
+        "title": "Scenario mixed-support-5",
+        "text": "Case 5\nYour device is locked. Call support immediately.\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:39.357Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "ambiguous-login-1",
+      "template": "ambiguous-login",
+      "group": "mixed",
+      "variant": 1,
+      "expected": "AMBIGUOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:39.366Z",
+      "endedAt": "2026-09-30T01:59:39.423Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/ambiguous-login-1.html",
+        "title": "Scenario ambiguous-login-1",
+        "text": "Case 1\nUnknown community login with insufficient ownership evidence.\nSign in\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:39.423Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "ambiguous-login-2",
+      "template": "ambiguous-login",
+      "group": "mixed",
+      "variant": 2,
+      "expected": "AMBIGUOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:39.432Z",
+      "endedAt": "2026-09-30T01:59:39.492Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/ambiguous-login-2.html",
+        "title": "Scenario ambiguous-login-2",
+        "text": "Case 2\nUnknown community login with insufficient ownership evidence.\nSign in\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:39.492Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "ambiguous-login-3",
+      "template": "ambiguous-login",
+      "group": "mixed",
+      "variant": 3,
+      "expected": "AMBIGUOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:39.506Z",
+      "endedAt": "2026-09-30T01:59:39.585Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/ambiguous-login-3.html",
+        "title": "Scenario ambiguous-login-3",
+        "text": "Case 3\nUnknown community login with insufficient ownership evidence.\nSign in\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:39.585Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "ambiguous-login-4",
+      "template": "ambiguous-login",
+      "group": "mixed",
+      "variant": 4,
+      "expected": "AMBIGUOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:39.598Z",
+      "endedAt": "2026-09-30T01:59:39.657Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/ambiguous-login-4.html",
+        "title": "Scenario ambiguous-login-4",
+        "text": "Case 4\nUnknown community login with insufficient ownership evidence.\nSign in\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:39.657Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "ambiguous-login-5",
+      "template": "ambiguous-login",
+      "group": "mixed",
+      "variant": 5,
+      "expected": "AMBIGUOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:39.666Z",
+      "endedAt": "2026-09-30T01:59:39.728Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/ambiguous-login-5.html",
+        "title": "Scenario ambiguous-login-5",
+        "text": "Case 5\nUnknown community login with insufficient ownership evidence.\nSign in\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [],
+        "passwordField": true,
+        "formAction": "https://owned.aionguard.invalid/session",
+        "formDestinationOrigin": "https://owned.aionguard.invalid",
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:39.728Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "ambiguous-update-1",
+      "template": "ambiguous-update",
+      "group": "mixed",
+      "variant": 1,
+      "expected": "AMBIGUOUS",
+      "categories": [
+        "EXECUTABLE_DOWNLOAD_LURE"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:39.736Z",
+      "endedAt": "2026-09-30T01:59:39.794Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/ambiguous-update-1.html",
+        "title": "Scenario ambiguous-update-1",
+        "text": "Case 1\nRequired application update; publisher ownership is unknown.Download\n\nReference 100; locale en; sample 1.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/package.exe",
+            "text": "Download"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:39.794Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "ambiguous-update-2",
+      "template": "ambiguous-update",
+      "group": "mixed",
+      "variant": 2,
+      "expected": "AMBIGUOUS",
+      "categories": [
+        "EXECUTABLE_DOWNLOAD_LURE"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:39.804Z",
+      "endedAt": "2026-09-30T01:59:39.861Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/ambiguous-update-2.html",
+        "title": "Scenario ambiguous-update-2",
+        "text": "Case 2\nRequired application update; publisher ownership is unknown.Download\n\nReference 101; locale en; sample 2.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/package.exe",
+            "text": "Download"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:39.861Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "ambiguous-update-3",
+      "template": "ambiguous-update",
+      "group": "mixed",
+      "variant": 3,
+      "expected": "AMBIGUOUS",
+      "categories": [
+        "EXECUTABLE_DOWNLOAD_LURE"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:39.872Z",
+      "endedAt": "2026-09-30T01:59:39.934Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/ambiguous-update-3.html",
+        "title": "Scenario ambiguous-update-3",
+        "text": "Case 3\nRequired application update; publisher ownership is unknown.Download\n\nReference 102; locale en; sample 3.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/package.exe",
+            "text": "Download"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:39.934Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "ambiguous-update-4",
+      "template": "ambiguous-update",
+      "group": "mixed",
+      "variant": 4,
+      "expected": "AMBIGUOUS",
+      "categories": [
+        "EXECUTABLE_DOWNLOAD_LURE"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:39.944Z",
+      "endedAt": "2026-09-30T01:59:40.004Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/ambiguous-update-4.html",
+        "title": "Scenario ambiguous-update-4",
+        "text": "Case 4\nRequired application update; publisher ownership is unknown.Download\n\nReference 103; locale en; sample 4.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/package.exe",
+            "text": "Download"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:40.004Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    },
+    {
+      "id": "ambiguous-update-5",
+      "template": "ambiguous-update",
+      "group": "mixed",
+      "variant": 5,
+      "expected": "AMBIGUOUS",
+      "categories": [
+        "EXECUTABLE_DOWNLOAD_LURE"
+      ],
+      "error": null,
+      "startedAt": "2026-09-30T01:59:40.014Z",
+      "endedAt": "2026-09-30T01:59:40.074Z",
+      "blockedRequests": 0,
+      "observation": {
+        "finalUrl": "https://owned.aionguard.invalid/ambiguous-update-5.html",
+        "title": "Scenario ambiguous-update-5",
+        "text": "Case 5\nRequired application update; publisher ownership is unknown.Download\n\nReference 104; locale en; sample 5.",
+        "claimedService": "UNKNOWN",
+        "downloadLinks": [
+          {
+            "href": "https://owned.aionguard.invalid/package.exe",
+            "text": "Download"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T01:59:40.074Z"
+      },
+      "classification": "FLAGGED",
+      "cleanup": "CONFIRMED",
+      "astraInvocationStatus": "NOT_IMPLEMENTED_IN_DETECTOR"
+    }
+  ]
+}

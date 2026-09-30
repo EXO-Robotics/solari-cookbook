@@ -1,5 +1,6 @@
 import { createHash, randomUUID } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
+import { setTimeout as delay } from 'node:timers/promises';
 import { z } from 'zod';
 import {
   CleanupSchema,
@@ -21,9 +22,34 @@ import { FIXTURE_ID, isAllowedNavigation, MAX_RESULT_BYTES, validPng } from './p
 import { pathAllowed } from './worker.mjs';
 import { IsolationError, type InspectionVm } from './provider.ts';
 
+const WorkerTimingSchema = z
+  .object({
+    startedAt: z.string().datetime(),
+    events: z
+      .object({
+        workerStarted: z.number().finite().min(0),
+        browserReady: z.number().finite().min(0),
+        navigationStarted: z.number().finite().min(0),
+        pageLoaded: z.number().finite().min(0),
+        factsCollected: z.number().finite().min(0),
+        screenshotCollected: z.number().finite().min(0),
+      })
+      .strict(),
+  })
+  .strict()
+  .refine((value) => {
+    const events = Object.values(value.events);
+    return events.every(
+      (time, index) => time <= 60_000 && (index === 0 || time >= events[index - 1]!),
+    );
+  });
+export type WorkerTiming = z.infer<typeof WorkerTimingSchema>;
+export type InspectionObserver = (event: string, detail?: WorkerTiming) => void;
+
 const PayloadSchema = z
   .object({
     observation: InspectionObservationSchema,
+    benchmarkTiming: WorkerTimingSchema.optional(),
     pngBase64: z
       .string()
       .min(1)
@@ -43,8 +69,18 @@ export class SolariInspector implements Inspector {
   constructor(
     config: SolariInspectorConfig | null,
     private readonly provider: SolariProvider = solariProvider,
+    private readonly observer?: InspectionObserver,
   ) {
     this.config = config === null ? null : validateConfig(config);
+  }
+
+  private emit(event: string, detail?: WorkerTiming): void {
+    // Optional measurement must never prevent lifecycle cleanup or alter a verdict.
+    try {
+      this.observer?.(event, detail);
+    } catch {
+      /* Diagnostic observer only. */
+    }
   }
 
   /** Unresolved cleanup counts against admission until independently resolved. */
@@ -53,6 +89,7 @@ export class SolariInspector implements Inspector {
   }
 
   async inspect(fixtureId: string): Promise<InspectionResult> {
+    this.emit('inspection_started');
     const empty: InspectionResult = {
       execution: 'UNAVAILABLE',
       mode: 'LIVE',
@@ -85,6 +122,7 @@ export class SolariInspector implements Inspector {
       // Upload only this event-built worker and registered destination configuration, never host secrets.
       const worker = await readFile(new URL('./worker.mjs', import.meta.url), 'utf8');
       creationAttempted = true;
+      this.emit('provision_started');
       pending.vm = await this.provider.create(
         {
           name,
@@ -92,11 +130,13 @@ export class SolariInspector implements Inspector {
         },
         AbortSignal.timeout(this.config.commandTimeoutMs),
       );
+      this.emit('provision_complete');
       result.createdAt = new Date().toISOString();
       result.sandboxId = IdSchema.parse(
         `solari-${createHash('sha256').update(pending.vm.id).digest('hex').slice(0, 32)}`,
       );
       pending.cleanup.sandboxId = result.sandboxId;
+      this.emit('setup_started');
       const setupSignal = AbortSignal.timeout(this.config.setupTimeoutMs);
       await pending.vm.writeFiles(
         [
@@ -104,6 +144,7 @@ export class SolariInspector implements Inspector {
           {
             path: '/vercel/sandbox/aionguard-request.json',
             content: JSON.stringify({
+              ...(this.observer ? { benchmarkTiming: true } : {}),
               url: this.config.fixture.url,
               navigationOrigins: this.config.fixture.navigationOrigins,
               requestPath,
@@ -113,19 +154,22 @@ export class SolariInspector implements Inspector {
         ],
         setupSignal,
       );
+      this.emit('setup_complete');
       const signal = AbortSignal.timeout(this.config.commandTimeoutMs);
       result.collectionStartedAt = new Date().toISOString();
+      this.emit('collection_started');
       const exitCode = await pending.vm.runWorker(this.config.commandTimeoutMs, signal);
       if (exitCode !== 0)
         throw new IsolationError(
           exitCode === 124 || exitCode === 137 ? 'TIMEOUT' : 'INVALID_EVIDENCE',
         );
       const bytes = await pending.vm.readResult(MAX_RESULT_BYTES, signal);
+      this.emit('evidence_received');
       if (bytes.length > MAX_RESULT_BYTES) throw new IsolationError('INVALID_EVIDENCE');
       const parsed: unknown = JSON.parse(bytes.toString('utf8'));
       const failed = WorkerFailureSchema.safeParse(parsed);
       if (failed.success) throw new IsolationError(failed.data.failure);
-      const { observation, pngBase64 } = PayloadSchema.parse(parsed);
+      const { observation, pngBase64, benchmarkTiming } = PayloadSchema.parse(parsed);
       const png = Buffer.from(pngBase64, 'base64');
       if (
         png.toString('base64') !== pngBase64 ||
@@ -155,6 +199,8 @@ export class SolariInspector implements Inspector {
         observedAt > Date.now() + 5_000
       )
         throw new IsolationError('INVALID_EVIDENCE');
+      this.emit('evidence_validated');
+      if (benchmarkTiming) this.emit('worker_timing', benchmarkTiming);
       result.execution = 'SUCCEEDED';
       result.observation = observation;
       result.pngBase64 = pngBase64;
@@ -177,9 +223,13 @@ export class SolariInspector implements Inspector {
         this.pending.delete(name);
       }
     } finally {
-      if (pending.vm) await this.cleanup(name, pending);
-      else if (pending.cleanup.state === 'PENDING') pending.cleanup.state = 'UNRESOLVED';
+      if (pending.vm) {
+        this.emit('cleanup_started');
+        await this.cleanup(name, pending);
+        this.emit('cleanup_complete');
+      } else if (pending.cleanup.state === 'PENDING') pending.cleanup.state = 'UNRESOLVED';
       result.returnedAt = new Date().toISOString();
+      this.emit('inspection_returned');
     }
     return InspectionResultSchema.parse(result);
   }
@@ -355,11 +405,14 @@ export const solariProvider: SolariProvider = {
     // A successful kill followed by an empty exact-metadata inventory is independent
     // lifecycle evidence; it does not assert deletion of provider audit logs.
     async function confirmAbsent(signal: AbortSignal): Promise<boolean> {
-      const items = await bounded(
-        client.list({ metadata: { application: 'aionguard', inspection: name }, limit: 100 }),
+      return waitForInventoryAbsence(
+        () =>
+          bounded(
+            client.list({ metadata: { application: 'aionguard', inspection: name }, limit: 100 }),
+            signal,
+          ),
         signal,
       );
-      return items.sandboxes.length === 0 && !items.nextCursor;
     }
     return {
       id: sandbox.id,
@@ -420,6 +473,10 @@ export const solariProvider: SolariProvider = {
       async delete(signal) {
         activeSignal = signal;
         if (absenceConfirmed) return;
+        // A successful termination may precede inventory convergence, and its
+        // signed capability can become invalid. Reconcile before repeating kill.
+        absenceConfirmed = await confirmAbsent(signal);
+        if (absenceConfirmed) return;
         await bounded(sandbox.kill(), signal);
         absenceConfirmed = await confirmAbsent(signal);
         if (!absenceConfirmed) throw new IsolationError('PROVIDER_UNAVAILABLE');
@@ -427,3 +484,18 @@ export const solariProvider: SolariProvider = {
     };
   },
 };
+
+/** Bounded inventory convergence; never interpret a paginated result as absence. */
+export async function waitForInventoryAbsence(
+  list: () => Promise<{ sandboxes: unknown[]; nextCursor?: string | null }>,
+  signal: AbortSignal,
+  pause: () => Promise<void> = () => delay(250, undefined, { signal }),
+): Promise<boolean> {
+  for (let attempt = 0; attempt < 10; attempt++) {
+    signal.throwIfAborted();
+    const page = await list();
+    if (page.sandboxes.length === 0 && !page.nextCursor) return true;
+    if (attempt < 9) await pause();
+  }
+  return false;
+}

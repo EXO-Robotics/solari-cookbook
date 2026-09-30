@@ -1,0 +1,510 @@
+{
+  "schemaVersion": 1,
+  "startedAt": "2026-09-30T01:24:32.901Z",
+  "requested": 50,
+  "expectedCategory": "CREDENTIAL_PHISHING",
+  "sourceCommit": "ebe860395a3a446b3038da773d66b878504af03b",
+  "sourceDirty": true,
+  "hashes": {
+    "src/server/isolation/worker.mjs": "baf52d6b2f501b50ab2d377ea92e807e475e05c787f1762bb6210451ef08f8d5",
+    "src/server/detection/index.ts": "e2e3f868fc26e0bb6457bb8e0cf2442423ddbdee6cf5b8efea2404098df1d5aa",
+    "src/server/isolation/solari.ts": "14e82e216a1d8309c7db032dbb34edf1e6d33cdff3d5f527edae11e735898d5a",
+    "scripts/benchmark-solari.ts": "0181714c0481b34d9d3cc270a3f70711d2ff5a1c350fa3f011b5d7ed216b342c",
+    "scripts/benchmark-metrics.ts": "c0a6e0ee443e55fd49bdd55e3489583b0579a47668847c26a6e05be59f591421"
+  },
+  "scope": "Sequential cold fresh Solari sandbox inspections of one configured owned fixture; backend harness timings, not click-to-navigation latency.",
+  "fixtureUrlSha256": "2740195243bb25715458a2f3491a2cee655aee0fdfe23b7b10755fbacbe2e5ca",
+  "astraInvoked": false,
+  "astraMeasured": false,
+  "endpointInterceptionVerified": false,
+  "hostIsolationVerified": false,
+  "limitations": [
+    "No ALLOW decision is produced.",
+    "Observer event serialization and synchronous checkpoint I/O add host measurement overhead; worker timing payload serialization adds guest overhead.",
+    "Rules execute after inspection returns and cleanup completes.",
+    "Browser setup includes dependency installation on each fresh sandbox.",
+    "Guest stage intervals use guest monotonic offsets only; host and guest clocks are never subtracted.",
+    "A repeated fixture is not a detection-rate dataset.",
+    "Observation hashes normalize observedAt to null so content drift can be compared across repeated runs.",
+    "Partial stage durations remain measured even on failed runs; backendDecision is measured only for usable successful evidence."
+  ],
+  "stopReason": "UNRESOLVED_CLEANUP",
+  "inProgressAttempt": null,
+  "summary": {
+    "requested": 50,
+    "attempted": 2,
+    "completed": 2,
+    "incomplete": 0,
+    "notAttempted": 48,
+    "succeeded": 1,
+    "unavailable": 0,
+    "cleanupConfirmed": 1,
+    "cleanupUnresolved": 1,
+    "expectedCategoryMatched": 2,
+    "expectedCategoryMismatched": 0,
+    "expectedCategoryNotEvaluable": 0,
+    "percentileMethod": "nearest-rank",
+    "latencyPopulation": "ALL_ATTEMPTS: measured stage values, including partial failed runs; incomplete attempts contribute to missing counts",
+    "latency": {
+      "provisioning": {
+        "measured": 2,
+        "missing": 0,
+        "medianMs": 230.02308300000004,
+        "p90Ms": 810.933125,
+        "p95Ms": 810.933125
+      },
+      "browserSetup": {
+        "measured": 2,
+        "missing": 0,
+        "medianMs": 31455.225375,
+        "p90Ms": 32453.728792,
+        "p95Ms": 32453.728792
+      },
+      "collectionAndTransfer": {
+        "measured": 2,
+        "missing": 0,
+        "medianMs": 1722.7571249999964,
+        "p90Ms": 2109.051124999998,
+        "p95Ms": 2109.051124999998
+      },
+      "evidenceValidation": {
+        "measured": 2,
+        "missing": 0,
+        "medianMs": 4.505959000001894,
+        "p90Ms": 8.419583000002604,
+        "p95Ms": 8.419583000002604
+      },
+      "cleanup": {
+        "measured": 2,
+        "missing": 0,
+        "medianMs": 483.1958749999976,
+        "p90Ms": 631.4517079999932,
+        "p95Ms": 631.4517079999932
+      },
+      "rules": {
+        "measured": 2,
+        "missing": 0,
+        "medianMs": 0.7094580000120914,
+        "p90Ms": 1.776916999995592,
+        "p95Ms": 1.776916999995592
+      },
+      "backendDecision": {
+        "measured": 1,
+        "missing": 1,
+        "medianMs": 34491.224833,
+        "p90Ms": 34491.224833,
+        "p95Ms": 34491.224833
+      },
+      "totalAttempt": {
+        "measured": 2,
+        "missing": 0,
+        "medianMs": 34491.337416,
+        "p90Ms": 35435.140999999996,
+        "p95Ms": 35435.140999999996
+      },
+      "guestBrowserLaunch": {
+        "measured": 2,
+        "missing": 0,
+        "medianMs": 517.0079519999999,
+        "p90Ms": 553.936749,
+        "p95Ms": 553.936749
+      },
+      "guestContextSetup": {
+        "measured": 2,
+        "missing": 0,
+        "medianMs": 66.44287100000008,
+        "p90Ms": 115.53357100000005,
+        "p95Ms": 115.53357100000005
+      },
+      "pageLoad": {
+        "measured": 2,
+        "missing": 0,
+        "medianMs": 203.36042099999997,
+        "p90Ms": 635.9269929999999,
+        "p95Ms": 635.9269929999999
+      },
+      "observation": {
+        "measured": 2,
+        "missing": 0,
+        "medianMs": 18.675977999999986,
+        "p90Ms": 21.29760599999986,
+        "p95Ms": 21.29760599999986
+      },
+      "guestScreenshot": {
+        "measured": 2,
+        "missing": 0,
+        "medianMs": 222.22251200000005,
+        "p90Ms": 269.64943100000005,
+        "p95Ms": 269.64943100000005
+      },
+      "clickToDecision": {
+        "measured": 0,
+        "missing": 2,
+        "medianMs": null,
+        "p90Ms": null,
+        "p95Ms": null
+      },
+      "astraReview": {
+        "measured": 0,
+        "missing": 2,
+        "medianMs": null,
+        "p90Ms": null,
+        "p95Ms": null
+      },
+      "totalDeepReview": {
+        "measured": 0,
+        "missing": 2,
+        "medianMs": null,
+        "p90Ms": null,
+        "p95Ms": null
+      }
+    },
+    "successfulLatencyPopulation": "SUCCEEDED execution AND CONFIRMED cleanup AND classification other than INSPECTION_UNAVAILABLE",
+    "successfulLatency": {
+      "provisioning": {
+        "measured": 1,
+        "missing": 0,
+        "medianMs": 810.933125,
+        "p90Ms": 810.933125,
+        "p95Ms": 810.933125
+      },
+      "browserSetup": {
+        "measured": 1,
+        "missing": 0,
+        "medianMs": 31455.225375,
+        "p90Ms": 31455.225375,
+        "p95Ms": 31455.225375
+      },
+      "collectionAndTransfer": {
+        "measured": 1,
+        "missing": 0,
+        "medianMs": 1722.7571249999964,
+        "p90Ms": 1722.7571249999964,
+        "p95Ms": 1722.7571249999964
+      },
+      "evidenceValidation": {
+        "measured": 1,
+        "missing": 0,
+        "medianMs": 8.419583000002604,
+        "p90Ms": 8.419583000002604,
+        "p95Ms": 8.419583000002604
+      },
+      "cleanup": {
+        "measured": 1,
+        "missing": 0,
+        "medianMs": 483.1958749999976,
+        "p90Ms": 483.1958749999976,
+        "p95Ms": 483.1958749999976
+      },
+      "rules": {
+        "measured": 1,
+        "missing": 0,
+        "medianMs": 1.776916999995592,
+        "p90Ms": 1.776916999995592,
+        "p95Ms": 1.776916999995592
+      },
+      "backendDecision": {
+        "measured": 1,
+        "missing": 0,
+        "medianMs": 34491.224833,
+        "p90Ms": 34491.224833,
+        "p95Ms": 34491.224833
+      },
+      "totalAttempt": {
+        "measured": 1,
+        "missing": 0,
+        "medianMs": 34491.337416,
+        "p90Ms": 34491.337416,
+        "p95Ms": 34491.337416
+      },
+      "guestBrowserLaunch": {
+        "measured": 1,
+        "missing": 0,
+        "medianMs": 517.0079519999999,
+        "p90Ms": 517.0079519999999,
+        "p95Ms": 517.0079519999999
+      },
+      "guestContextSetup": {
+        "measured": 1,
+        "missing": 0,
+        "medianMs": 66.44287100000008,
+        "p90Ms": 66.44287100000008,
+        "p95Ms": 66.44287100000008
+      },
+      "pageLoad": {
+        "measured": 1,
+        "missing": 0,
+        "medianMs": 203.36042099999997,
+        "p90Ms": 203.36042099999997,
+        "p95Ms": 203.36042099999997
+      },
+      "observation": {
+        "measured": 1,
+        "missing": 0,
+        "medianMs": 18.675977999999986,
+        "p90Ms": 18.675977999999986,
+        "p95Ms": 18.675977999999986
+      },
+      "guestScreenshot": {
+        "measured": 1,
+        "missing": 0,
+        "medianMs": 269.64943100000005,
+        "p90Ms": 269.64943100000005,
+        "p95Ms": 269.64943100000005
+      },
+      "clickToDecision": {
+        "measured": 0,
+        "missing": 1,
+        "medianMs": null,
+        "p90Ms": null,
+        "p95Ms": null
+      },
+      "astraReview": {
+        "measured": 0,
+        "missing": 1,
+        "medianMs": null,
+        "p90Ms": null,
+        "p95Ms": null
+      },
+      "totalDeepReview": {
+        "measured": 0,
+        "missing": 1,
+        "medianMs": null,
+        "p90Ms": null,
+        "p95Ms": null
+      }
+    }
+  },
+  "runs": [
+    {
+      "run": 1,
+      "expectedCategory": "CREDENTIAL_PHISHING",
+      "classification": "SUSPICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "expectedCategoryMatched": true,
+      "execution": "SUCCEEDED",
+      "cleanup": "CONFIRMED",
+      "error": null,
+      "timestamps": {
+        "attempt_started": {
+          "iso": "2026-09-30T01:24:32.902Z",
+          "elapsedMs": 0.05716699999999264
+        },
+        "inspection_started": {
+          "iso": "2026-09-30T01:24:32.904Z",
+          "elapsedMs": 1.8422499999999786
+        },
+        "provision_started": {
+          "iso": "2026-09-30T01:24:32.904Z",
+          "elapsedMs": 2.2372499999999604
+        },
+        "provision_complete": {
+          "iso": "2026-09-30T01:24:33.715Z",
+          "elapsedMs": 813.1703749999999
+        },
+        "setup_started": {
+          "iso": "2026-09-30T01:24:33.716Z",
+          "elapsedMs": 813.623292
+        },
+        "setup_complete": {
+          "iso": "2026-09-30T01:25:05.171Z",
+          "elapsedMs": 32268.848667000002
+        },
+        "collection_started": {
+          "iso": "2026-09-30T01:25:05.172Z",
+          "elapsedMs": 32269.892417000003
+        },
+        "evidence_received": {
+          "iso": "2026-09-30T01:25:06.895Z",
+          "elapsedMs": 33992.649542
+        },
+        "evidence_validated": {
+          "iso": "2026-09-30T01:25:06.903Z",
+          "elapsedMs": 34001.069125
+        },
+        "worker_timing": {
+          "iso": "2026-09-30T01:25:06.903Z",
+          "elapsedMs": 34001.532625
+        },
+        "cleanup_started": {
+          "iso": "2026-09-30T01:25:06.904Z",
+          "elapsedMs": 34001.663625
+        },
+        "cleanup_complete": {
+          "iso": "2026-09-30T01:25:07.387Z",
+          "elapsedMs": 34484.8595
+        },
+        "inspection_returned": {
+          "iso": "2026-09-30T01:25:07.388Z",
+          "elapsedMs": 34485.772458
+        },
+        "rules_started": {
+          "iso": "2026-09-30T01:25:07.391Z",
+          "elapsedMs": 34489.291208
+        },
+        "rules_complete": {
+          "iso": "2026-09-30T01:25:07.393Z",
+          "elapsedMs": 34491.068125
+        },
+        "decision_returned": {
+          "iso": "2026-09-30T01:25:07.393Z",
+          "elapsedMs": 34491.282
+        },
+        "attempt_complete": {
+          "iso": "2026-09-30T01:25:07.393Z",
+          "elapsedMs": 34491.394583
+        }
+      },
+      "durationsMs": {
+        "provisioning": 810.933125,
+        "browserSetup": 31455.225375,
+        "collectionAndTransfer": 1722.7571249999964,
+        "evidenceValidation": 8.419583000002604,
+        "cleanup": 483.1958749999976,
+        "rules": 1.776916999995592,
+        "backendDecision": 34491.224833,
+        "totalAttempt": 34491.337416,
+        "guestBrowserLaunch": 517.0079519999999,
+        "guestContextSetup": 66.44287100000008,
+        "pageLoad": 203.36042099999997,
+        "observation": 18.675977999999986,
+        "guestScreenshot": 269.64943100000005,
+        "clickToDecision": null,
+        "astraReview": null,
+        "totalDeepReview": null
+      },
+      "astraInvoked": false,
+      "astraStatus": "NOT_INVOKED",
+      "observationSha256": "3a7e5e30258ac21d060ae72ad976ed86c77cf4200af7995f8c5def0fe786bac5",
+      "screenshotSha256": "d8baec55e6ee99045d82749a800e02d8973838c3b7457e23e4c2494e1b0bf830",
+      "workerTiming": {
+        "startedAt": "2026-09-30T01:25:04.712Z",
+        "events": {
+          "workerStarted": 0,
+          "browserReady": 517.0079519999999,
+          "navigationStarted": 583.450823,
+          "pageLoaded": 786.811244,
+          "factsCollected": 805.487222,
+          "screenshotCollected": 1075.136653
+        }
+      }
+    },
+    {
+      "run": 2,
+      "expectedCategory": "CREDENTIAL_PHISHING",
+      "classification": "SUSPICIOUS",
+      "categories": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "expectedCategoryMatched": true,
+      "execution": "SUCCEEDED",
+      "cleanup": "UNRESOLVED",
+      "error": null,
+      "timestamps": {
+        "attempt_started": {
+          "iso": "2026-09-30T01:25:07.396Z",
+          "elapsedMs": 0.016999999999825377
+        },
+        "inspection_started": {
+          "iso": "2026-09-30T01:25:07.398Z",
+          "elapsedMs": 2.516749999995227
+        },
+        "provision_started": {
+          "iso": "2026-09-30T01:25:07.399Z",
+          "elapsedMs": 3.2282500000001164
+        },
+        "provision_complete": {
+          "iso": "2026-09-30T01:25:07.629Z",
+          "elapsedMs": 233.25133300000016
+        },
+        "setup_started": {
+          "iso": "2026-09-30T01:25:07.629Z",
+          "elapsedMs": 233.85904099999607
+        },
+        "setup_complete": {
+          "iso": "2026-09-30T01:25:40.083Z",
+          "elapsedMs": 32687.587832999998
+        },
+        "collection_started": {
+          "iso": "2026-09-30T01:25:40.083Z",
+          "elapsedMs": 32687.877416000003
+        },
+        "evidence_received": {
+          "iso": "2026-09-30T01:25:42.192Z",
+          "elapsedMs": 34796.928541
+        },
+        "evidence_validated": {
+          "iso": "2026-09-30T01:25:42.197Z",
+          "elapsedMs": 34801.4345
+        },
+        "worker_timing": {
+          "iso": "2026-09-30T01:25:42.197Z",
+          "elapsedMs": 34801.736791
+        },
+        "cleanup_started": {
+          "iso": "2026-09-30T01:25:42.197Z",
+          "elapsedMs": 34801.925833
+        },
+        "cleanup_complete": {
+          "iso": "2026-09-30T01:25:42.829Z",
+          "elapsedMs": 35433.377540999994
+        },
+        "inspection_returned": {
+          "iso": "2026-09-30T01:25:42.829Z",
+          "elapsedMs": 35433.65695799999
+        },
+        "rules_started": {
+          "iso": "2026-09-30T01:25:42.830Z",
+          "elapsedMs": 35434.34174999999
+        },
+        "rules_complete": {
+          "iso": "2026-09-30T01:25:42.830Z",
+          "elapsedMs": 35435.051208000004
+        },
+        "decision_returned": {
+          "iso": "2026-09-30T01:25:42.830Z",
+          "elapsedMs": 35435.11404099999
+        },
+        "attempt_complete": {
+          "iso": "2026-09-30T01:25:42.830Z",
+          "elapsedMs": 35435.157999999996
+        }
+      },
+      "durationsMs": {
+        "provisioning": 230.02308300000004,
+        "browserSetup": 32453.728792,
+        "collectionAndTransfer": 2109.051124999998,
+        "evidenceValidation": 4.505959000001894,
+        "cleanup": 631.4517079999932,
+        "rules": 0.7094580000120914,
+        "backendDecision": null,
+        "totalAttempt": 35435.140999999996,
+        "guestBrowserLaunch": 553.936749,
+        "guestContextSetup": 115.53357100000005,
+        "pageLoad": 635.9269929999999,
+        "observation": 21.29760599999986,
+        "guestScreenshot": 222.22251200000005,
+        "clickToDecision": null,
+        "astraReview": null,
+        "totalDeepReview": null
+      },
+      "astraInvoked": false,
+      "astraStatus": "NOT_INVOKED",
+      "observationSha256": "3a7e5e30258ac21d060ae72ad976ed86c77cf4200af7995f8c5def0fe786bac5",
+      "screenshotSha256": "d8baec55e6ee99045d82749a800e02d8973838c3b7457e23e4c2494e1b0bf830",
+      "workerTiming": {
+        "startedAt": "2026-09-30T01:25:39.629Z",
+        "events": {
+          "workerStarted": 0,
+          "browserReady": 553.936749,
+          "navigationStarted": 669.47032,
+          "pageLoaded": 1305.397313,
+          "factsCollected": 1326.6949189999998,
+          "screenshotCollected": 1548.9174309999999
+        }
+      }
+    }
+  ]
+}
