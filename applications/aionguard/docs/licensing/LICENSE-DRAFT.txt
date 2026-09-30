@@ -1,0 +1,115 @@
+AionGuard Personal and Internal Use License — LEGAL-REVIEW DRAFT 0.1
+September 30, 2026 — NOT EFFECTIVE; NOT AN APPROVED LICENSE
+
+This document is a proposal only. It does not amend the repository's MIT
+LICENSE, designate any Covered Material, withdraw previous permissions,
+or represent assent by Blake Grove, Megan Frey, or any other rights holder.
+Unresolved scope, authority, and legal questions must be settled before a
+final license is adopted. Do not use this draft as an active LICENSE.
+
+1. Scope and rights holders
+
+For a future approved release, "Covered Material" means only the identified
+new copyrightable material first offered under the final adopted terms in
+an accompanying coverage manifest. That manifest must state exact version,
+commit, path or addition/diff boundaries, rights holders, and effective date.
+"Licensors" means only those identified rights holders, or their documented
+authorized representatives, granting rights they actually possess.
+No code or version is covered by this draft; the review manifest is empty.
+
+Previously MIT-licensed material, Pinetree Research/Solari upstream code,
+dependencies, and separately licensed assets are excluded. If a file contains
+both MIT baseline material and eligible new additions, these terms apply
+only to the identified additions. Earlier valid permissions remain usable.
+These terms do not override a recipient's independent MIT or other license
+for the same material. Notices and the coverage map must make this clear.
+
+2. Proposed no-charge permission
+
+Subject to the final conditions below, Licensors would grant a worldwide,
+nonexclusive copyright permission to inspect, use, execute, reproduce and
+modify Covered Material for personal use and Internal Business Use, and to
+share it without compensation outside Commercial Exploitation.
+
+"Internal Business Use" means use for the licensee organization's own
+operations, personnel, and devices, including use in its private deployment
+on rented cloud infrastructure. Being a for-profit organization does not
+remove this permission. Authorized contractors may operate that internal
+deployment solely on the organization's behalf. Ordinary use of inspection
+results in the organization's business does not grant rights over its
+revenue or outputs. Providing the software or inspection service as a
+customer-facing paid offering is not Internal Business Use.
+
+Gratis redistribution may include source or executable forms and modifications,
+provided the original copyright, license and third-party notices, coverage
+map, and prominent notices of modifications accompany the distribution.
+Recipients obtain the same permitted rights in the original Covered Material
+from its authorized Licensors. This statement does not assign ownership of
+a modifier's contributions. Treatment of those new modifications, including
+any reciprocal licensing requirement, must be decided in the final terms.
+This permission does not include resale, a paid hosted offering, or a
+commercial bundle. Private modifications need not be publicly disclosed.
+
+3. Proposed commercial boundary
+
+"Commercial Exploitation" means:
+(a) selling, reselling or distributing Covered Material or a derivative
+containing it for compensation;
+(b) hosting Covered Material to provide functionality to paying external
+customers, whether the charge is for it separately or for a larger service;
+or (c) including Covered Material or a derivative containing it as part of
+a product or subscription offered commercially for compensation, including
+a client provided without a separate charge as part of that paid offering.
+
+Commercial Exploitation would require a separate written paid commercial
+agreement signed by the licensee and the authorized Licensors before the
+activity begins. Fees or revenue sharing, if agreed, are set in that separate
+agreement. This draft sets no royalty, default invoice, retroactive payment,
+or right to revenue from unrelated business activity. The written agreement
+must identify the material and permitted activity; it cannot sell rights
+belonging to an unconsenting contributor or third party.
+
+Ad-supported services, donations/cost recovery, freemium trials, affiliates,
+and paid implementation/support without software resale or paid hosting
+remain drafting questions. Counsel and contributors must settle those
+boundaries expressly in the final terms, including precedence between paid
+managed hosting and the contractor/internal-deployment exception; this draft
+does not silently
+classify them or impose fees for them.
+
+4. Preservation of other rights
+
+All applicable prior MIT notices and third-party license/NOTICE files must
+remain with their respective material. No new restriction is imposed on
+that excluded material, whether used alone or in a larger distribution.
+Nothing here restricts statutory exceptions or creates ownership in facts,
+ideas, systems or independently authored implementations. Users' data and
+ordinary findings/outputs are not automatically licensed as Covered Material.
+The lawfulness of particular copying or derivative works is not decided here.
+
+5. Patents and names
+
+This draft makes no express patent grant and does not determine the presence,
+validity, ownership, scope or effect of any patents or implied rights. Existing
+third-party grants remain governed by their own licenses. No trademark,
+logo, trade-name, endorsement or branding permission is granted, including
+for Solari, Pinetree Research or the proposed SolariGuard name.
+
+6. Proposed warranty and liability treatment
+
+To the extent permitted by applicable law, Covered Material would be provided
+AS IS, without warranties of merchantability, fitness, title or noninfringement.
+Licensors would disclaim liability for damages arising from its use except
+where applicable law prohibits that exclusion or a separately signed
+agreement expressly provides otherwise. Counsel must finalize this language
+for applicable jurisdictions; it is not an enforceability opinion.
+
+7. Adoption and breach provisions requiring legal completion
+
+The effective version, coverage manifest, licensor identity, governing law,
+assent/delivery mechanism, termination, notice, cure/reinstatement, survival,
+and treatment of downstream compliant recipients remain unapproved.
+Counsel must complete them before adoption. Nothing in a later termination
+provision may purport to cancel independently granted prior MIT permissions.
+Until a final license and completed manifest are expressly adopted, the
+active repository LICENSE and applicable component licenses govern.

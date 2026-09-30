@@ -125,4 +125,4 @@ For live inspections against your own harmless test page, follow the [Solari set
 
 [Official Solari fork](https://github.com/EXO-Robotics/solari-cookbook/tree/main/applications/aionguard) · [Full submission record](docs/solari-submission.md) · [Run the checks](docs/quickstart.md#checks) · [Presentation kit](docs/presentation.md)
 
-MIT licensed.
+[Licensing](LICENSE): published MIT components retain their permissions. Future designated additions use a source-available license: personal and internal-business use is free; resale, paid customer hosting, and commercial bundling require a separate written agreement. [Commercial licensing](COMMERCIAL-LICENSING.md) · [Authorship](AUTHORS.md).

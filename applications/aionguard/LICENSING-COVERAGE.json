@@ -1,0 +1,22 @@
+{
+  "framework_adoption": "LOCAL_UNPUBLISHED_2026-09-30",
+  "license_file": "LICENSES/AionGuard-Personal-Internal-1.0.txt",
+  "covered_material": [],
+  "scope_rule": "Only expressly identified rights-cleared new material; no wildcard restriction on existing code.",
+  "authority_record": "docs/licensing/LICENSING-AUTHORITY.md",
+  "first_restricted_release": null,
+  "historical_mit_versions": {
+    "solari-submission-v1.0.0": "f540c2679730de29db557f3435d833d5d65425b8",
+    "solari-submission-v1.1.0": "62efa40016ef815fbad0ae0aa3047c55e5bdcf19",
+    "solari-submission-v1.2.0": "328631544440d7a31727a87e5f62c0322d0a2cd0"
+  },
+  "published_mit_main_baselines": {
+    "EXO-Robotics/AionGuard-Solari": "a124c05022fbf72f1b3b6142a1446152440ffbf2",
+    "EXO-Robotics/solari-cookbook": "a470fc87d822988c94d2c205c9b7726d4777dcd0"
+  },
+  "third_party_exclusions": [
+    "Pinetree Research upstream cookbook material",
+    "SDKs and other dependencies",
+    "Separately licensed media, fixture artwork and other assets"
+  ]
+}

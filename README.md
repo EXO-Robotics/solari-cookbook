@@ -104,4 +104,4 @@ Things that cost you an afternoon if you meet them cold:
 New examples are welcome. Keep them small, make them run end-to-end against the
 real API, and put anything surprising in a comment right where it bites.
 
-MIT licensed.
+Upstream cookbook material is MIT licensed. See [AionGuard component licensing](applications/aionguard/LICENSE) for its prospective licensing framework; existing MIT permissions remain available.

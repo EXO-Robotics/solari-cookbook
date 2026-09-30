@@ -1,0 +1,470 @@
+[
+  {
+    "source": "node_modules/@jridgewell/resolve-uri/LICENSE",
+    "snapshot": "snapshots/@jridgewell/resolve-uri/LICENSE",
+    "sha256": "b8778b155bfde5a28b023a558753c0fa058a52bb9de35c343c250be1bbcdedab",
+    "bytes": 1079
+  },
+  {
+    "source": "node_modules/@jridgewell/sourcemap-codec/LICENSE",
+    "snapshot": "snapshots/@jridgewell/sourcemap-codec/LICENSE",
+    "sha256": "769d154fbde32a915af110b1123650bc79f4cbe675acc66e005265bf069c6c6c",
+    "bytes": 1080
+  },
+  {
+    "source": "node_modules/@jridgewell/trace-mapping/LICENSE",
+    "snapshot": "snapshots/@jridgewell/trace-mapping/LICENSE",
+    "sha256": "769d154fbde32a915af110b1123650bc79f4cbe675acc66e005265bf069c6c6c",
+    "bytes": 1080
+  },
+  {
+    "source": "node_modules/@oxc-project/types/LICENSE",
+    "snapshot": "snapshots/@oxc-project/types/LICENSE",
+    "sha256": "95ced5ecf1133fbf41d409b5555c86c344f83f3b019926057ddbc07cfdcc27b3",
+    "bytes": 1119
+  },
+  {
+    "source": "node_modules/@rolldown/pluginutils/LICENSE",
+    "snapshot": "snapshots/@rolldown/pluginutils/LICENSE",
+    "sha256": "e1919b3b98b8bf6c1b99fcc60a0ed46027c97ac947432e1278446c9606f50161",
+    "bytes": 1106
+  },
+  {
+    "source": "node_modules/@solarisdk/core/LICENSE",
+    "snapshot": "snapshots/@solarisdk/core/LICENSE",
+    "sha256": "58f6497f1155a47fc99aafff024ae5aa3ea13302d11b4d8be62fda69bc5b1ba6",
+    "bytes": 743
+  },
+  {
+    "source": "node_modules/@solarisdk/sandbox/LICENSE",
+    "snapshot": "snapshots/@solarisdk/sandbox/LICENSE",
+    "sha256": "58f6497f1155a47fc99aafff024ae5aa3ea13302d11b4d8be62fda69bc5b1ba6",
+    "bytes": 743
+  },
+  {
+    "source": "node_modules/@types/chai/LICENSE",
+    "snapshot": "snapshots/@types/chai/LICENSE",
+    "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
+    "bytes": 1141
+  },
+  {
+    "source": "node_modules/@types/deep-eql/LICENSE",
+    "snapshot": "snapshots/@types/deep-eql/LICENSE",
+    "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
+    "bytes": 1141
+  },
+  {
+    "source": "node_modules/@types/estree/LICENSE",
+    "snapshot": "snapshots/@types/estree/LICENSE",
+    "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
+    "bytes": 1141
+  },
+  {
+    "source": "node_modules/@types/node/LICENSE",
+    "snapshot": "snapshots/@types/node/LICENSE",
+    "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
+    "bytes": 1141
+  },
+  {
+    "source": "node_modules/@types/react/LICENSE",
+    "snapshot": "snapshots/@types/react/LICENSE",
+    "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
+    "bytes": 1141
+  },
+  {
+    "source": "node_modules/@types/react-dom/LICENSE",
+    "snapshot": "snapshots/@types/react-dom/LICENSE",
+    "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383",
+    "bytes": 1141
+  },
+  {
+    "source": "node_modules/@typescript/typescript-darwin-arm64/LICENSE",
+    "snapshot": "snapshots/@typescript/typescript-darwin-arm64/LICENSE",
+    "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47",
+    "bytes": 9197
+  },
+  {
+    "source": "node_modules/@typescript/typescript-darwin-arm64/NOTICE.txt",
+    "snapshot": "snapshots/@typescript/typescript-darwin-arm64/NOTICE.txt",
+    "sha256": "f5c708b59114507b8b27b48181b6883d106bbca0c1634bbee45b5e344237b66b",
+    "bytes": 48860
+  },
+  {
+    "source": "node_modules/@vercel/oidc/LICENSE",
+    "snapshot": "snapshots/@vercel/oidc/LICENSE",
+    "sha256": "b070d77bfb2c52a1dd6996de0ce5f64c49a0ca55c889b163a963ddf5cb001ee2",
+    "bytes": 11343
+  },
+  {
+    "source": "node_modules/@vercel/sandbox/LICENSE",
+    "snapshot": "snapshots/@vercel/sandbox/LICENSE",
+    "sha256": "1478317a3aa0506e6d2ed3b23b2c8b3f8d08af491c6f666325a1a4e2f9d59163",
+    "bytes": 11343
+  },
+  {
+    "source": "node_modules/@vitejs/plugin-react/LICENSE",
+    "snapshot": "snapshots/@vitejs/plugin-react/LICENSE",
+    "sha256": "29b68325fe026047d13e187b44c33b2acacf7dc647dec4583702e59f235e13b5",
+    "bytes": 1103
+  },
+  {
+    "source": "node_modules/@vitest/mocker/LICENSE",
+    "snapshot": "snapshots/@vitest/mocker/LICENSE",
+    "sha256": "04575fc5bfae19a9b63100f8691f901a2e15a399011ac02db435a9ef27295551",
+    "bytes": 1102
+  },
+  {
+    "source": "node_modules/@vitest/spy/LICENSE",
+    "snapshot": "snapshots/@vitest/spy/LICENSE",
+    "sha256": "04575fc5bfae19a9b63100f8691f901a2e15a399011ac02db435a9ef27295551",
+    "bytes": 1102
+  },
+  {
+    "source": "node_modules/@workflow/serde/LICENSE.md",
+    "snapshot": "snapshots/@workflow/serde/LICENSE.md",
+    "sha256": "39248a57eaac37e120c65bae851c6382bf722fc87c3452bf6a245caef96db739",
+    "bytes": 73
+  },
+  {
+    "source": "node_modules/assertion-error/LICENSE",
+    "snapshot": "snapshots/assertion-error/LICENSE",
+    "sha256": "2130216d5ab4c02134f8247f32999feda0abe1eaf028218baeac445c19ce4cea",
+    "bytes": 1108
+  },
+  {
+    "source": "node_modules/async-retry/LICENSE.md",
+    "snapshot": "snapshots/async-retry/LICENSE.md",
+    "sha256": "91887c62d26f64b8d6e98b1dca57e75aca62e6f9af79fb0783f8f1904abaeea6",
+    "bytes": 1079
+  },
+  {
+    "source": "node_modules/b4a/LICENSE",
+    "snapshot": "snapshots/b4a/LICENSE",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "bytes": 11357
+  },
+  {
+    "source": "node_modules/bare-events/LICENSE",
+    "snapshot": "snapshots/bare-events/LICENSE",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "bytes": 11357
+  },
+  {
+    "source": "node_modules/chai/LICENSE",
+    "snapshot": "snapshots/chai/LICENSE",
+    "sha256": "b181da80336ff9dd1043fc8be1a764d7382363433319aa872e4d2cb5ce2a3066",
+    "bytes": 1082
+  },
+  {
+    "source": "node_modules/csstype/LICENSE",
+    "snapshot": "snapshots/csstype/LICENSE",
+    "sha256": "11d55bd4541c75ee7879547ac49089c489163dae49551389713c3d026cab383e",
+    "bytes": 1062
+  },
+  {
+    "source": "node_modules/detect-libc/LICENSE",
+    "snapshot": "snapshots/detect-libc/LICENSE",
+    "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+    "bytes": 11357
+  },
+  {
+    "source": "node_modules/es-module-lexer/LICENSE",
+    "snapshot": "snapshots/es-module-lexer/LICENSE",
+    "sha256": "8a4b6c44eebfb026d23719a348145a661a555568dbfdc11618ff2d0dd9306b00",
+    "bytes": 1085
+  },
+  {
+    "source": "node_modules/esbuild/LICENSE.md",
+    "snapshot": "snapshots/esbuild/LICENSE.md",
+    "sha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+    "bytes": 1069
+  },
+  {
+    "source": "node_modules/estree-walker/LICENSE",
+    "snapshot": "snapshots/estree-walker/LICENSE",
+    "sha256": "8a6dcbabe7179f9c8489c08a7d874d0f1e093ae7449e03756ccf87cb9d0e296e",
+    "bytes": 1126
+  },
+  {
+    "source": "node_modules/events-universal/LICENSE",
+    "snapshot": "snapshots/events-universal/LICENSE",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "bytes": 11357
+  },
+  {
+    "source": "node_modules/expect-type/LICENSE",
+    "snapshot": "snapshots/expect-type/LICENSE",
+    "sha256": "7c6cc83c84eaa249a85bf12fe3eedd831bb50c696e8890b5248223ae68c7b408",
+    "bytes": 10760
+  },
+  {
+    "source": "node_modules/fast-fifo/LICENSE",
+    "snapshot": "snapshots/fast-fifo/LICENSE",
+    "sha256": "41a2aa55a9ebad3df900cf37fded512714a127f4300ef54b978f834a11ec4d48",
+    "bytes": 1079
+  },
+  {
+    "source": "node_modules/fdir/LICENSE",
+    "snapshot": "snapshots/fdir/LICENSE",
+    "sha256": "9a39f2aadab11a3697edd668ff2d8ad885b649737b7ab4d3bf12b34e5ada0c86",
+    "bytes": 1053
+  },
+  {
+    "source": "node_modules/fsevents/LICENSE",
+    "snapshot": "snapshots/fsevents/LICENSE",
+    "sha256": "2a8a5d6197bb97a018b8a190dd3ed853d750ca87c8e80c17aad41d6c6ff448e1",
+    "bytes": 1133
+  },
+  {
+    "source": "node_modules/jose/LICENSE.md",
+    "snapshot": "snapshots/jose/LICENSE.md",
+    "sha256": "8078b0829d6c3e9ecde2f003e1966e4cad3efc6e7a640efbab0313cc166b1af1",
+    "bytes": 1079
+  },
+  {
+    "source": "node_modules/lightningcss/LICENSE",
+    "snapshot": "snapshots/lightningcss/LICENSE",
+    "sha256": "5eba353fe5076ac3432177f8ab1cf75e3afcd0584251e37c3bfead5f447d040e",
+    "bytes": 15648
+  },
+  {
+    "source": "node_modules/lightningcss-darwin-arm64/LICENSE",
+    "snapshot": "snapshots/lightningcss-darwin-arm64/LICENSE",
+    "sha256": "5eba353fe5076ac3432177f8ab1cf75e3afcd0584251e37c3bfead5f447d040e",
+    "bytes": 15648
+  },
+  {
+    "source": "node_modules/lru-cache/LICENSE",
+    "snapshot": "snapshots/lru-cache/LICENSE",
+    "sha256": "451ec07eeb9c4e1b86de9abdaa426462a8be48f887ec7421cf0bbb9c769555ab",
+    "bytes": 775
+  },
+  {
+    "source": "node_modules/magic-string/LICENSE",
+    "snapshot": "snapshots/magic-string/LICENSE",
+    "sha256": "1cbe51b907662f6cb1492b16c359384a595180bf0e4d101603ed525e75c4e484",
+    "bytes": 1051
+  },
+  {
+    "source": "node_modules/ms/license.md",
+    "snapshot": "snapshots/ms/license.md",
+    "sha256": "1662fae9b5314d11cf51284e2dcd1f006a354f7343f08712a730fcff9a359801",
+    "bytes": 1079
+  },
+  {
+    "source": "node_modules/nanoid/LICENSE",
+    "snapshot": "snapshots/nanoid/LICENSE",
+    "sha256": "da4db1480d9beea3483a2eda5c53b22238d0827d57da162b48f122e04d2d9987",
+    "bytes": 1095
+  },
+  {
+    "source": "node_modules/obug/LICENSE",
+    "snapshot": "snapshots/obug/LICENSE",
+    "sha256": "ee48679d379ca6b4493d5e231094d85f818dd9be40b1a4f234fb7ff657ee35d9",
+    "bytes": 1205
+  },
+  {
+    "source": "node_modules/os-paths/LICENSE",
+    "snapshot": "snapshots/os-paths/LICENSE",
+    "sha256": "284ff307d5455fccaa8c79bdf28768934af711ef28bd7774180e906817c71455",
+    "bytes": 1156
+  },
+  {
+    "source": "node_modules/picocolors/LICENSE",
+    "snapshot": "snapshots/picocolors/LICENSE",
+    "sha256": "6582629e2979466878f6014313dcc2f3756c9616148682227ce3063dde310750",
+    "bytes": 787
+  },
+  {
+    "source": "node_modules/picomatch/LICENSE",
+    "snapshot": "snapshots/picomatch/LICENSE",
+    "sha256": "d0cd141b0c322fded5dfad1d4645bb2fedfc05b7321fe1009469638190d59ef9",
+    "bytes": 1091
+  },
+  {
+    "source": "node_modules/playwright/LICENSE",
+    "snapshot": "snapshots/playwright/LICENSE",
+    "sha256": "45873d00a0dd243596deb4aa23b2493b3d1f0671921bf2538ea431d7380220eb",
+    "bytes": 11601
+  },
+  {
+    "source": "node_modules/playwright/NOTICE",
+    "snapshot": "snapshots/playwright/NOTICE",
+    "sha256": "6d602191187b35b9b01d2cffa01c8469c2c8d9de8a96f1bf868e0f264f51c81d",
+    "bytes": 254
+  },
+  {
+    "source": "node_modules/playwright-core/LICENSE",
+    "snapshot": "snapshots/playwright-core/LICENSE",
+    "sha256": "45873d00a0dd243596deb4aa23b2493b3d1f0671921bf2538ea431d7380220eb",
+    "bytes": 11601
+  },
+  {
+    "source": "node_modules/playwright-core/NOTICE",
+    "snapshot": "snapshots/playwright-core/NOTICE",
+    "sha256": "6d602191187b35b9b01d2cffa01c8469c2c8d9de8a96f1bf868e0f264f51c81d",
+    "bytes": 254
+  },
+  {
+    "source": "node_modules/postcss/LICENSE",
+    "snapshot": "snapshots/postcss/LICENSE",
+    "sha256": "5be1f3465bba68a626777f984878814aaf35e7ef8e9fd314d469bcf887050fb8",
+    "bytes": 1095
+  },
+  {
+    "source": "node_modules/prettier/LICENSE",
+    "snapshot": "snapshots/prettier/LICENSE",
+    "sha256": "b0f2417199889f1c0d28ec4e0244eacf1a15de5819d61f641dd7d8f45153ac9c",
+    "bytes": 1065
+  },
+  {
+    "source": "node_modules/react/LICENSE",
+    "snapshot": "snapshots/react/LICENSE",
+    "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+    "bytes": 1088
+  },
+  {
+    "source": "node_modules/react-dom/LICENSE",
+    "snapshot": "snapshots/react-dom/LICENSE",
+    "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+    "bytes": 1088
+  },
+  {
+    "source": "node_modules/retry/License",
+    "snapshot": "snapshots/retry/License",
+    "sha256": "01ad164273e8e095abc9dbd1c21e194594a671af7d528cb43ee7b4c903ba7da3",
+    "bytes": 1139
+  },
+  {
+    "source": "node_modules/rolldown/LICENSE",
+    "snapshot": "snapshots/rolldown/LICENSE",
+    "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734",
+    "bytes": 1302
+  },
+  {
+    "source": "node_modules/scheduler/LICENSE",
+    "snapshot": "snapshots/scheduler/LICENSE",
+    "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+    "bytes": 1088
+  },
+  {
+    "source": "node_modules/siginfo/LICENSE",
+    "snapshot": "snapshots/siginfo/LICENSE",
+    "sha256": "3bdddf0b9b08aaa2fe4365b803fc958ed32c0597ca0bd727be8d9fcb8b248d18",
+    "bytes": 744
+  },
+  {
+    "source": "node_modules/source-map-js/LICENSE",
+    "snapshot": "snapshots/source-map-js/LICENSE",
+    "sha256": "6cb0631f71c7749763fd3dd1d5bee52dd1070ec17f2edc1710079ad070bd2fbd",
+    "bytes": 1526
+  },
+  {
+    "source": "node_modules/streamx/LICENSE",
+    "snapshot": "snapshots/streamx/LICENSE",
+    "sha256": "41a2aa55a9ebad3df900cf37fded512714a127f4300ef54b978f834a11ec4d48",
+    "bytes": 1079
+  },
+  {
+    "source": "node_modules/tar-stream/LICENSE",
+    "snapshot": "snapshots/tar-stream/LICENSE",
+    "sha256": "3fe8d55a98dbf260eace67c00cf9bc53edb46234e840098a0b93df3096b97fb6",
+    "bytes": 1078
+  },
+  {
+    "source": "node_modules/text-decoder/LICENSE",
+    "snapshot": "snapshots/text-decoder/LICENSE",
+    "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+    "bytes": 11357
+  },
+  {
+    "source": "node_modules/tinybench/LICENSE",
+    "snapshot": "snapshots/tinybench/LICENSE",
+    "sha256": "cebc084d54e6dd99e53292ddb4bc1cdb63d9bfcd9ce438fe3aa6eb106d79e2ea",
+    "bytes": 1065
+  },
+  {
+    "source": "node_modules/tinyexec/LICENSE",
+    "snapshot": "snapshots/tinyexec/LICENSE",
+    "sha256": "f95f668fe64081ddb4153b322e34fdd719b991285ed08177d5ad7133b7988d92",
+    "bytes": 1065
+  },
+  {
+    "source": "node_modules/tinyglobby/LICENSE",
+    "snapshot": "snapshots/tinyglobby/LICENSE",
+    "sha256": "22c68811e174cbbfb3813d4135918df4f540959c14d872e601d9abe83d3cde8f",
+    "bytes": 1076
+  },
+  {
+    "source": "node_modules/tsx/LICENSE",
+    "snapshot": "snapshots/tsx/LICENSE",
+    "sha256": "8dded67841a9261a622c739fb61c81785e93765de852828ceeb9403d20a74581",
+    "bytes": 1088
+  },
+  {
+    "source": "node_modules/typescript/LICENSE",
+    "snapshot": "snapshots/typescript/LICENSE",
+    "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47",
+    "bytes": 9197
+  },
+  {
+    "source": "node_modules/typescript/NOTICE.txt",
+    "snapshot": "snapshots/typescript/NOTICE.txt",
+    "sha256": "f5c708b59114507b8b27b48181b6883d106bbca0c1634bbee45b5e344237b66b",
+    "bytes": 48860
+  },
+  {
+    "source": "node_modules/undici/LICENSE",
+    "snapshot": "snapshots/undici/LICENSE",
+    "sha256": "a6db8096b2707bc0102d256917d4d33f298ba36d8c3f25de067a2b5bb379db27",
+    "bytes": 1090
+  },
+  {
+    "source": "node_modules/undici-types/LICENSE",
+    "snapshot": "snapshots/undici-types/LICENSE",
+    "sha256": "a6db8096b2707bc0102d256917d4d33f298ba36d8c3f25de067a2b5bb379db27",
+    "bytes": 1090
+  },
+  {
+    "source": "node_modules/vite/LICENSE.md",
+    "snapshot": "snapshots/vite/LICENSE.md",
+    "sha256": "387dd7baa307083401a27c58c362c30832f5ba1dba84f10cc22c33401523f45c",
+    "bytes": 112425
+  },
+  {
+    "source": "node_modules/vitest/LICENSE.md",
+    "snapshot": "snapshots/vitest/LICENSE.md",
+    "sha256": "d47eb4eeddb0a8b7776abd645d9c2d18e14bf6a5ffa52ac75fc3647d672d0260",
+    "bytes": 43992
+  },
+  {
+    "source": "node_modules/why-is-node-running/LICENSE",
+    "snapshot": "snapshots/why-is-node-running/LICENSE",
+    "sha256": "6a134e51aa31496c15a741592fc5d782b2dbf8d8b6b8524e15c8520ae0cd6374",
+    "bytes": 1079
+  },
+  {
+    "source": "node_modules/ws/LICENSE",
+    "snapshot": "snapshots/ws/LICENSE",
+    "sha256": "2b29dcfe0d6471f7e8c92c5fb38c9f93edee10330937055440192f1832b1ecef",
+    "bytes": 1183
+  },
+  {
+    "source": "node_modules/xdg-app-paths/license",
+    "snapshot": "snapshots/xdg-app-paths/license",
+    "sha256": "284ff307d5455fccaa8c79bdf28768934af711ef28bd7774180e906817c71455",
+    "bytes": 1156
+  },
+  {
+    "source": "node_modules/xdg-portable/LICENSE",
+    "snapshot": "snapshots/xdg-portable/LICENSE",
+    "sha256": "284ff307d5455fccaa8c79bdf28768934af711ef28bd7774180e906817c71455",
+    "bytes": 1156
+  },
+  {
+    "source": "node_modules/zod/LICENSE",
+    "snapshot": "snapshots/zod/LICENSE",
+    "sha256": "3f1189b28e3866e0d979968d466b78f813f76827cfdca1fbb124cc0a5c8841f8",
+    "bytes": 1072
+  }
+]

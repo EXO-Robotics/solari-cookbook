@@ -1,21 +1,128 @@
-MIT License
+AionGuard component licensing
 
-Copyright (c) 2026 AionGuard contributors
+The custom license below is the project’s prospective licensing framework.
+Its scope is defined by LICENSING-COVERAGE.json. Existing published code and
+historical releases retain their valid MIT permissions, including commercial
+use and redistribution. No existing published implementation is designated
+as restricted by this update. No royalty debt is created for MIT users.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+The original MIT license and copyright notice are preserved verbatim in
+LICENSES/MIT-AionGuard-legacy.txt. Upstream Pinetree Research material and
+third-party dependencies/assets retain their own terms and notices; see
+THIRD-PARTY-NOTICES.md. The cookbook root license is not changed.
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+Only future explicitly identified new material uses the custom terms below.
+See COMMERCIAL-LICENSING.md and LICENSING-COVERAGE.json for the component
+boundary and separate written commercial-permission process.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+AionGuard Personal and Internal Business Use License 1.0
+
+Prospective licensing framework adopted locally September 30, 2026.
+This license applies only to Covered Material expressly identified below.
+It does not replace previously granted MIT or third-party permissions.
+
+1. Scope
+
+"Covered Material" means copyrightable AionGuard material expressly marked
+as subject to this license and identified by path and version/commit (or
+baseline-plus-diff boundaries) in LICENSING-COVERAGE.json. "Licensors" means
+its actual copyright holders or their authorized representatives. A person
+may grant only rights they own or are authorized to grant. No unlisted
+material is brought under this license by its presence in this repository.
+
+Previously MIT-licensed material, Pinetree Research/Solari upstream material,
+third-party dependencies, and separately licensed artwork/media retain their
+applicable licenses. An entry for mixed material covers only the identified
+new expression, not the MIT baseline. Valid MIT permissions remain available
+for that baseline, including commercial use, distribution and sale. Nothing
+here overrides another valid license the recipient holds for the same code.
+
+2. Free permitted use
+
+Subject to these conditions, Licensors grant a worldwide, nonexclusive,
+no-charge copyright license to inspect, use, execute, copy and modify Covered
+Material for personal use or Internal Business Use, and to distribute it
+without compensation outside the commercial activities described in section 3.
+
+"Internal Business Use" means use for an organization's own operations,
+employees, authorized contractors and devices, including private deployments
+on rented infrastructure. For-profit status alone does not require payment.
+The organization may use findings and ordinary outputs in its business without
+owing a share of unrelated revenue. A contractor may install, configure or
+maintain that organization's internal deployment and charge for those services,
+provided it does not sell software copies, bundle the software commercially,
+or provide a paid hosted inspection service to external customers.
+
+Gratis redistribution must preserve the copyright and license notices, this
+license, the scope map and applicable third-party notices. Mark modifications
+prominently. Recipients receive the permitted rights in original Covered
+Material directly from its authorized Licensors. This does not assign the
+modifier's copyright or require a copyright transfer. A distributor must
+have and provide sufficient permissions for recipients to exercise these
+permitted rights in the distributed copy; separately authored modifications
+need not be licensed under identical terms. The restrictions on original
+Covered Material remain applicable to copies or derivatives containing it.
+Private modifications need not be published.
+
+3. Separate commercial agreement
+
+The free grant does not authorize:
+(a) selling, reselling or distributing Covered Material, or a derivative
+containing it, for compensation;
+(b) hosting Covered Material to provide functionality to paying external
+customers, including when access is part of a larger paid service; or
+(c) including Covered Material, or a derivative containing it, in a commercial
+product, appliance, client bundle or paid subscription offered to others.
+A client supplied without a separate charge as part of a paid offering is
+still commercial bundling.
+
+Those activities require a separate written paid commercial agreement with
+an authorized licensing representative before they begin. Fees or revenue
+sharing, permitted versions/components and commercial rights are negotiated
+in that agreement. This license specifies no royalty rate, automatic debt,
+retroactive fee, or right to revenue from unrelated activities.
+
+Ordinary paid cloud infrastructure used for an organization's internal
+deployment is not a paid inspection offering by that organization. An operator
+providing a managed hosted inspection service to paying external customers
+falls under subsection (b), even when the customers use it internally.
+Any special permission for trials, cost recovery, sponsored services or
+other arrangements must be recorded in writing. This clause creates no
+royalty merely because a user has sponsorship, advertising or donations;
+resale, paid hosting and bundling are the permission triggers above.
+
+4. Other rights and attribution
+
+Preserve applicable prior MIT permissions and third-party license/NOTICE
+files. This license imposes no new conditions on excluded material used alone
+or in a larger distribution. It does not reserve facts, ideas, systems,
+independently authored implementations, user data or ordinary findings/outputs.
+Statutory exceptions and permissions obtained elsewhere are not displaced.
+No copyright assignment is required by this license.
+
+This license makes no express patent grant or determination of patent
+ownership, validity, infringement or implied rights. Existing third-party
+patent provisions retain their own effect. It grants no trademark, trade-name,
+logo, endorsement or branding rights, including permission to use Solari,
+Pinetree Research or the proposed SolariGuard name.
+
+5. Conditions, breach and preservation
+
+Permissions for Covered Material are conditional on compliance with this
+license. A use outside the free grant requires the commercial agreement; it
+does not become authorized by an assumed payment obligation. A breach does
+not cancel independently granted MIT permissions or independent compliant
+recipients' permissions. Licensors may grant separate written permissions.
+No licensor can revoke third-party permissions by issuing a project notice.
+The version of this license supplied with a copy governs that grant; a later
+license edit does not silently impose new terms on that copy.
+
+6. Warranty and liability
+
+To the extent permitted by applicable law, Covered Material is provided AS IS,
+without warranties of merchantability, fitness for a particular purpose,
+title or noninfringement. To that extent, Licensors disclaim liability for
+claims or damages arising from its use. Applicable mandatory law and any
+express obligations in a separately signed agreement remain controlling.
+No security, detection-accuracy or fitness guarantee is provided by the code
+license. This text supplies no opinion on legal enforceability.
