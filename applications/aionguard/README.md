@@ -59,7 +59,7 @@ A screenshot and findings explain each warning. When a completed check returns *
 
 ## From hackathon to click checkpoint
 
-AionGuard was first built with Vercel Sandbox at the **OpenAI Astra Hackathon in New York**, then migrated to Solari.
+AionGuard started at the **OpenAI Astra Hackathon in New York**. AWS downtime on **September 10** disrupted our planned Solari setup, so we used Vercel Sandbox for the hackathon build and reported the issue to Harry by email. We later migrated the isolation layer to Solari.
 
 The Solari workflow prepares the sandbox before the click, opens a fresh browser for each inspection, and reuses the VM between checks. That moves browser setup out of the click path. The measured warm inspection median is **1.414 seconds**; this is not a like-for-like speed or cost comparison with Vercel.
 
