@@ -48,6 +48,60 @@ describe('integrated case lifecycle with injected software providers', () => {
     expect(snapshot.link.imagePath).toBe(null);
     expect(choose).not.toHaveBeenCalled();
   });
+  it('accepts a genuinely prewarmed timestamp while keeping no-findings blocked', async () => {
+    const result = await createMockInspector('SOLARI_SANDBOX').inspect('acme-login');
+    const now = Date.now();
+    result.createdAt = new Date(now - 60000).toISOString();
+    result.cleanup = {
+      state: 'RETAINED',
+      sandboxId: result.sandboxId,
+      stoppedAt: null,
+      deletedAt: null,
+    };
+    result.session = {
+      mode: 'WARM',
+      readyAt: new Date(now - 30000).toISOString(),
+      acquiredAt: new Date(now).toISOString(),
+      reused: true,
+      inspectionCount: 2,
+      disposition: 'RETAINED',
+    };
+    result.observation = {
+      ...result.observation!,
+      claimedService: 'UNKNOWN',
+      passwordField: false,
+      formAction: null,
+      formDestinationOrigin: null,
+    };
+    const assessed = assessLink(result, new Date(now).toISOString(), 'warm', [], true);
+    expect(assessed.classification).toBe('UNDETERMINED');
+    expect(assessed.decision).toBe('BLOCK');
+    expect(assessed.cleanup.state).toBe('RETAINED');
+    delete result.session;
+    expect(assessLink(result, new Date(now).toISOString(), 'warm', [], true).classification).toBe(
+      'INSPECTION_UNAVAILABLE',
+    );
+  });
+  it('rejects a retained sandbox if the controller independently finds a threat', async () => {
+    const result = await createMockInspector('SOLARI_SANDBOX').inspect('acme-login');
+    result.cleanup = {
+      state: 'RETAINED',
+      sandboxId: result.sandboxId,
+      stoppedAt: null,
+      deletedAt: null,
+    };
+    result.session = {
+      mode: 'WARM',
+      readyAt: result.createdAt!,
+      acquiredAt: result.collectionStartedAt!,
+      reused: false,
+      inspectionCount: 1,
+      disposition: 'RETAINED',
+    };
+    expect(assessLink(result, result.createdAt!, 'warm', [], true).classification).toBe(
+      'INSPECTION_UNAVAILABLE',
+    );
+  });
   it('blocks before planner, spends canonical credits and keeps the write unverified until paid evidence', async () => {
     const planner = { choose: vi.fn((view) => new MockPlanner().choose(view)) } as Planner;
     const { controller, run } = setup(createMockInspector(), planner);

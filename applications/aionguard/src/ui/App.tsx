@@ -1,5 +1,11 @@
 import { useEffect, useState, type FormEvent } from 'react';
-import { ASSUMPTIONS, CaseSnapshotSchema, type CaseSnapshot } from '../contracts/index.js';
+import {
+  ASSUMPTIONS,
+  CaseSnapshotSchema,
+  WarmPoolStatusSchema,
+  type WarmPoolStatus,
+  type CaseSnapshot,
+} from '../contracts/index.js';
 import { request, caseRequest, exportReceipt } from './api.js';
 import { EvidenceGraph } from './EvidenceGraph.js';
 import { ComparisonStrip } from './ComparisonStrip.js';
@@ -14,6 +20,9 @@ export function App() {
   const [showOperatorControls, setShowOperatorControls] = useState(false);
   const [token, setToken] = useState(() => sessionStorage.getItem('aionguard.controller') ?? '');
   const [connected, setConnected] = useState(false);
+  const [sandbox, setSandbox] = useState<WarmPoolStatus | null>(null);
+  const [sandboxUnavailable, setSandboxUnavailable] = useState(false);
+  const [preparingSandbox, setPreparingSandbox] = useState(false);
   const [mode, setMode] = useState('LIVE');
   const [workflow, setWorkflow] = useState<'DETECTOR' | 'SYNTHETIC'>('DETECTOR');
   const [snapshot, setSnapshot] = useState<CaseSnapshot | null>(null);
@@ -25,6 +34,7 @@ export function App() {
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const runId = snapshot?.identity.runId;
   const imagePath = snapshot?.link.imagePath;
+  const detector = (snapshot?.workflow ?? workflow) === 'DETECTOR';
 
   useEffect(() => {
     void fetch('/api/health')
@@ -54,6 +64,31 @@ export function App() {
       clearTimeout(timer);
     };
   }, [connected, runId, token]);
+  useEffect(() => {
+    if (!connected || !detector) return;
+    let stopped = false;
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    const poll = async () => {
+      try {
+        const status = WarmPoolStatusSchema.parse(await request('/api/sandbox', token));
+        if (!stopped) {
+          setSandbox(status);
+          setSandboxUnavailable(false);
+        }
+      } catch {
+        if (!stopped) {
+          setSandbox(null);
+          setSandboxUnavailable(true);
+        }
+      }
+      if (!stopped) timer = setTimeout(() => void poll(), 1500);
+    };
+    void poll();
+    return () => {
+      stopped = true;
+      clearTimeout(timer);
+    };
+  }, [connected, detector, token]);
   useEffect(() => {
     setImageUrl(null);
     if (!imagePath || !connected) return;
@@ -123,7 +158,20 @@ export function App() {
       );
     });
   }
-  const detector = (snapshot?.workflow ?? workflow) === 'DETECTOR';
+  async function prepareSandbox() {
+    if (preparingSandbox || sandbox?.state !== 'EMPTY') return;
+    setPreparingSandbox(true);
+    try {
+      setSandbox(WarmPoolStatusSchema.parse(await request('/api/sandbox/prepare', token, {})));
+      setSandboxUnavailable(false);
+    } catch (e) {
+      setSandbox(null);
+      setSandboxUnavailable(true);
+      setError(message(e));
+    } finally {
+      setPreparingSandbox(false);
+    }
+  }
   const assessment = snapshot?.assessments.find((h) => h.hypothesisId === selected);
   const baseline = snapshot?.baseline?.assessments.find((h) => h.hypothesisId === selected);
   const active = snapshot
@@ -187,6 +235,49 @@ export function App() {
             runId={runId}
             canArm={snapshot?.execution === 'READY' && !!snapshot.authorization}
           />
+        ) : null}
+        {connected && detector && sandbox?.state !== 'DISABLED' ? (
+          <section className="ready-banner" aria-label="Solari sandbox readiness">
+            <div role="status" aria-live="polite">
+              <strong>
+                {sandboxUnavailable
+                  ? 'Sandbox status unavailable'
+                  : sandbox
+                    ? sandboxLabels[sandbox.state]
+                    : 'Checking sandbox readiness…'}
+              </strong>
+              <p>
+                {sandboxUnavailable
+                  ? 'The controller could not confirm readiness. Reconnecting automatically.'
+                  : sandbox
+                    ? sandboxDescriptions[sandbox.state]
+                    : 'Waiting for the controller’s current status.'}
+              </p>
+              {sandbox?.state === 'READY' ? (
+                <p className="subtle">
+                  {sandbox.inspectionCount} inspections in this sandbox.
+                  {sandbox.expiresAt
+                    ? ` Maximum lifetime ends at ${new Date(sandbox.expiresAt).toLocaleTimeString()}; idle retirement may happen sooner.`
+                    : ''}
+                </p>
+              ) : null}
+              {sandbox && !sandboxUnavailable ? (
+                <p className="subtle">
+                  Each inspection opens a fresh browser. Retaining the sandbox does not mean a link
+                  is safe or authorize navigation.
+                </p>
+              ) : null}
+            </div>
+            {sandbox?.state === 'EMPTY' && !sandboxUnavailable ? (
+              <button
+                className="secondary"
+                disabled={preparingSandbox}
+                onClick={() => void prepareSandbox()}
+              >
+                {preparingSandbox ? 'Preparing…' : 'Prepare sandbox'}
+              </button>
+            ) : null}
+          </section>
         ) : null}
         {error ? (
           <div className="error-banner" role="alert">
@@ -640,3 +731,24 @@ export function App() {
 function message(error: unknown): string {
   return error instanceof Error ? error.message : 'The request could not be completed.';
 }
+
+const sandboxLabels: Record<WarmPoolStatus['state'], string> = {
+  DISABLED: 'Warm sandbox disabled',
+  EMPTY: 'No warm sandbox available',
+  PREPARING: 'Preparing Solari sandbox…',
+  READY: 'Solari sandbox ready',
+  INSPECTING: 'Sandbox inspection in progress',
+  RETIRING: 'Retiring Solari sandbox…',
+  BLOCKED: 'Sandbox preparation blocked',
+  CLOSED: 'Sandbox controller closed',
+};
+const sandboxDescriptions: Record<WarmPoolStatus['state'], string> = {
+  DISABLED: 'This configuration does not use a warm sandbox.',
+  EMPTY: 'Prepare a sandbox before inspecting so browser setup finishes ahead of the request.',
+  PREPARING: 'Preparing the browser environment before it can accept an inspection.',
+  READY: 'The prepared environment can accept one inspection at a time.',
+  INSPECTING: 'The sandbox is reserved for the current inspection.',
+  RETIRING: 'This sandbox cannot accept another inspection while retirement is in progress.',
+  BLOCKED: 'Resource cleanup is unresolved. Reconcile it before preparing another sandbox.',
+  CLOSED: 'The controller is shutting down and cannot accept inspections.',
+};

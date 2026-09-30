@@ -551,6 +551,7 @@ export function assessLink(
     decision: 'BLOCK' as const,
     source: result.source,
     cleanup: result.cleanup,
+    ...(result.session ? { session: result.session } : {}),
     timing: {
       heldAt,
       createdAt: result.createdAt,
@@ -568,14 +569,37 @@ export function assessLink(
     result.observation?.observedAt,
     result.returnedAt,
   ].map((value) => (value ? Date.parse(value) : NaN));
-  const orderedTimes =
-    times.every(Number.isFinite) &&
-    times.slice(1).every((time, index) => time + 5000 >= times[index]!);
+  const ordered = (values: number[]) =>
+    values.every(Number.isFinite) &&
+    values.slice(1).every((time, index) => time + 5000 >= values[index]!);
+  const orderedTimes = result.session
+    ? result.source === 'SOLARI_SANDBOX' &&
+      detector &&
+      Date.parse(heldAt) <= Date.parse(result.session.acquiredAt) + 5000 &&
+      ordered([
+        Date.parse(result.createdAt ?? ''),
+        Date.parse(result.session.readyAt),
+        Date.parse(result.session.acquiredAt),
+        Date.parse(result.collectionStartedAt ?? ''),
+        Date.parse(result.observation?.observedAt ?? ''),
+        Date.parse(result.returnedAt),
+      ]) &&
+      (result.cleanup.state === 'RETAINED'
+        ? result.session.disposition === 'RETAINED' &&
+          result.cleanup.stoppedAt === null &&
+          result.cleanup.deletedAt === null
+        : result.session.disposition === 'RETIRED')
+    : result.cleanup.state !== 'RETAINED' && ordered(times);
   const successMetadata =
     result.sandboxId !== null &&
     result.cleanup.sandboxId === result.sandboxId &&
     result.cleanup.state !== 'NOT_CREATED' &&
     result.failure === null &&
+    !(
+      result.cleanup.state === 'RETAINED' &&
+      result.observation &&
+      detectThreats(result.observation, idpOrigins).length > 0
+    ) &&
     orderedTimes;
   if (result.execution !== 'SUCCEEDED' || !result.observation || !pngValid || !successMetadata)
     return {

@@ -1,0 +1,55 @@
+{
+  "meaning": "Ten post-run complete unfiltered inventories; control-plane observation, not physical erasure proof.",
+  "samples": [
+    {
+      "at": "2026-09-30T02:32:04.410Z",
+      "complete": true,
+      "owned": []
+    },
+    {
+      "at": "2026-09-30T02:32:04.925Z",
+      "complete": true,
+      "owned": []
+    },
+    {
+      "at": "2026-09-30T02:32:05.234Z",
+      "complete": true,
+      "owned": []
+    },
+    {
+      "at": "2026-09-30T02:32:05.578Z",
+      "complete": true,
+      "owned": []
+    },
+    {
+      "at": "2026-09-30T02:32:06.058Z",
+      "complete": true,
+      "owned": []
+    },
+    {
+      "at": "2026-09-30T02:32:06.374Z",
+      "complete": true,
+      "owned": []
+    },
+    {
+      "at": "2026-09-30T02:32:06.687Z",
+      "complete": true,
+      "owned": []
+    },
+    {
+      "at": "2026-09-30T02:32:07.201Z",
+      "complete": true,
+      "owned": []
+    },
+    {
+      "at": "2026-09-30T02:32:07.524Z",
+      "complete": true,
+      "owned": []
+    },
+    {
+      "at": "2026-09-30T02:32:07.853Z",
+      "complete": true,
+      "owned": []
+    }
+  ]
+}

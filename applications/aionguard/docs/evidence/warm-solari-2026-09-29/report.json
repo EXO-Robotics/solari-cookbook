@@ -1,0 +1,3240 @@
+{
+  "schemaVersion": 1,
+  "completedAt": "2026-09-30T02:30:51.098Z",
+  "failure": null,
+  "requestedReuseChecks": 20,
+  "completedReuseChecks": 20,
+  "reuseId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+  "replacementId": "solari-99d83a923ffbb261deadd8f732c80f58",
+  "replacementVerified": true,
+  "originalTrustedOrigins": [
+    "https://idp.acme.invalid"
+  ],
+  "calibrationTrustedOrigins": [
+    "https://mfrey18.github.io"
+  ],
+  "interpretation": "Owned AionPhish fixture only. Reuse calibration trusts its actual origin to suppress the credential heuristic intentionally. This proves lifecycle and hot-path latency, not benign accuracy, detection rates, safe release, host containment, or universal VM compatibility.",
+  "timingBoundary": "Backend inspect() entry to returned validated result, after explicit prewarming; excludes user click interception and asynchronous retirement. Worker spans use a separate guest monotonic clock.",
+  "reuseLatencyMs": {
+    "median": 1414.4830419999998,
+    "p90": 1484.641208000001,
+    "p95": 1486.7066670000058
+  },
+  "cleanup": {
+    "cleanupUnresolved": 0,
+    "reservationRemains": false,
+    "meaning": "Control-plane termination and inventory reconciliation only; not physical isolation or erasure proof."
+  },
+  "astraInvoked": false,
+  "navigationReleased": false,
+  "hashes": {
+    "worker.mjs": "2c68f7ffa1d7a571caa77d3276ff2c0bbd3fd8cc8c16a5a708c12d5bfd5ab5f1",
+    "warm-solari.ts": "89c2685ded09d813ec6dff3b3596d048502df86e27e36493990212aa032f3bb0",
+    "solari.ts": "5f9104ae395028e3f6a4231be8e5c60487bc1a641b2d178725c2c88b21ed6ef6",
+    "warm-journal.ts": "4654dfd6605f9c5850ec7365bdd2e8749d2afd69bf2c5d53117a5010ab4ce0eb",
+    "index.ts": "e2e3f868fc26e0bb6457bb8e0cf2442423ddbdee6cf5b8efea2404098df1d5aa"
+  },
+  "runs": [
+    {
+      "phase": "CALIBRATED_REUSE",
+      "index": 1,
+      "startedAt": "2026-09-30T02:28:56.844Z",
+      "elapsedMs": 1735.5487920000014,
+      "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+      "execution": "SUCCEEDED",
+      "failure": null,
+      "findings": [],
+      "expectedFindings": "NONE_BY_CONTROLLED_TRUST_CALIBRATION",
+      "cleanup": {
+        "state": "RETAINED",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "stoppedAt": null,
+        "deletedAt": null
+      },
+      "session": {
+        "mode": "WARM",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "acquiredAt": "2026-09-30T02:28:56.845Z",
+        "reused": false,
+        "inspectionCount": 1,
+        "disposition": "RETAINED"
+      },
+      "stagesMs": {
+        "collectionAndTransfer": 1628.1602080000011,
+        "validation": 5.497875000000931,
+        "decisionAfterValidation": 0.7237079999977141,
+        "workerBrowserLaunch": 559.623545,
+        "workerNavigation": 223.20574599999998,
+        "workerFacts": 18.811646999999994,
+        "workerScreenshot": 235.307006
+      },
+      "events": [
+        {
+          "phase": "CALIBRATED_REUSE_1",
+          "event": "inspection_started",
+          "at": "2026-09-30T02:28:56.845Z",
+          "elapsedMs": 37621.78999999999
+        },
+        {
+          "phase": "CALIBRATED_REUSE_1",
+          "event": "collection_started",
+          "at": "2026-09-30T02:28:56.944Z",
+          "elapsedMs": 37721.489292
+        },
+        {
+          "phase": "CALIBRATED_REUSE_1",
+          "event": "evidence_received",
+          "at": "2026-09-30T02:28:58.573Z",
+          "elapsedMs": 39349.6495
+        },
+        {
+          "phase": "CALIBRATED_REUSE_1",
+          "event": "evidence_validated",
+          "at": "2026-09-30T02:28:58.578Z",
+          "elapsedMs": 39355.147375
+        },
+        {
+          "phase": "CALIBRATED_REUSE_1",
+          "event": "worker_timing",
+          "at": "2026-09-30T02:28:58.578Z",
+          "elapsedMs": 39355.150666999994,
+          "workerTiming": {
+            "startedAt": "2026-09-30T02:28:56.243Z",
+            "events": {
+              "workerStarted": 0,
+              "browserReady": 559.623545,
+              "navigationStarted": 652.297987,
+              "pageLoaded": 875.503733,
+              "factsCollected": 894.31538,
+              "screenshotCollected": 1129.622386
+            }
+          }
+        },
+        {
+          "phase": "CALIBRATED_REUSE_1",
+          "event": "inspection_returned",
+          "at": "2026-09-30T02:28:58.579Z",
+          "elapsedMs": 39355.871083
+        }
+      ]
+    },
+    {
+      "phase": "CALIBRATED_REUSE",
+      "index": 2,
+      "startedAt": "2026-09-30T02:28:58.581Z",
+      "elapsedMs": 1486.7066670000058,
+      "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+      "execution": "SUCCEEDED",
+      "failure": null,
+      "findings": [],
+      "expectedFindings": "NONE_BY_CONTROLLED_TRUST_CALIBRATION",
+      "cleanup": {
+        "state": "RETAINED",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "stoppedAt": null,
+        "deletedAt": null
+      },
+      "session": {
+        "mode": "WARM",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "acquiredAt": "2026-09-30T02:28:58.581Z",
+        "reused": true,
+        "inspectionCount": 2,
+        "disposition": "RETAINED"
+      },
+      "stagesMs": {
+        "collectionAndTransfer": 1285.793958000002,
+        "validation": 2.4987079999991693,
+        "decisionAfterValidation": 0.13441700000112178,
+        "workerBrowserLaunch": 566.001904,
+        "workerNavigation": 85.21583399999997,
+        "workerFacts": 20.93627200000003,
+        "workerScreenshot": 149.88683600000002
+      },
+      "events": [
+        {
+          "phase": "CALIBRATED_REUSE_2",
+          "event": "inspection_started",
+          "at": "2026-09-30T02:28:58.581Z",
+          "elapsedMs": 39358.120124999994
+        },
+        {
+          "phase": "CALIBRATED_REUSE_2",
+          "event": "collection_started",
+          "at": "2026-09-30T02:28:58.779Z",
+          "elapsedMs": 39556.228166999994
+        },
+        {
+          "phase": "CALIBRATED_REUSE_2",
+          "event": "evidence_received",
+          "at": "2026-09-30T02:29:00.065Z",
+          "elapsedMs": 40842.022124999996
+        },
+        {
+          "phase": "CALIBRATED_REUSE_2",
+          "event": "evidence_validated",
+          "at": "2026-09-30T02:29:00.067Z",
+          "elapsedMs": 40844.520832999995
+        },
+        {
+          "phase": "CALIBRATED_REUSE_2",
+          "event": "worker_timing",
+          "at": "2026-09-30T02:29:00.067Z",
+          "elapsedMs": 40844.524124999996,
+          "workerTiming": {
+            "startedAt": "2026-09-30T02:28:58.079Z",
+            "events": {
+              "workerStarted": 0,
+              "browserReady": 566.001904,
+              "navigationStarted": 655.415634,
+              "pageLoaded": 740.6314679999999,
+              "factsCollected": 761.56774,
+              "screenshotCollected": 911.454576
+            }
+          }
+        },
+        {
+          "phase": "CALIBRATED_REUSE_2",
+          "event": "inspection_returned",
+          "at": "2026-09-30T02:29:00.068Z",
+          "elapsedMs": 40844.655249999996
+        }
+      ]
+    },
+    {
+      "phase": "CALIBRATED_REUSE",
+      "index": 3,
+      "startedAt": "2026-09-30T02:29:00.069Z",
+      "elapsedMs": 1371.1825829999943,
+      "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+      "execution": "SUCCEEDED",
+      "failure": null,
+      "findings": [],
+      "expectedFindings": "NONE_BY_CONTROLLED_TRUST_CALIBRATION",
+      "cleanup": {
+        "state": "RETAINED",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "stoppedAt": null,
+        "deletedAt": null
+      },
+      "session": {
+        "mode": "WARM",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "acquiredAt": "2026-09-30T02:29:00.069Z",
+        "reused": true,
+        "inspectionCount": 3,
+        "disposition": "RETAINED"
+      },
+      "stagesMs": {
+        "collectionAndTransfer": 1256.7251249999972,
+        "validation": 2.383958000005805,
+        "decisionAfterValidation": 0.08795899999677204,
+        "workerBrowserLaunch": 563.374753,
+        "workerNavigation": 80.37685199999999,
+        "workerFacts": 23.152867000000015,
+        "workerScreenshot": 141.131669
+      },
+      "events": [
+        {
+          "phase": "CALIBRATED_REUSE_3",
+          "event": "inspection_started",
+          "at": "2026-09-30T02:29:00.069Z",
+          "elapsedMs": 40845.567292
+        },
+        {
+          "phase": "CALIBRATED_REUSE_3",
+          "event": "collection_started",
+          "at": "2026-09-30T02:29:00.180Z",
+          "elapsedMs": 40957.460875
+        },
+        {
+          "phase": "CALIBRATED_REUSE_3",
+          "event": "evidence_received",
+          "at": "2026-09-30T02:29:01.437Z",
+          "elapsedMs": 42214.185999999994
+        },
+        {
+          "phase": "CALIBRATED_REUSE_3",
+          "event": "evidence_validated",
+          "at": "2026-09-30T02:29:01.440Z",
+          "elapsedMs": 42216.569958
+        },
+        {
+          "phase": "CALIBRATED_REUSE_3",
+          "event": "worker_timing",
+          "at": "2026-09-30T02:29:01.440Z",
+          "elapsedMs": 42216.571333,
+          "workerTiming": {
+            "startedAt": "2026-09-30T02:28:59.488Z",
+            "events": {
+              "workerStarted": 0,
+              "browserReady": 563.374753,
+              "navigationStarted": 657.008957,
+              "pageLoaded": 737.385809,
+              "factsCollected": 760.538676,
+              "screenshotCollected": 901.670345
+            }
+          }
+        },
+        {
+          "phase": "CALIBRATED_REUSE_3",
+          "event": "inspection_returned",
+          "at": "2026-09-30T02:29:01.440Z",
+          "elapsedMs": 42216.657917
+        }
+      ]
+    },
+    {
+      "phase": "CALIBRATED_REUSE",
+      "index": 4,
+      "startedAt": "2026-09-30T02:29:01.441Z",
+      "elapsedMs": 1353.9854169999962,
+      "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+      "execution": "SUCCEEDED",
+      "failure": null,
+      "findings": [],
+      "expectedFindings": "NONE_BY_CONTROLLED_TRUST_CALIBRATION",
+      "cleanup": {
+        "state": "RETAINED",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "stoppedAt": null,
+        "deletedAt": null
+      },
+      "session": {
+        "mode": "WARM",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "acquiredAt": "2026-09-30T02:29:01.441Z",
+        "reused": true,
+        "inspectionCount": 4,
+        "disposition": "RETAINED"
+      },
+      "stagesMs": {
+        "collectionAndTransfer": 1253.0999579999989,
+        "validation": 2.412084000003233,
+        "decisionAfterValidation": 0.11208299999998417,
+        "workerBrowserLaunch": 564.8015449999999,
+        "workerNavigation": 76.35992600000009,
+        "workerFacts": 24.765523999999914,
+        "workerScreenshot": 143.33558300000004
+      },
+      "events": [
+        {
+          "phase": "CALIBRATED_REUSE_4",
+          "event": "inspection_started",
+          "at": "2026-09-30T02:29:01.441Z",
+          "elapsedMs": 42217.904458
+        },
+        {
+          "phase": "CALIBRATED_REUSE_4",
+          "event": "collection_started",
+          "at": "2026-09-30T02:29:01.539Z",
+          "elapsedMs": 42316.159374999996
+        },
+        {
+          "phase": "CALIBRATED_REUSE_4",
+          "event": "evidence_received",
+          "at": "2026-09-30T02:29:02.792Z",
+          "elapsedMs": 43569.259332999995
+        },
+        {
+          "phase": "CALIBRATED_REUSE_4",
+          "event": "evidence_validated",
+          "at": "2026-09-30T02:29:02.795Z",
+          "elapsedMs": 43571.671417
+        },
+        {
+          "phase": "CALIBRATED_REUSE_4",
+          "event": "worker_timing",
+          "at": "2026-09-30T02:29:02.795Z",
+          "elapsedMs": 43571.673041999995,
+          "workerTiming": {
+            "startedAt": "2026-09-30T02:29:00.837Z",
+            "events": {
+              "workerStarted": 0,
+              "browserReady": 564.8015449999999,
+              "navigationStarted": 657.1693829999999,
+              "pageLoaded": 733.529309,
+              "factsCollected": 758.2948329999999,
+              "screenshotCollected": 901.630416
+            }
+          }
+        },
+        {
+          "phase": "CALIBRATED_REUSE_4",
+          "event": "inspection_returned",
+          "at": "2026-09-30T02:29:02.795Z",
+          "elapsedMs": 43571.7835
+        }
+      ]
+    },
+    {
+      "phase": "CALIBRATED_REUSE",
+      "index": 5,
+      "startedAt": "2026-09-30T02:29:02.796Z",
+      "elapsedMs": 1457.2914999999994,
+      "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+      "execution": "SUCCEEDED",
+      "failure": null,
+      "findings": [],
+      "expectedFindings": "NONE_BY_CONTROLLED_TRUST_CALIBRATION",
+      "cleanup": {
+        "state": "RETAINED",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "stoppedAt": null,
+        "deletedAt": null
+      },
+      "session": {
+        "mode": "WARM",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "acquiredAt": "2026-09-30T02:29:02.796Z",
+        "reused": true,
+        "inspectionCount": 5,
+        "disposition": "RETAINED"
+      },
+      "stagesMs": {
+        "collectionAndTransfer": 1275.400834,
+        "validation": 3.4893750000046566,
+        "decisionAfterValidation": 0.16974999999365536,
+        "workerBrowserLaunch": 559.5350030000001,
+        "workerNavigation": 76.989238,
+        "workerFacts": 25.645910999999955,
+        "workerScreenshot": 144.89714100000003
+      },
+      "events": [
+        {
+          "phase": "CALIBRATED_REUSE_5",
+          "event": "inspection_started",
+          "at": "2026-09-30T02:29:02.796Z",
+          "elapsedMs": 43572.577625
+        },
+        {
+          "phase": "CALIBRATED_REUSE_5",
+          "event": "collection_started",
+          "at": "2026-09-30T02:29:02.973Z",
+          "elapsedMs": 43750.479332999996
+        },
+        {
+          "phase": "CALIBRATED_REUSE_5",
+          "event": "evidence_received",
+          "at": "2026-09-30T02:29:04.249Z",
+          "elapsedMs": 45025.880166999996
+        },
+        {
+          "phase": "CALIBRATED_REUSE_5",
+          "event": "evidence_validated",
+          "at": "2026-09-30T02:29:04.252Z",
+          "elapsedMs": 45029.369542
+        },
+        {
+          "phase": "CALIBRATED_REUSE_5",
+          "event": "worker_timing",
+          "at": "2026-09-30T02:29:04.252Z",
+          "elapsedMs": 45029.375167,
+          "workerTiming": {
+            "startedAt": "2026-09-30T02:29:02.285Z",
+            "events": {
+              "workerStarted": 0,
+              "browserReady": 559.5350030000001,
+              "navigationStarted": 658.20482,
+              "pageLoaded": 735.194058,
+              "factsCollected": 760.839969,
+              "screenshotCollected": 905.73711
+            }
+          }
+        },
+        {
+          "phase": "CALIBRATED_REUSE_5",
+          "event": "inspection_returned",
+          "at": "2026-09-30T02:29:04.253Z",
+          "elapsedMs": 45029.539291999994
+        }
+      ]
+    },
+    {
+      "phase": "CALIBRATED_REUSE",
+      "index": 6,
+      "startedAt": "2026-09-30T02:29:04.254Z",
+      "elapsedMs": 1352.6962499999936,
+      "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+      "execution": "SUCCEEDED",
+      "failure": null,
+      "findings": [],
+      "expectedFindings": "NONE_BY_CONTROLLED_TRUST_CALIBRATION",
+      "cleanup": {
+        "state": "RETAINED",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "stoppedAt": null,
+        "deletedAt": null
+      },
+      "session": {
+        "mode": "WARM",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "acquiredAt": "2026-09-30T02:29:04.254Z",
+        "reused": true,
+        "inspectionCount": 6,
+        "disposition": "RETAINED"
+      },
+      "stagesMs": {
+        "collectionAndTransfer": 1252.064833000004,
+        "validation": 3.421249999999418,
+        "decisionAfterValidation": 0.16420900000230176,
+        "workerBrowserLaunch": 562.6555189999999,
+        "workerNavigation": 80.95068399999991,
+        "workerFacts": 20.105649000000085,
+        "workerScreenshot": 146.94845099999998
+      },
+      "events": [
+        {
+          "phase": "CALIBRATED_REUSE_6",
+          "event": "inspection_started",
+          "at": "2026-09-30T02:29:04.254Z",
+          "elapsedMs": 45030.927041999996
+        },
+        {
+          "phase": "CALIBRATED_REUSE_6",
+          "event": "collection_started",
+          "at": "2026-09-30T02:29:04.351Z",
+          "elapsedMs": 45127.687999999995
+        },
+        {
+          "phase": "CALIBRATED_REUSE_6",
+          "event": "evidence_received",
+          "at": "2026-09-30T02:29:05.603Z",
+          "elapsedMs": 46379.752833
+        },
+        {
+          "phase": "CALIBRATED_REUSE_6",
+          "event": "evidence_validated",
+          "at": "2026-09-30T02:29:05.606Z",
+          "elapsedMs": 46383.174083
+        },
+        {
+          "phase": "CALIBRATED_REUSE_6",
+          "event": "worker_timing",
+          "at": "2026-09-30T02:29:05.606Z",
+          "elapsedMs": 46383.17858299999,
+          "workerTiming": {
+            "startedAt": "2026-09-30T02:29:03.649Z",
+            "events": {
+              "workerStarted": 0,
+              "browserReady": 562.6555189999999,
+              "navigationStarted": 658.629813,
+              "pageLoaded": 739.5804969999999,
+              "factsCollected": 759.686146,
+              "screenshotCollected": 906.634597
+            }
+          }
+        },
+        {
+          "phase": "CALIBRATED_REUSE_6",
+          "event": "inspection_returned",
+          "at": "2026-09-30T02:29:05.606Z",
+          "elapsedMs": 46383.338292
+        }
+      ]
+    },
+    {
+      "phase": "CALIBRATED_REUSE",
+      "index": 7,
+      "startedAt": "2026-09-30T02:29:05.608Z",
+      "elapsedMs": 1414.0711670000019,
+      "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+      "execution": "SUCCEEDED",
+      "failure": null,
+      "findings": [],
+      "expectedFindings": "NONE_BY_CONTROLLED_TRUST_CALIBRATION",
+      "cleanup": {
+        "state": "RETAINED",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "stoppedAt": null,
+        "deletedAt": null
+      },
+      "session": {
+        "mode": "WARM",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "acquiredAt": "2026-09-30T02:29:05.608Z",
+        "reused": true,
+        "inspectionCount": 7,
+        "disposition": "RETAINED"
+      },
+      "stagesMs": {
+        "collectionAndTransfer": 1311.2771659999999,
+        "validation": 3.4425000000046566,
+        "decisionAfterValidation": 0.13224999999511056,
+        "workerBrowserLaunch": 577.274413,
+        "workerNavigation": 75.26257800000008,
+        "workerFacts": 22.22773799999993,
+        "workerScreenshot": 153.981451
+      },
+      "events": [
+        {
+          "phase": "CALIBRATED_REUSE_7",
+          "event": "inspection_started",
+          "at": "2026-09-30T02:29:05.608Z",
+          "elapsedMs": 46385.451167
+        },
+        {
+          "phase": "CALIBRATED_REUSE_7",
+          "event": "collection_started",
+          "at": "2026-09-30T02:29:05.707Z",
+          "elapsedMs": 46484.372041999995
+        },
+        {
+          "phase": "CALIBRATED_REUSE_7",
+          "event": "evidence_received",
+          "at": "2026-09-30T02:29:07.019Z",
+          "elapsedMs": 47795.649207999995
+        },
+        {
+          "phase": "CALIBRATED_REUSE_7",
+          "event": "evidence_validated",
+          "at": "2026-09-30T02:29:07.022Z",
+          "elapsedMs": 47799.091708
+        },
+        {
+          "phase": "CALIBRATED_REUSE_7",
+          "event": "worker_timing",
+          "at": "2026-09-30T02:29:07.022Z",
+          "elapsedMs": 47799.0965,
+          "workerTiming": {
+            "startedAt": "2026-09-30T02:29:05.016Z",
+            "events": {
+              "workerStarted": 0,
+              "browserReady": 577.274413,
+              "navigationStarted": 671.8690889999999,
+              "pageLoaded": 747.131667,
+              "factsCollected": 769.3594049999999,
+              "screenshotCollected": 923.3408559999999
+            }
+          }
+        },
+        {
+          "phase": "CALIBRATED_REUSE_7",
+          "event": "inspection_returned",
+          "at": "2026-09-30T02:29:07.022Z",
+          "elapsedMs": 47799.223957999995
+        }
+      ]
+    },
+    {
+      "phase": "CALIBRATED_REUSE",
+      "index": 8,
+      "startedAt": "2026-09-30T02:29:07.024Z",
+      "elapsedMs": 1447.2239169999957,
+      "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+      "execution": "SUCCEEDED",
+      "failure": null,
+      "findings": [],
+      "expectedFindings": "NONE_BY_CONTROLLED_TRUST_CALIBRATION",
+      "cleanup": {
+        "state": "RETAINED",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "stoppedAt": null,
+        "deletedAt": null
+      },
+      "session": {
+        "mode": "WARM",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "acquiredAt": "2026-09-30T02:29:07.024Z",
+        "reused": true,
+        "inspectionCount": 8,
+        "disposition": "RETAINED"
+      },
+      "stagesMs": {
+        "collectionAndTransfer": 1302.413999999997,
+        "validation": 1.514499999997497,
+        "decisionAfterValidation": 0.05512499999895226,
+        "workerBrowserLaunch": 573.229146,
+        "workerNavigation": 77.34985900000004,
+        "workerFacts": 28.00456399999996,
+        "workerScreenshot": 151.59498499999995
+      },
+      "events": [
+        {
+          "phase": "CALIBRATED_REUSE_8",
+          "event": "inspection_started",
+          "at": "2026-09-30T02:29:07.024Z",
+          "elapsedMs": 47801.212875
+        },
+        {
+          "phase": "CALIBRATED_REUSE_8",
+          "event": "collection_started",
+          "at": "2026-09-30T02:29:07.167Z",
+          "elapsedMs": 47944.387875
+        },
+        {
+          "phase": "CALIBRATED_REUSE_8",
+          "event": "evidence_received",
+          "at": "2026-09-30T02:29:08.470Z",
+          "elapsedMs": 49246.801875
+        },
+        {
+          "phase": "CALIBRATED_REUSE_8",
+          "event": "evidence_validated",
+          "at": "2026-09-30T02:29:08.471Z",
+          "elapsedMs": 49248.316374999995
+        },
+        {
+          "phase": "CALIBRATED_REUSE_8",
+          "event": "worker_timing",
+          "at": "2026-09-30T02:29:08.471Z",
+          "elapsedMs": 49248.3175,
+          "workerTiming": {
+            "startedAt": "2026-09-30T02:29:06.476Z",
+            "events": {
+              "workerStarted": 0,
+              "browserReady": 573.229146,
+              "navigationStarted": 675.888674,
+              "pageLoaded": 753.2385330000001,
+              "factsCollected": 781.243097,
+              "screenshotCollected": 932.838082
+            }
+          }
+        },
+        {
+          "phase": "CALIBRATED_REUSE_8",
+          "event": "inspection_returned",
+          "at": "2026-09-30T02:29:08.471Z",
+          "elapsedMs": 49248.371499999994
+        }
+      ]
+    },
+    {
+      "phase": "CALIBRATED_REUSE",
+      "index": 9,
+      "startedAt": "2026-09-30T02:29:08.472Z",
+      "elapsedMs": 1478.505833999996,
+      "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+      "execution": "SUCCEEDED",
+      "failure": null,
+      "findings": [],
+      "expectedFindings": "NONE_BY_CONTROLLED_TRUST_CALIBRATION",
+      "cleanup": {
+        "state": "RETAINED",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "stoppedAt": null,
+        "deletedAt": null
+      },
+      "session": {
+        "mode": "WARM",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "acquiredAt": "2026-09-30T02:29:08.472Z",
+        "reused": true,
+        "inspectionCount": 9,
+        "disposition": "RETAINED"
+      },
+      "stagesMs": {
+        "collectionAndTransfer": 1368.448249999994,
+        "validation": 3.4959170000001905,
+        "decisionAfterValidation": 0.1991660000057891,
+        "workerBrowserLaunch": 573.0390639999999,
+        "workerNavigation": 78.67704500000002,
+        "workerFacts": 24.157457000000022,
+        "workerScreenshot": 143.98469
+      },
+      "events": [
+        {
+          "phase": "CALIBRATED_REUSE_9",
+          "event": "inspection_started",
+          "at": "2026-09-30T02:29:08.472Z",
+          "elapsedMs": 49248.844332999994
+        },
+        {
+          "phase": "CALIBRATED_REUSE_9",
+          "event": "collection_started",
+          "at": "2026-09-30T02:29:08.578Z",
+          "elapsedMs": 49354.95375
+        },
+        {
+          "phase": "CALIBRATED_REUSE_9",
+          "event": "evidence_received",
+          "at": "2026-09-30T02:29:09.946Z",
+          "elapsedMs": 50723.401999999995
+        },
+        {
+          "phase": "CALIBRATED_REUSE_9",
+          "event": "evidence_validated",
+          "at": "2026-09-30T02:29:09.950Z",
+          "elapsedMs": 50726.897916999995
+        },
+        {
+          "phase": "CALIBRATED_REUSE_9",
+          "event": "worker_timing",
+          "at": "2026-09-30T02:29:09.950Z",
+          "elapsedMs": 50726.903,
+          "workerTiming": {
+            "startedAt": "2026-09-30T02:29:07.891Z",
+            "events": {
+              "workerStarted": 0,
+              "browserReady": 573.0390639999999,
+              "navigationStarted": 669.376941,
+              "pageLoaded": 748.053986,
+              "factsCollected": 772.211443,
+              "screenshotCollected": 916.196133
+            }
+          }
+        },
+        {
+          "phase": "CALIBRATED_REUSE_9",
+          "event": "inspection_returned",
+          "at": "2026-09-30T02:29:09.950Z",
+          "elapsedMs": 50727.097083
+        }
+      ]
+    },
+    {
+      "phase": "CALIBRATED_REUSE",
+      "index": 10,
+      "startedAt": "2026-09-30T02:29:09.952Z",
+      "elapsedMs": 1462.4494999999952,
+      "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+      "execution": "SUCCEEDED",
+      "failure": null,
+      "findings": [],
+      "expectedFindings": "NONE_BY_CONTROLLED_TRUST_CALIBRATION",
+      "cleanup": {
+        "state": "RETAINED",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "stoppedAt": null,
+        "deletedAt": null
+      },
+      "session": {
+        "mode": "WARM",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "acquiredAt": "2026-09-30T02:29:09.952Z",
+        "reused": true,
+        "inspectionCount": 10,
+        "disposition": "RETAINED"
+      },
+      "stagesMs": {
+        "collectionAndTransfer": 1314.1907909999936,
+        "validation": 2.58283400000073,
+        "decisionAfterValidation": 0.1041250000052969,
+        "workerBrowserLaunch": 571.945661,
+        "workerNavigation": 81.42861200000004,
+        "workerFacts": 22.41363100000001,
+        "workerScreenshot": 160.544624
+      },
+      "events": [
+        {
+          "phase": "CALIBRATED_REUSE_10",
+          "event": "inspection_started",
+          "at": "2026-09-30T02:29:09.952Z",
+          "elapsedMs": 50728.888583
+        },
+        {
+          "phase": "CALIBRATED_REUSE_10",
+          "event": "collection_started",
+          "at": "2026-09-30T02:29:10.097Z",
+          "elapsedMs": 50874.238417
+        },
+        {
+          "phase": "CALIBRATED_REUSE_10",
+          "event": "evidence_received",
+          "at": "2026-09-30T02:29:11.411Z",
+          "elapsedMs": 52188.429207999994
+        },
+        {
+          "phase": "CALIBRATED_REUSE_10",
+          "event": "evidence_validated",
+          "at": "2026-09-30T02:29:11.414Z",
+          "elapsedMs": 52191.012041999995
+        },
+        {
+          "phase": "CALIBRATED_REUSE_10",
+          "event": "worker_timing",
+          "at": "2026-09-30T02:29:11.414Z",
+          "elapsedMs": 52191.015708,
+          "workerTiming": {
+            "startedAt": "2026-09-30T02:29:09.406Z",
+            "events": {
+              "workerStarted": 0,
+              "browserReady": 571.945661,
+              "navigationStarted": 669.634967,
+              "pageLoaded": 751.063579,
+              "factsCollected": 773.47721,
+              "screenshotCollected": 934.021834
+            }
+          }
+        },
+        {
+          "phase": "CALIBRATED_REUSE_10",
+          "event": "inspection_returned",
+          "at": "2026-09-30T02:29:11.414Z",
+          "elapsedMs": 52191.116167
+        }
+      ]
+    },
+    {
+      "phase": "CALIBRATED_REUSE",
+      "index": 11,
+      "startedAt": "2026-09-30T02:29:11.415Z",
+      "elapsedMs": 1378.5874580000018,
+      "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+      "execution": "SUCCEEDED",
+      "failure": null,
+      "findings": [],
+      "expectedFindings": "NONE_BY_CONTROLLED_TRUST_CALIBRATION",
+      "cleanup": {
+        "state": "RETAINED",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "stoppedAt": null,
+        "deletedAt": null
+      },
+      "session": {
+        "mode": "WARM",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "acquiredAt": "2026-09-30T02:29:11.415Z",
+        "reused": true,
+        "inspectionCount": 11,
+        "disposition": "RETAINED"
+      },
+      "stagesMs": {
+        "collectionAndTransfer": 1277.380416,
+        "validation": 1.5568339999954333,
+        "decisionAfterValidation": 0.04254100000252947,
+        "workerBrowserLaunch": 565.627336,
+        "workerNavigation": 78.90450699999997,
+        "workerFacts": 22.993067999999994,
+        "workerScreenshot": 156.27259800000002
+      },
+      "events": [
+        {
+          "phase": "CALIBRATED_REUSE_11",
+          "event": "inspection_started",
+          "at": "2026-09-30T02:29:11.415Z",
+          "elapsedMs": 52192.196832999995
+        },
+        {
+          "phase": "CALIBRATED_REUSE_11",
+          "event": "collection_started",
+          "at": "2026-09-30T02:29:11.515Z",
+          "elapsedMs": 52291.765667
+        },
+        {
+          "phase": "CALIBRATED_REUSE_11",
+          "event": "evidence_received",
+          "at": "2026-09-30T02:29:12.792Z",
+          "elapsedMs": 53569.146083
+        },
+        {
+          "phase": "CALIBRATED_REUSE_11",
+          "event": "evidence_validated",
+          "at": "2026-09-30T02:29:12.794Z",
+          "elapsedMs": 53570.702916999995
+        },
+        {
+          "phase": "CALIBRATED_REUSE_11",
+          "event": "worker_timing",
+          "at": "2026-09-30T02:29:12.794Z",
+          "elapsedMs": 53570.703958,
+          "workerTiming": {
+            "startedAt": "2026-09-30T02:29:10.821Z",
+            "events": {
+              "workerStarted": 0,
+              "browserReady": 565.627336,
+              "navigationStarted": 660.123357,
+              "pageLoaded": 739.027864,
+              "factsCollected": 762.020932,
+              "screenshotCollected": 918.29353
+            }
+          }
+        },
+        {
+          "phase": "CALIBRATED_REUSE_11",
+          "event": "inspection_returned",
+          "at": "2026-09-30T02:29:12.794Z",
+          "elapsedMs": 53570.745458
+        }
+      ]
+    },
+    {
+      "phase": "CALIBRATED_REUSE",
+      "index": 12,
+      "startedAt": "2026-09-30T02:29:12.794Z",
+      "elapsedMs": 1484.641208000001,
+      "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+      "execution": "SUCCEEDED",
+      "failure": null,
+      "findings": [],
+      "expectedFindings": "NONE_BY_CONTROLLED_TRUST_CALIBRATION",
+      "cleanup": {
+        "state": "RETAINED",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "stoppedAt": null,
+        "deletedAt": null
+      },
+      "session": {
+        "mode": "WARM",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "acquiredAt": "2026-09-30T02:29:12.794Z",
+        "reused": true,
+        "inspectionCount": 12,
+        "disposition": "RETAINED"
+      },
+      "stagesMs": {
+        "collectionAndTransfer": 1342.4644999999946,
+        "validation": 3.347165999999561,
+        "decisionAfterValidation": 0.14995900000212714,
+        "workerBrowserLaunch": 577.6567319999999,
+        "workerNavigation": 87.72316999999998,
+        "workerFacts": 22.611770000000092,
+        "workerScreenshot": 157.0999589999999
+      },
+      "events": [
+        {
+          "phase": "CALIBRATED_REUSE_12",
+          "event": "inspection_started",
+          "at": "2026-09-30T02:29:12.794Z",
+          "elapsedMs": 53571.08375
+        },
+        {
+          "phase": "CALIBRATED_REUSE_12",
+          "event": "collection_started",
+          "at": "2026-09-30T02:29:12.933Z",
+          "elapsedMs": 53709.560417
+        },
+        {
+          "phase": "CALIBRATED_REUSE_12",
+          "event": "evidence_received",
+          "at": "2026-09-30T02:29:14.275Z",
+          "elapsedMs": 55052.024916999995
+        },
+        {
+          "phase": "CALIBRATED_REUSE_12",
+          "event": "evidence_validated",
+          "at": "2026-09-30T02:29:14.278Z",
+          "elapsedMs": 55055.372082999995
+        },
+        {
+          "phase": "CALIBRATED_REUSE_12",
+          "event": "worker_timing",
+          "at": "2026-09-30T02:29:14.278Z",
+          "elapsedMs": 55055.374874999994,
+          "workerTiming": {
+            "startedAt": "2026-09-30T02:29:12.233Z",
+            "events": {
+              "workerStarted": 0,
+              "browserReady": 577.6567319999999,
+              "navigationStarted": 673.103539,
+              "pageLoaded": 760.8267089999999,
+              "factsCollected": 783.438479,
+              "screenshotCollected": 940.5384379999999
+            }
+          }
+        },
+        {
+          "phase": "CALIBRATED_REUSE_12",
+          "event": "inspection_returned",
+          "at": "2026-09-30T02:29:14.278Z",
+          "elapsedMs": 55055.522042
+        }
+      ]
+    },
+    {
+      "phase": "CALIBRATED_REUSE",
+      "index": 13,
+      "startedAt": "2026-09-30T02:29:14.280Z",
+      "elapsedMs": 1443.4767920000013,
+      "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+      "execution": "SUCCEEDED",
+      "failure": null,
+      "findings": [],
+      "expectedFindings": "NONE_BY_CONTROLLED_TRUST_CALIBRATION",
+      "cleanup": {
+        "state": "RETAINED",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "stoppedAt": null,
+        "deletedAt": null
+      },
+      "session": {
+        "mode": "WARM",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "acquiredAt": "2026-09-30T02:29:14.280Z",
+        "reused": true,
+        "inspectionCount": 13,
+        "disposition": "RETAINED"
+      },
+      "stagesMs": {
+        "collectionAndTransfer": 1343.2854999999981,
+        "validation": 2.2620000000024447,
+        "decisionAfterValidation": 0.05929199999809498,
+        "workerBrowserLaunch": 575.4485510000001,
+        "workerNavigation": 87.6110470000001,
+        "workerFacts": 24.684515999999917,
+        "workerScreenshot": 150.86952400000007
+      },
+      "events": [
+        {
+          "phase": "CALIBRATED_REUSE_13",
+          "event": "inspection_started",
+          "at": "2026-09-30T02:29:14.280Z",
+          "elapsedMs": 55056.820457999995
+        },
+        {
+          "phase": "CALIBRATED_REUSE_13",
+          "event": "collection_started",
+          "at": "2026-09-30T02:29:14.378Z",
+          "elapsedMs": 55154.630458
+        },
+        {
+          "phase": "CALIBRATED_REUSE_13",
+          "event": "evidence_received",
+          "at": "2026-09-30T02:29:15.721Z",
+          "elapsedMs": 56497.915958
+        },
+        {
+          "phase": "CALIBRATED_REUSE_13",
+          "event": "evidence_validated",
+          "at": "2026-09-30T02:29:15.723Z",
+          "elapsedMs": 56500.177958
+        },
+        {
+          "phase": "CALIBRATED_REUSE_13",
+          "event": "worker_timing",
+          "at": "2026-09-30T02:29:15.723Z",
+          "elapsedMs": 56500.179667,
+          "workerTiming": {
+            "startedAt": "2026-09-30T02:29:13.685Z",
+            "events": {
+              "workerStarted": 0,
+              "browserReady": 575.4485510000001,
+              "navigationStarted": 673.863293,
+              "pageLoaded": 761.4743400000001,
+              "factsCollected": 786.158856,
+              "screenshotCollected": 937.0283800000001
+            }
+          }
+        },
+        {
+          "phase": "CALIBRATED_REUSE_13",
+          "event": "inspection_returned",
+          "at": "2026-09-30T02:29:15.723Z",
+          "elapsedMs": 56500.23725
+        }
+      ]
+    },
+    {
+      "phase": "CALIBRATED_REUSE",
+      "index": 14,
+      "startedAt": "2026-09-30T02:29:15.724Z",
+      "elapsedMs": 1417.1012499999997,
+      "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+      "execution": "SUCCEEDED",
+      "failure": null,
+      "findings": [],
+      "expectedFindings": "NONE_BY_CONTROLLED_TRUST_CALIBRATION",
+      "cleanup": {
+        "state": "RETAINED",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "stoppedAt": null,
+        "deletedAt": null
+      },
+      "session": {
+        "mode": "WARM",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "acquiredAt": "2026-09-30T02:29:15.724Z",
+        "reused": true,
+        "inspectionCount": 14,
+        "disposition": "RETAINED"
+      },
+      "stagesMs": {
+        "collectionAndTransfer": 1310.8727080000026,
+        "validation": 3.0597080000006827,
+        "decisionAfterValidation": 0.15920899999764515,
+        "workerBrowserLaunch": 573.3017199999999,
+        "workerNavigation": 74.44114099999979,
+        "workerFacts": 22.192907000000105,
+        "workerScreenshot": 154.49663400000009
+      },
+      "events": [
+        {
+          "phase": "CALIBRATED_REUSE_14",
+          "event": "inspection_started",
+          "at": "2026-09-30T02:29:15.724Z",
+          "elapsedMs": 56500.836624999996
+        },
+        {
+          "phase": "CALIBRATED_REUSE_14",
+          "event": "collection_started",
+          "at": "2026-09-30T02:29:15.827Z",
+          "elapsedMs": 56603.588666999996
+        },
+        {
+          "phase": "CALIBRATED_REUSE_14",
+          "event": "evidence_received",
+          "at": "2026-09-30T02:29:17.137Z",
+          "elapsedMs": 57914.461375
+        },
+        {
+          "phase": "CALIBRATED_REUSE_14",
+          "event": "evidence_validated",
+          "at": "2026-09-30T02:29:17.140Z",
+          "elapsedMs": 57917.521083
+        },
+        {
+          "phase": "CALIBRATED_REUSE_14",
+          "event": "worker_timing",
+          "at": "2026-09-30T02:29:17.140Z",
+          "elapsedMs": 57917.524792,
+          "workerTiming": {
+            "startedAt": "2026-09-30T02:29:15.137Z",
+            "events": {
+              "workerStarted": 0,
+              "browserReady": 573.3017199999999,
+              "navigationStarted": 667.8592450000001,
+              "pageLoaded": 742.3003859999999,
+              "factsCollected": 764.493293,
+              "screenshotCollected": 918.9899270000001
+            }
+          }
+        },
+        {
+          "phase": "CALIBRATED_REUSE_14",
+          "event": "inspection_returned",
+          "at": "2026-09-30T02:29:17.141Z",
+          "elapsedMs": 57917.680292
+        }
+      ]
+    },
+    {
+      "phase": "CALIBRATED_REUSE",
+      "index": 15,
+      "startedAt": "2026-09-30T02:29:17.142Z",
+      "elapsedMs": 1383.2043750000012,
+      "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+      "execution": "SUCCEEDED",
+      "failure": null,
+      "findings": [],
+      "expectedFindings": "NONE_BY_CONTROLLED_TRUST_CALIBRATION",
+      "cleanup": {
+        "state": "RETAINED",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "stoppedAt": null,
+        "deletedAt": null
+      },
+      "session": {
+        "mode": "WARM",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "acquiredAt": "2026-09-30T02:29:17.142Z",
+        "reused": true,
+        "inspectionCount": 15,
+        "disposition": "RETAINED"
+      },
+      "stagesMs": {
+        "collectionAndTransfer": 1273.161583000001,
+        "validation": 2.859083000003011,
+        "decisionAfterValidation": 0.1510839999973541,
+        "workerBrowserLaunch": 572.0003770000001,
+        "workerNavigation": 75.00194799999997,
+        "workerFacts": 20.99164799999994,
+        "workerScreenshot": 154.50069900000005
+      },
+      "events": [
+        {
+          "phase": "CALIBRATED_REUSE_15",
+          "event": "inspection_started",
+          "at": "2026-09-30T02:29:17.142Z",
+          "elapsedMs": 57919.093167
+        },
+        {
+          "phase": "CALIBRATED_REUSE_15",
+          "event": "collection_started",
+          "at": "2026-09-30T02:29:17.249Z",
+          "elapsedMs": 58025.944041999996
+        },
+        {
+          "phase": "CALIBRATED_REUSE_15",
+          "event": "evidence_received",
+          "at": "2026-09-30T02:29:18.522Z",
+          "elapsedMs": 59299.105625
+        },
+        {
+          "phase": "CALIBRATED_REUSE_15",
+          "event": "evidence_validated",
+          "at": "2026-09-30T02:29:18.525Z",
+          "elapsedMs": 59301.964708
+        },
+        {
+          "phase": "CALIBRATED_REUSE_15",
+          "event": "worker_timing",
+          "at": "2026-09-30T02:29:18.525Z",
+          "elapsedMs": 59301.970582999995,
+          "workerTiming": {
+            "startedAt": "2026-09-30T02:29:16.559Z",
+            "events": {
+              "workerStarted": 0,
+              "browserReady": 572.0003770000001,
+              "navigationStarted": 662.9221150000001,
+              "pageLoaded": 737.924063,
+              "factsCollected": 758.915711,
+              "screenshotCollected": 913.41641
+            }
+          }
+        },
+        {
+          "phase": "CALIBRATED_REUSE_15",
+          "event": "inspection_returned",
+          "at": "2026-09-30T02:29:18.525Z",
+          "elapsedMs": 59302.115792
+        }
+      ]
+    },
+    {
+      "phase": "CALIBRATED_REUSE",
+      "index": 16,
+      "startedAt": "2026-09-30T02:29:18.526Z",
+      "elapsedMs": 1462.0596250000017,
+      "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+      "execution": "SUCCEEDED",
+      "failure": null,
+      "findings": [],
+      "expectedFindings": "NONE_BY_CONTROLLED_TRUST_CALIBRATION",
+      "cleanup": {
+        "state": "RETAINED",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "stoppedAt": null,
+        "deletedAt": null
+      },
+      "session": {
+        "mode": "WARM",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "acquiredAt": "2026-09-30T02:29:18.526Z",
+        "reused": true,
+        "inspectionCount": 16,
+        "disposition": "RETAINED"
+      },
+      "stagesMs": {
+        "collectionAndTransfer": 1283.554250000001,
+        "validation": 2.580708000001323,
+        "decisionAfterValidation": 0.10337499999877764,
+        "workerBrowserLaunch": 573.878723,
+        "workerNavigation": 80.26117599999998,
+        "workerFacts": 21.87094000000002,
+        "workerScreenshot": 155.840687
+      },
+      "events": [
+        {
+          "phase": "CALIBRATED_REUSE_16",
+          "event": "inspection_started",
+          "at": "2026-09-30T02:29:18.526Z",
+          "elapsedMs": 59303.4845
+        },
+        {
+          "phase": "CALIBRATED_REUSE_16",
+          "event": "collection_started",
+          "at": "2026-09-30T02:29:18.702Z",
+          "elapsedMs": 59479.192041999995
+        },
+        {
+          "phase": "CALIBRATED_REUSE_16",
+          "event": "evidence_received",
+          "at": "2026-09-30T02:29:19.986Z",
+          "elapsedMs": 60762.746291999996
+        },
+        {
+          "phase": "CALIBRATED_REUSE_16",
+          "event": "evidence_validated",
+          "at": "2026-09-30T02:29:19.988Z",
+          "elapsedMs": 60765.327
+        },
+        {
+          "phase": "CALIBRATED_REUSE_16",
+          "event": "worker_timing",
+          "at": "2026-09-30T02:29:19.988Z",
+          "elapsedMs": 60765.330582999995,
+          "workerTiming": {
+            "startedAt": "2026-09-30T02:29:18.017Z",
+            "events": {
+              "workerStarted": 0,
+              "browserReady": 573.878723,
+              "navigationStarted": 665.618236,
+              "pageLoaded": 745.879412,
+              "factsCollected": 767.750352,
+              "screenshotCollected": 923.591039
+            }
+          }
+        },
+        {
+          "phase": "CALIBRATED_REUSE_16",
+          "event": "inspection_returned",
+          "at": "2026-09-30T02:29:19.988Z",
+          "elapsedMs": 60765.430374999996
+        }
+      ]
+    },
+    {
+      "phase": "CALIBRATED_REUSE",
+      "index": 17,
+      "startedAt": "2026-09-30T02:29:19.989Z",
+      "elapsedMs": 1399.9151249999995,
+      "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+      "execution": "SUCCEEDED",
+      "failure": null,
+      "findings": [],
+      "expectedFindings": "NONE_BY_CONTROLLED_TRUST_CALIBRATION",
+      "cleanup": {
+        "state": "RETAINED",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "stoppedAt": null,
+        "deletedAt": null
+      },
+      "session": {
+        "mode": "WARM",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "acquiredAt": "2026-09-30T02:29:19.989Z",
+        "reused": true,
+        "inspectionCount": 17,
+        "disposition": "RETAINED"
+      },
+      "stagesMs": {
+        "collectionAndTransfer": 1288.1043749999953,
+        "validation": 1.6454999999987194,
+        "decisionAfterValidation": 0.046875,
+        "workerBrowserLaunch": 566.3184170000001,
+        "workerNavigation": 78.64506000000006,
+        "workerFacts": 24.642334000000005,
+        "workerScreenshot": 150.51759100000004
+      },
+      "events": [
+        {
+          "phase": "CALIBRATED_REUSE_17",
+          "event": "inspection_started",
+          "at": "2026-09-30T02:29:19.989Z",
+          "elapsedMs": 60766.196333
+        },
+        {
+          "phase": "CALIBRATED_REUSE_17",
+          "event": "collection_started",
+          "at": "2026-09-30T02:29:20.099Z",
+          "elapsedMs": 60876.255417
+        },
+        {
+          "phase": "CALIBRATED_REUSE_17",
+          "event": "evidence_received",
+          "at": "2026-09-30T02:29:21.387Z",
+          "elapsedMs": 62164.359791999996
+        },
+        {
+          "phase": "CALIBRATED_REUSE_17",
+          "event": "evidence_validated",
+          "at": "2026-09-30T02:29:21.389Z",
+          "elapsedMs": 62166.005291999994
+        },
+        {
+          "phase": "CALIBRATED_REUSE_17",
+          "event": "worker_timing",
+          "at": "2026-09-30T02:29:21.389Z",
+          "elapsedMs": 62166.006541999996,
+          "workerTiming": {
+            "startedAt": "2026-09-30T02:29:19.407Z",
+            "events": {
+              "workerStarted": 0,
+              "browserReady": 566.3184170000001,
+              "navigationStarted": 668.857708,
+              "pageLoaded": 747.5027680000001,
+              "factsCollected": 772.1451020000001,
+              "screenshotCollected": 922.6626930000001
+            }
+          }
+        },
+        {
+          "phase": "CALIBRATED_REUSE_17",
+          "event": "inspection_returned",
+          "at": "2026-09-30T02:29:21.389Z",
+          "elapsedMs": 62166.052166999994
+        }
+      ]
+    },
+    {
+      "phase": "CALIBRATED_REUSE",
+      "index": 18,
+      "startedAt": "2026-09-30T02:29:21.389Z",
+      "elapsedMs": 1362.2226250000022,
+      "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+      "execution": "SUCCEEDED",
+      "failure": null,
+      "findings": [],
+      "expectedFindings": "NONE_BY_CONTROLLED_TRUST_CALIBRATION",
+      "cleanup": {
+        "state": "RETAINED",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "stoppedAt": null,
+        "deletedAt": null
+      },
+      "session": {
+        "mode": "WARM",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "acquiredAt": "2026-09-30T02:29:21.389Z",
+        "reused": true,
+        "inspectionCount": 18,
+        "disposition": "RETAINED"
+      },
+      "stagesMs": {
+        "collectionAndTransfer": 1261.3705830000035,
+        "validation": 1.6039590000000317,
+        "decisionAfterValidation": 0.051124999998137355,
+        "workerBrowserLaunch": 563.990554,
+        "workerNavigation": 80.31739500000003,
+        "workerFacts": 23.999963999999977,
+        "workerScreenshot": 144.82719799999995
+      },
+      "events": [
+        {
+          "phase": "CALIBRATED_REUSE_18",
+          "event": "inspection_started",
+          "at": "2026-09-30T02:29:21.389Z",
+          "elapsedMs": 62166.488792
+        },
+        {
+          "phase": "CALIBRATED_REUSE_18",
+          "event": "collection_started",
+          "at": "2026-09-30T02:29:21.489Z",
+          "elapsedMs": 62265.635749999994
+        },
+        {
+          "phase": "CALIBRATED_REUSE_18",
+          "event": "evidence_received",
+          "at": "2026-09-30T02:29:22.750Z",
+          "elapsedMs": 63527.006333
+        },
+        {
+          "phase": "CALIBRATED_REUSE_18",
+          "event": "evidence_validated",
+          "at": "2026-09-30T02:29:22.752Z",
+          "elapsedMs": 63528.610292
+        },
+        {
+          "phase": "CALIBRATED_REUSE_18",
+          "event": "worker_timing",
+          "at": "2026-09-30T02:29:22.752Z",
+          "elapsedMs": 63528.61133299999,
+          "workerTiming": {
+            "startedAt": "2026-09-30T02:29:20.798Z",
+            "events": {
+              "workerStarted": 0,
+              "browserReady": 563.990554,
+              "navigationStarted": 659.013192,
+              "pageLoaded": 739.330587,
+              "factsCollected": 763.330551,
+              "screenshotCollected": 908.157749
+            }
+          }
+        },
+        {
+          "phase": "CALIBRATED_REUSE_18",
+          "event": "inspection_returned",
+          "at": "2026-09-30T02:29:22.752Z",
+          "elapsedMs": 63528.661416999996
+        }
+      ]
+    },
+    {
+      "phase": "CALIBRATED_REUSE",
+      "index": 19,
+      "startedAt": "2026-09-30T02:29:22.752Z",
+      "elapsedMs": 1414.4830419999998,
+      "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+      "execution": "SUCCEEDED",
+      "failure": null,
+      "findings": [],
+      "expectedFindings": "NONE_BY_CONTROLLED_TRUST_CALIBRATION",
+      "cleanup": {
+        "state": "RETAINED",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "stoppedAt": null,
+        "deletedAt": null
+      },
+      "session": {
+        "mode": "WARM",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "acquiredAt": "2026-09-30T02:29:22.752Z",
+        "reused": true,
+        "inspectionCount": 19,
+        "disposition": "RETAINED"
+      },
+      "stagesMs": {
+        "collectionAndTransfer": 1265.6626659999965,
+        "validation": 3.3817500000004657,
+        "decisionAfterValidation": 0.17525000000023283,
+        "workerBrowserLaunch": 564.9258709999999,
+        "workerNavigation": 76.45470399999999,
+        "workerFacts": 21.40659100000005,
+        "workerScreenshot": 151.29730399999994
+      },
+      "events": [
+        {
+          "phase": "CALIBRATED_REUSE_19",
+          "event": "inspection_started",
+          "at": "2026-09-30T02:29:22.752Z",
+          "elapsedMs": 63529.131792
+        },
+        {
+          "phase": "CALIBRATED_REUSE_19",
+          "event": "collection_started",
+          "at": "2026-09-30T02:29:22.897Z",
+          "elapsedMs": 63674.095167
+        },
+        {
+          "phase": "CALIBRATED_REUSE_19",
+          "event": "evidence_received",
+          "at": "2026-09-30T02:29:24.163Z",
+          "elapsedMs": 64939.757832999996
+        },
+        {
+          "phase": "CALIBRATED_REUSE_19",
+          "event": "evidence_validated",
+          "at": "2026-09-30T02:29:24.166Z",
+          "elapsedMs": 64943.139583
+        },
+        {
+          "phase": "CALIBRATED_REUSE_19",
+          "event": "worker_timing",
+          "at": "2026-09-30T02:29:24.166Z",
+          "elapsedMs": 64943.145749999996,
+          "workerTiming": {
+            "startedAt": "2026-09-30T02:29:22.199Z",
+            "events": {
+              "workerStarted": 0,
+              "browserReady": 564.9258709999999,
+              "navigationStarted": 656.0816269999999,
+              "pageLoaded": 732.5363309999999,
+              "factsCollected": 753.942922,
+              "screenshotCollected": 905.2402259999999
+            }
+          }
+        },
+        {
+          "phase": "CALIBRATED_REUSE_19",
+          "event": "inspection_returned",
+          "at": "2026-09-30T02:29:24.166Z",
+          "elapsedMs": 64943.314833
+        }
+      ]
+    },
+    {
+      "phase": "CALIBRATED_REUSE",
+      "index": 20,
+      "startedAt": "2026-09-30T02:29:24.168Z",
+      "elapsedMs": 1360.4849170000016,
+      "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+      "execution": "SUCCEEDED",
+      "failure": null,
+      "findings": [],
+      "expectedFindings": "NONE_BY_CONTROLLED_TRUST_CALIBRATION",
+      "cleanup": {
+        "state": "RETAINED",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "stoppedAt": null,
+        "deletedAt": null
+      },
+      "session": {
+        "mode": "WARM",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "acquiredAt": "2026-09-30T02:29:24.168Z",
+        "reused": true,
+        "inspectionCount": 20,
+        "disposition": "RETAINED"
+      },
+      "stagesMs": {
+        "collectionAndTransfer": 1258.2027920000037,
+        "validation": 3.093124999999418,
+        "decisionAfterValidation": 0.09579200000735,
+        "workerBrowserLaunch": 560.1801409999999,
+        "workerNavigation": 80.00951099999997,
+        "workerFacts": 19.879702000000066,
+        "workerScreenshot": 148.20859299999995
+      },
+      "events": [
+        {
+          "phase": "CALIBRATED_REUSE_20",
+          "event": "inspection_started",
+          "at": "2026-09-30T02:29:24.168Z",
+          "elapsedMs": 64945.14025
+        },
+        {
+          "phase": "CALIBRATED_REUSE_20",
+          "event": "collection_started",
+          "at": "2026-09-30T02:29:24.267Z",
+          "elapsedMs": 65044.120707999995
+        },
+        {
+          "phase": "CALIBRATED_REUSE_20",
+          "event": "evidence_received",
+          "at": "2026-09-30T02:29:25.525Z",
+          "elapsedMs": 66302.3235
+        },
+        {
+          "phase": "CALIBRATED_REUSE_20",
+          "event": "evidence_validated",
+          "at": "2026-09-30T02:29:25.528Z",
+          "elapsedMs": 66305.416625
+        },
+        {
+          "phase": "CALIBRATED_REUSE_20",
+          "event": "worker_timing",
+          "at": "2026-09-30T02:29:25.528Z",
+          "elapsedMs": 66305.420333,
+          "workerTiming": {
+            "startedAt": "2026-09-30T02:29:23.575Z",
+            "events": {
+              "workerStarted": 0,
+              "browserReady": 560.1801409999999,
+              "navigationStarted": 651.312152,
+              "pageLoaded": 731.321663,
+              "factsCollected": 751.201365,
+              "screenshotCollected": 899.409958
+            }
+          }
+        },
+        {
+          "phase": "CALIBRATED_REUSE_20",
+          "event": "inspection_returned",
+          "at": "2026-09-30T02:29:25.528Z",
+          "elapsedMs": 66305.512417
+        }
+      ]
+    },
+    {
+      "phase": "FLAGGED_RETIREMENT",
+      "index": 1,
+      "startedAt": "2026-09-30T02:30:07.116Z",
+      "elapsedMs": 1552.1192500000034,
+      "sandboxId": "solari-0f87616dcd244c63babff69e44b38cfc",
+      "execution": "SUCCEEDED",
+      "failure": null,
+      "findings": [
+        "CREDENTIAL_PHISHING"
+      ],
+      "expectedFindings": "CREDENTIAL_PHISHING",
+      "cleanup": {
+        "state": "PENDING",
+        "sandboxId": "solari-0f87616dcd244c63babff69e44b38cfc",
+        "stoppedAt": null,
+        "deletedAt": null
+      },
+      "session": {
+        "mode": "WARM",
+        "readyAt": "2026-09-30T02:30:07.116Z",
+        "acquiredAt": "2026-09-30T02:30:07.116Z",
+        "reused": false,
+        "inspectionCount": 1,
+        "disposition": "RETIRED"
+      },
+      "stagesMs": {
+        "collectionAndTransfer": 1448.7100409999985,
+        "validation": 4.086708999995608,
+        "decisionAfterValidation": 1.804415999999037,
+        "workerBrowserLaunch": 545.0233410000001,
+        "workerNavigation": 99.916654,
+        "workerFacts": 19.69640400000003,
+        "workerScreenshot": 143.93413099999998
+      },
+      "events": [
+        {
+          "phase": "FLAGGED_RETIREMENT_1",
+          "event": "inspection_started",
+          "at": "2026-09-30T02:30:07.116Z",
+          "elapsedMs": 107892.85158300001
+        },
+        {
+          "phase": "FLAGGED_RETIREMENT_1",
+          "event": "collection_started",
+          "at": "2026-09-30T02:30:07.213Z",
+          "elapsedMs": 107990.25241700001
+        },
+        {
+          "phase": "FLAGGED_RETIREMENT_1",
+          "event": "evidence_received",
+          "at": "2026-09-30T02:30:08.662Z",
+          "elapsedMs": 109438.96245800001
+        },
+        {
+          "phase": "FLAGGED_RETIREMENT_1",
+          "event": "evidence_validated",
+          "at": "2026-09-30T02:30:08.666Z",
+          "elapsedMs": 109443.049167
+        },
+        {
+          "phase": "FLAGGED_RETIREMENT_1",
+          "event": "worker_timing",
+          "at": "2026-09-30T02:30:08.666Z",
+          "elapsedMs": 109443.055167,
+          "workerTiming": {
+            "startedAt": "2026-09-30T02:30:07.092Z",
+            "events": {
+              "workerStarted": 0,
+              "browserReady": 545.0233410000001,
+              "navigationStarted": 636.759406,
+              "pageLoaded": 736.67606,
+              "factsCollected": 756.372464,
+              "screenshotCollected": 900.306595
+            }
+          }
+        },
+        {
+          "phase": "FLAGGED_RETIREMENT_1",
+          "event": "cleanup_started",
+          "at": "2026-09-30T02:30:08.667Z",
+          "elapsedMs": 109443.638042
+        },
+        {
+          "phase": "FLAGGED_RETIREMENT_1",
+          "event": "inspection_returned",
+          "at": "2026-09-30T02:30:08.668Z",
+          "elapsedMs": 109444.853583
+        }
+      ]
+    }
+  ],
+  "checkpoints": [
+    {
+      "phase": "PREWARM_REUSE",
+      "at": "2026-09-30T02:28:56.844Z",
+      "status": {
+        "state": "READY",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "expiresAt": "2026-09-30T02:32:19.224Z",
+        "inspectionCount": 0,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_1",
+      "at": "2026-09-30T02:28:58.581Z",
+      "status": {
+        "state": "READY",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "expiresAt": "2026-09-30T02:32:19.224Z",
+        "inspectionCount": 1,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_2",
+      "at": "2026-09-30T02:29:00.069Z",
+      "status": {
+        "state": "READY",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "expiresAt": "2026-09-30T02:32:19.224Z",
+        "inspectionCount": 2,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_3",
+      "at": "2026-09-30T02:29:01.441Z",
+      "status": {
+        "state": "READY",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "expiresAt": "2026-09-30T02:32:19.224Z",
+        "inspectionCount": 3,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_4",
+      "at": "2026-09-30T02:29:02.796Z",
+      "status": {
+        "state": "READY",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "expiresAt": "2026-09-30T02:32:19.224Z",
+        "inspectionCount": 4,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_5",
+      "at": "2026-09-30T02:29:04.254Z",
+      "status": {
+        "state": "READY",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "expiresAt": "2026-09-30T02:32:19.224Z",
+        "inspectionCount": 5,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_6",
+      "at": "2026-09-30T02:29:05.608Z",
+      "status": {
+        "state": "READY",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "expiresAt": "2026-09-30T02:32:19.224Z",
+        "inspectionCount": 6,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_7",
+      "at": "2026-09-30T02:29:07.024Z",
+      "status": {
+        "state": "READY",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "expiresAt": "2026-09-30T02:32:19.224Z",
+        "inspectionCount": 7,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_8",
+      "at": "2026-09-30T02:29:08.472Z",
+      "status": {
+        "state": "READY",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "expiresAt": "2026-09-30T02:32:19.224Z",
+        "inspectionCount": 8,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_9",
+      "at": "2026-09-30T02:29:09.952Z",
+      "status": {
+        "state": "READY",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "expiresAt": "2026-09-30T02:32:19.224Z",
+        "inspectionCount": 9,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_10",
+      "at": "2026-09-30T02:29:11.415Z",
+      "status": {
+        "state": "READY",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "expiresAt": "2026-09-30T02:32:19.224Z",
+        "inspectionCount": 10,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_11",
+      "at": "2026-09-30T02:29:12.794Z",
+      "status": {
+        "state": "READY",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "expiresAt": "2026-09-30T02:32:19.224Z",
+        "inspectionCount": 11,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_12",
+      "at": "2026-09-30T02:29:14.280Z",
+      "status": {
+        "state": "READY",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "expiresAt": "2026-09-30T02:32:19.224Z",
+        "inspectionCount": 12,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_13",
+      "at": "2026-09-30T02:29:15.724Z",
+      "status": {
+        "state": "READY",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "expiresAt": "2026-09-30T02:32:19.224Z",
+        "inspectionCount": 13,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_14",
+      "at": "2026-09-30T02:29:17.142Z",
+      "status": {
+        "state": "READY",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "expiresAt": "2026-09-30T02:32:19.224Z",
+        "inspectionCount": 14,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_15",
+      "at": "2026-09-30T02:29:18.526Z",
+      "status": {
+        "state": "READY",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "expiresAt": "2026-09-30T02:32:19.224Z",
+        "inspectionCount": 15,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_16",
+      "at": "2026-09-30T02:29:19.989Z",
+      "status": {
+        "state": "READY",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "expiresAt": "2026-09-30T02:32:19.224Z",
+        "inspectionCount": 16,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_17",
+      "at": "2026-09-30T02:29:21.389Z",
+      "status": {
+        "state": "READY",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "expiresAt": "2026-09-30T02:32:19.224Z",
+        "inspectionCount": 17,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_18",
+      "at": "2026-09-30T02:29:22.752Z",
+      "status": {
+        "state": "READY",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "expiresAt": "2026-09-30T02:32:19.224Z",
+        "inspectionCount": 18,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_19",
+      "at": "2026-09-30T02:29:24.168Z",
+      "status": {
+        "state": "READY",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "expiresAt": "2026-09-30T02:32:19.224Z",
+        "inspectionCount": 19,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_20",
+      "at": "2026-09-30T02:29:25.529Z",
+      "status": {
+        "state": "READY",
+        "sandboxId": "solari-e48c72a4a5e9fbebc5f1f6126cb6e5bd",
+        "readyAt": "2026-09-30T02:28:56.843Z",
+        "expiresAt": "2026-09-30T02:32:19.224Z",
+        "inspectionCount": 20,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "CLOSE_REUSE",
+      "at": "2026-09-30T02:29:32.029Z",
+      "status": {
+        "state": "CLOSED",
+        "sandboxId": null,
+        "readyAt": null,
+        "expiresAt": null,
+        "inspectionCount": 0,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "PREWARM_FLAGGED",
+      "at": "2026-09-30T02:30:07.116Z",
+      "status": {
+        "state": "READY",
+        "sandboxId": "solari-0f87616dcd244c63babff69e44b38cfc",
+        "readyAt": "2026-09-30T02:30:07.116Z",
+        "expiresAt": "2026-09-30T02:33:32.029Z",
+        "inspectionCount": 0,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "FLAGGED_RETIREMENT_1",
+      "at": "2026-09-30T02:30:08.669Z",
+      "status": {
+        "state": "RETIRING",
+        "sandboxId": null,
+        "readyAt": null,
+        "expiresAt": null,
+        "inspectionCount": 0,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "REPLACEMENT",
+      "at": "2026-09-30T02:30:45.926Z",
+      "status": {
+        "state": "READY",
+        "sandboxId": "solari-99d83a923ffbb261deadd8f732c80f58",
+        "readyAt": "2026-09-30T02:30:45.847Z",
+        "expiresAt": "2026-09-30T02:34:13.353Z",
+        "inspectionCount": 0,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "SHUTDOWN",
+      "at": "2026-09-30T02:30:45.926Z",
+      "status": {
+        "state": "CLOSED",
+        "sandboxId": null,
+        "readyAt": null,
+        "expiresAt": null,
+        "inspectionCount": 0,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    },
+    {
+      "phase": "SHUTDOWN",
+      "at": "2026-09-30T02:30:51.093Z",
+      "status": {
+        "state": "CLOSED",
+        "sandboxId": null,
+        "readyAt": null,
+        "expiresAt": null,
+        "inspectionCount": 0,
+        "cleanupUnresolved": 0,
+        "lastError": null
+      }
+    }
+  ],
+  "events": [
+    {
+      "phase": "PREWARM_REUSE",
+      "event": "provision_started",
+      "at": "2026-09-30T02:28:19.224Z",
+      "elapsedMs": 2.286042000000009
+    },
+    {
+      "phase": "PREWARM_REUSE",
+      "event": "provision_complete",
+      "at": "2026-09-30T02:28:19.878Z",
+      "elapsedMs": 654.580792
+    },
+    {
+      "phase": "PREWARM_REUSE",
+      "event": "setup_started",
+      "at": "2026-09-30T02:28:19.878Z",
+      "elapsedMs": 654.711333
+    },
+    {
+      "phase": "PREWARM_REUSE",
+      "event": "setup_complete",
+      "at": "2026-09-30T02:28:56.843Z",
+      "elapsedMs": 37619.643333
+    },
+    {
+      "phase": "CALIBRATED_REUSE_1",
+      "event": "inspection_started",
+      "at": "2026-09-30T02:28:56.845Z",
+      "elapsedMs": 37621.78999999999
+    },
+    {
+      "phase": "CALIBRATED_REUSE_1",
+      "event": "collection_started",
+      "at": "2026-09-30T02:28:56.944Z",
+      "elapsedMs": 37721.489292
+    },
+    {
+      "phase": "CALIBRATED_REUSE_1",
+      "event": "evidence_received",
+      "at": "2026-09-30T02:28:58.573Z",
+      "elapsedMs": 39349.6495
+    },
+    {
+      "phase": "CALIBRATED_REUSE_1",
+      "event": "evidence_validated",
+      "at": "2026-09-30T02:28:58.578Z",
+      "elapsedMs": 39355.147375
+    },
+    {
+      "phase": "CALIBRATED_REUSE_1",
+      "event": "worker_timing",
+      "at": "2026-09-30T02:28:58.578Z",
+      "elapsedMs": 39355.150666999994,
+      "workerTiming": {
+        "startedAt": "2026-09-30T02:28:56.243Z",
+        "events": {
+          "workerStarted": 0,
+          "browserReady": 559.623545,
+          "navigationStarted": 652.297987,
+          "pageLoaded": 875.503733,
+          "factsCollected": 894.31538,
+          "screenshotCollected": 1129.622386
+        }
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_1",
+      "event": "inspection_returned",
+      "at": "2026-09-30T02:28:58.579Z",
+      "elapsedMs": 39355.871083
+    },
+    {
+      "phase": "CALIBRATED_REUSE_2",
+      "event": "inspection_started",
+      "at": "2026-09-30T02:28:58.581Z",
+      "elapsedMs": 39358.120124999994
+    },
+    {
+      "phase": "CALIBRATED_REUSE_2",
+      "event": "collection_started",
+      "at": "2026-09-30T02:28:58.779Z",
+      "elapsedMs": 39556.228166999994
+    },
+    {
+      "phase": "CALIBRATED_REUSE_2",
+      "event": "evidence_received",
+      "at": "2026-09-30T02:29:00.065Z",
+      "elapsedMs": 40842.022124999996
+    },
+    {
+      "phase": "CALIBRATED_REUSE_2",
+      "event": "evidence_validated",
+      "at": "2026-09-30T02:29:00.067Z",
+      "elapsedMs": 40844.520832999995
+    },
+    {
+      "phase": "CALIBRATED_REUSE_2",
+      "event": "worker_timing",
+      "at": "2026-09-30T02:29:00.067Z",
+      "elapsedMs": 40844.524124999996,
+      "workerTiming": {
+        "startedAt": "2026-09-30T02:28:58.079Z",
+        "events": {
+          "workerStarted": 0,
+          "browserReady": 566.001904,
+          "navigationStarted": 655.415634,
+          "pageLoaded": 740.6314679999999,
+          "factsCollected": 761.56774,
+          "screenshotCollected": 911.454576
+        }
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_2",
+      "event": "inspection_returned",
+      "at": "2026-09-30T02:29:00.068Z",
+      "elapsedMs": 40844.655249999996
+    },
+    {
+      "phase": "CALIBRATED_REUSE_3",
+      "event": "inspection_started",
+      "at": "2026-09-30T02:29:00.069Z",
+      "elapsedMs": 40845.567292
+    },
+    {
+      "phase": "CALIBRATED_REUSE_3",
+      "event": "collection_started",
+      "at": "2026-09-30T02:29:00.180Z",
+      "elapsedMs": 40957.460875
+    },
+    {
+      "phase": "CALIBRATED_REUSE_3",
+      "event": "evidence_received",
+      "at": "2026-09-30T02:29:01.437Z",
+      "elapsedMs": 42214.185999999994
+    },
+    {
+      "phase": "CALIBRATED_REUSE_3",
+      "event": "evidence_validated",
+      "at": "2026-09-30T02:29:01.440Z",
+      "elapsedMs": 42216.569958
+    },
+    {
+      "phase": "CALIBRATED_REUSE_3",
+      "event": "worker_timing",
+      "at": "2026-09-30T02:29:01.440Z",
+      "elapsedMs": 42216.571333,
+      "workerTiming": {
+        "startedAt": "2026-09-30T02:28:59.488Z",
+        "events": {
+          "workerStarted": 0,
+          "browserReady": 563.374753,
+          "navigationStarted": 657.008957,
+          "pageLoaded": 737.385809,
+          "factsCollected": 760.538676,
+          "screenshotCollected": 901.670345
+        }
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_3",
+      "event": "inspection_returned",
+      "at": "2026-09-30T02:29:01.440Z",
+      "elapsedMs": 42216.657917
+    },
+    {
+      "phase": "CALIBRATED_REUSE_4",
+      "event": "inspection_started",
+      "at": "2026-09-30T02:29:01.441Z",
+      "elapsedMs": 42217.904458
+    },
+    {
+      "phase": "CALIBRATED_REUSE_4",
+      "event": "collection_started",
+      "at": "2026-09-30T02:29:01.539Z",
+      "elapsedMs": 42316.159374999996
+    },
+    {
+      "phase": "CALIBRATED_REUSE_4",
+      "event": "evidence_received",
+      "at": "2026-09-30T02:29:02.792Z",
+      "elapsedMs": 43569.259332999995
+    },
+    {
+      "phase": "CALIBRATED_REUSE_4",
+      "event": "evidence_validated",
+      "at": "2026-09-30T02:29:02.795Z",
+      "elapsedMs": 43571.671417
+    },
+    {
+      "phase": "CALIBRATED_REUSE_4",
+      "event": "worker_timing",
+      "at": "2026-09-30T02:29:02.795Z",
+      "elapsedMs": 43571.673041999995,
+      "workerTiming": {
+        "startedAt": "2026-09-30T02:29:00.837Z",
+        "events": {
+          "workerStarted": 0,
+          "browserReady": 564.8015449999999,
+          "navigationStarted": 657.1693829999999,
+          "pageLoaded": 733.529309,
+          "factsCollected": 758.2948329999999,
+          "screenshotCollected": 901.630416
+        }
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_4",
+      "event": "inspection_returned",
+      "at": "2026-09-30T02:29:02.795Z",
+      "elapsedMs": 43571.7835
+    },
+    {
+      "phase": "CALIBRATED_REUSE_5",
+      "event": "inspection_started",
+      "at": "2026-09-30T02:29:02.796Z",
+      "elapsedMs": 43572.577625
+    },
+    {
+      "phase": "CALIBRATED_REUSE_5",
+      "event": "collection_started",
+      "at": "2026-09-30T02:29:02.973Z",
+      "elapsedMs": 43750.479332999996
+    },
+    {
+      "phase": "CALIBRATED_REUSE_5",
+      "event": "evidence_received",
+      "at": "2026-09-30T02:29:04.249Z",
+      "elapsedMs": 45025.880166999996
+    },
+    {
+      "phase": "CALIBRATED_REUSE_5",
+      "event": "evidence_validated",
+      "at": "2026-09-30T02:29:04.252Z",
+      "elapsedMs": 45029.369542
+    },
+    {
+      "phase": "CALIBRATED_REUSE_5",
+      "event": "worker_timing",
+      "at": "2026-09-30T02:29:04.252Z",
+      "elapsedMs": 45029.375167,
+      "workerTiming": {
+        "startedAt": "2026-09-30T02:29:02.285Z",
+        "events": {
+          "workerStarted": 0,
+          "browserReady": 559.5350030000001,
+          "navigationStarted": 658.20482,
+          "pageLoaded": 735.194058,
+          "factsCollected": 760.839969,
+          "screenshotCollected": 905.73711
+        }
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_5",
+      "event": "inspection_returned",
+      "at": "2026-09-30T02:29:04.253Z",
+      "elapsedMs": 45029.539291999994
+    },
+    {
+      "phase": "CALIBRATED_REUSE_6",
+      "event": "inspection_started",
+      "at": "2026-09-30T02:29:04.254Z",
+      "elapsedMs": 45030.927041999996
+    },
+    {
+      "phase": "CALIBRATED_REUSE_6",
+      "event": "collection_started",
+      "at": "2026-09-30T02:29:04.351Z",
+      "elapsedMs": 45127.687999999995
+    },
+    {
+      "phase": "CALIBRATED_REUSE_6",
+      "event": "evidence_received",
+      "at": "2026-09-30T02:29:05.603Z",
+      "elapsedMs": 46379.752833
+    },
+    {
+      "phase": "CALIBRATED_REUSE_6",
+      "event": "evidence_validated",
+      "at": "2026-09-30T02:29:05.606Z",
+      "elapsedMs": 46383.174083
+    },
+    {
+      "phase": "CALIBRATED_REUSE_6",
+      "event": "worker_timing",
+      "at": "2026-09-30T02:29:05.606Z",
+      "elapsedMs": 46383.17858299999,
+      "workerTiming": {
+        "startedAt": "2026-09-30T02:29:03.649Z",
+        "events": {
+          "workerStarted": 0,
+          "browserReady": 562.6555189999999,
+          "navigationStarted": 658.629813,
+          "pageLoaded": 739.5804969999999,
+          "factsCollected": 759.686146,
+          "screenshotCollected": 906.634597
+        }
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_6",
+      "event": "inspection_returned",
+      "at": "2026-09-30T02:29:05.606Z",
+      "elapsedMs": 46383.338292
+    },
+    {
+      "phase": "CALIBRATED_REUSE_7",
+      "event": "inspection_started",
+      "at": "2026-09-30T02:29:05.608Z",
+      "elapsedMs": 46385.451167
+    },
+    {
+      "phase": "CALIBRATED_REUSE_7",
+      "event": "collection_started",
+      "at": "2026-09-30T02:29:05.707Z",
+      "elapsedMs": 46484.372041999995
+    },
+    {
+      "phase": "CALIBRATED_REUSE_7",
+      "event": "evidence_received",
+      "at": "2026-09-30T02:29:07.019Z",
+      "elapsedMs": 47795.649207999995
+    },
+    {
+      "phase": "CALIBRATED_REUSE_7",
+      "event": "evidence_validated",
+      "at": "2026-09-30T02:29:07.022Z",
+      "elapsedMs": 47799.091708
+    },
+    {
+      "phase": "CALIBRATED_REUSE_7",
+      "event": "worker_timing",
+      "at": "2026-09-30T02:29:07.022Z",
+      "elapsedMs": 47799.0965,
+      "workerTiming": {
+        "startedAt": "2026-09-30T02:29:05.016Z",
+        "events": {
+          "workerStarted": 0,
+          "browserReady": 577.274413,
+          "navigationStarted": 671.8690889999999,
+          "pageLoaded": 747.131667,
+          "factsCollected": 769.3594049999999,
+          "screenshotCollected": 923.3408559999999
+        }
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_7",
+      "event": "inspection_returned",
+      "at": "2026-09-30T02:29:07.022Z",
+      "elapsedMs": 47799.223957999995
+    },
+    {
+      "phase": "CALIBRATED_REUSE_8",
+      "event": "inspection_started",
+      "at": "2026-09-30T02:29:07.024Z",
+      "elapsedMs": 47801.212875
+    },
+    {
+      "phase": "CALIBRATED_REUSE_8",
+      "event": "collection_started",
+      "at": "2026-09-30T02:29:07.167Z",
+      "elapsedMs": 47944.387875
+    },
+    {
+      "phase": "CALIBRATED_REUSE_8",
+      "event": "evidence_received",
+      "at": "2026-09-30T02:29:08.470Z",
+      "elapsedMs": 49246.801875
+    },
+    {
+      "phase": "CALIBRATED_REUSE_8",
+      "event": "evidence_validated",
+      "at": "2026-09-30T02:29:08.471Z",
+      "elapsedMs": 49248.316374999995
+    },
+    {
+      "phase": "CALIBRATED_REUSE_8",
+      "event": "worker_timing",
+      "at": "2026-09-30T02:29:08.471Z",
+      "elapsedMs": 49248.3175,
+      "workerTiming": {
+        "startedAt": "2026-09-30T02:29:06.476Z",
+        "events": {
+          "workerStarted": 0,
+          "browserReady": 573.229146,
+          "navigationStarted": 675.888674,
+          "pageLoaded": 753.2385330000001,
+          "factsCollected": 781.243097,
+          "screenshotCollected": 932.838082
+        }
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_8",
+      "event": "inspection_returned",
+      "at": "2026-09-30T02:29:08.471Z",
+      "elapsedMs": 49248.371499999994
+    },
+    {
+      "phase": "CALIBRATED_REUSE_9",
+      "event": "inspection_started",
+      "at": "2026-09-30T02:29:08.472Z",
+      "elapsedMs": 49248.844332999994
+    },
+    {
+      "phase": "CALIBRATED_REUSE_9",
+      "event": "collection_started",
+      "at": "2026-09-30T02:29:08.578Z",
+      "elapsedMs": 49354.95375
+    },
+    {
+      "phase": "CALIBRATED_REUSE_9",
+      "event": "evidence_received",
+      "at": "2026-09-30T02:29:09.946Z",
+      "elapsedMs": 50723.401999999995
+    },
+    {
+      "phase": "CALIBRATED_REUSE_9",
+      "event": "evidence_validated",
+      "at": "2026-09-30T02:29:09.950Z",
+      "elapsedMs": 50726.897916999995
+    },
+    {
+      "phase": "CALIBRATED_REUSE_9",
+      "event": "worker_timing",
+      "at": "2026-09-30T02:29:09.950Z",
+      "elapsedMs": 50726.903,
+      "workerTiming": {
+        "startedAt": "2026-09-30T02:29:07.891Z",
+        "events": {
+          "workerStarted": 0,
+          "browserReady": 573.0390639999999,
+          "navigationStarted": 669.376941,
+          "pageLoaded": 748.053986,
+          "factsCollected": 772.211443,
+          "screenshotCollected": 916.196133
+        }
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_9",
+      "event": "inspection_returned",
+      "at": "2026-09-30T02:29:09.950Z",
+      "elapsedMs": 50727.097083
+    },
+    {
+      "phase": "CALIBRATED_REUSE_10",
+      "event": "inspection_started",
+      "at": "2026-09-30T02:29:09.952Z",
+      "elapsedMs": 50728.888583
+    },
+    {
+      "phase": "CALIBRATED_REUSE_10",
+      "event": "collection_started",
+      "at": "2026-09-30T02:29:10.097Z",
+      "elapsedMs": 50874.238417
+    },
+    {
+      "phase": "CALIBRATED_REUSE_10",
+      "event": "evidence_received",
+      "at": "2026-09-30T02:29:11.411Z",
+      "elapsedMs": 52188.429207999994
+    },
+    {
+      "phase": "CALIBRATED_REUSE_10",
+      "event": "evidence_validated",
+      "at": "2026-09-30T02:29:11.414Z",
+      "elapsedMs": 52191.012041999995
+    },
+    {
+      "phase": "CALIBRATED_REUSE_10",
+      "event": "worker_timing",
+      "at": "2026-09-30T02:29:11.414Z",
+      "elapsedMs": 52191.015708,
+      "workerTiming": {
+        "startedAt": "2026-09-30T02:29:09.406Z",
+        "events": {
+          "workerStarted": 0,
+          "browserReady": 571.945661,
+          "navigationStarted": 669.634967,
+          "pageLoaded": 751.063579,
+          "factsCollected": 773.47721,
+          "screenshotCollected": 934.021834
+        }
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_10",
+      "event": "inspection_returned",
+      "at": "2026-09-30T02:29:11.414Z",
+      "elapsedMs": 52191.116167
+    },
+    {
+      "phase": "CALIBRATED_REUSE_11",
+      "event": "inspection_started",
+      "at": "2026-09-30T02:29:11.415Z",
+      "elapsedMs": 52192.196832999995
+    },
+    {
+      "phase": "CALIBRATED_REUSE_11",
+      "event": "collection_started",
+      "at": "2026-09-30T02:29:11.515Z",
+      "elapsedMs": 52291.765667
+    },
+    {
+      "phase": "CALIBRATED_REUSE_11",
+      "event": "evidence_received",
+      "at": "2026-09-30T02:29:12.792Z",
+      "elapsedMs": 53569.146083
+    },
+    {
+      "phase": "CALIBRATED_REUSE_11",
+      "event": "evidence_validated",
+      "at": "2026-09-30T02:29:12.794Z",
+      "elapsedMs": 53570.702916999995
+    },
+    {
+      "phase": "CALIBRATED_REUSE_11",
+      "event": "worker_timing",
+      "at": "2026-09-30T02:29:12.794Z",
+      "elapsedMs": 53570.703958,
+      "workerTiming": {
+        "startedAt": "2026-09-30T02:29:10.821Z",
+        "events": {
+          "workerStarted": 0,
+          "browserReady": 565.627336,
+          "navigationStarted": 660.123357,
+          "pageLoaded": 739.027864,
+          "factsCollected": 762.020932,
+          "screenshotCollected": 918.29353
+        }
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_11",
+      "event": "inspection_returned",
+      "at": "2026-09-30T02:29:12.794Z",
+      "elapsedMs": 53570.745458
+    },
+    {
+      "phase": "CALIBRATED_REUSE_12",
+      "event": "inspection_started",
+      "at": "2026-09-30T02:29:12.794Z",
+      "elapsedMs": 53571.08375
+    },
+    {
+      "phase": "CALIBRATED_REUSE_12",
+      "event": "collection_started",
+      "at": "2026-09-30T02:29:12.933Z",
+      "elapsedMs": 53709.560417
+    },
+    {
+      "phase": "CALIBRATED_REUSE_12",
+      "event": "evidence_received",
+      "at": "2026-09-30T02:29:14.275Z",
+      "elapsedMs": 55052.024916999995
+    },
+    {
+      "phase": "CALIBRATED_REUSE_12",
+      "event": "evidence_validated",
+      "at": "2026-09-30T02:29:14.278Z",
+      "elapsedMs": 55055.372082999995
+    },
+    {
+      "phase": "CALIBRATED_REUSE_12",
+      "event": "worker_timing",
+      "at": "2026-09-30T02:29:14.278Z",
+      "elapsedMs": 55055.374874999994,
+      "workerTiming": {
+        "startedAt": "2026-09-30T02:29:12.233Z",
+        "events": {
+          "workerStarted": 0,
+          "browserReady": 577.6567319999999,
+          "navigationStarted": 673.103539,
+          "pageLoaded": 760.8267089999999,
+          "factsCollected": 783.438479,
+          "screenshotCollected": 940.5384379999999
+        }
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_12",
+      "event": "inspection_returned",
+      "at": "2026-09-30T02:29:14.278Z",
+      "elapsedMs": 55055.522042
+    },
+    {
+      "phase": "CALIBRATED_REUSE_13",
+      "event": "inspection_started",
+      "at": "2026-09-30T02:29:14.280Z",
+      "elapsedMs": 55056.820457999995
+    },
+    {
+      "phase": "CALIBRATED_REUSE_13",
+      "event": "collection_started",
+      "at": "2026-09-30T02:29:14.378Z",
+      "elapsedMs": 55154.630458
+    },
+    {
+      "phase": "CALIBRATED_REUSE_13",
+      "event": "evidence_received",
+      "at": "2026-09-30T02:29:15.721Z",
+      "elapsedMs": 56497.915958
+    },
+    {
+      "phase": "CALIBRATED_REUSE_13",
+      "event": "evidence_validated",
+      "at": "2026-09-30T02:29:15.723Z",
+      "elapsedMs": 56500.177958
+    },
+    {
+      "phase": "CALIBRATED_REUSE_13",
+      "event": "worker_timing",
+      "at": "2026-09-30T02:29:15.723Z",
+      "elapsedMs": 56500.179667,
+      "workerTiming": {
+        "startedAt": "2026-09-30T02:29:13.685Z",
+        "events": {
+          "workerStarted": 0,
+          "browserReady": 575.4485510000001,
+          "navigationStarted": 673.863293,
+          "pageLoaded": 761.4743400000001,
+          "factsCollected": 786.158856,
+          "screenshotCollected": 937.0283800000001
+        }
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_13",
+      "event": "inspection_returned",
+      "at": "2026-09-30T02:29:15.723Z",
+      "elapsedMs": 56500.23725
+    },
+    {
+      "phase": "CALIBRATED_REUSE_14",
+      "event": "inspection_started",
+      "at": "2026-09-30T02:29:15.724Z",
+      "elapsedMs": 56500.836624999996
+    },
+    {
+      "phase": "CALIBRATED_REUSE_14",
+      "event": "collection_started",
+      "at": "2026-09-30T02:29:15.827Z",
+      "elapsedMs": 56603.588666999996
+    },
+    {
+      "phase": "CALIBRATED_REUSE_14",
+      "event": "evidence_received",
+      "at": "2026-09-30T02:29:17.137Z",
+      "elapsedMs": 57914.461375
+    },
+    {
+      "phase": "CALIBRATED_REUSE_14",
+      "event": "evidence_validated",
+      "at": "2026-09-30T02:29:17.140Z",
+      "elapsedMs": 57917.521083
+    },
+    {
+      "phase": "CALIBRATED_REUSE_14",
+      "event": "worker_timing",
+      "at": "2026-09-30T02:29:17.140Z",
+      "elapsedMs": 57917.524792,
+      "workerTiming": {
+        "startedAt": "2026-09-30T02:29:15.137Z",
+        "events": {
+          "workerStarted": 0,
+          "browserReady": 573.3017199999999,
+          "navigationStarted": 667.8592450000001,
+          "pageLoaded": 742.3003859999999,
+          "factsCollected": 764.493293,
+          "screenshotCollected": 918.9899270000001
+        }
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_14",
+      "event": "inspection_returned",
+      "at": "2026-09-30T02:29:17.141Z",
+      "elapsedMs": 57917.680292
+    },
+    {
+      "phase": "CALIBRATED_REUSE_15",
+      "event": "inspection_started",
+      "at": "2026-09-30T02:29:17.142Z",
+      "elapsedMs": 57919.093167
+    },
+    {
+      "phase": "CALIBRATED_REUSE_15",
+      "event": "collection_started",
+      "at": "2026-09-30T02:29:17.249Z",
+      "elapsedMs": 58025.944041999996
+    },
+    {
+      "phase": "CALIBRATED_REUSE_15",
+      "event": "evidence_received",
+      "at": "2026-09-30T02:29:18.522Z",
+      "elapsedMs": 59299.105625
+    },
+    {
+      "phase": "CALIBRATED_REUSE_15",
+      "event": "evidence_validated",
+      "at": "2026-09-30T02:29:18.525Z",
+      "elapsedMs": 59301.964708
+    },
+    {
+      "phase": "CALIBRATED_REUSE_15",
+      "event": "worker_timing",
+      "at": "2026-09-30T02:29:18.525Z",
+      "elapsedMs": 59301.970582999995,
+      "workerTiming": {
+        "startedAt": "2026-09-30T02:29:16.559Z",
+        "events": {
+          "workerStarted": 0,
+          "browserReady": 572.0003770000001,
+          "navigationStarted": 662.9221150000001,
+          "pageLoaded": 737.924063,
+          "factsCollected": 758.915711,
+          "screenshotCollected": 913.41641
+        }
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_15",
+      "event": "inspection_returned",
+      "at": "2026-09-30T02:29:18.525Z",
+      "elapsedMs": 59302.115792
+    },
+    {
+      "phase": "CALIBRATED_REUSE_16",
+      "event": "inspection_started",
+      "at": "2026-09-30T02:29:18.526Z",
+      "elapsedMs": 59303.4845
+    },
+    {
+      "phase": "CALIBRATED_REUSE_16",
+      "event": "collection_started",
+      "at": "2026-09-30T02:29:18.702Z",
+      "elapsedMs": 59479.192041999995
+    },
+    {
+      "phase": "CALIBRATED_REUSE_16",
+      "event": "evidence_received",
+      "at": "2026-09-30T02:29:19.986Z",
+      "elapsedMs": 60762.746291999996
+    },
+    {
+      "phase": "CALIBRATED_REUSE_16",
+      "event": "evidence_validated",
+      "at": "2026-09-30T02:29:19.988Z",
+      "elapsedMs": 60765.327
+    },
+    {
+      "phase": "CALIBRATED_REUSE_16",
+      "event": "worker_timing",
+      "at": "2026-09-30T02:29:19.988Z",
+      "elapsedMs": 60765.330582999995,
+      "workerTiming": {
+        "startedAt": "2026-09-30T02:29:18.017Z",
+        "events": {
+          "workerStarted": 0,
+          "browserReady": 573.878723,
+          "navigationStarted": 665.618236,
+          "pageLoaded": 745.879412,
+          "factsCollected": 767.750352,
+          "screenshotCollected": 923.591039
+        }
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_16",
+      "event": "inspection_returned",
+      "at": "2026-09-30T02:29:19.988Z",
+      "elapsedMs": 60765.430374999996
+    },
+    {
+      "phase": "CALIBRATED_REUSE_17",
+      "event": "inspection_started",
+      "at": "2026-09-30T02:29:19.989Z",
+      "elapsedMs": 60766.196333
+    },
+    {
+      "phase": "CALIBRATED_REUSE_17",
+      "event": "collection_started",
+      "at": "2026-09-30T02:29:20.099Z",
+      "elapsedMs": 60876.255417
+    },
+    {
+      "phase": "CALIBRATED_REUSE_17",
+      "event": "evidence_received",
+      "at": "2026-09-30T02:29:21.387Z",
+      "elapsedMs": 62164.359791999996
+    },
+    {
+      "phase": "CALIBRATED_REUSE_17",
+      "event": "evidence_validated",
+      "at": "2026-09-30T02:29:21.389Z",
+      "elapsedMs": 62166.005291999994
+    },
+    {
+      "phase": "CALIBRATED_REUSE_17",
+      "event": "worker_timing",
+      "at": "2026-09-30T02:29:21.389Z",
+      "elapsedMs": 62166.006541999996,
+      "workerTiming": {
+        "startedAt": "2026-09-30T02:29:19.407Z",
+        "events": {
+          "workerStarted": 0,
+          "browserReady": 566.3184170000001,
+          "navigationStarted": 668.857708,
+          "pageLoaded": 747.5027680000001,
+          "factsCollected": 772.1451020000001,
+          "screenshotCollected": 922.6626930000001
+        }
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_17",
+      "event": "inspection_returned",
+      "at": "2026-09-30T02:29:21.389Z",
+      "elapsedMs": 62166.052166999994
+    },
+    {
+      "phase": "CALIBRATED_REUSE_18",
+      "event": "inspection_started",
+      "at": "2026-09-30T02:29:21.389Z",
+      "elapsedMs": 62166.488792
+    },
+    {
+      "phase": "CALIBRATED_REUSE_18",
+      "event": "collection_started",
+      "at": "2026-09-30T02:29:21.489Z",
+      "elapsedMs": 62265.635749999994
+    },
+    {
+      "phase": "CALIBRATED_REUSE_18",
+      "event": "evidence_received",
+      "at": "2026-09-30T02:29:22.750Z",
+      "elapsedMs": 63527.006333
+    },
+    {
+      "phase": "CALIBRATED_REUSE_18",
+      "event": "evidence_validated",
+      "at": "2026-09-30T02:29:22.752Z",
+      "elapsedMs": 63528.610292
+    },
+    {
+      "phase": "CALIBRATED_REUSE_18",
+      "event": "worker_timing",
+      "at": "2026-09-30T02:29:22.752Z",
+      "elapsedMs": 63528.61133299999,
+      "workerTiming": {
+        "startedAt": "2026-09-30T02:29:20.798Z",
+        "events": {
+          "workerStarted": 0,
+          "browserReady": 563.990554,
+          "navigationStarted": 659.013192,
+          "pageLoaded": 739.330587,
+          "factsCollected": 763.330551,
+          "screenshotCollected": 908.157749
+        }
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_18",
+      "event": "inspection_returned",
+      "at": "2026-09-30T02:29:22.752Z",
+      "elapsedMs": 63528.661416999996
+    },
+    {
+      "phase": "CALIBRATED_REUSE_19",
+      "event": "inspection_started",
+      "at": "2026-09-30T02:29:22.752Z",
+      "elapsedMs": 63529.131792
+    },
+    {
+      "phase": "CALIBRATED_REUSE_19",
+      "event": "collection_started",
+      "at": "2026-09-30T02:29:22.897Z",
+      "elapsedMs": 63674.095167
+    },
+    {
+      "phase": "CALIBRATED_REUSE_19",
+      "event": "evidence_received",
+      "at": "2026-09-30T02:29:24.163Z",
+      "elapsedMs": 64939.757832999996
+    },
+    {
+      "phase": "CALIBRATED_REUSE_19",
+      "event": "evidence_validated",
+      "at": "2026-09-30T02:29:24.166Z",
+      "elapsedMs": 64943.139583
+    },
+    {
+      "phase": "CALIBRATED_REUSE_19",
+      "event": "worker_timing",
+      "at": "2026-09-30T02:29:24.166Z",
+      "elapsedMs": 64943.145749999996,
+      "workerTiming": {
+        "startedAt": "2026-09-30T02:29:22.199Z",
+        "events": {
+          "workerStarted": 0,
+          "browserReady": 564.9258709999999,
+          "navigationStarted": 656.0816269999999,
+          "pageLoaded": 732.5363309999999,
+          "factsCollected": 753.942922,
+          "screenshotCollected": 905.2402259999999
+        }
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_19",
+      "event": "inspection_returned",
+      "at": "2026-09-30T02:29:24.166Z",
+      "elapsedMs": 64943.314833
+    },
+    {
+      "phase": "CALIBRATED_REUSE_20",
+      "event": "inspection_started",
+      "at": "2026-09-30T02:29:24.168Z",
+      "elapsedMs": 64945.14025
+    },
+    {
+      "phase": "CALIBRATED_REUSE_20",
+      "event": "collection_started",
+      "at": "2026-09-30T02:29:24.267Z",
+      "elapsedMs": 65044.120707999995
+    },
+    {
+      "phase": "CALIBRATED_REUSE_20",
+      "event": "evidence_received",
+      "at": "2026-09-30T02:29:25.525Z",
+      "elapsedMs": 66302.3235
+    },
+    {
+      "phase": "CALIBRATED_REUSE_20",
+      "event": "evidence_validated",
+      "at": "2026-09-30T02:29:25.528Z",
+      "elapsedMs": 66305.416625
+    },
+    {
+      "phase": "CALIBRATED_REUSE_20",
+      "event": "worker_timing",
+      "at": "2026-09-30T02:29:25.528Z",
+      "elapsedMs": 66305.420333,
+      "workerTiming": {
+        "startedAt": "2026-09-30T02:29:23.575Z",
+        "events": {
+          "workerStarted": 0,
+          "browserReady": 560.1801409999999,
+          "navigationStarted": 651.312152,
+          "pageLoaded": 731.321663,
+          "factsCollected": 751.201365,
+          "screenshotCollected": 899.409958
+        }
+      }
+    },
+    {
+      "phase": "CALIBRATED_REUSE_20",
+      "event": "inspection_returned",
+      "at": "2026-09-30T02:29:25.528Z",
+      "elapsedMs": 66305.512417
+    },
+    {
+      "phase": "CLOSE_REUSE",
+      "event": "cleanup_started",
+      "at": "2026-09-30T02:29:25.530Z",
+      "elapsedMs": 66306.59025000001
+    },
+    {
+      "phase": "CLOSE_REUSE",
+      "event": "cleanup_complete",
+      "at": "2026-09-30T02:29:32.029Z",
+      "elapsedMs": 72805.915125
+    },
+    {
+      "phase": "PREWARM_FLAGGED",
+      "event": "provision_started",
+      "at": "2026-09-30T02:29:32.030Z",
+      "elapsedMs": 72806.791708
+    },
+    {
+      "phase": "PREWARM_FLAGGED",
+      "event": "provision_complete",
+      "at": "2026-09-30T02:29:32.333Z",
+      "elapsedMs": 73109.88825
+    },
+    {
+      "phase": "PREWARM_FLAGGED",
+      "event": "setup_started",
+      "at": "2026-09-30T02:29:32.333Z",
+      "elapsedMs": 73110.1095
+    },
+    {
+      "phase": "PREWARM_FLAGGED",
+      "event": "setup_complete",
+      "at": "2026-09-30T02:30:07.116Z",
+      "elapsedMs": 107892.743875
+    },
+    {
+      "phase": "FLAGGED_RETIREMENT_1",
+      "event": "inspection_started",
+      "at": "2026-09-30T02:30:07.116Z",
+      "elapsedMs": 107892.85158300001
+    },
+    {
+      "phase": "FLAGGED_RETIREMENT_1",
+      "event": "collection_started",
+      "at": "2026-09-30T02:30:07.213Z",
+      "elapsedMs": 107990.25241700001
+    },
+    {
+      "phase": "FLAGGED_RETIREMENT_1",
+      "event": "evidence_received",
+      "at": "2026-09-30T02:30:08.662Z",
+      "elapsedMs": 109438.96245800001
+    },
+    {
+      "phase": "FLAGGED_RETIREMENT_1",
+      "event": "evidence_validated",
+      "at": "2026-09-30T02:30:08.666Z",
+      "elapsedMs": 109443.049167
+    },
+    {
+      "phase": "FLAGGED_RETIREMENT_1",
+      "event": "worker_timing",
+      "at": "2026-09-30T02:30:08.666Z",
+      "elapsedMs": 109443.055167,
+      "workerTiming": {
+        "startedAt": "2026-09-30T02:30:07.092Z",
+        "events": {
+          "workerStarted": 0,
+          "browserReady": 545.0233410000001,
+          "navigationStarted": 636.759406,
+          "pageLoaded": 736.67606,
+          "factsCollected": 756.372464,
+          "screenshotCollected": 900.306595
+        }
+      }
+    },
+    {
+      "phase": "FLAGGED_RETIREMENT_1",
+      "event": "cleanup_started",
+      "at": "2026-09-30T02:30:08.667Z",
+      "elapsedMs": 109443.638042
+    },
+    {
+      "phase": "FLAGGED_RETIREMENT_1",
+      "event": "inspection_returned",
+      "at": "2026-09-30T02:30:08.668Z",
+      "elapsedMs": 109444.853583
+    },
+    {
+      "phase": "REPLACEMENT",
+      "event": "cleanup_complete",
+      "at": "2026-09-30T02:30:13.353Z",
+      "elapsedMs": 114130.3445
+    },
+    {
+      "phase": "REPLACEMENT",
+      "event": "provision_started",
+      "at": "2026-09-30T02:30:13.356Z",
+      "elapsedMs": 114132.72995800001
+    },
+    {
+      "phase": "REPLACEMENT",
+      "event": "provision_complete",
+      "at": "2026-09-30T02:30:13.622Z",
+      "elapsedMs": 114399.16070800001
+    },
+    {
+      "phase": "REPLACEMENT",
+      "event": "setup_started",
+      "at": "2026-09-30T02:30:13.622Z",
+      "elapsedMs": 114399.303083
+    },
+    {
+      "phase": "REPLACEMENT",
+      "event": "setup_complete",
+      "at": "2026-09-30T02:30:45.846Z",
+      "elapsedMs": 146623.697458
+    },
+    {
+      "phase": "SHUTDOWN",
+      "event": "cleanup_started",
+      "at": "2026-09-30T02:30:45.926Z",
+      "elapsedMs": 146703.647875
+    },
+    {
+      "phase": "SHUTDOWN",
+      "event": "cleanup_complete",
+      "at": "2026-09-30T02:30:51.093Z",
+      "elapsedMs": 151870.565208
+    }
+  ]
+}

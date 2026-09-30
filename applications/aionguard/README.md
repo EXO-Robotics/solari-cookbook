@@ -1,6 +1,6 @@
 # AionGuard × Solari
 
-This is the runnable AionGuard application inside `EXO-Robotics/solari-cookbook`, a GitHub fork of `solari-sdk/solari-cookbook`. The [polished standalone submission](https://github.com/EXO-Robotics/AionGuard-Solari) remains the primary project presentation. This copy is derived from its verified commit `f540c2679730de29db557f3435d833d5d65425b8`; application source, tests and recorded evidence are unchanged.
+This is the runnable AionGuard application inside `EXO-Robotics/solari-cookbook`, a GitHub fork of `solari-sdk/solari-cookbook`. The [polished standalone submission](https://github.com/EXO-Robotics/AionGuard-Solari) remains the primary project presentation. This copy matches standalone commit `d1559591ea70821196c5b7d95c847dc2f0442904`; application source, tests and recorded evidence are unchanged.
 
 **Inspect a suspicious link in Solari. Show the warning signs and the evidence.**
 
@@ -10,7 +10,7 @@ This is the runnable AionGuard application inside `EXO-Robotics/solari-cookbook`
 
 This is the standalone Solari submission edition of AionGuard, derived from tested candidate `4a2e6e876def9827f252acc2741d61ef93195348`. It is an independent repository with a reviewed source snapshot, rather than the original repository's private Git history.
 
-AionGuard is a small, local web-threat detector backed by a fresh Solari sandbox. It inspects one administrator-registered, owned demo URL, captures the page with scripts disabled, and explains which of five deterministic rules matched. The local VM is outside this submission.
+AionGuard is a small, local web-threat detector backed by a prepared Solari sandbox. It inspects one administrator-registered, owned demo URL, captures the page with scripts disabled, and explains which of five deterministic rules matched. The local VM is outside this submission.
 
 | Detector | Observed warning sign |
 | --- | --- |
@@ -60,12 +60,15 @@ Alternatively set `AIONGUARD_SOLARI_ENV_PATH` to an existing private env file co
 
 Run `npm start`, open `http://127.0.0.1:4317`, and connect using the private token in `runtime-data/controller-token`. Create an inspection, confirm authorization for the registered owned fixture, then select **Inspect registered URL**. Export its receipt afterward. The token stays local; Solari credentials remain in the server.
 
-The first browser setup in each fresh sandbox may take up to a few minutes. Only one inspection can run at a time. Unresolved cleanup consumes that slot. Cases are held in memory; export before stopping the controller. After an interrupted process, reconcile that process's tagged Solari resources before restarting.
+With the default `AIONGUARD_SOLARI_SESSION=WARM`, startup prepares a browser-ready sandbox before the first check. Subsequent no-finding checks reuse that VM with a fresh browser process. A finding or error retires it and prepares a replacement after cleanup reconciliation. The UI shows readiness; a click during cold preparation still waits for setup. Use `FRESH` for one VM per inspection.
+
+Only one inspection can run at a time. Idle sandboxes expire after two minutes and maximum age is four minutes. Unresolved cleanup blocks replacement. Cases are held in memory; export before stopping. A durable ownership journal blocks unsafe restart after interruption. See [warm lifecycle and qualification](docs/warm-solari.md).
+
+**Warm-path measurement:** 20 repeated owned-fixture checks in one prewarmed VM: **1.41 s median / 1.49 s P95**. Trust was intentionally calibrated for the reuse test; this is backend latency, not detection accuracy or click-to-navigation latency. Flagged retirement and automatic replacement were separately verified. [Data and limits](docs/warm-solari.md).
 
 ## What this submission proves
 
 **Latest benchmark finding:** 50 inspections and 150 controlled cases completed, but a later full-inventory audit contradicted immediate cleanup receipts. Additional termination and reconciliation cleared the listed resources. Per-run cleanup assurance remains unverified; see the [benchmark evidence and limitations](docs/benchmark.md). The current detector also showed substantial misses and false positives in its authored challenge corpus.
-
 
 The September 29 candidate has live Solari inspection evidence against the owned AionPhish demo: page observation, screenshot, a phishing heuristic finding and confirmed resource cleanup. See [the submission record](docs/solari-submission.md) for exact checks, failures and remaining limits.
 

@@ -3,6 +3,7 @@ import {
   SolariInspector,
   solariConfigFromEnv,
   waitForInventoryAbsence,
+  reconcileSolariSandbox,
   type SolariProvider,
 } from '../src/server/isolation/solari.ts';
 import { IsolationError, type InspectionVm } from '../src/server/isolation/provider.ts';
@@ -46,7 +47,14 @@ function fake(overrides: Partial<InspectionVm> = {}) {
           return 0;
         },
         async readResult() {
-          return Buffer.from(JSON.stringify(payload()));
+          return Buffer.from(
+            JSON.stringify({
+              ...payload(),
+              inspectionNonce: JSON.parse(
+                files.find((file) => file.path.endsWith('request.json'))!.content,
+              ).inspectionNonce,
+            }),
+          );
         },
         async stop() {
           events.push('stop');
@@ -231,5 +239,85 @@ describe('Solari inventory convergence', () => {
     await expect(
       waitForInventoryAbsence(async () => ({ sandboxes: [] }), controller.signal),
     ).rejects.toThrow();
+  });
+});
+
+describe('complete Solari reconciliation', () => {
+  function client(
+    list: () => Promise<any>,
+    get = async (): Promise<any> => {
+      throw { status: 404 };
+    },
+  ) {
+    return { kill: async () => undefined, list, get } as Parameters<
+      typeof reconcileSolariSandbox
+    >[0];
+  }
+  const signal = () => AbortSignal.timeout(10000);
+  it('requires ten complete empty inventories and not-found point lookups', async () => {
+    let calls = 0;
+    expect(
+      await reconcileSolariSandbox(
+        client(async () => {
+          calls++;
+          return { sandboxes: [] };
+        }),
+        'owned',
+        'tag',
+        signal(),
+        async () => {},
+      ),
+    ).toBe(true);
+    expect(calls).toBe(10);
+  });
+  it('does not ignore later inventory pages or fluctuating presence', async () => {
+    let calls = 0;
+    const c = client(async () => {
+      calls++;
+      return calls % 2
+        ? { sandboxes: [], nextCursor: 'page2' }
+        : { sandboxes: [{ sandboxId: 'owned' }] };
+    });
+    expect(await reconcileSolariSandbox(c, 'owned', 'tag', signal(), async () => {})).toBe(false);
+    expect(calls).toBe(40);
+  });
+  it('rejects list and point-get disagreement and ambiguous errors', async () => {
+    expect(
+      await reconcileSolariSandbox(
+        client(
+          async () => ({ sandboxes: [] }),
+          async () => ({ state: 'running' }),
+        ),
+        'owned',
+        'tag',
+        signal(),
+        async () => {},
+      ),
+    ).toBe(false);
+    expect(
+      await reconcileSolariSandbox(
+        client(
+          async () => ({ sandboxes: [] }),
+          async () => {
+            throw { status: 503 };
+          },
+        ),
+        'owned',
+        'tag',
+        signal(),
+        async () => {},
+      ),
+    ).toBe(false);
+  });
+  it('fails closed on incomplete pagination', async () => {
+    expect(
+      await reconcileSolariSandbox(
+        client(async () => ({ sandboxes: [], nextCursor: 'repeated' })),
+        'owned',
+        'tag',
+        signal(),
+        async () => {},
+      ),
+    ).toBe(false);
   });
 });

@@ -194,6 +194,9 @@ export async function main() {
       await writeFile(
         '/vercel/sandbox/aionguard-result.json',
         JSON.stringify({
+          ...(typeof request.inspectionNonce === 'string'
+            ? { inspectionNonce: request.inspectionNonce }
+            : {}),
           ...(request.benchmarkTiming === true ? { benchmarkTiming: { startedAt, events } } : {}),
           observation: { ...facts, finalUrl, redirects, observedAt: new Date().toISOString() },
           pngBase64: png.toString('base64'),

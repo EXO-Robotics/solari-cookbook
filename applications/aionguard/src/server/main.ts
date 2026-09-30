@@ -9,6 +9,8 @@ import { CliAstraPlanner, MockPlanner } from './planner/index.js';
 import { VercelInspector, createMockInspector, inspectorConfigFromEnv } from './isolation/index.js';
 
 import { SolariInspector, solariConfigFromEnv } from './isolation/solari.js';
+import { WarmSolariInspector } from './isolation/warm-solari.js';
+import { journaledSolariProvider } from './isolation/warm-journal.js';
 
 const config = readConfig();
 await mkdir('runtime-data', { recursive: true, mode: 0o700 });
@@ -45,11 +47,26 @@ const inspectorConfig =
     : inspectorConfigFromEnv(process.env, approval);
 const inspectionSource =
   config.AIONGUARD_PROVIDER === 'SOLARI' ? 'SOLARI_SANDBOX' : 'VERCEL_SANDBOX';
+const warmInspector =
+  config.AIONGUARD_MODE === 'LIVE' &&
+  config.AIONGUARD_PROVIDER === 'SOLARI' &&
+  config.AIONGUARD_WORKFLOW === 'DETECTOR' &&
+  config.AIONGUARD_SOLARI_SESSION === 'WARM'
+    ? new WarmSolariInspector(
+        solariConfigFromEnv(process.env),
+        journaledSolariProvider(resolve('runtime-data', 'solari-warm-owner.json')),
+        {
+          idleTimeoutMs: config.AIONGUARD_SOLARI_IDLE_MS,
+          maxAgeMs: config.AIONGUARD_SOLARI_MAX_AGE_MS,
+          maxInspections: config.AIONGUARD_SOLARI_MAX_INSPECTIONS,
+        },
+      )
+    : undefined;
 const inspector =
   config.AIONGUARD_MODE === 'MOCK'
     ? createMockInspector(inspectionSource)
     : config.AIONGUARD_PROVIDER === 'SOLARI'
-      ? new SolariInspector(solariConfigFromEnv(process.env))
+      ? (warmInspector ?? new SolariInspector(solariConfigFromEnv(process.env)))
       : new VercelInspector(inspectorConfigFromEnv(process.env, approval));
 const planner =
   config.AIONGUARD_MODE === 'MOCK' || config.AIONGUARD_WORKFLOW === 'DETECTOR'
@@ -94,6 +111,7 @@ const server = createHttpServer({
   entryToken,
   recoveryToken,
   protection,
+  sandbox: warmInspector,
   port: config.AIONGUARD_PORT,
   mode: config.AIONGUARD_MODE,
   workflow: config.AIONGUARD_WORKFLOW,
@@ -105,6 +123,10 @@ const server = createHttpServer({
 server.requestTimeout = 360_000;
 server.headersTimeout = 10_000;
 server.listen(config.AIONGUARD_PORT, '127.0.0.1', () => {
+  // Begin bounded preparation before a click; callers can observe PREPARING/READY.
+  void warmInspector?.prepare().catch(() => {
+    console.error('Warm sandbox preparation failed; inspect authenticated sandbox status.');
+  });
   console.info(
     `AionGuard ${config.AIONGUARD_MODE} controller: http://127.0.0.1:${config.AIONGUARD_PORT}`,
   );
@@ -119,6 +141,9 @@ server.listen(config.AIONGUARD_PORT, '127.0.0.1', () => {
 server.on('error', () => {
   console.error('Controller could not listen on the configured loopback port.');
   process.exitCode = 1;
+  void warmInspector?.close().catch(() => {
+    console.error('Warm sandbox shutdown failed; reconcile the ownership journal before reuse.');
+  });
 });
 let closing = false;
 for (const signal of ['SIGINT', 'SIGTERM'] as const)
@@ -130,8 +155,23 @@ for (const signal of ['SIGINT', 'SIGTERM'] as const)
     console.info(
       'Controller shutting down. Preserve receipts and reconcile any unresolved provider cleanup before a new LIVE session.',
     );
-    server.close(() => {
-      process.exitCode = 0;
-    });
+    const drained = new Promise<void>((done) => server.close(() => done()));
+    // close() fences new prepares immediately, then waits for accepted work and cleanup.
+    void Promise.all([drained, warmInspector?.close()])
+      .then(() => {
+        const unresolved = warmInspector?.status().cleanupUnresolved ?? 0;
+        if (unresolved) {
+          console.error(
+            `Warm sandbox cleanup unresolved (${unresolved}); preserve and reconcile runtime-data/solari-warm-owner.json.`,
+          );
+          process.exitCode = 1;
+        } else process.exitCode = 0;
+      })
+      .catch(() => {
+        console.error(
+          'Warm sandbox shutdown incomplete; preserve and reconcile runtime-data/solari-warm-owner.json.',
+        );
+        process.exitCode = 1;
+      });
     server.closeIdleConnections();
   });

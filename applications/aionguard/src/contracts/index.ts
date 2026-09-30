@@ -356,7 +356,7 @@ export type Collector = (
 
 export const CleanupSchema = z
   .object({
-    state: z.enum(['NOT_CREATED', 'PENDING', 'CONFIRMED', 'UNRESOLVED']),
+    state: z.enum(['NOT_CREATED', 'PENDING', 'CONFIRMED', 'UNRESOLVED', 'RETAINED']),
     sandboxId: IdSchema.nullable(),
     stoppedAt: TimestampSchema.nullable(),
     deletedAt: TimestampSchema.nullable(),
@@ -381,6 +381,37 @@ export const InspectionObservationSchema = z
   })
   .strict();
 export type InspectionObservation = z.infer<typeof InspectionObservationSchema>;
+export const WarmSessionSchema = z
+  .object({
+    mode: z.literal('WARM'),
+    readyAt: TimestampSchema,
+    acquiredAt: TimestampSchema,
+    reused: z.boolean(),
+    inspectionCount: z.number().int().min(1).max(1000),
+    disposition: z.enum(['RETAINED', 'RETIRED']),
+  })
+  .strict();
+export const WarmPoolStatusSchema = z
+  .object({
+    state: z.enum([
+      'DISABLED',
+      'EMPTY',
+      'PREPARING',
+      'READY',
+      'INSPECTING',
+      'RETIRING',
+      'BLOCKED',
+      'CLOSED',
+    ]),
+    sandboxId: IdSchema.nullable(),
+    readyAt: TimestampSchema.nullable(),
+    expiresAt: TimestampSchema.nullable(),
+    inspectionCount: z.number().int().nonnegative(),
+    cleanupUnresolved: z.number().int().nonnegative(),
+    lastError: z.string().max(100).nullable(),
+  })
+  .strict();
+export type WarmPoolStatus = z.infer<typeof WarmPoolStatusSchema>;
 export const InspectionResultSchema = z
   .object({
     execution: z.enum(['SUCCEEDED', 'UNAVAILABLE']),
@@ -393,6 +424,7 @@ export const InspectionResultSchema = z
     collectionStartedAt: TimestampSchema.nullable(),
     returnedAt: TimestampSchema,
     cleanup: CleanupSchema,
+    session: WarmSessionSchema.optional(),
     failure: z
       .enum([
         'NOT_CONFIGURED',
@@ -438,6 +470,7 @@ export const LinkAssessmentSchema = z
       .regex(/^\/api\/attempts\/[a-zA-Z0-9_-]+\/image$/)
       .nullable(),
     cleanup: CleanupSchema,
+    session: WarmSessionSchema.optional(),
     source: z.enum(['VERCEL_SANDBOX', 'SOLARI_SANDBOX']),
     failure: InspectionResultSchema.shape.failure,
     timing: z

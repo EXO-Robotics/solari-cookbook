@@ -3,6 +3,10 @@ import { z } from 'zod';
 
 export const ConfigSchema = z.object({
   AIONGUARD_PROVIDER: z.enum(['SOLARI', 'VERCEL']).default('SOLARI'),
+  AIONGUARD_SOLARI_SESSION: z.enum(['WARM', 'FRESH']).default('WARM'),
+  AIONGUARD_SOLARI_IDLE_MS: z.coerce.number().int().min(1000).max(240000).default(120000),
+  AIONGUARD_SOLARI_MAX_AGE_MS: z.coerce.number().int().min(60000).max(240000).default(240000),
+  AIONGUARD_SOLARI_MAX_INSPECTIONS: z.coerce.number().int().min(1).max(100).default(100),
   AIONGUARD_WORKFLOW: z.enum(['DETECTOR', 'SYNTHETIC']).default('DETECTOR'),
   AIONGUARD_MODE: z.enum(['LIVE', 'MOCK']).default('LIVE'),
   AIONGUARD_PORT: z.coerce.number().int().min(1024).max(65535).default(4317),

@@ -1,3 +1,5 @@
+> Current lifecycle update: the default Solari detector now prewarms and reuses a bounded sandbox until a finding/error, then retires and replaces it. See [warm qualification](warm-solari.md) for the measured 1.41-second median / 1.49-second P95 and separate cleanup audit. Earlier evidence below describes its original fresh-sandbox candidate.
+
 # AionGuard: bare-bones Solari detector
 
 September 29, 2026, America/New_York. Based on public AionGuard commit `a40841e6678487aef3f0b207b0a7aeec1e4c9c30`.

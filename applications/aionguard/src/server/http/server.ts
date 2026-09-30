@@ -8,6 +8,8 @@ import {
   ContinueCommandSchema,
   CreateAttemptCommandSchema,
   IdSchema,
+  WarmPoolStatusSchema,
+  type WarmPoolStatus,
 } from '../../contracts/index.js';
 import { CaseController, CommandError } from '../runtime/controller.js';
 import { ProtectionLease } from '../runtime/protection.js';
@@ -23,6 +25,7 @@ export interface HttpOptions {
   workflow?: 'DETECTOR' | 'SYNTHETIC';
   protection?: ProtectionLease;
   recoveryToken?: string;
+  sandbox?: { status(): WarmPoolStatus; prepare(): Promise<void> };
 }
 const EntrySchema = z.object({ fixtureId: z.literal('acme-login'), requestId: IdSchema }).strict();
 const mime: Record<string, string> = {
@@ -161,6 +164,35 @@ export function createHttpServer(options: HttpOptions) {
         const expectedToken = url.pathname === '/api/entry' ? options.entryToken : options.token;
         if (!authenticate(req, expectedToken))
           throw new CommandError('AUTHENTICATION_REQUIRED', 401);
+        if (req.method === 'GET' && url.pathname === '/api/sandbox') {
+          json(
+            res,
+            200,
+            WarmPoolStatusSchema.parse(
+              options.sandbox?.status() ?? {
+                state: 'DISABLED',
+                sandboxId: null,
+                readyAt: null,
+                expiresAt: null,
+                inspectionCount: 0,
+                cleanupUnresolved: 0,
+                lastError: null,
+              },
+            ),
+          );
+          return;
+        }
+        if (req.method === 'POST' && url.pathname === '/api/sandbox/prepare') {
+          z.object({})
+            .strict()
+            .parse(await body(req));
+          if (!options.sandbox) throw new CommandError('WARM_SANDBOX_DISABLED', 409);
+          void options.sandbox.prepare().catch(() => {
+            // The inspector records safe failure codes in its polled status.
+          });
+          json(res, 202, WarmPoolStatusSchema.parse(options.sandbox.status()));
+          return;
+        }
         if (req.method === 'GET' && url.pathname === '/api/attempts') {
           json(res, 200, options.controller.list());
           return;

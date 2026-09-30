@@ -11,7 +11,7 @@ import {
   type InspectionResult,
   type Inspector,
 } from '../../contracts/index.ts';
-import { GatewayError, SandboxClient } from '@solarisdk/sandbox';
+import { GatewayError, SandboxClient, type Sandbox } from '@solarisdk/sandbox';
 import {
   BROWSER_VERSION,
   normalizeFixtureTarget,
@@ -49,6 +49,7 @@ export type InspectionObserver = (event: string, detail?: WorkerTiming) => void;
 const PayloadSchema = z
   .object({
     observation: InspectionObservationSchema,
+    inspectionNonce: z.uuid().optional(),
     benchmarkTiming: WorkerTimingSchema.optional(),
     pngBase64: z
       .string()
@@ -71,7 +72,7 @@ export class SolariInspector implements Inspector {
     private readonly provider: SolariProvider = solariProvider,
     private readonly observer?: InspectionObserver,
   ) {
-    this.config = config === null ? null : validateConfig(config);
+    this.config = config === null ? null : validateSolariConfig(config);
   }
 
   private emit(event: string, detail?: WorkerTiming): void {
@@ -111,6 +112,7 @@ export class SolariInspector implements Inspector {
     // A legacy root fixture keeps its original origin-wide request scope.
     const requestPath = new URL(this.config.fixture.url).pathname.replace(/[^/]*$/, '');
     const name = `aionguard-${randomUUID()}`;
+    const inspectionNonce = randomUUID();
     const pending: Pending = {
       vm: null,
       cleanup: { state: 'PENDING', sandboxId: name, stoppedAt: null, deletedAt: null },
@@ -145,6 +147,7 @@ export class SolariInspector implements Inspector {
             path: '/vercel/sandbox/aionguard-request.json',
             content: JSON.stringify({
               ...(this.observer ? { benchmarkTiming: true } : {}),
+              inspectionNonce,
               url: this.config.fixture.url,
               navigationOrigins: this.config.fixture.navigationOrigins,
               requestPath,
@@ -165,40 +168,12 @@ export class SolariInspector implements Inspector {
         );
       const bytes = await pending.vm.readResult(MAX_RESULT_BYTES, signal);
       this.emit('evidence_received');
-      if (bytes.length > MAX_RESULT_BYTES) throw new IsolationError('INVALID_EVIDENCE');
-      const parsed: unknown = JSON.parse(bytes.toString('utf8'));
-      const failed = WorkerFailureSchema.safeParse(parsed);
-      if (failed.success) throw new IsolationError(failed.data.failure);
-      const { observation, pngBase64, benchmarkTiming } = PayloadSchema.parse(parsed);
-      const png = Buffer.from(pngBase64, 'base64');
-      if (
-        png.toString('base64') !== pngBase64 ||
-        !validPng(png) ||
-        !isAllowedNavigation(observation.finalUrl, this.config.fixture.navigationOrigins) ||
-        !pathAllowed(observation.finalUrl, requestPath) ||
-        observation.redirects.some(
-          (url) =>
-            !isAllowedNavigation(url, this.config!.fixture.navigationOrigins) ||
-            !pathAllowed(url, requestPath),
-        )
-      )
-        throw new IsolationError('INVALID_EVIDENCE');
-      if (observation.formAction !== null) {
-        const declared = new URL(observation.formAction);
-        if (
-          declared.username ||
-          declared.password ||
-          declared.origin !== observation.formDestinationOrigin
-        )
-          throw new IsolationError('INVALID_EVIDENCE');
-      } else if (observation.formDestinationOrigin !== null)
-        throw new IsolationError('INVALID_EVIDENCE');
-      const observedAt = Date.parse(observation.observedAt);
-      if (
-        observedAt < Date.parse(result.collectionStartedAt) - 5_000 ||
-        observedAt > Date.now() + 5_000
-      )
-        throw new IsolationError('INVALID_EVIDENCE');
+      const { observation, pngBase64, benchmarkTiming } = parseSolariPayload(
+        bytes,
+        this.config,
+        result.collectionStartedAt,
+        inspectionNonce,
+      );
       this.emit('evidence_validated');
       if (benchmarkTiming) this.emit('worker_timing', benchmarkTiming);
       result.execution = 'SUCCEEDED';
@@ -268,7 +243,9 @@ export interface SolariInspectorConfig {
   maxConcurrent?: number;
 }
 
-function validateConfig(config: SolariInspectorConfig): Required<SolariInspectorConfig> {
+export function validateSolariConfig(
+  config: SolariInspectorConfig,
+): Required<SolariInspectorConfig> {
   const fixture = registeredFixture(
     config.fixture.url,
     config.fixture.identityProviderOrigins,
@@ -316,7 +293,7 @@ export function solariConfigFromEnv(
       normalizeFixtureTarget(env.AIONGUARD_FIXTURE_ORIGIN, 'origin').origin !== target.origin
     )
       return null;
-    return validateConfig({
+    return validateSolariConfig({
       apiKey: env.SOLARI_API_KEY,
       baseUrl: env.SOLARI_BASE_URL,
       fixture: registeredFixture(
@@ -377,7 +354,7 @@ export const solariProvider: SolariProvider = {
         });
       },
     });
-    let sandbox;
+    let sandbox: Sandbox;
     try {
       sandbox = await bounded(
         client.create({
@@ -401,36 +378,46 @@ export const solariProvider: SolariProvider = {
       throw new IsolationError(createSignal.aborted ? 'TIMEOUT' : 'PROVIDER_UNAVAILABLE');
     }
     let absenceConfirmed = false;
-    // The gateway may invalidate signed session IDs immediately after deletion.
-    // A successful kill followed by an empty exact-metadata inventory is independent
-    // lifecycle evidence; it does not assert deletion of provider audit logs.
+    let prepared = false;
+    // Filtered inventories contradicted one another in the benchmark. Use
+    // repeated, complete unfiltered inventories and match our owned identity.
+    // This is control-plane reconciliation, not physical erasure attestation.
     async function confirmAbsent(signal: AbortSignal): Promise<boolean> {
-      return waitForInventoryAbsence(
-        () =>
-          bounded(
-            client.list({ metadata: { application: 'aionguard', inspection: name }, limit: 100 }),
-            signal,
-          ),
-        signal,
-      );
+      return reconcileSolariSandbox(client, sandbox.id, name, signal);
     }
+
     return {
       id: sandbox.id,
       async writeFiles(files, signal) {
         activeSignal = signal;
         // Static install recipe only, before processing content. No guest credentials.
-        const setup = await bounded(
-          sandbox.commands.run('sh', {
-            args: [
-              '-c',
-              `mkdir -p /vercel/sandbox && cd /vercel/sandbox && npm install --no-audit --no-fund --ignore-scripts --save-exact playwright@${BROWSER_VERSION} && PLAYWRIGHT_BROWSERS_PATH=/vercel/sandbox/ms-playwright npx playwright install --with-deps chromium`,
-            ],
-            timeoutMs: config.setupTimeoutMs,
-          }),
-          signal,
-        );
-        if (setup.exitCode !== 0) throw new IsolationError('PROVIDER_UNAVAILABLE');
-        await bounded(sandbox.connect(), signal);
+        if (!prepared) {
+          const setup = await bounded(
+            sandbox.commands.run('sh', {
+              args: [
+                '-c',
+                `mkdir -p /vercel/sandbox && cd /vercel/sandbox && npm install --no-audit --no-fund --ignore-scripts --save-exact playwright@${BROWSER_VERSION} && PLAYWRIGHT_BROWSERS_PATH=/vercel/sandbox/ms-playwright npx playwright install --with-deps chromium`,
+              ],
+              timeoutMs: config.setupTimeoutMs,
+            }),
+            signal,
+          );
+          if (setup.exitCode !== 0) throw new IsolationError('PROVIDER_UNAVAILABLE');
+          await bounded(sandbox.connect(), signal);
+          const readiness = await bounded(
+            sandbox.commands.run('node', {
+              args: [
+                '-e',
+                "const {chromium}=require('/vercel/sandbox/node_modules/playwright');(async()=>{const b=await chromium.launch({headless:true});await b.close()})().catch(()=>process.exit(1))",
+              ],
+              env: { PLAYWRIGHT_BROWSERS_PATH: '/vercel/sandbox/ms-playwright' },
+              timeoutMs: 15_000,
+            }),
+            signal,
+          );
+          if (readiness.exitCode !== 0) throw new IsolationError('PROVIDER_UNAVAILABLE');
+          prepared = true;
+        }
         for (const file of files)
           await bounded(sandbox.files.write(file.path, file.content), signal);
       },
@@ -496,6 +483,113 @@ export async function waitForInventoryAbsence(
     const page = await list();
     if (page.sandboxes.length === 0 && !page.nextCursor) return true;
     if (attempt < 9) await pause();
+  }
+  return false;
+}
+
+/** Shared cold/warm validation. A warm job must bind evidence to its unique nonce. */
+export function parseSolariPayload(
+  bytes: Buffer,
+  config: Required<SolariInspectorConfig>,
+  collectionStartedAt: string,
+  expectedNonce?: string,
+) {
+  const requestPath = new URL(config.fixture.url).pathname.replace(/[^/]*$/, '');
+  if (bytes.length > MAX_RESULT_BYTES) throw new IsolationError('INVALID_EVIDENCE');
+  const parsed: unknown = JSON.parse(bytes.toString('utf8'));
+  const failed = WorkerFailureSchema.safeParse(parsed);
+  if (failed.success) throw new IsolationError(failed.data.failure);
+  const { observation, pngBase64, benchmarkTiming, inspectionNonce } = PayloadSchema.parse(parsed);
+  if (expectedNonce !== undefined && inspectionNonce !== expectedNonce)
+    throw new IsolationError('INVALID_EVIDENCE');
+  const png = Buffer.from(pngBase64, 'base64');
+  if (
+    png.toString('base64') !== pngBase64 ||
+    !validPng(png) ||
+    !isAllowedNavigation(observation.finalUrl, config.fixture.navigationOrigins) ||
+    !pathAllowed(observation.finalUrl, requestPath) ||
+    observation.redirects.some(
+      (url) =>
+        !isAllowedNavigation(url, config.fixture.navigationOrigins) ||
+        !pathAllowed(url, requestPath),
+    )
+  )
+    throw new IsolationError('INVALID_EVIDENCE');
+  if (observation.formAction !== null) {
+    const declared = new URL(observation.formAction);
+    if (
+      declared.username ||
+      declared.password ||
+      declared.origin !== observation.formDestinationOrigin
+    )
+      throw new IsolationError('INVALID_EVIDENCE');
+  } else if (observation.formDestinationOrigin !== null)
+    throw new IsolationError('INVALID_EVIDENCE');
+  const observedAt = Date.parse(observation.observedAt);
+  if (observedAt < Date.parse(collectionStartedAt) - 5_000 || observedAt > Date.now() + 5_000)
+    throw new IsolationError('INVALID_EVIDENCE');
+  return { observation, pngBase64, benchmarkTiming };
+}
+
+/** Reconcile one owned resource through complete inventories; never accept one empty filtered list. */
+export async function reconcileSolariSandbox(
+  client: Pick<SandboxClient, 'kill' | 'list' | 'get'>,
+  sandboxId: string,
+  inspection: string,
+  signal: AbortSignal,
+  pause: () => Promise<void> = () => delay(150, undefined, { signal }),
+): Promise<boolean> {
+  for (let i = 0; i < 3; i++) {
+    try {
+      await bounded(client.kill(sandboxId), signal);
+    } catch {
+      /* Absence still needs repeated complete inventory observations. */
+    }
+  }
+  let absentSamples = 0;
+  for (let sample = 0; sample < 20; sample++) {
+    signal.throwIfAborted();
+    let cursor: string | undefined;
+    let complete = false;
+    let present = false;
+    for (let pageIndex = 0; pageIndex < 10; pageIndex++) {
+      const page = await bounded(
+        client.list({ limit: 100, ...(cursor ? { cursor } : {}) }),
+        signal,
+      );
+      present ||= page.sandboxes.some(
+        (item) => item.sandboxId === sandboxId || item.metadata?.inspection === inspection,
+      );
+      if (!page.nextCursor) {
+        complete = true;
+        break;
+      }
+      cursor = page.nextCursor;
+    }
+    if (!complete) return false;
+    // A point lookup that still sees the resource contradicts an empty inventory.
+    try {
+      await bounded(client.get(sandboxId), signal);
+      present = true;
+    } catch (error) {
+      if (
+        typeof error !== 'object' ||
+        error === null ||
+        !('status' in error) ||
+        error.status !== 404
+      )
+        return false;
+    }
+    absentSamples = present ? 0 : absentSamples + 1;
+    if (absentSamples >= 10) return true;
+    if (present) {
+      try {
+        await bounded(client.kill(sandboxId), signal);
+      } catch {
+        /* Retain reservation unless reconciled. */
+      }
+    }
+    if (sample < 19) await pause();
   }
   return false;
 }

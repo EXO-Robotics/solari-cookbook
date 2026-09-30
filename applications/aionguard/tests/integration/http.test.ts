@@ -1,8 +1,8 @@
-import { afterEach, describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
 import { request as httpRequest } from 'node:http';
 import { once } from 'node:events';
 import type { Server } from 'node:http';
-import { createHttpServer } from '../../src/server/http/server.js';
+import { createHttpServer, type HttpOptions } from '../../src/server/http/server.js';
 import { CaseController } from '../../src/server/runtime/controller.js';
 import { createMockInspector } from '../../src/server/isolation/index.js';
 import { MockPlanner } from '../../src/server/planner/index.js';
@@ -19,7 +19,11 @@ afterEach(async () => {
     server = null;
   }
 });
-async function setup(mode: 'LIVE' | 'MOCK' = 'MOCK', allowedExtensionOrigins: string[] = []) {
+async function setup(
+  mode: 'LIVE' | 'MOCK' = 'MOCK',
+  allowedExtensionOrigins: string[] = [],
+  sandbox?: HttpOptions['sandbox'],
+) {
   const controller = new CaseController({
     inspector: createMockInspector(),
     planner: new MockPlanner(),
@@ -37,6 +41,7 @@ async function setup(mode: 'LIVE' | 'MOCK' = 'MOCK', allowedExtensionOrigins: st
     port: 4317,
     mode,
     allowedExtensionOrigins,
+    sandbox,
   });
   server.listen(0, '127.0.0.1');
   await once(server, 'listening');
@@ -93,6 +98,68 @@ async function setup(mode: 'LIVE' | 'MOCK' = 'MOCK', allowedExtensionOrigins: st
   return { controller, send, protection, port };
 }
 describe('local HTTP authority boundary', () => {
+  it('keeps warm resource status and preparation operator-only with strict commands', async () => {
+    const state = {
+      state: 'READY' as const,
+      sandboxId: 'solari-publichash',
+      readyAt: new Date().toISOString(),
+      expiresAt: new Date(Date.now() + 1000).toISOString(),
+      inspectionCount: 0,
+      cleanupUnresolved: 0,
+      lastError: null,
+    };
+    const prepare = vi.fn(async () => {});
+    const { send } = await setup('LIVE', [], { status: () => state, prepare });
+    for (const secret of ['', entryToken, recoveryToken]) {
+      expect((await send('/api/sandbox', { secret })).status).toBe(401);
+      expect(
+        (await send('/api/sandbox/prepare', { method: 'POST', body: {}, secret })).status,
+      ).toBe(401);
+    }
+    expect((await send('/api/sandbox')).body).toEqual(state);
+    expect(
+      (
+        await send('/api/sandbox/prepare', {
+          method: 'POST',
+          body: { url: 'https://untrusted.example' },
+        })
+      ).status,
+    ).toBe(400);
+    expect(prepare).not.toHaveBeenCalled();
+    expect((await send('/api/sandbox/prepare', { method: 'POST', body: {} })).status).toBe(202);
+    expect(prepare).toHaveBeenCalledOnce();
+  });
+
+  it('returns preparation status without waiting for cold startup and sanitizes rejection', async () => {
+    let reject!: (error: Error) => void;
+    const pending = new Promise<void>((_, fail) => {
+      reject = fail;
+    });
+    const { send } = await setup('LIVE', [], {
+      status: () => ({
+        state: 'PREPARING',
+        sandboxId: null,
+        readyAt: null,
+        expiresAt: null,
+        inspectionCount: 0,
+        cleanupUnresolved: 0,
+        lastError: null,
+      }),
+      prepare: () => pending,
+    });
+    const response = await send('/api/sandbox/prepare', { method: 'POST', body: {} });
+    expect(response.status).toBe(202);
+    expect(response.body.state).toBe('PREPARING');
+    reject(new Error('signed.secret-provider-error'));
+    expect(JSON.stringify((await send('/api/sandbox')).body)).not.toContain('secret');
+  });
+
+  it('reports disabled warm sessions without allocating a resource', async () => {
+    const { send } = await setup();
+    expect((await send('/api/sandbox')).body).toMatchObject({ state: 'DISABLED', sandboxId: null });
+    expect((await send('/api/sandbox/prepare', { method: 'POST', body: {} })).status).toBe(409);
+  });
+
   it('rejects an accepted arm request whose body completes after shutdown starts', async () => {
     const { controller, protection, port } = await setup();
     const runId = controller.create().identity.runId;
