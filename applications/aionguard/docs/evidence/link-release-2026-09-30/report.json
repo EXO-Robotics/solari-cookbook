@@ -1,0 +1,705 @@
+{
+  "status": "PASS",
+  "capturedAt": "2026-09-30T14:37:02.779Z",
+  "scenarios": [
+    {
+      "name": "benign",
+      "report": {
+        "sourceManifestSha256": "5bd08a1ceb3e28f3d593b2d6f099a30bb73b134c1b3f7c35dc75459c4c63dc80",
+        "schemaVersion": "1.0.0",
+        "status": "PASS",
+        "fixture": "https://mfrey18.github.io/AionPhish/celebration.html",
+        "capturedAt": "2026-09-30T14:36:13.221Z",
+        "observationEndedAt": "2026-09-30T14:36:12.971Z",
+        "browser": {
+          "name": "Chromium",
+          "version": "Chrome/145.0.7632.6",
+          "headless": true,
+          "isolatedProfiles": true,
+          "http2Enabled": false,
+          "quicEnabled": false
+        },
+        "baseline": {
+          "destinationOrigin": "https://mfrey18.github.io",
+          "destinationRequestsSent": 3,
+          "destinationDocumentRequestsSent": 1,
+          "canaryRequestsSent": 2,
+          "totalRequestsSent": 8,
+          "events": [
+            {
+              "sourceId": 90,
+              "event": "HTTP_TRANSACTION_SEND_REQUEST_HEADERS",
+              "url": "https://mfrey18.github.io/AionPhish/celebration.html"
+            },
+            {
+              "sourceId": 108,
+              "event": "HTTP_TRANSACTION_SEND_REQUEST_HEADERS",
+              "url": "https://mfrey18.github.io/AionPhish/celebration.css"
+            },
+            {
+              "sourceId": 112,
+              "event": "HTTP_TRANSACTION_SEND_REQUEST_HEADERS",
+              "url": "https://mfrey18.github.io/AionPhish/celebration.js"
+            }
+          ],
+          "method": "CHROMIUM_NETLOG_HTTP_TRANSACTION_HEADER_SEND",
+          "finalUrl": "https://mfrey18.github.io/AionPhish/celebration.html",
+          "clickToLoadMs": 381.00979199999983,
+          "rawNetLogSha256": "9a3af649d6357e5378ade511f1cffb8229174fec3f90dbd8a67de9b0a7f9a0ca",
+          "cdp": {
+            "method": "CDP_REQUEST_EXTRA_INFO_AUTHORITY_AND_REQUEST_ID",
+            "destinationRequestsSent": 3,
+            "firstDestinationRequestEpochMs": 1790778933909.869,
+            "canaryRequestsSent": 2,
+            "totalRequestExtraInfoEvents": 5
+          },
+          "argv": [
+            "<pinned-playwright-chromium>",
+            "--disable-field-trial-config",
+            "--disable-background-networking",
+            "--disable-background-timer-throttling",
+            "--disable-backgrounding-occluded-windows",
+            "--disable-back-forward-cache",
+            "--disable-breakpad",
+            "--disable-client-side-phishing-detection",
+            "--disable-component-extensions-with-background-pages",
+            "--disable-component-update",
+            "--no-default-browser-check",
+            "--disable-default-apps",
+            "--disable-dev-shm-usage",
+            "--disable-extensions",
+            "--disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints",
+            "--enable-features=CDPScreenshotNewSurface",
+            "--allow-pre-commit-input",
+            "--disable-hang-monitor",
+            "--disable-ipc-flooding-protection",
+            "--disable-popup-blocking",
+            "--disable-prompt-on-repost",
+            "--disable-renderer-backgrounding",
+            "--force-color-profile=srgb",
+            "--metrics-recording-only",
+            "--no-first-run",
+            "--password-store=basic",
+            "--use-mock-keychain",
+            "--no-service-autorun",
+            "--export-tagged-pdf",
+            "--disable-search-engine-choice-screen",
+            "--unsafely-disable-devtools-self-xss-warnings",
+            "--edge-skip-compat-layer-relaunch",
+            "--enable-automation",
+            "--disable-infobars",
+            "--disable-search-engine-choice-screen",
+            "--disable-sync",
+            "--headless",
+            "--hide-scrollbars",
+            "--mute-audio",
+            "--blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4",
+            "--no-sandbox",
+            "--log-net-log=<private-output>/baseline-netlog.private.json",
+            "--net-log-capture-mode=Default",
+            "--disable-quic",
+            "--disable-http2",
+            "--disable-background-networking",
+            "--user-data-dir=<private-output>/baseline-profile",
+            "--remote-debugging-pipe",
+            "--noerrdialogs",
+            "--flag-switches-begin",
+            "--flag-switches-end",
+            "about:blank"
+          ]
+        },
+        "protected": {
+          "destinationOrigin": "https://mfrey18.github.io",
+          "destinationRequestsSent": 3,
+          "destinationDocumentRequestsSent": 1,
+          "canaryRequestsSent": 2,
+          "totalRequestsSent": 35,
+          "events": [
+            {
+              "sourceId": 227,
+              "event": "HTTP_TRANSACTION_SEND_REQUEST_HEADERS",
+              "url": "https://mfrey18.github.io/AionPhish/celebration.html"
+            },
+            {
+              "sourceId": 237,
+              "event": "HTTP_TRANSACTION_SEND_REQUEST_HEADERS",
+              "url": "https://mfrey18.github.io/AionPhish/celebration.css"
+            },
+            {
+              "sourceId": 241,
+              "event": "HTTP_TRANSACTION_SEND_REQUEST_HEADERS",
+              "url": "https://mfrey18.github.io/AionPhish/celebration.js"
+            }
+          ],
+          "method": "CHROMIUM_NETLOG_HTTP_TRANSACTION_HEADER_SEND",
+          "finalUrl": "https://mfrey18.github.io/AionPhish/celebration.html",
+          "decision": "RELEASE",
+          "clickToReleaseRequestMs": 2071.2998046875,
+          "clickToDestinationLoadedMs": 2272.999755859375,
+          "clickToWarningMs": null,
+          "releaseTimingDefinition": "RELEASING holding-page state precedes the extension release RPC; destinationLoaded uses browser load event. Neither metric is a safety verdict.",
+          "rulesAfterNavigation": [
+            {
+              "action": {
+                "redirect": {
+                  "extensionPath": "/hold.html"
+                },
+                "type": "redirect"
+              },
+              "condition": {
+                "isUrlFilterCaseSensitive": true,
+                "regexFilter": "^https://mfrey18\\.github\\.io/AionPhish/celebration\\.html$",
+                "resourceTypes": [
+                  "main_frame"
+                ]
+              },
+              "id": 7101,
+              "priority": 20
+            },
+            {
+              "action": {
+                "type": "block"
+              },
+              "condition": {
+                "isUrlFilterCaseSensitive": true,
+                "regexFilter": "^https://mfrey18\\.github\\.io/AionPhish(?:[/?#].*)?$",
+                "resourceTypes": [
+                  "main_frame",
+                  "sub_frame",
+                  "stylesheet",
+                  "script",
+                  "image",
+                  "font",
+                  "object",
+                  "xmlhttprequest",
+                  "ping",
+                  "csp_report",
+                  "media",
+                  "websocket",
+                  "webtransport",
+                  "webbundle",
+                  "other"
+                ]
+              },
+              "id": 7102,
+              "priority": 10
+            },
+            {
+              "action": {
+                "type": "allow"
+              },
+              "condition": {
+                "excludedResourceTypes": [
+                  "main_frame",
+                  "sub_frame"
+                ],
+                "isUrlFilterCaseSensitive": true,
+                "regexFilter": "^https://mfrey18\\.github\\.io/AionPhish(?:[/?#].*)?$",
+                "tabIds": [
+                  1882203802
+                ]
+              },
+              "id": 7105,
+              "priority": 25
+            }
+          ],
+          "releaseState": {
+            "pendingRelease": false,
+            "consumedRequests": 1
+          },
+          "dispatchToDecisionObservedMs": 2275.7968330000003,
+          "bindingReceiptDeltaMs": 2061.3296670000054,
+          "trustedAutomatedClick": true,
+          "warmStatusBeforeClick": {
+            "state": "READY",
+            "sandboxId": "solari-4a0c616707bb3daf041bb3214675ccf7",
+            "readyAt": "2026-09-30T14:36:08.258Z",
+            "expiresAt": "2026-09-30T14:39:33.211Z",
+            "inspectionCount": 0,
+            "cleanupUnresolved": 0,
+            "lastError": null
+          },
+          "inspectionTrigger": "CHROME_HANDOFF",
+          "classification": "UNDETERMINED",
+          "inspectionTiming": {
+            "heldAt": "2026-09-30T14:36:08.642Z",
+            "createdAt": "2026-09-30T14:35:34.083Z",
+            "collectionStartedAt": "2026-09-30T14:36:08.801Z",
+            "returnedAt": "2026-09-30T14:36:10.586Z",
+            "blockedAt": "2026-09-30T14:36:10.587Z"
+          },
+          "cleanupAtDecision": {
+            "state": "RETAINED",
+            "sandboxId": "solari-4a0c616707bb3daf041bb3214675ccf7",
+            "stoppedAt": null,
+            "deletedAt": null
+          },
+          "session": {
+            "mode": "WARM",
+            "readyAt": "2026-09-30T14:36:08.258Z",
+            "acquiredAt": "2026-09-30T14:36:08.643Z",
+            "reused": false,
+            "inspectionCount": 1,
+            "disposition": "RETAINED"
+          },
+          "rawNetLogSha256": "e9de06b96ddd576282df9aa0d15a38844f90aa74da6df55036feff8d01ca7481",
+          "cdp": {
+            "method": "CDP_REQUEST_EXTRA_INFO_AUTHORITY_AND_REQUEST_ID",
+            "destinationRequestsSent": 3,
+            "firstDestinationRequestEpochMs": 1790778970677.155,
+            "canaryRequestsSent": 2,
+            "totalRequestExtraInfoEvents": 5
+          },
+          "argv": [
+            "<pinned-playwright-chromium>",
+            "--disable-field-trial-config",
+            "--disable-background-networking",
+            "--disable-background-timer-throttling",
+            "--disable-backgrounding-occluded-windows",
+            "--disable-back-forward-cache",
+            "--disable-breakpad",
+            "--disable-client-side-phishing-detection",
+            "--disable-component-extensions-with-background-pages",
+            "--disable-component-update",
+            "--no-default-browser-check",
+            "--disable-default-apps",
+            "--disable-dev-shm-usage",
+            "--disable-extensions",
+            "--disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints",
+            "--enable-features=CDPScreenshotNewSurface",
+            "--allow-pre-commit-input",
+            "--disable-hang-monitor",
+            "--disable-ipc-flooding-protection",
+            "--disable-popup-blocking",
+            "--disable-prompt-on-repost",
+            "--disable-renderer-backgrounding",
+            "--force-color-profile=srgb",
+            "--metrics-recording-only",
+            "--no-first-run",
+            "--password-store=basic",
+            "--use-mock-keychain",
+            "--no-service-autorun",
+            "--export-tagged-pdf",
+            "--disable-search-engine-choice-screen",
+            "--unsafely-disable-devtools-self-xss-warnings",
+            "--edge-skip-compat-layer-relaunch",
+            "--enable-automation",
+            "--disable-infobars",
+            "--disable-search-engine-choice-screen",
+            "--disable-sync",
+            "--headless",
+            "--hide-scrollbars",
+            "--mute-audio",
+            "--blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4",
+            "--no-sandbox",
+            "--log-net-log=<private-output>/protected-netlog.private.json",
+            "--net-log-capture-mode=Default",
+            "--disable-quic",
+            "--disable-http2",
+            "--disable-background-networking",
+            "--disable-extensions-except=<private-output>/extension",
+            "--load-extension=<private-output>/extension",
+            "--user-data-dir=<private-output>/protected-profile",
+            "--remote-debugging-pipe",
+            "--noerrdialogs",
+            "--flag-switches-begin",
+            "--flag-switches-end",
+            "about:blank"
+          ],
+          "installedRules": {
+            "expectedRuleSha256": "21a47dd73061fa165b69191521504967f1d31ccb8df30d168daa4ce799700e07",
+            "installedRuleSha256": "21a47dd73061fa165b69191521504967f1d31ccb8df30d168daa4ce799700e07",
+            "rules": [
+              {
+                "action": {
+                  "redirect": {
+                    "extensionPath": "/hold.html"
+                  },
+                  "type": "redirect"
+                },
+                "condition": {
+                  "isUrlFilterCaseSensitive": true,
+                  "regexFilter": "^https://mfrey18\\.github\\.io/AionPhish/celebration\\.html$",
+                  "resourceTypes": [
+                    "main_frame"
+                  ]
+                },
+                "id": 7101,
+                "priority": 20
+              },
+              {
+                "action": {
+                  "type": "block"
+                },
+                "condition": {
+                  "isUrlFilterCaseSensitive": true,
+                  "regexFilter": "^https://mfrey18\\.github\\.io/AionPhish(?:[/?#].*)?$",
+                  "resourceTypes": [
+                    "main_frame",
+                    "sub_frame",
+                    "stylesheet",
+                    "script",
+                    "image",
+                    "font",
+                    "object",
+                    "xmlhttprequest",
+                    "ping",
+                    "csp_report",
+                    "media",
+                    "websocket",
+                    "webtransport",
+                    "webbundle",
+                    "other"
+                  ]
+                },
+                "id": 7102,
+                "priority": 10
+              }
+            ]
+          }
+        },
+        "scope": "One baseline and one protected ordinary anchor click per owned fixture in disposable Chromium profiles. Successful live zero-findings inspection releases the registered benign URL; findings hold the phishing URL. No findings is not proof of safety. Destination requests are HTTP header sends, not DNS/TCP/TLS contact. This does not establish arbitrary-site support, Safari release, hostile-page containment, or detection accuracy. No Playwright routing or mocked responses.",
+        "netLogReference": "https://chromium.googlesource.com/chromium/src/+/main/net/log/net_log_event_type_list.h",
+        "controllerShutdown": {
+          "exitCode": 0,
+          "ownershipJournalAbsent": true
+        }
+      }
+    },
+    {
+      "name": "phishing",
+      "report": {
+        "sourceManifestSha256": "db5938068d25ac9bd66b046143bb02f641ef3c28ca8df338cbd7577232f1c28e",
+        "schemaVersion": "1.0.0",
+        "status": "PASS",
+        "fixture": "https://mfrey18.github.io/AionPhish/",
+        "capturedAt": "2026-09-30T14:37:00.781Z",
+        "observationEndedAt": "2026-09-30T14:37:00.476Z",
+        "browser": {
+          "name": "Chromium",
+          "version": "Chrome/145.0.7632.6",
+          "headless": true,
+          "isolatedProfiles": true,
+          "http2Enabled": false,
+          "quicEnabled": false
+        },
+        "baseline": {
+          "destinationOrigin": "https://mfrey18.github.io",
+          "destinationRequestsSent": 4,
+          "destinationDocumentRequestsSent": 1,
+          "canaryRequestsSent": 2,
+          "totalRequestsSent": 10,
+          "events": [
+            {
+              "sourceId": 87,
+              "event": "HTTP_TRANSACTION_SEND_REQUEST_HEADERS",
+              "url": "https://mfrey18.github.io/AionPhish/"
+            },
+            {
+              "sourceId": 104,
+              "event": "HTTP_TRANSACTION_SEND_REQUEST_HEADERS",
+              "url": "https://mfrey18.github.io/AionPhish/aquarium.css"
+            },
+            {
+              "sourceId": 121,
+              "event": "HTTP_TRANSACTION_SEND_REQUEST_HEADERS",
+              "url": "https://mfrey18.github.io/AionPhish/demo-login.js"
+            },
+            {
+              "sourceId": 126,
+              "event": "HTTP_TRANSACTION_SEND_REQUEST_HEADERS",
+              "url": "https://mfrey18.github.io/AionPhish/aquarium.js"
+            }
+          ],
+          "method": "CHROMIUM_NETLOG_HTTP_TRANSACTION_HEADER_SEND",
+          "finalUrl": "https://mfrey18.github.io/AionPhish/",
+          "clickToLoadMs": 1738.5665000000008,
+          "rawNetLogSha256": "18acc63766e376c1421e96cde474f04715f382bf525d8970828e5b746e9bb4e6",
+          "cdp": {
+            "method": "CDP_REQUEST_EXTRA_INFO_AUTHORITY_AND_REQUEST_ID",
+            "destinationRequestsSent": 4,
+            "firstDestinationRequestEpochMs": 1790778979625.326,
+            "canaryRequestsSent": 2,
+            "totalRequestExtraInfoEvents": 6
+          },
+          "argv": [
+            "<pinned-playwright-chromium>",
+            "--disable-field-trial-config",
+            "--disable-background-networking",
+            "--disable-background-timer-throttling",
+            "--disable-backgrounding-occluded-windows",
+            "--disable-back-forward-cache",
+            "--disable-breakpad",
+            "--disable-client-side-phishing-detection",
+            "--disable-component-extensions-with-background-pages",
+            "--disable-component-update",
+            "--no-default-browser-check",
+            "--disable-default-apps",
+            "--disable-dev-shm-usage",
+            "--disable-extensions",
+            "--disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints",
+            "--enable-features=CDPScreenshotNewSurface",
+            "--allow-pre-commit-input",
+            "--disable-hang-monitor",
+            "--disable-ipc-flooding-protection",
+            "--disable-popup-blocking",
+            "--disable-prompt-on-repost",
+            "--disable-renderer-backgrounding",
+            "--force-color-profile=srgb",
+            "--metrics-recording-only",
+            "--no-first-run",
+            "--password-store=basic",
+            "--use-mock-keychain",
+            "--no-service-autorun",
+            "--export-tagged-pdf",
+            "--disable-search-engine-choice-screen",
+            "--unsafely-disable-devtools-self-xss-warnings",
+            "--edge-skip-compat-layer-relaunch",
+            "--enable-automation",
+            "--disable-infobars",
+            "--disable-search-engine-choice-screen",
+            "--disable-sync",
+            "--headless",
+            "--hide-scrollbars",
+            "--mute-audio",
+            "--blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4",
+            "--no-sandbox",
+            "--log-net-log=<private-output>/baseline-netlog.private.json",
+            "--net-log-capture-mode=Default",
+            "--disable-quic",
+            "--disable-http2",
+            "--disable-background-networking",
+            "--user-data-dir=<private-output>/baseline-profile",
+            "--remote-debugging-pipe",
+            "--noerrdialogs",
+            "--flag-switches-begin",
+            "--flag-switches-end",
+            "about:blank"
+          ]
+        },
+        "protected": {
+          "destinationOrigin": "https://mfrey18.github.io",
+          "destinationRequestsSent": 0,
+          "destinationDocumentRequestsSent": 0,
+          "canaryRequestsSent": 2,
+          "totalRequestsSent": 28,
+          "events": [],
+          "method": "CHROMIUM_NETLOG_HTTP_TRANSACTION_HEADER_SEND",
+          "finalUrl": "chrome-extension://<disposable-demo>/hold.html",
+          "decision": "BLOCK",
+          "clickToReleaseRequestMs": null,
+          "clickToDestinationLoadedMs": null,
+          "clickToWarningMs": 1775.5,
+          "releaseTimingDefinition": "RELEASING holding-page state precedes the extension release RPC; destinationLoaded uses browser load event. Neither metric is a safety verdict.",
+          "rulesAfterNavigation": [
+            {
+              "action": {
+                "redirect": {
+                  "extensionPath": "/hold.html"
+                },
+                "type": "redirect"
+              },
+              "condition": {
+                "isUrlFilterCaseSensitive": true,
+                "regexFilter": "^https://mfrey18\\.github\\.io/AionPhish/$",
+                "resourceTypes": [
+                  "main_frame"
+                ]
+              },
+              "id": 7101,
+              "priority": 20
+            },
+            {
+              "action": {
+                "type": "block"
+              },
+              "condition": {
+                "isUrlFilterCaseSensitive": true,
+                "regexFilter": "^https://mfrey18\\.github\\.io/AionPhish(?:[/?#].*)?$",
+                "resourceTypes": [
+                  "main_frame",
+                  "sub_frame",
+                  "stylesheet",
+                  "script",
+                  "image",
+                  "font",
+                  "object",
+                  "xmlhttprequest",
+                  "ping",
+                  "csp_report",
+                  "media",
+                  "websocket",
+                  "webtransport",
+                  "webbundle",
+                  "other"
+                ]
+              },
+              "id": 7102,
+              "priority": 10
+            }
+          ],
+          "releaseState": {
+            "pendingRelease": false,
+            "consumedRequests": 0
+          },
+          "dispatchToDecisionObservedMs": 1875.5162910000072,
+          "bindingReceiptDeltaMs": 1761.8308749999997,
+          "trustedAutomatedClick": true,
+          "warmStatusBeforeClick": {
+            "state": "READY",
+            "sandboxId": "solari-2e88a7043736892a4b375270a6ce4f69",
+            "readyAt": "2026-09-30T14:36:56.183Z",
+            "expiresAt": "2026-09-30T14:40:18.981Z",
+            "inspectionCount": 0,
+            "cleanupUnresolved": 0,
+            "lastError": null
+          },
+          "inspectionTrigger": "CHROME_HANDOFF",
+          "classification": "SUSPICIOUS",
+          "inspectionTiming": {
+            "heldAt": "2026-09-30T14:36:56.622Z",
+            "createdAt": "2026-09-30T14:36:19.250Z",
+            "collectionStartedAt": "2026-09-30T14:36:56.700Z",
+            "returnedAt": "2026-09-30T14:36:58.213Z",
+            "blockedAt": "2026-09-30T14:36:58.214Z"
+          },
+          "cleanupAtDecision": {
+            "state": "PENDING",
+            "sandboxId": "solari-2e88a7043736892a4b375270a6ce4f69",
+            "stoppedAt": null,
+            "deletedAt": null
+          },
+          "session": {
+            "mode": "WARM",
+            "readyAt": "2026-09-30T14:36:56.183Z",
+            "acquiredAt": "2026-09-30T14:36:56.623Z",
+            "reused": false,
+            "inspectionCount": 1,
+            "disposition": "RETIRED"
+          },
+          "rawNetLogSha256": "6124562d978135113fc021a7b229206565d43f7cd0a4406daa59c6e4a8e7e6b8",
+          "cdp": {
+            "method": "CDP_REQUEST_EXTRA_INFO_AUTHORITY_AND_REQUEST_ID",
+            "destinationRequestsSent": 0,
+            "firstDestinationRequestEpochMs": null,
+            "canaryRequestsSent": 2,
+            "totalRequestExtraInfoEvents": 2
+          },
+          "argv": [
+            "<pinned-playwright-chromium>",
+            "--disable-field-trial-config",
+            "--disable-background-networking",
+            "--disable-background-timer-throttling",
+            "--disable-backgrounding-occluded-windows",
+            "--disable-back-forward-cache",
+            "--disable-breakpad",
+            "--disable-client-side-phishing-detection",
+            "--disable-component-extensions-with-background-pages",
+            "--disable-component-update",
+            "--no-default-browser-check",
+            "--disable-default-apps",
+            "--disable-dev-shm-usage",
+            "--disable-extensions",
+            "--disable-features=AvoidUnnecessaryBeforeUnloadCheckSync,BoundaryEventDispatchTracksNodeRemoval,DestroyProfileOnBrowserClose,DialMediaRouteProvider,GlobalMediaControls,HttpsUpgrades,LensOverlay,MediaRouter,PaintHolding,ThirdPartyStoragePartitioning,Translate,AutoDeElevate,RenderDocument,OptimizationHints",
+            "--enable-features=CDPScreenshotNewSurface",
+            "--allow-pre-commit-input",
+            "--disable-hang-monitor",
+            "--disable-ipc-flooding-protection",
+            "--disable-popup-blocking",
+            "--disable-prompt-on-repost",
+            "--disable-renderer-backgrounding",
+            "--force-color-profile=srgb",
+            "--metrics-recording-only",
+            "--no-first-run",
+            "--password-store=basic",
+            "--use-mock-keychain",
+            "--no-service-autorun",
+            "--export-tagged-pdf",
+            "--disable-search-engine-choice-screen",
+            "--unsafely-disable-devtools-self-xss-warnings",
+            "--edge-skip-compat-layer-relaunch",
+            "--enable-automation",
+            "--disable-infobars",
+            "--disable-search-engine-choice-screen",
+            "--disable-sync",
+            "--headless",
+            "--hide-scrollbars",
+            "--mute-audio",
+            "--blink-settings=primaryHoverType=2,availableHoverTypes=2,primaryPointerType=4,availablePointerTypes=4",
+            "--no-sandbox",
+            "--log-net-log=<private-output>/protected-netlog.private.json",
+            "--net-log-capture-mode=Default",
+            "--disable-quic",
+            "--disable-http2",
+            "--disable-background-networking",
+            "--disable-extensions-except=<private-output>/extension",
+            "--load-extension=<private-output>/extension",
+            "--user-data-dir=<private-output>/protected-profile",
+            "--remote-debugging-pipe",
+            "--noerrdialogs",
+            "--flag-switches-begin",
+            "--flag-switches-end",
+            "about:blank"
+          ],
+          "installedRules": {
+            "expectedRuleSha256": "249cc81dab325e1ea9fc195f5c5b4c853d61bc37ac54b0ff85932074bc61e411",
+            "installedRuleSha256": "249cc81dab325e1ea9fc195f5c5b4c853d61bc37ac54b0ff85932074bc61e411",
+            "rules": [
+              {
+                "action": {
+                  "redirect": {
+                    "extensionPath": "/hold.html"
+                  },
+                  "type": "redirect"
+                },
+                "condition": {
+                  "isUrlFilterCaseSensitive": true,
+                  "regexFilter": "^https://mfrey18\\.github\\.io/AionPhish/$",
+                  "resourceTypes": [
+                    "main_frame"
+                  ]
+                },
+                "id": 7101,
+                "priority": 20
+              },
+              {
+                "action": {
+                  "type": "block"
+                },
+                "condition": {
+                  "isUrlFilterCaseSensitive": true,
+                  "regexFilter": "^https://mfrey18\\.github\\.io/AionPhish(?:[/?#].*)?$",
+                  "resourceTypes": [
+                    "main_frame",
+                    "sub_frame",
+                    "stylesheet",
+                    "script",
+                    "image",
+                    "font",
+                    "object",
+                    "xmlhttprequest",
+                    "ping",
+                    "csp_report",
+                    "media",
+                    "websocket",
+                    "webtransport",
+                    "webbundle",
+                    "other"
+                  ]
+                },
+                "id": 7102,
+                "priority": 10
+              }
+            ]
+          }
+        },
+        "scope": "One baseline and one protected ordinary anchor click per owned fixture in disposable Chromium profiles. Successful live zero-findings inspection releases the registered benign URL; findings hold the phishing URL. No findings is not proof of safety. Destination requests are HTTP header sends, not DNS/TCP/TLS contact. This does not establish arbitrary-site support, Safari release, hostile-page containment, or detection accuracy. No Playwright routing or mocked responses.",
+        "netLogReference": "https://chromium.googlesource.com/chromium/src/+/main/net/log/net_log_event_type_list.h",
+        "controllerShutdown": {
+          "exitCode": 0,
+          "ownershipJournalAbsent": true
+        }
+      }
+    }
+  ]
+}

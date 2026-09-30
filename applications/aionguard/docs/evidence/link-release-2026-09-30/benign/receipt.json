@@ -1,0 +1,326 @@
+{
+  "receiptVersion": "1.0.0",
+  "exportedAt": "2026-09-30T14:36:10.970Z",
+  "digest": "cdafa5b9e1eb4b8ce79949933b2bddb2b7c6e2961cfc406f32abc06483967e3d",
+  "snapshot": {
+    "workflow": "DETECTOR",
+    "inspectionTrigger": "CHROME_HANDOFF",
+    "identity": {
+      "schemaVersion": "1.0.0",
+      "caseId": "PR-014",
+      "runId": "run_5734edd9-47e1-4f9c-82ba-7a505f1e5a76",
+      "attemptId": "attempt_c39a8242-6a69-417f-9731-36f790cf17c5",
+      "ledgerId": "ledger_6333b882-06ce-448d-93bd-9054cb5d7f9f",
+      "revision": 0
+    },
+    "scenarioVersion": "acme-1",
+    "principal": "Apprentice-07",
+    "modes": {
+      "inspection": "LIVE",
+      "planner": "MOCK",
+      "organization": "SYNTHETIC_ORGANIZATION"
+    },
+    "authorization": {
+      "id": "auth_8f08e47e-911f-4080-bec8-b171076a6bea",
+      "at": "2026-09-30T14:36:08.440Z",
+      "principal": "Apprentice-07",
+      "scenario": "OWNED_FIXTURE_INSPECTION",
+      "assumptions": [],
+      "change": "NONE"
+    },
+    "execution": "RELEASE_READY",
+    "link": {
+      "execution": "SUCCEEDED",
+      "classification": "UNDETERMINED",
+      "decision": "RELEASE",
+      "release": {
+        "url": "https://mfrey18.github.io/AionPhish/celebration.html",
+        "expiresAt": "2026-09-30T14:36:24.208Z",
+        "policy": "NO_FINDINGS_V1"
+      },
+      "ruleIds": [],
+      "findings": [],
+      "mode": "LIVE",
+      "observation": {
+        "finalUrl": "https://mfrey18.github.io/AionPhish/celebration.html",
+        "title": "GPT-6 Astra Hackathon · AionPhish",
+        "text": "a AIONPHISHA LITTLE SURPRISE BELOW THE SURFACE\n\nYOU REELED IN SOMETHING GOOD\n\n✦\n✦\n✧\n✦\nfor you\n\nTHE BEST CATCH OF THE DAY\n\nGPT-6 Astra\nHackathon\n\nA little curiosity. A big celebration.\n\nDemo complete. Your test entries were cleared.\nNo username or password was stored or sent.\n\n↻   Open it againBack to the aquarium ↗\n\nYour gift: GPT-6 Astra Hackathon. Enable JavaScript to replay the confetti.\n\nAIONPHISH • AN AIONGUARD DEMO",
+        "claimedService": "AIONPHISH",
+        "downloadLinks": [
+          {
+            "href": "https://mfrey18.github.io/AionPhish/",
+            "text": "a AIONPHISH"
+          },
+          {
+            "href": "https://mfrey18.github.io/AionPhish/",
+            "text": "Back to the aquarium ↗"
+          }
+        ],
+        "passwordField": false,
+        "formAction": null,
+        "formDestinationOrigin": null,
+        "redirects": [],
+        "observedAt": "2026-09-30T14:36:09.208Z"
+      },
+      "imagePath": "/api/attempts/run_5734edd9-47e1-4f9c-82ba-7a505f1e5a76/image",
+      "cleanup": {
+        "state": "RETAINED",
+        "sandboxId": "solari-4a0c616707bb3daf041bb3214675ccf7",
+        "stoppedAt": null,
+        "deletedAt": null
+      },
+      "session": {
+        "mode": "WARM",
+        "readyAt": "2026-09-30T14:36:08.258Z",
+        "acquiredAt": "2026-09-30T14:36:08.643Z",
+        "reused": false,
+        "inspectionCount": 1,
+        "disposition": "RETAINED"
+      },
+      "source": "SOLARI_SANDBOX",
+      "failure": null,
+      "timing": {
+        "heldAt": "2026-09-30T14:36:08.642Z",
+        "createdAt": "2026-09-30T14:35:34.083Z",
+        "collectionStartedAt": "2026-09-30T14:36:08.801Z",
+        "returnedAt": "2026-09-30T14:36:10.586Z",
+        "blockedAt": "2026-09-30T14:36:10.587Z"
+      }
+    },
+    "observations": [],
+    "assessments": [],
+    "baseline": null,
+    "change": null,
+    "verification": "NOT_REQUESTED",
+    "budget": {
+      "total": 4,
+      "spent": 0,
+      "remaining": 4
+    },
+    "catalog": [
+      {
+        "id": "INV-SECRET-METADATA",
+        "label": "Inspect additional secret metadata",
+        "cost": 1,
+        "target": "legacy-prod-secrets",
+        "coverage": [
+          "legacy_reference",
+          "artifact_metadata"
+        ],
+        "hypotheses": [
+          "HYP-001"
+        ],
+        "sourceCurrent": true,
+        "sourceComplete": true,
+        "order": 0
+      },
+      {
+        "id": "INV-PRINCIPAL-STATUS",
+        "label": "Check referenced principal status",
+        "cost": 1,
+        "target": "prod-admin-legacy",
+        "coverage": [
+          "principal_status"
+        ],
+        "hypotheses": [
+          "HYP-001"
+        ],
+        "sourceCurrent": true,
+        "sourceComplete": true,
+        "order": 1
+      },
+      {
+        "id": "INV-PRODUCTION-MAP",
+        "label": "Map Production resources",
+        "cost": 2,
+        "target": "Production",
+        "coverage": [
+          "production_map"
+        ],
+        "hypotheses": [
+          "HYP-001"
+        ],
+        "sourceCurrent": true,
+        "sourceComplete": true,
+        "order": 2
+      },
+      {
+        "id": "INV-CREDENTIAL-AGE",
+        "label": "Inspect credential age",
+        "cost": 1,
+        "target": "legacy-prod-secrets",
+        "coverage": [
+          "credential_age_days"
+        ],
+        "hypotheses": [
+          "HYP-001"
+        ],
+        "sourceCurrent": true,
+        "sourceComplete": true,
+        "order": 3
+      },
+      {
+        "id": "INV-ACTIVITY-LEDGER",
+        "label": "Review identity + workload activity",
+        "cost": 1,
+        "target": "prod-admin-legacy",
+        "coverage": [
+          "principal_status",
+          "last_auth_days",
+          "runtime_identity"
+        ],
+        "hypotheses": [
+          "HYP-001",
+          "HYP-002"
+        ],
+        "sourceCurrent": true,
+        "sourceComplete": true,
+        "order": 4
+      },
+      {
+        "id": "INV-JENKINS-PLUGINS",
+        "label": "Enumerate Jenkins plugins",
+        "cost": 1,
+        "target": "Jenkins-02",
+        "coverage": [
+          "plugins"
+        ],
+        "hypotheses": [
+          "HYP-002"
+        ],
+        "sourceCurrent": true,
+        "sourceComplete": true,
+        "order": 5
+      },
+      {
+        "id": "INV-JENKINS-CLI",
+        "label": "Check Jenkins CLI availability",
+        "cost": 1,
+        "target": "Jenkins-02",
+        "coverage": [
+          "cli_available"
+        ],
+        "hypotheses": [
+          "HYP-002"
+        ],
+        "sourceCurrent": true,
+        "sourceComplete": true,
+        "order": 6
+      },
+      {
+        "id": "INV-ASSET-INVENTORY",
+        "label": "Refresh full asset inventory",
+        "cost": 2,
+        "target": "Apprentice-07",
+        "coverage": [
+          "direct_access",
+          "product"
+        ],
+        "hypotheses": [
+          "HYP-001",
+          "HYP-002"
+        ],
+        "sourceCurrent": true,
+        "sourceComplete": true,
+        "order": 7
+      },
+      {
+        "id": "INV-JENKINS-VERSION",
+        "label": "Confirm exact Jenkins version",
+        "cost": 1,
+        "target": "Jenkins-02",
+        "coverage": [
+          "jenkins_version"
+        ],
+        "hypotheses": [
+          "HYP-002"
+        ],
+        "sourceCurrent": true,
+        "sourceComplete": true,
+        "order": 8
+      }
+    ],
+    "brokerReceipts": [],
+    "events": [
+      {
+        "sequence": 1,
+        "runId": "run_5734edd9-47e1-4f9c-82ba-7a505f1e5a76",
+        "revision": 0,
+        "type": "ATTEMPT_CREATED",
+        "at": "2026-09-30T14:36:08.423Z",
+        "payload": {}
+      },
+      {
+        "sequence": 2,
+        "runId": "run_5734edd9-47e1-4f9c-82ba-7a505f1e5a76",
+        "revision": 0,
+        "type": "AUTHORIZED",
+        "at": "2026-09-30T14:36:08.440Z",
+        "payload": {
+          "referenceId": "auth_8f08e47e-911f-4080-bec8-b171076a6bea"
+        }
+      },
+      {
+        "sequence": 3,
+        "runId": "run_5734edd9-47e1-4f9c-82ba-7a505f1e5a76",
+        "revision": 0,
+        "type": "NAVIGATION_HELD",
+        "at": "2026-09-30T14:36:08.642Z",
+        "payload": {
+          "reason": "Trusted handoff reported; endpoint interception requires separate measurement."
+        }
+      },
+      {
+        "sequence": 4,
+        "runId": "run_5734edd9-47e1-4f9c-82ba-7a505f1e5a76",
+        "revision": 0,
+        "type": "INSPECTION_STARTED",
+        "at": "2026-09-30T14:36:08.642Z",
+        "payload": {
+          "reason": "CHROME_HANDOFF"
+        }
+      },
+      {
+        "sequence": 5,
+        "runId": "run_5734edd9-47e1-4f9c-82ba-7a505f1e5a76",
+        "revision": 0,
+        "type": "POLICY_RELEASE_GRANTED",
+        "at": "2026-09-30T14:36:10.588Z",
+        "payload": {
+          "reason": "UNDETERMINED"
+        }
+      }
+    ],
+    "access": {
+      "reachable": 0,
+      "blocked": 0
+    },
+    "summary": {
+      "retained": 0,
+      "dismissed": 0,
+      "inconclusive": 0,
+      "verifiedAfterState": false
+    }
+  },
+  "claims": {
+    "exploitAttempts": 0,
+    "credentialsSubmitted": false,
+    "compromiseObserved": false,
+    "consequenceDemonstrated": false,
+    "endpointInterceptionVerified": false,
+    "productionScaleVerified": false
+  },
+  "limitations": [
+    "Heuristics inspect a static page title, the first 1000 body characters, one password form, and up to 20 links from the first 200 anchors. Page scripts are disabled. Findings can be false positives; no findings means unknown, never safe. No payload execution, malware scanning, iframe coverage, or prevalence ranking is claimed.",
+    "Direct operator inspection is not proof of local navigation interception. Astra is not invoked.",
+    "Solari browser routing is not a verified infrastructure egress firewall. Owned inert fixtures only.",
+    "Confirmed cleanup means accepted termination plus absence from exact-tag authenticated resource inventory, not erasure of provider logs.",
+    "Synthetic organization observations are separate from remote page inspection.",
+    "No exploitation, authentication attempt, service takeover or downstream compromise was demonstrated.",
+    "A declared form destination does not establish all JavaScript network behavior.",
+    "Endpoint interception and the integrated live route require a separate measured acceptance run.",
+    "The local in-memory controller is a shared administrative authority; no multi-tenant or scale claim is verified.",
+    "The digest binds exported bytes but is not an independent signature or attestation.",
+    "MOCK/REPLAY components cannot establish live provider or Astra behavior; inspect the per-component mode and workflow."
+  ]
+}

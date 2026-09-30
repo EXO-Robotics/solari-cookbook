@@ -26,14 +26,24 @@ const sender = {
   documentLifecycle: 'active',
 };
 
-async function worker() {
+async function worker(initialSaved: Record<string, any> = {}, initialRules: any[] = []) {
   let listener: (message: unknown, sender: unknown, respond: (value: any) => void) => boolean;
-  let onAlarm: (alarm: { name: string }) => void;
+  const alarmListeners: Array<(alarm: { name: string }) => void> = [];
+  let onBeforeNavigate: (details: any) => void;
+  let onCommitted: (details: any) => void;
+  let onError: (details: any) => void;
+  let onRemoved: (tabId: number) => void;
+  const tabsUpdate = vi.fn(async () => undefined);
   let now = Date.now();
-  const saved: Record<string, any> = {};
-  const installed = new Map<number, any>([[9999, { id: 9999 }]]);
+  const saved: Record<string, any> = structuredClone(initialSaved);
+  const installed = new Map<number, any>([
+    [9999, { id: 9999 }],
+    ...initialRules.map((rule): [number, any] => [rule.id, rule]),
+  ]);
   const storage = {
-    get: vi.fn(async (key: string) => ({ [key]: structuredClone(saved[key]) })),
+    get: vi.fn(async (key: string | null) =>
+      key === null ? structuredClone(saved) : { [key]: structuredClone(saved[key]) },
+    ),
     set: vi.fn(async (values: Record<string, any>) =>
       Object.assign(saved, structuredClone(values)),
     ),
@@ -61,7 +71,12 @@ async function worker() {
   );
   const context = createContext({
     importScripts: () => undefined,
-    AIONGUARD_CHROME: { controllerOrigin, fixtureId: 'acme-login', rules: artifacts.rules },
+    AIONGUARD_CHROME: {
+      controllerOrigin,
+      fixtureUrl,
+      fixtureId: 'acme-login',
+      rules: artifacts.rules,
+    },
     Date: class extends Date {
       static now() {
         return now;
@@ -80,12 +95,37 @@ async function worker() {
       },
       storage: { session: storage },
       declarativeNetRequest: { updateSessionRules },
+      tabs: {
+        update: tabsUpdate,
+        onRemoved: {
+          addListener: (fn: typeof onRemoved) => {
+            onRemoved = fn;
+          },
+        },
+      },
+      webNavigation: {
+        onBeforeNavigate: {
+          addListener: (fn: typeof onBeforeNavigate) => {
+            onBeforeNavigate = fn;
+          },
+        },
+        onCommitted: {
+          addListener: (fn: typeof onCommitted) => {
+            onCommitted = fn;
+          },
+        },
+        onErrorOccurred: {
+          addListener: (fn: typeof onError) => {
+            onError = fn;
+          },
+        },
+      },
       alarms: {
         create: vi.fn(async () => undefined),
         clear: vi.fn(async () => true),
         onAlarm: {
-          addListener: (fn: typeof onAlarm) => {
-            onAlarm = fn;
+          addListener: (fn: (alarm: { name: string }) => void) => {
+            alarmListeners.push(fn);
           },
         },
       },
@@ -116,7 +156,19 @@ async function worker() {
     },
     configure: (value = { entryToken, expiresAt: now + 120000 }) => context.configure(value),
     disarm: () => context.disarm(),
-    alarm: () => onAlarm({ name: 'controlled-click-expiry' }),
+    now: () => now,
+    tabsUpdate,
+    beforeNavigate: (details = { tabId: 1, frameId: 0 }) => onBeforeNavigate(details),
+    commit: (
+      details: { tabId: number; frameId: number; url?: string } = {
+        tabId: 1,
+        frameId: 0,
+        url: fixtureUrl,
+      },
+    ) => onCommitted(details),
+    navigationError: (details = { tabId: 1, frameId: 0, url: fixtureUrl }) => onError(details),
+    removeTab: (tabId = 1) => onRemoved(tabId),
+    alarm: (name = 'controlled-click-expiry') => alarmListeners.forEach((fn) => fn({ name })),
     send: (type = 'INSPECT', from: unknown = sender, extra = {}) =>
       new Promise<any>((resolve) => {
         expect(listener({ type, requestId, ...extra }, from, resolve)).toBe(true);
@@ -131,9 +183,11 @@ describe('controlled Chrome build', () => {
     const blockRegex = new RegExp(block!.condition.regexFilter);
     expect(redirect!.priority).toBeGreaterThan(block!.priority);
     expect(redirect!.condition.resourceTypes).toEqual(['main_frame']);
-    expect(block!.condition.resourceTypes).toBeUndefined();
-    for (const suffix of ['', '?owned=1', '#section'])
-      expect(redirectRegex.test(fixtureUrl + suffix)).toBe(true);
+    expect(block!.condition.resourceTypes).toContain('main_frame');
+    expect(block!.condition.resourceTypes).toContain('script');
+    expect(redirectRegex.test(fixtureUrl)).toBe(true);
+    for (const suffix of ['?owned=1', '#section'])
+      expect(redirectRegex.test(fixtureUrl + suffix)).toBe(false);
     expect(redirectRegex.test(fixtureUrl + 'index.html')).toBe(false);
     for (const path of ['/AionPhish', '/AionPhish/', '/AionPhish/script.js'])
       expect(blockRegex.test('https://mfrey18.github.io' + path)).toBe(true);
@@ -187,7 +241,7 @@ describe('controlled Chrome build', () => {
       const html = await readFile(join(dir, 'hold.html'), 'utf8');
       expect(html).not.toContain('<iframe');
       expect(html).not.toContain('<img');
-      expect(html).toContain('no automatic release');
+      expect(html).toContain('completed check with no findings → open');
     } finally {
       await rm(dir, { recursive: true, force: true });
     }
@@ -341,4 +395,300 @@ describe('controlled Chrome worker authority', () => {
       expect(w.saved.requests?.[requestId]).toBeUndefined();
     },
   );
+});
+
+function releaseStatus(now: number) {
+  return {
+    requestId,
+    runId: 'run_001',
+    state: 'COMPLETE',
+    classification: 'UNDETERMINED',
+    decision: 'RELEASE',
+    execution: 'SUCCEEDED',
+    cleanup: 'RETAINED',
+    release: {
+      policy: 'NO_FINDINGS_V1',
+      url: fixtureUrl,
+      expiresAt: new Date(now + 10000).toISOString(),
+    },
+  };
+}
+
+async function readyRelease() {
+  const w = await worker();
+  await w.configure();
+  await w.send();
+  w.fetch.mockImplementation(async () => new Response(JSON.stringify(releaseStatus(w.now()))));
+  return w;
+}
+
+describe('controlled Chrome navigation release', () => {
+  it('opens a completed no-findings check once with an exact tab-scoped GET main-frame grant', async () => {
+    const w = await readyRelease();
+    expect(await w.send('RELEASE')).toMatchObject({ ok: true, state: 'RELEASING' });
+    expect(w.tabsUpdate).toHaveBeenCalledExactlyOnceWith(1, { url: fixtureUrl });
+    const allow = w.installed.get(7103);
+    expect(allow.action).toEqual({ type: 'allow' });
+    expect(allow.condition).toMatchObject({
+      tabIds: [1],
+      resourceTypes: ['main_frame'],
+      requestMethods: ['get'],
+      isUrlFilterCaseSensitive: true,
+    });
+    const exact = new RegExp(allow.condition.regexFilter);
+    expect(exact.test(fixtureUrl)).toBe(true);
+    for (const url of [
+      fixtureUrl + '?next=1',
+      fixtureUrl + 'extra',
+      fixtureUrl.replace('https:', 'http:'),
+      'https://other.example/',
+    ])
+      expect(exact.test(url)).toBe(false);
+    expect(w.installed.get(7104)).toMatchObject({
+      action: { type: 'block' },
+      condition: { tabIds: [1], resourceTypes: ['main_frame'] },
+    });
+    expect(allow.priority).toBeGreaterThan(w.installed.get(7104).priority);
+    expect([...w.installed.values()].some((rule) => rule.action?.type === 'allowAllRequests')).toBe(
+      false,
+    );
+    expect(w.saved.requests[requestId].consumed).toBe(true);
+    expect(await w.send('RELEASE')).toMatchObject({ ok: false });
+    expect(w.tabsUpdate).toHaveBeenCalledTimes(1);
+  });
+
+  it.each([
+    ['checking', { state: 'CHECKING' }],
+    ['finding', { classification: 'SUSPICIOUS' }],
+    ['review', { decision: 'REVIEW' }],
+    ['failed execution', { execution: 'FAILED' }],
+    ['pending cleanup', { cleanup: 'PENDING' }],
+    ['wrong request', { requestId: '22222222-2222-4222-8222-222222222222' }],
+    ['wrong run', { runId: 'run_other' }],
+    ['wrong policy', { release: { policy: 'ALLOWLIST_V1' } }],
+    ['wrong destination', { release: { url: fixtureUrl + '?other=1' } }],
+    ['expired', { release: { expiresAt: '2000-01-01T00:00:00.000Z' } }],
+    ['malformed expiry', { release: { expiresAt: 'invalid' } }],
+    ['unbounded expiry', { release: { expiresAt: '2999-01-01T00:00:00.000Z' } }],
+  ])('keeps held for %s', async (_name, patch) => {
+    const w = await readyRelease();
+    const good = releaseStatus(w.now());
+    const body = {
+      ...good,
+      ...patch,
+      release: { ...good.release, ...('release' in patch ? patch.release : {}) },
+    };
+    w.fetch.mockImplementation(async () => new Response(JSON.stringify(body)));
+    expect(await w.send('RELEASE')).toMatchObject({ ok: false });
+    expect(w.tabsUpdate).not.toHaveBeenCalled();
+    expect(w.installed.has(7103)).toBe(false);
+    expect(w.installed.has(7102)).toBe(true);
+  });
+
+  it('rejects absent ownership, a changed document, another tab, and an expired lease', async () => {
+    const w = await readyRelease();
+    expect(
+      await w.send('RELEASE', sender, { requestId: '22222222-2222-4222-8222-222222222222' }),
+    ).toMatchObject({ ok: false });
+    w.contexts.mockResolvedValue([
+      { documentId: 'document_002', documentUrl: holdUrl, tabId: 1, frameId: 0 },
+    ]);
+    expect(await w.send('RELEASE', { ...sender, documentId: 'document_002' })).toMatchObject({
+      ok: false,
+    });
+    w.contexts.mockResolvedValue([
+      { documentId: sender.documentId, documentUrl: holdUrl, tabId: 2, frameId: 0 },
+    ]);
+    expect(await w.send('RELEASE', { ...sender, tab: { id: 2 } })).toMatchObject({ ok: false });
+    w.contexts.mockResolvedValue([
+      { documentId: sender.documentId, documentUrl: holdUrl, tabId: 1, frameId: 0 },
+    ]);
+    w.advance(120001);
+    expect(await w.send('RELEASE')).toMatchObject({ ok: false });
+    expect(w.tabsUpdate).not.toHaveBeenCalled();
+  });
+
+  it.each(['commit', 'navigationError', 'removeTab', 'expiry'] as const)(
+    'revokes the temporary gate after %s without removing the hold',
+    async (event) => {
+      const w = await readyRelease();
+      await w.send('RELEASE');
+      if (event === 'expiry') {
+        w.advance(10001);
+        w.alarm('controlled-release-expiry');
+      } else w[event]();
+      await vi.waitFor(() => expect(w.installed.has(7103)).toBe(false));
+      expect(w.installed.has(7104)).toBe(false);
+      expect(w.installed.has(7105)).toBe(event === 'commit');
+      expect(w.installed.has(7102)).toBe(true);
+      expect(w.saved.release).toBeUndefined();
+      expect(await w.send('RELEASE')).toMatchObject({ ok: false });
+    },
+  );
+
+  it('retains only path-scoped subresources after commit, then removes them on the next navigation', async () => {
+    const w = await readyRelease();
+    await w.send('RELEASE');
+    const assets = w.installed.get(7105);
+    expect(assets.action).toEqual({ type: 'allow' });
+    expect(assets.condition).toEqual({
+      regexFilter: artifacts.rules[1]!.condition.regexFilter,
+      isUrlFilterCaseSensitive: true,
+      tabIds: [1],
+      excludedResourceTypes: ['main_frame', 'sub_frame'],
+    });
+    w.commit();
+    await vi.waitFor(() => expect(w.saved.release).toBeUndefined());
+    expect(w.installed.has(7103)).toBe(false);
+    expect(w.installed.has(7105)).toBe(true);
+    w.beforeNavigate();
+    await vi.waitFor(() => expect(w.installed.has(7105)).toBe(false));
+  });
+
+  it('ignores commits in unrelated tabs and subframes', async () => {
+    const w = await readyRelease();
+    await w.send('RELEASE');
+    w.commit({ tabId: 2, frameId: 0 });
+    w.commit({ tabId: 1, frameId: 1 });
+    await w.context.serialize(async () => undefined);
+    expect(w.installed.has(7103)).toBe(true);
+  });
+
+  it('consumes concurrent release attempts only once', async () => {
+    const w = await readyRelease();
+    const results = await Promise.all([w.send('RELEASE'), w.send('RELEASE')]);
+    expect(results.filter((result) => result.ok)).toHaveLength(1);
+    expect(w.tabsUpdate).toHaveBeenCalledTimes(1);
+  });
+
+  it.each(['disarm', 'configure'] as const)(
+    'rejects a release response after %s replaces its authority',
+    async (change) => {
+      const w = await readyRelease();
+      let finishJson!: (value: unknown) => void;
+      const body = new Promise((resolve) => {
+        finishJson = resolve;
+      });
+      const json = vi.fn(() => body);
+      w.fetch.mockResolvedValueOnce({ ok: true, status: 200, json } as unknown as Response);
+      const result = w.send('RELEASE');
+      await vi.waitFor(() => expect(json).toHaveBeenCalled());
+      await w[change]();
+      finishJson(releaseStatus(w.now()));
+      expect(await result).toMatchObject({ ok: false });
+      expect(w.tabsUpdate).not.toHaveBeenCalled();
+      expect(w.installed.has(7103)).toBe(false);
+    },
+  );
+
+  it('rechecks the document after the controller response before opening the gate', async () => {
+    const w = await readyRelease();
+    w.fetch.mockImplementationOnce(async () => {
+      w.contexts.mockResolvedValue([]);
+      return new Response(JSON.stringify(releaseStatus(w.now())));
+    });
+    expect(await w.send('RELEASE')).toMatchObject({ ok: false });
+    expect(w.tabsUpdate).not.toHaveBeenCalled();
+    expect(w.installed.has(7103)).toBe(false);
+  });
+
+  it('does not navigate when installing the temporary rules fails', async () => {
+    const w = await readyRelease();
+    w.updateSessionRules.mockRejectedValueOnce(new Error('Rules unavailable'));
+    expect(await w.send('RELEASE')).toMatchObject({ ok: false });
+    expect(w.tabsUpdate).not.toHaveBeenCalled();
+    expect(w.saved.release).toBeUndefined();
+    expect(w.saved.requests[requestId].consumed).toBe(true);
+    expect(w.installed.has(7103)).toBe(false);
+  });
+
+  it('revalidates controller authority after waiting in the mutation queue', async () => {
+    const w = await readyRelease();
+    let unblock!: () => void;
+    const queued = w.context.serialize(
+      () =>
+        new Promise<void>((resolve) => {
+          unblock = resolve;
+        }),
+    );
+    let decision = 'RELEASE';
+    w.fetch.mockImplementation(
+      async () => new Response(JSON.stringify({ ...releaseStatus(w.now()), decision })),
+    );
+    const result = w.send('RELEASE');
+    await vi.waitFor(() => expect(w.fetch).toHaveBeenCalledTimes(2));
+    decision = 'REVIEW';
+    unblock();
+    await queued;
+    expect(await result).toMatchObject({ ok: false });
+    expect(w.fetch).toHaveBeenCalledTimes(3);
+    expect(w.tabsUpdate).not.toHaveBeenCalled();
+  });
+
+  it.each(['runId', 'requestId'])(
+    'rejects changed %s in the serialized status recheck',
+    async (key) => {
+      const w = await readyRelease();
+      w.fetch.mockResolvedValueOnce(new Response(JSON.stringify(releaseStatus(w.now()))));
+      w.fetch.mockResolvedValueOnce(
+        new Response(JSON.stringify({ ...releaseStatus(w.now()), [key]: 'changed' })),
+      );
+      expect(await w.send('RELEASE')).toMatchObject({ ok: false });
+      expect(w.tabsUpdate).not.toHaveBeenCalled();
+    },
+  );
+
+  it('ignores stale hold and blank-page commit/error events while a grant is active', async () => {
+    const w = await readyRelease();
+    await w.send('RELEASE');
+    for (const url of [holdUrl, 'about:blank']) {
+      w.commit({ tabId: 1, frameId: 0, url });
+      w.navigationError({ tabId: 1, frameId: 0, url });
+    }
+    await w.context.serialize(async () => undefined);
+    expect(w.installed.has(7103)).toBe(true);
+    expect(w.saved.release).toBeDefined();
+  });
+
+  it('keeps committed assets for other tabs, and removes them when their own tab closes', async () => {
+    const w = await readyRelease();
+    await w.send('RELEASE');
+    w.commit();
+    await vi.waitFor(() => expect(w.saved.assetTab).toBe(1));
+    w.beforeNavigate({ tabId: 2, frameId: 0 });
+    w.removeTab(2);
+    await w.context.serialize(async () => undefined);
+    expect(w.installed.has(7105)).toBe(true);
+    w.removeTab(1);
+    await vi.waitFor(() => expect(w.installed.has(7105)).toBe(false));
+    expect(w.saved.assetTab).toBeUndefined();
+  });
+
+  it.each([-1000, 10000])(
+    'revokes an interrupted grant at worker startup, expiry offset %i',
+    async (offset) => {
+      const w = await worker(
+        {
+          release: { tabId: 1, requestId, expiresAt: Date.now() + offset },
+          requests: { [requestId]: { tabId: 1, documentId: sender.documentId, consumed: true } },
+        },
+        [{ id: 7103 }, { id: 7104 }, { id: 7105 }, { id: 7102 }],
+      );
+      await w.context.serialize(async () => undefined);
+      expect(w.saved.release).toBeUndefined();
+      expect(w.saved.requests[requestId].consumed).toBe(true);
+      expect([...w.installed.keys()]).toEqual([9999, 7102]);
+      expect(w.tabsUpdate).not.toHaveBeenCalled();
+    },
+  );
+
+  it('removes the gate and consumes the grant if navigation fails', async () => {
+    const w = await readyRelease();
+    w.tabsUpdate.mockRejectedValueOnce(new Error('Tab closed'));
+    expect(await w.send('RELEASE')).toMatchObject({ ok: false });
+    expect(w.installed.has(7103)).toBe(false);
+    expect(w.saved.release).toBeUndefined();
+    expect(w.saved.requests[requestId].consumed).toBe(true);
+    expect(await w.send('RELEASE')).toMatchObject({ ok: false });
+  });
 });

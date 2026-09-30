@@ -1,6 +1,8 @@
-import { describe, expect, it } from 'vitest';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import { SandboxClient } from '@solarisdk/sandbox';
 import {
   SolariInspector,
+  solariProvider,
   solariConfigFromEnv,
   waitForInventoryAbsence,
   reconcileSolariSandbox,
@@ -319,5 +321,55 @@ describe('complete Solari reconciliation', () => {
         async () => {},
       ),
     ).toBe(false);
+  });
+});
+
+describe('Solari signed-capability stop reconciliation', () => {
+  afterEach(() => vi.restoreAllMocks());
+  async function providerVm(kill: () => Promise<void>) {
+    vi.spyOn(SandboxClient.prototype, 'create').mockResolvedValue({ id: rawId, kill } as Awaited<
+      ReturnType<SandboxClient['create']>
+    >);
+    vi.spyOn(SandboxClient.prototype, 'kill').mockRejectedValue({ status: 404 });
+    const loaded = solariConfigFromEnv({
+      SOLARI_API_KEY: 'test',
+      AIONGUARD_FIXTURE_URL: config.fixture.url,
+      AIONGUARD_IDP_ORIGINS: 'https://id.example',
+    })!;
+    return solariProvider.create(
+      { name: 'owned-stop-test', config: loaded },
+      AbortSignal.timeout(5000),
+    );
+  }
+  it('confirms stop after signed kill fails only when complete inventories and point lookups prove absence', async () => {
+    const list = vi.spyOn(SandboxClient.prototype, 'list').mockResolvedValue({ sandboxes: [] });
+    const get = vi.spyOn(SandboxClient.prototype, 'get').mockRejectedValue({ status: 404 });
+    const vm = await providerVm(async () => {
+      throw new Error('expired capability');
+    });
+    expect(await vm.stop(AbortSignal.timeout(5000))).toEqual({ status: 'stopped' });
+    expect(list).toHaveBeenCalledTimes(10);
+    expect(get).toHaveBeenCalledTimes(10);
+    await vm.delete(AbortSignal.timeout(5000));
+    expect(list).toHaveBeenCalledTimes(10);
+  });
+  it('does not convert failed kill and ambiguous lookup into confirmed stop', async () => {
+    vi.spyOn(SandboxClient.prototype, 'list').mockResolvedValue({ sandboxes: [] });
+    vi.spyOn(SandboxClient.prototype, 'get').mockRejectedValue({ status: 503 });
+    const vm = await providerVm(async () => {
+      throw new Error('kill unavailable');
+    });
+    expect(await vm.stop(AbortSignal.timeout(5000))).toEqual({ status: 'unknown' });
+  });
+  it('does not reconcile after the stop signal aborts', async () => {
+    const list = vi.spyOn(SandboxClient.prototype, 'list').mockResolvedValue({ sandboxes: [] });
+    const controller = new AbortController();
+    const vm = await providerVm(async () => {
+      await Promise.resolve();
+      controller.abort();
+      throw new Error('cancelled');
+    });
+    await expect(vm.stop(controller.signal)).rejects.toThrow();
+    expect(list).not.toHaveBeenCalled();
   });
 });

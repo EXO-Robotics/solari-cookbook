@@ -46,7 +46,7 @@ export function controlledChromeArtifacts(config: ControlledChromeDemoConfig) {
       priority: 20,
       action: { type: 'redirect', redirect: { extensionPath: '/hold.html' } },
       condition: {
-        regexFilter: `^${escapeRegex(target.url)}(?:[?#].*)?$`,
+        regexFilter: `^${escapeRegex(target.url)}$`,
         isUrlFilterCaseSensitive: true,
         resourceTypes: ['main_frame'],
       },
@@ -55,7 +55,27 @@ export function controlledChromeArtifacts(config: ControlledChromeDemoConfig) {
       id: 7102,
       priority: 10,
       action: { type: 'block' },
-      condition: { regexFilter: blockPattern, isUrlFilterCaseSensitive: true },
+      condition: {
+        regexFilter: blockPattern,
+        isUrlFilterCaseSensitive: true,
+        resourceTypes: [
+          'main_frame',
+          'sub_frame',
+          'stylesheet',
+          'script',
+          'image',
+          'font',
+          'object',
+          'xmlhttprequest',
+          'ping',
+          'csp_report',
+          'media',
+          'websocket',
+          'webtransport',
+          'webbundle',
+          'other',
+        ],
+      },
     },
   ];
   const manifest = {
@@ -64,7 +84,7 @@ export function controlledChromeArtifacts(config: ControlledChromeDemoConfig) {
     version: '1.0.0',
     description: 'Disposable-profile demonstration for one owned registered fixture.',
     minimum_chrome_version: '120',
-    permissions: ['declarativeNetRequestWithHostAccess', 'storage', 'alarms'],
+    permissions: ['declarativeNetRequest', 'storage', 'alarms', 'webNavigation'],
     host_permissions: [`${target.origin}/*`, `${controller.origin}/*`],
     background: { service_worker: 'background.js' },
     web_accessible_resources: [
@@ -81,6 +101,7 @@ export function controlledChromeArtifacts(config: ControlledChromeDemoConfig) {
   };
   const workerConfig = `globalThis.AIONGUARD_CHROME = Object.freeze(${JSON.stringify({
     fixtureId: FIXTURE_ID,
+    fixtureUrl: target.url,
     controllerOrigin: controller.origin,
     rules,
   })});\n`;

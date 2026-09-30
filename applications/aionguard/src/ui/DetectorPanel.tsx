@@ -62,7 +62,7 @@ export function DetectorPanel({
     : snapshot.link.cleanup.state.toLowerCase().replaceAll('_', ' ');
   const classification =
     snapshot.link.classification === 'UNDETERMINED'
-      ? 'No matching warning signs — safety undetermined'
+      ? 'No warning signs detected'
       : snapshot.link.classification.replaceAll('_', ' ').toLowerCase();
   return (
     <>
@@ -86,9 +86,11 @@ export function DetectorPanel({
           {snapshot.modes.inspection} · {provider} inspection
         </span>
         <span>
-          {snapshot.execution === 'BLOCKED'
-            ? 'inspection complete · no navigation released'
-            : snapshot.execution.toLowerCase().replaceAll('_', ' ')}
+          {snapshot.link.decision === 'RELEASE'
+            ? 'no findings · browser release authorized'
+            : snapshot.execution === 'BLOCKED'
+              ? 'warning signs found · navigation blocked'
+              : snapshot.execution.toLowerCase().replaceAll('_', ' ')}
         </span>
         <span>Cleanup: {cleanupLabel}</span>
         <span className="run-label">{snapshot.identity.runId.slice(0, 16)}…</span>

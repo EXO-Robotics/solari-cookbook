@@ -460,7 +460,15 @@ export const LinkAssessmentSchema = z
   .object({
     execution: z.enum(['PENDING', 'SUCCEEDED', 'UNAVAILABLE']),
     classification: z.enum(['PENDING', 'SUSPICIOUS', 'INSPECTION_UNAVAILABLE', 'UNDETERMINED']),
-    decision: z.literal('BLOCK'),
+    decision: z.enum(['BLOCK', 'REVIEW', 'RELEASE']),
+    release: z
+      .object({
+        url: z.url().max(2048),
+        expiresAt: TimestampSchema,
+        policy: z.literal('NO_FINDINGS_V1'),
+      })
+      .strict()
+      .optional(),
     ruleIds: z.array(z.string().max(40)),
     findings: z.array(ThreatFindingSchema).max(5).default([]),
     mode: ModeSchema,
@@ -506,6 +514,8 @@ export const EventTypeSchema = z.enum([
   'NAVIGATION_HELD',
   'INSPECTION_STARTED',
   'LINK_BLOCKED',
+  'REVIEW_REQUIRED',
+  'POLICY_RELEASE_GRANTED',
   'SCENARIO_STARTED',
   'PLANNER_DISPATCHED',
   'PLANNER_DECIDED',
@@ -548,6 +558,8 @@ export const ExecutionSchema = z.enum([
   'VERIFYING',
   'COMPLETE',
   'BLOCKED',
+  'REVIEW',
+  'RELEASE_READY',
 ]);
 export const CaseSnapshotSchema = z
   .object({

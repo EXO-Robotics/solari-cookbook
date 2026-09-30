@@ -1,3 +1,4 @@
+import { applyReleasePolicy, type ReleasePolicy } from './release-policy.js';
 import { createHash, randomUUID } from 'node:crypto';
 import {
   ASSUMPTIONS,
@@ -67,6 +68,7 @@ const emptyCleanup = () => ({
   deletedAt: null,
 });
 export interface ControllerOptions {
+  releasePolicy?: ReleasePolicy;
   workflow?: 'DETECTOR' | 'SYNTHETIC';
   inspectionSource?: InspectionResult['source'];
   comparisonReport?: unknown;
@@ -250,10 +252,25 @@ export class CaseController {
       );
       if (a.link.execution === 'SUCCEEDED' && result.pngBase64)
         a.png = Buffer.from(result.pngBase64, 'base64');
-      this.event(a, 'LINK_BLOCKED', { reason: a.link.classification });
+      if (this.options.workflow === 'DETECTOR')
+        a.link = applyReleasePolicy(a.link, this.options.releasePolicy, a.trigger);
+      this.event(
+        a,
+        a.link.decision === 'RELEASE'
+          ? 'POLICY_RELEASE_GRANTED'
+          : a.link.decision === 'REVIEW'
+            ? 'REVIEW_REQUIRED'
+            : 'LINK_BLOCKED',
+        { reason: a.link.classification },
+      );
       if (a.link.cleanup.state === 'UNRESOLVED') this.event(a, 'CLEANUP_UNRESOLVED');
       if (this.options.workflow === 'DETECTOR' || a.link.classification !== 'SUSPICIOUS') {
-        a.execution = 'BLOCKED';
+        a.execution =
+          a.link.decision === 'RELEASE'
+            ? 'RELEASE_READY'
+            : a.link.decision === 'REVIEW'
+              ? 'REVIEW'
+              : 'BLOCKED';
         return;
       }
       a.session.observations = a.environment.initialObservations(a.session.identity);

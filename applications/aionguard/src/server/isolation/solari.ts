@@ -453,7 +453,13 @@ export const solariProvider: SolariProvider = {
       },
       async stop(signal) {
         activeSignal = signal;
-        await bounded(sandbox.kill(), signal);
+        try {
+          await bounded(sandbox.kill(), signal);
+        } catch {
+          // Signed capabilities can expire after termination. A failed kill is
+          // not absence proof, but must not skip authoritative reconciliation.
+          signal.throwIfAborted();
+        }
         absenceConfirmed = await confirmAbsent(signal);
         return { status: absenceConfirmed ? 'stopped' : 'unknown' };
       },

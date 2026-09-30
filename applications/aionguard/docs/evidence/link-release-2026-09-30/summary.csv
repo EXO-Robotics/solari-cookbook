@@ -1,0 +1,3 @@
+scenario,decision,click_to_release_request_ms,click_to_destination_loaded_ms,click_to_warning_ms,destination_http_requests
+benign,RELEASE,2071.2998046875,2272.999755859375,,3
+phishing,BLOCK,,,1775.5,0

@@ -19,13 +19,21 @@ async function check() {
       const result = await chrome.runtime.sendMessage({ type: 'STATUS', requestId });
       if (!result?.ok) return failed();
       if (result.state === 'COMPLETE') {
-        const suspicious = result.classification === 'SUSPICIOUS';
-        heading.textContent = suspicious
-          ? 'Warning signs found.'
-          : 'No finding is not a safe verdict.';
+        document.body.dataset.decision = result.decision;
+        if (result.decision === 'RELEASE') {
+          heading.textContent = 'No warning signs detected. Opening…';
+          status.textContent =
+            'The check completed without findings. Opening the destination in this browser.';
+          document.body.dataset.state = 'RELEASING';
+          const released = await chrome.runtime.sendMessage({ type: 'RELEASE', requestId });
+          if (!released?.ok) failed();
+          return;
+        }
+        const suspicious = result.decision === 'BLOCK';
+        heading.textContent = suspicious ? 'Warning signs found.' : 'This check needs review.';
         status.textContent = suspicious
           ? 'The link stays blocked. Solari collected the evidence without opening the destination here.'
-          : 'The inspection returned no finding. This demonstration keeps navigation held.';
+          : 'The check could not authorize navigation. Review the evidence or try again.';
         receipt.href = result.receiptUrl;
         receipt.hidden = false;
         document.body.dataset.classification = result.classification;

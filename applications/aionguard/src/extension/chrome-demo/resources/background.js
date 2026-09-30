@@ -4,6 +4,8 @@ const config = globalThis.AIONGUARD_CHROME;
 const holdUrl = chrome.runtime.getURL('hold.html');
 const ruleIds = config.rules.map((rule) => rule.id);
 const alarmName = 'controlled-click-expiry';
+const releaseAlarm = 'controlled-release-expiry';
+const releaseRuleIds = [7103, 7104];
 const pending = new Map();
 const aborts = new Set();
 let mutation = Promise.resolve();
@@ -26,7 +28,20 @@ function serialize(task) {
   return result;
 }
 
+async function clearRelease(keepAssets = false) {
+  // Restore the hold before dropping the record. Failure retains retry information.
+  await chrome.declarativeNetRequest.updateSessionRules({
+    removeRuleIds: keepAssets ? releaseRuleIds : [...releaseRuleIds, 7105],
+  });
+  const { release } = await chrome.storage.session.get('release');
+  if (keepAssets && release) await chrome.storage.session.set({ assetTab: release.tabId });
+  else await chrome.storage.session.remove(['assetTab']);
+  await chrome.storage.session.remove(['release']);
+  await chrome.alarms.clear(releaseAlarm);
+}
+
 async function revoke() {
+  await clearRelease();
   await chrome.storage.session.remove(['lease', 'requests']);
   for (const abort of aborts) abort.abort();
   pending.clear();
@@ -148,7 +163,10 @@ async function inspect(message, sender, lease) {
   const { requests = {} } = await chrome.storage.session.get('requests');
   if (!(await sameLease(lease))) return held();
   const existing = requests[message.requestId];
-  if (existing) return existing.tabId === sender.tab.id ? existing.result : held();
+  if (existing)
+    return existing.tabId === sender.tab.id && existing.documentId === sender.documentId
+      ? existing.result
+      : held();
   if (Object.keys(requests).length >= 32) return held();
   const { body, status } = await controllerRequest('/api/controlled-click/entry', lease, {
     method: 'POST',
@@ -162,7 +180,10 @@ async function inspect(message, sender, lease) {
     const latest = await chrome.storage.session.get('requests');
     if (!(await sameLease(lease))) return held();
     await chrome.storage.session.set({
-      requests: { ...latest.requests, [message.requestId]: { tabId: sender.tab.id, result } },
+      requests: {
+        ...latest.requests,
+        [message.requestId]: { tabId: sender.tab.id, documentId: sender.documentId, result },
+      },
     });
     return (await sameLease(lease)) ? result : held();
   });
@@ -172,7 +193,7 @@ async function handle(message, sender) {
   if (
     !exactKeys(message, ['type', 'requestId']) ||
     !uuid(message.requestId) ||
-    !['INSPECT', 'STATUS'].includes(message.type) ||
+    !['INSPECT', 'STATUS', 'RELEASE'].includes(message.type) ||
     !(await validSender(sender))
   )
     return held();
@@ -182,17 +203,25 @@ async function handle(message, sender) {
     const key = `${lease.generation}:${message.requestId}`;
     if (pending.has(key)) {
       const job = pending.get(key);
-      return job.tabId === sender.tab.id ? job.promise : held();
+      return job.tabId === sender.tab.id && job.documentId === sender.documentId
+        ? job.promise
+        : held();
     }
     const promise = inspect(message, sender, lease)
       .catch(held)
       .finally(() => pending.delete(key));
-    pending.set(key, { tabId: sender.tab.id, promise });
+    pending.set(key, { tabId: sender.tab.id, documentId: sender.documentId, promise });
     return promise;
   }
   const { requests = {} } = await chrome.storage.session.get('requests');
   const registered = requests[message.requestId];
-  if (!registered || registered.tabId !== sender.tab.id) return held();
+  if (
+    !registered ||
+    registered.tabId !== sender.tab.id ||
+    registered.documentId !== sender.documentId ||
+    registered.consumed
+  )
+    return held();
   const { body } = await controllerRequest('/api/controlled-click/status', lease, {
     method: 'POST',
     body: JSON.stringify({ requestId: message.requestId }),
@@ -201,17 +230,29 @@ async function handle(message, sender) {
     body.requestId !== message.requestId ||
     !['CHECKING', 'COMPLETE', 'ERROR'].includes(body.state) ||
     (body.runId !== undefined && body.runId !== registered.result.runId) ||
-    (body.state === 'COMPLETE' && !['SUSPICIOUS', 'UNDETERMINED'].includes(body.classification))
+    (body.state === 'COMPLETE' &&
+      !['SUSPICIOUS', 'UNDETERMINED', 'INSPECTION_UNAVAILABLE'].includes(body.classification))
   )
     return held();
   return serialize(async () => {
-    if (!(await sameLease(lease))) return held();
+    if (!(await sameLease(lease)) || !(await validSender(sender))) return held();
+    if (message.type === 'RELEASE') {
+      const { body: fresh } = await controllerRequest('/api/controlled-click/status', lease, {
+        method: 'POST',
+        body: JSON.stringify({ requestId: message.requestId }),
+      });
+      if (fresh.requestId !== message.requestId || fresh.runId !== registered.result.runId)
+        return held();
+      return releaseNavigation(fresh, message, sender, lease);
+    }
     return {
       ok: body.state !== 'ERROR',
       state: body.state,
       requestId: message.requestId,
       runId: registered.result.runId,
-      ...(body.state === 'COMPLETE' ? { classification: body.classification } : {}),
+      ...(body.state === 'COMPLETE'
+        ? { classification: body.classification, decision: body.decision ?? 'REVIEW' }
+        : {}),
       receiptUrl: `${config.controllerOrigin}/?run=${encodeURIComponent(registered.result.runId)}`,
     };
   });
@@ -227,4 +268,129 @@ chrome.alarms.onAlarm.addListener((alarm) => {
       const { lease } = await chrome.storage.session.get('lease');
       if (lease && lease.expiresAt <= Date.now()) await revoke();
     });
+});
+
+// A policy grant can open only the build-time URL, once, in its original held tab.
+// No allowAllRequests or domain-wide bypass is installed. A temporary main-frame
+// guard blocks changed HTTP redirect destinations until commit/error/expiry.
+async function releaseNavigation(body, message, sender, lease) {
+  const expiresAt = Date.parse(body.release?.expiresAt ?? '');
+  if (
+    body.state !== 'COMPLETE' ||
+    body.decision !== 'RELEASE' ||
+    body.classification !== 'UNDETERMINED' ||
+    body.execution !== 'SUCCEEDED' ||
+    !['CONFIRMED', 'RETAINED'].includes(body.cleanup) ||
+    body.release?.policy !== 'NO_FINDINGS_V1' ||
+    body.release.url !== config.fixtureUrl ||
+    !Number.isFinite(expiresAt) ||
+    expiresAt <= Date.now() ||
+    expiresAt > Date.now() + 15000
+  )
+    return held();
+  const { requests = {}, release } = await chrome.storage.session.get(null);
+  const record = requests[message.requestId];
+  if (
+    release ||
+    !record ||
+    record.consumed ||
+    record.tabId !== sender.tab.id ||
+    record.documentId !== sender.documentId
+  )
+    return held();
+  const target = config.fixtureUrl.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const grant = {
+    tabId: sender.tab.id,
+    requestId: message.requestId,
+    expiresAt: Math.min(expiresAt, lease.expiresAt),
+  };
+  // Persist consumed authority before opening any network gate, including on restart.
+  await chrome.storage.session.set({
+    requests: { ...requests, [message.requestId]: { ...record, consumed: true } },
+    release: grant,
+  });
+  try {
+    await chrome.alarms.create(releaseAlarm, { when: grant.expiresAt });
+    await chrome.declarativeNetRequest.updateSessionRules({
+      removeRuleIds: [...releaseRuleIds, 7105],
+      addRules: [
+        {
+          id: 7103,
+          priority: 40,
+          action: { type: 'allow' },
+          condition: {
+            regexFilter: '^' + target + '$',
+            isUrlFilterCaseSensitive: true,
+            tabIds: [sender.tab.id],
+            resourceTypes: ['main_frame'],
+            requestMethods: ['get'],
+          },
+        },
+        {
+          id: 7105,
+          priority: 25,
+          action: { type: 'allow' },
+          condition: {
+            regexFilter: config.rules[1].condition.regexFilter,
+            isUrlFilterCaseSensitive: true,
+            tabIds: [sender.tab.id],
+            excludedResourceTypes: ['main_frame', 'sub_frame'],
+          },
+        },
+        {
+          id: 7104,
+          priority: 30,
+          action: { type: 'block' },
+          condition: {
+            tabIds: [sender.tab.id],
+            resourceTypes: ['main_frame'],
+          },
+        },
+      ],
+    });
+    if (!(await sameLease(lease)) || Date.now() >= grant.expiresAt || !(await validSender(sender)))
+      throw new Error('Expired or changed context');
+    await chrome.tabs.update(sender.tab.id, { url: config.fixtureUrl });
+    return { ok: true, state: 'RELEASING', requestId: message.requestId };
+  } catch {
+    await clearRelease();
+    return held();
+  }
+}
+
+function finishRelease(details, committed = false) {
+  if (details.frameId !== 0 || details.url !== config.fixtureUrl) return;
+  void serialize(async () => {
+    const { release } = await chrome.storage.session.get('release');
+    if (release?.tabId === details.tabId)
+      await clearRelease(committed && details.url === config.fixtureUrl);
+  });
+}
+chrome.webNavigation.onCommitted.addListener((details) => finishRelease(details, true));
+chrome.webNavigation.onErrorOccurred.addListener(finishRelease);
+chrome.tabs.onRemoved.addListener((tabId) => {
+  void serialize(async () => {
+    const { release, assetTab } = await chrome.storage.session.get(null);
+    if (release?.tabId === tabId || assetTab === tabId) await clearRelease();
+  });
+});
+chrome.alarms.onAlarm.addListener((alarm) => {
+  if (alarm.name === releaseAlarm) void serialize(() => clearRelease());
+});
+// Never resume an interrupted navigation grant after a worker restart.
+// Consumed authority stays consumed; retry requires a new inspection.
+void serialize(async () => {
+  const { release } = await chrome.storage.session.get('release');
+  if (release) await clearRelease();
+});
+
+chrome.webNavigation.onBeforeNavigate.addListener((details) => {
+  if (details.frameId !== 0) return;
+  void serialize(async () => {
+    const { release, assetTab } = await chrome.storage.session.get(null);
+    if (!release && assetTab === details.tabId) {
+      await chrome.declarativeNetRequest.updateSessionRules({ removeRuleIds: [7105] });
+      await chrome.storage.session.remove(['assetTab']);
+    }
+  });
 });

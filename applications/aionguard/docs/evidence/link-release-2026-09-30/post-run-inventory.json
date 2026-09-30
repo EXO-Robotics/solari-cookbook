@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "samples": [
+    {
+      "at": "2026-09-30T14:37:53.939Z",
+      "aionguardResources": 0,
+      "complete": true
+    },
+    {
+      "at": "2026-09-30T14:37:54.299Z",
+      "aionguardResources": 0,
+      "complete": true
+    },
+    {
+      "at": "2026-09-30T14:37:54.679Z",
+      "aionguardResources": 0,
+      "complete": true
+    },
+    {
+      "at": "2026-09-30T14:37:55.235Z",
+      "aionguardResources": 0,
+      "complete": true
+    },
+    {
+      "at": "2026-09-30T14:37:55.762Z",
+      "aionguardResources": 0,
+      "complete": true
+    },
+    {
+      "at": "2026-09-30T14:37:56.156Z",
+      "aionguardResources": 0,
+      "complete": true
+    },
+    {
+      "at": "2026-09-30T14:37:56.523Z",
+      "aionguardResources": 0,
+      "complete": true
+    },
+    {
+      "at": "2026-09-30T14:37:56.888Z",
+      "aionguardResources": 0,
+      "complete": true
+    },
+    {
+      "at": "2026-09-30T14:37:57.324Z",
+      "aionguardResources": 0,
+      "complete": true
+    },
+    {
+      "at": "2026-09-30T14:37:57.732Z",
+      "aionguardResources": 0,
+      "complete": true
+    }
+  ]
+}

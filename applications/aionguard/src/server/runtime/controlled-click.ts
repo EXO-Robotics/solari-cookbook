@@ -4,7 +4,10 @@ import { CaseController, CommandError } from './controller.ts';
 /** Explicitly enabled disposable-profile demonstration, separate from Safari recovery. */
 export class ControlledClickDemo {
   private armed: { runId: string; deadline: number; expiresAt: number } | null = null;
-  private readonly accepted = new Map<string, { runId: string; failed: boolean }>();
+  private readonly accepted = new Map<
+    string,
+    { runId: string; failed: boolean; deadline: number; revoked: boolean }
+  >();
   private closed = false;
   constructor(
     private readonly controller: CaseController,
@@ -42,11 +45,20 @@ export class ControlledClickDemo {
     // Consume admission before any async work. This cannot arm the Safari lease.
     this.armed = null;
     this.controller.revokeEntry();
-    const record = { runId: lease.runId, failed: false };
+    const record = { runId: lease.runId, failed: false, deadline: lease.deadline, revoked: false };
     this.accepted.set(requestId, record);
-    void this.controller.inspect(lease.runId, fixtureId, requestId, 'CHROME_HANDOFF').catch(() => {
-      record.failed = true;
-    });
+    void this.controller
+      .inspect(lease.runId, fixtureId, requestId, 'CHROME_HANDOFF')
+      .then((snapshot) => {
+        if (snapshot.link.release)
+          record.deadline = Math.min(
+            record.deadline,
+            this.now() + Date.parse(snapshot.link.release.expiresAt) - this.wall(),
+          );
+      })
+      .catch(() => {
+        record.failed = true;
+      });
     return { runId: lease.runId };
   }
   status(requestId: string) {
@@ -56,18 +68,36 @@ export class ControlledClickDemo {
     const snapshot = this.controller.snapshot(entry.runId);
     if (snapshot.execution === 'READY' || snapshot.execution === 'INSPECTING')
       return { state: 'CHECKING' as const, requestId, runId: entry.runId };
+    const release = snapshot.link.release;
+    // A wall-clock rollback must never revive or extend a consumed policy grant.
+    if (release)
+      entry.deadline = Math.min(
+        entry.deadline,
+        this.now() + Date.parse(release.expiresAt) - this.wall(),
+      );
+    const freshRelease =
+      !this.closed &&
+      !entry.revoked &&
+      this.now() < entry.deadline &&
+      snapshot.link.decision === 'RELEASE' &&
+      release &&
+      this.wall() < Date.parse(release.expiresAt);
+    if (snapshot.link.decision === 'RELEASE' && !freshRelease) entry.revoked = true;
     return {
       state: 'COMPLETE' as const,
       requestId,
       runId: entry.runId,
       classification: snapshot.link.classification,
       execution: snapshot.link.execution,
-      decision: snapshot.link.decision,
+      decision:
+        snapshot.link.decision === 'RELEASE' && !freshRelease ? 'REVIEW' : snapshot.link.decision,
+      ...(freshRelease ? { release } : {}),
       cleanup: snapshot.link.cleanup.state,
     };
   }
   disarm() {
     this.armed = null;
+    for (const entry of this.accepted.values()) entry.revoked = true;
     return { armed: false };
   }
   close() {

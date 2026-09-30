@@ -107,7 +107,7 @@ describe('controlled click one-case admission', () => {
     expect(() => demo.arm(f.runId)).toThrow('CONTROLLER_STOPPING');
   });
 
-  it('keeps provider failure blocked and omits raw provider errors', async () => {
+  it('keeps provider failure held for review and omits raw provider errors', async () => {
     const f = fixture();
     f.authorize();
     f.inspect.mockRejectedValueOnce(new Error('secret-provider-capability'));
@@ -117,7 +117,7 @@ describe('controlled click one-case admission', () => {
     demo.entry('acme-login', requestId);
     await vi.waitFor(() => expect(demo.status(requestId).state).toBe('COMPLETE'));
     expect(demo.status(requestId)).toMatchObject({
-      decision: 'BLOCK',
+      decision: 'REVIEW',
       classification: 'INSPECTION_UNAVAILABLE',
     });
     expect(JSON.stringify(demo.status(requestId))).not.toContain('secret-provider-capability');

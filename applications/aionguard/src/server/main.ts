@@ -92,6 +92,7 @@ try {
 }
 const controller = new CaseController({
   comparisonReport,
+  releasePolicy: inspectorConfig ? { url: inspectorConfig.fixture.url } : undefined,
   workflow: config.AIONGUARD_WORKFLOW,
   inspectionSource,
   inspector,
