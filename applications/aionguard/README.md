@@ -14,6 +14,8 @@ AionGuard holds a link, opens the destination in a prepared Solari sandbox, and 
 
 ## See it work
 
+![AionGuard on Solari: benign page opens in 2.27 seconds; phishing is blocked in 1.78 seconds with zero destination HTTP requests from the protected browser; incomplete checks stay held for review.](docs/assets/link-outcomes.svg)
+
 Live controlled Chromium tests show the complete check → open / block / review flow:
 
 | Link | What happens | Measured result |
@@ -26,11 +28,7 @@ Measured against owned test pages, with one prepared-sandbox run per page. [Resu
 
 **Warm Solari inspection: 1.41 s median · 1.49 s P95 · n=20.** Separate backend measurements on one controlled fixture, excluding preparation.
 
-**Reviewer quick path — 30-second review:** [original demo (Vercel)](#watch-the-original-demo) → [open/block evidence](docs/link-release.md#measured-live-result--september-30-2026) → [warm latency](docs/warm-solari.md) → [reproduce](docs/link-release.md#reproduce-the-live-browser-pair).
-
-![Earlier controlled-click comparison: normal click sends 4 destination HTTP requests; the protected browser sends 0. Warning in 1.98 seconds in one prepared-sandbox run.](docs/assets/controlled-click.svg)
-
-The graphic shows the earlier [baseline comparison](docs/controlled-click.md): the same phishing link produced **4 destination requests normally, versus 0 with AionGuard**. The newer open/block results above extend that demonstration.
+**Reviewer quick path — 30-second review:** [open/block evidence](docs/link-release.md#measured-live-result--september-30-2026) → [warm latency](docs/warm-solari.md) → [original 56-second product demo (Vercel)](#watch-the-original-demo) → [reproduce](docs/link-release.md#reproduce-the-live-browser-pair).
 
 ## A subscription feature for Solari
 
@@ -51,7 +49,7 @@ Solari could package the service in either of two ways:
 
 AionGuard supplies the open-source inspection and navigation controller. Solari supplies the remote execution environment. Prepared sandboxes and reuse keep the service ready between clicks.
 
-**SolariGuard is the proposed subscription offering.** The current build includes the local dashboard and Chromium inspection flow; the product roadmap adds client distribution, device enrollment, and Solari account integration.
+**SolariGuard is our proposed subscription offering.** The current build includes the local dashboard and Chromium inspection flow; the product roadmap adds client distribution, device enrollment, and Solari account integration.
 
 ## Built for links you would rather check first
 
@@ -86,6 +84,12 @@ Solari provides the sandbox lifecycle behind the checkpoint: prepare ahead, insp
 [Full timings, preparation cost, and lifecycle evidence](docs/warm-solari.md)
 
 Solari is our preferred provider for speed and convenience. Provider adapters keep the inspection layer separate from the execution substrate.
+
+## Supporting evidence: the original click comparison
+
+![Earlier controlled-click comparison: normal click sends 4 destination HTTP requests; the protected browser sends 0. Warning in 1.98 seconds in one prepared-sandbox run.](docs/assets/controlled-click.svg)
+
+The graphic shows the earlier [baseline comparison](docs/controlled-click.md): the same phishing link produced **4 destination requests normally, versus 0 with AionGuard**. The newer open/block results above extend that demonstration.
 
 ## Engineering evidence
 
