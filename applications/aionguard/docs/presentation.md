@@ -4,7 +4,8 @@
 
 ## Ready to share
 
-- [Illustrated flow chart / X image](assets/inspect-before-exposure.png): the current presentation artwork. Conceptual browser and checkpoint illustrations, paired with measured results.
+- [Measured proof / X image](assets/controlled-click.png): 4 normal-browser requests, 0 protected-browser requests, and 1.98 s click to warning.
+- [Illustrated flow chart](assets/inspect-before-exposure.png): the inspection-pipeline artwork. Conceptual browser and checkpoint illustrations, paired with measured results.
 - [Artwork provenance and prompt](assets/inspect-before-exposure.md)
 - [Measured comparison graph](assets/controlled-click.png)
 - [Post copy + image alt text](submission-post.md)

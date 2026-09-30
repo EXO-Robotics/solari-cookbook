@@ -4,15 +4,13 @@ Prepared for the user to post. Nothing has been posted to X or LinkedIn.
 
 ## Main post
 
-Attach [inspect-before-exposure.png](assets/inspect-before-exposure.png).
+Attach [controlled-click.png](assets/controlled-click.png).
 
-> AionGuard: inspect before exposure.
+> Normal click: 4 destination requests. AionGuard: 0. Warning in 1.98s.
 >
-> A hold-and-inspect checkpoint, powered by Solari.
+> AionGuard holds navigation while a prepared Solari sandbox inspects the page. One controlled Chromium test on our owned fixture.
 >
-> Controlled test: 4 → 0 local destination HTTP requests. Click → warning: 1.98s, with Solari ready beforehand.
->
-> Code + evidence: https://github.com/EXO-Robotics/AionGuard-Solari
+> https://github.com/EXO-Robotics/AionGuard-Solari
 >
 > @harrychow_ @getsolari
 
@@ -38,4 +36,4 @@ The 1.98-second result is one automated click-to-rendered-warning run, with prep
 
 ## Image alt text
 
-Conceptual illustration of AionGuard, a hold-and-inspect checkpoint powered by Solari. Local browser HTTP requests to the destination: ordinary click 4, protected click 0. The flow is click, hold navigation, inspect in a Solari sandbox prepared beforehand, and show a warning while the destination stays held. Click to warning took 1.98 seconds in one controlled Chromium comparison against an owned fixture. Code and reproducible evidence are linked in the post.
+Measured controlled-click comparison. The normal browser sent 4 HTTP requests to the destination; the AionGuard-protected browser sent 0. The warning appeared in 1.98 seconds with a Solari sandbox prepared beforehand, or 2.37 seconds including host automation. One owned fixture, one baseline and one protected Chromium click. The destination stayed held. These are request counts, not detection accuracy.

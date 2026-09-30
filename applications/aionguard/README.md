@@ -6,7 +6,7 @@ AionGuard is a pre-navigation security checkpoint for external links. It holds n
 
 ## Controlled intercepted-click test
 
-**4 → 0 destination HTTP requests from the local browser · 1.98 s click → warning**
+**Normal browser: 4 destination HTTP requests. Protected browser: 0. Warning in 1.98 s.**
 
 In one controlled comparison against our owned phishing fixture, a normal Chromium click generated four destination HTTP requests. With AionGuard intercepting the same click, the protected browser generated zero while Solari inspected the page remotely and returned a warning. The sandbox was prepared before the click, and navigation stayed held.
 
@@ -14,9 +14,11 @@ In one controlled comparison against our owned phishing fixture, a normal Chromi
 
 These are separate backend inspection measurements on one controlled fixture, excluding preparation.
 
-[Watch the original demo](#watch-the-original-demo) · [Controlled-click evidence](docs/controlled-click.md) · [Reproduce](docs/controlled-click.md#reproduce) · [Release v1.2.0](https://github.com/EXO-Robotics/AionGuard-Solari/releases/tag/solari-submission-v1.2.0)
+**Reviewer quick path — 30-second review:** [original demo (Vercel)](#watch-the-original-demo) → [controlled-click evidence](docs/controlled-click.md) → [warm latency](docs/warm-solari.md) → [reproduce](docs/controlled-click.md#reproduce).
 
-![Conceptual AionGuard flow: click, hold, inspect in a prepared Solari sandbox, and show a warning. Measured results: 4 versus 0 local destination HTTP requests and 1.98 seconds from click to warning in one controlled comparison.](docs/assets/inspect-before-exposure.png)
+[Release v1.2.0](https://github.com/EXO-Robotics/AionGuard-Solari/releases/tag/solari-submission-v1.2.0) — frozen source and evidence package.
+
+![Measured controlled-click comparison: normal click sends 4 destination HTTP requests; the protected browser sends 0. Warning in 1.98 seconds in one prepared-sandbox run.](docs/assets/controlled-click.svg)
 
 ## Submission verification
 
@@ -31,6 +33,8 @@ AionGuard started at the **OpenAI Astra Hackathon in New York**, using Vercel Sa
 Cold browser preparation took about **37 seconds**. Preparing the environment ahead of time brought inspection down to about **1.4 seconds**, making a pre-navigation checkpoint worth pursuing.
 
 ## Inspection pipeline
+
+![Conceptual AionGuard flow: click, hold, inspect in a prepared Solari sandbox, and show a warning while navigation stays held.](docs/assets/inspect-before-exposure.png)
 
 1. **Hold navigation.** The controlled Chromium extension intercepts the registered link and keeps the destination out of the local browser.
 2. **Acquire a prepared Solari VM.** The controller sends the destination to an environment that is already ready.

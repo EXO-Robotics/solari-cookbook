@@ -2,7 +2,9 @@
 
 ## Current Solari presentation
 
-- **`inspect-before-exposure.png`** is the current README and X graphic: an original conceptual illustration of click, hold, remote inspection, and warning. It is not a screenshot or containment proof. The 4-to-0 HTTP request comparison and 1.98-second timing come from the published controlled-click report. [Prompt and provenance](inspect-before-exposure.md).
+- **`controlled-click.svg` / `controlled-click.png`** is the first README visual and the suggested X attachment. Its request counts and timing are read directly from the controlled-click report. The light palette matches the conceptual illustration below.
+
+- **`inspect-before-exposure.png`** is the conceptual inspection-pipeline graphic: an original conceptual illustration of click, hold, remote inspection, and warning. It is not a screenshot or containment proof. The 4-to-0 HTTP request comparison and 1.98-second timing come from the published controlled-click report. [Prompt and provenance](inspect-before-exposure.md).
 
 ## Earlier vector presentation
 
