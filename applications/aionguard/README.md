@@ -2,37 +2,51 @@
 
 **Inspect before exposure.**
 
-AionGuard is a pre-navigation security checkpoint for external links. It holds navigation and inspects the destination inside an isolated, prepared Solari sandbox before the user's authenticated browser visits it.
+A background check for links before they open on the devices that matter most.
 
-## Controlled intercepted-click test
+AionGuard holds a link, opens the destination in a prepared Solari sandbox, and checks the page for warning signs before your browser visits it. When no warning signs are detected, it opens the page. When it finds warning signs, it keeps the link blocked and shows why. If the check cannot complete, keep the link held for review.
 
-**Normal browser: 4 destination HTTP requests. Protected browser: 0. Warning in 1.98 s.**
+**Check remotely. Continue locally. Keep the evidence.**
 
-In one controlled comparison against our owned phishing fixture, a normal Chromium click generated four destination HTTP requests. With AionGuard intercepting the same click, the protected browser generated zero while Solari inspected the page remotely and returned a warning. The sandbox was prepared before the click, and navigation stayed held.
+## See it work
 
-**Warm Solari inspection: 1.41 s median · 1.49 s P95 · n=20**
+The current prototype demonstrates both sides of the checkpoint in controlled Chromium tests:
 
-These are separate backend inspection measurements on one controlled fixture, excluding preparation.
+| Link | What happens | Measured result |
+| --- | --- | --- |
+| Owned benign page | Inspect, then open in the protected browser | **2.27 s** click → page loaded |
+| Owned phishing page | Inspect, block, and show a warning | **1.78 s** click → warning; **0 destination HTTP requests** from the protected browser |
+| Failed or incomplete inspection | Hold for review or retry | No automatic opening |
 
-**Reviewer quick path — 30-second review:** [original demo (Vercel)](#watch-the-original-demo) → [controlled-click evidence](docs/controlled-click.md) → [warm latency](docs/warm-solari.md) → [reproduce](docs/controlled-click.md#reproduce).
+One prepared-sandbox run per page; these timings are controlled results, not detection-accuracy claims. [Results, evidence, and reproduction](docs/link-release.md).
 
-[Release v1.2.0](https://github.com/EXO-Robotics/AionGuard-Solari/releases/tag/solari-submission-v1.2.0) — frozen source and evidence package.
+**Warm Solari inspection: 1.41 s median · 1.49 s P95 · n=20.** Separate backend measurements on one controlled fixture, excluding preparation.
 
-![Measured controlled-click comparison: normal click sends 4 destination HTTP requests; the protected browser sends 0. Warning in 1.98 seconds in one prepared-sandbox run.](docs/assets/controlled-click.svg)
+**Reviewer quick path — 30-second review:** [original demo (Vercel)](#watch-the-original-demo) → [open/block evidence](docs/link-release.md#measured-live-result--september-30-2026) → [warm latency](docs/warm-solari.md) → [reproduce](docs/link-release.md#reproduce-the-live-browser-pair).
 
-## Submission verification
+![Earlier controlled-click comparison: normal click sends 4 destination HTTP requests; the protected browser sends 0. Warning in 1.98 seconds in one prepared-sandbox run.](docs/assets/controlled-click.svg)
 
-**Frozen v1.2.0: 388 tests passing · [GitHub CI passing](https://github.com/EXO-Robotics/AionGuard-Solari/actions/workflows/ci.yml) · [JSON/CSV click evidence](docs/evidence/controlled-click-2026-09-30) · [Zero remaining AionGuard resources in ten post-run inventories](docs/evidence/controlled-click-2026-09-30/post-run-inventory.json)**
+The graphic shows the earlier [baseline comparison](docs/controlled-click.md): the same phishing link produced **4 destination requests normally, versus 0 with AionGuard**. The newer open/block results above extend that demonstration.
 
-The checks cover the detector, controller, advisory restrictions, click handoff, and sandbox lifecycle. Chromium NetLog and DevTools independently agreed on the request counts. [Verification record](docs/package-verification.md)
+## The app: SolariGuard
 
-## Check, then continue
+**SolariGuard is our proposed product direction for AionGuard:** a downloadable link-checking app powered by a customer's Solari subscription.
 
-**No warning signs detected → open. Findings → block. Incomplete check → review.**
+The intended experience is simple:
 
-The new live Chromium pair opened the benign page in **2.27 s** and blocked the phishing page in **1.78 s**, with **zero protected-browser destination requests** for the phishing click. One prepared-sandbox run per page. [Results and reproduction](docs/link-release.md).
+1. **Install the client** on a device used for sensitive work—such as a founder's laptop, an administrator's workstation, or a finance team's computer.
+2. **Connect a Solari account** to run inspections away from that device.
+3. **Enable link checks.** The client keeps a sandbox prepared, checks destinations before opening them, and shows a screenshot and findings when it catches warning signs.
 
-Current implementation: **434 tests passing**. The v1.2.0 release above remains frozen.
+This could become an optional security app for Solari customers: a practical use for their cloud sandboxes directly in everyday browsing. AionGuard supplies the open-source inspection and navigation controller; Solari supplies the remote execution environment.
+
+**Available today:** the source, local dashboard, and controlled Chromium open/block/review demonstration. A signed everyday-use client, general browser coverage, and subscription onboarding are the next product steps. SolariGuard is a proposed name and integration, not an announced Solari feature or an included subscription benefit.
+
+## Built for links you would rather check first
+
+The useful moment is an unexpected link in an email, message, or document—especially on a device with access to important accounts and work. AionGuard gives that destination a remote inspection before letting it run in the protected browser.
+
+The result is a background check, not a safety certificate. **“No warning signs detected” means exactly that.** The app can let browsing continue without claiming that its five detectors know every attack.
 
 ## From hackathon to click checkpoint
 
@@ -44,7 +58,7 @@ Cold browser preparation took about **37 seconds**. Preparing the environment ah
 
 ![Conceptual AionGuard flow: click, hold, inspect in a prepared Solari sandbox, and show a warning while navigation stays held.](docs/assets/inspect-before-exposure.png)
 
-1. **Hold navigation.** The controlled Chromium extension intercepts the registered link and keeps the destination out of the local browser.
+1. **Hold navigation.** The controlled Chromium extension intercepts the registered link and keeps the destination out of the protected browser.
 2. **Acquire a prepared Solari VM.** The controller sends the destination to an environment that is already ready.
 3. **Open a fresh remote browser.** The page loads inside the sandbox and produces rendered-page evidence.
 4. **Run deterministic detectors.** Five checks look for credential phishing, external password forms, executable-download lures, tech-support scams, and ClickFix command prompts.
@@ -62,6 +76,12 @@ Solari provides the sandbox lifecycle behind the checkpoint: prepare ahead, insp
 
 Solari is our preferred provider for speed and convenience. Provider adapters keep the inspection layer separate from the execution substrate.
 
+## Engineering evidence
+
+**434 tests passing** cover the detector, controller, navigation handoff, release authority, advisory restrictions, and sandbox lifecycle. [CI](https://github.com/EXO-Robotics/AionGuard-Solari/actions/workflows/ci.yml) · [JSON/CSV results](docs/evidence/link-release-2026-09-30) · [Zero remaining AionGuard resources in ten post-run inventories](docs/evidence/link-release-2026-09-30/post-run-inventory.json).
+
+The [v1.2.0 submission release](https://github.com/EXO-Robotics/AionGuard-Solari/releases/tag/solari-submission-v1.2.0) remains frozen with its original 388-test verification and evidence. The open/block flow is available on the current branch. [Original verification record](docs/package-verification.md).
+
 ## Current scope
 
 This is a controlled Chromium prototype for registered test pages. The current branch supports **check → open** when a live inspection completes with no findings, **block** when warning signs are found, and **review** when the check cannot complete. “No warning signs detected” is a background-check result, not a safety guarantee. [Release behavior and reproduction](docs/link-release.md). General browser deployment, hostile-page containment, and automatic provider fallback remain future work. The [evaluation corpus](docs/benchmark.md) includes misses and false positives; the timing results do not establish real-world detection accuracy. [Detailed click-test scope](docs/controlled-click.md#scope)
@@ -72,7 +92,7 @@ This is a controlled Chromium prototype for registered test pages. The current b
 
 Recorded with **Vercel Sandbox at the OpenAI Astra Hackathon in New York**. The Solari implementation and measurements are documented above.
 
-## Try it
+## Run the prototype
 
 Use Node 24 LTS:
 
