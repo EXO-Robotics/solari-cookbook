@@ -59,9 +59,9 @@ A screenshot and findings explain each warning. When a completed check returns *
 
 ## From hackathon to click checkpoint
 
-AionGuard started at the **OpenAI Astra Hackathon in New York**, using Vercel Sandbox. We then rebuilt the isolation layer around Solari and measured what it would take to put inspection directly in the click path.
+AionGuard was first built at the **OpenAI Astra Hackathon in New York**. We used Vercel Sandbox when Solari/AWS downtime interrupted our planned setup.
 
-Preparing the environment ahead of time moved browser setup out of the click path and brought warm inspection to about **1.4 seconds**.
+We later moved the isolation layer to Solari and redesigned the workflow for faster, more efficient checks: prepare the sandbox before the click, open a fresh browser for each inspection, and reuse the VM between checks. That keeps browser setup out of the click path and brought measured warm inspection to about **1.4 seconds**.
 
 ## Inspection pipeline
 
@@ -103,7 +103,7 @@ This build runs the open/block/review flow in controlled Chromium against config
 
 [▶ Watch the 56-second hackathon demo](https://www.youtube.com/watch?v=UJkPWHyTg-U)
 
-Recorded with **Vercel Sandbox at the OpenAI Astra Hackathon in New York**. The Solari implementation and measurements are documented above.
+The original recording uses **Vercel Sandbox at the OpenAI Astra Hackathon in New York**. The current version uses prepared Solari sandboxes; its open/block results and measurements are documented above.
 
 ## Run AionGuard
 
