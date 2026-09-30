@@ -26,7 +26,7 @@ Live controlled Chromium tests show the complete check → open / block / review
 
 Measured against owned test pages, with one prepared-sandbox run per page. [Results, evidence, and reproduction](docs/link-release.md).
 
-**Warm Solari inspection: 1.41 s median · 1.49 s P95 · n=20.** Separate backend measurements on one controlled fixture, excluding preparation.
+**Warm Solari inspection: 1.41 s median · 1.49 s P95 · n=20.** Separate backend measurements on one controlled fixture. In that run, VM creation took **0.653 s** and browser preparation took **36.965 s**, before the timed checks. Warm latency excludes preparation; idle cost and per-device economics have not been measured. [Timing boundaries](docs/warm-solari.md#measured-live-qualification--september-29-2026-new-york).
 
 **Reviewer quick path — 30-second review:** [open/block evidence](docs/link-release.md#measured-live-result--september-30-2026) → [warm latency](docs/warm-solari.md) → [original 56-second product demo (Vercel)](#watch-the-original-demo) → [reproduce](docs/link-release.md#reproduce-the-live-browser-pair).
 
@@ -49,7 +49,7 @@ Solari could package the service in either of two ways:
 
 AionGuard supplies the source-available inspection and navigation controller. Solari supplies the remote execution environment. Prepared sandboxes and reuse keep the service ready between clicks.
 
-**SolariGuard is our proposed subscription offering.** The current build includes the local dashboard and Chromium inspection flow; the product roadmap adds client distribution, device enrollment, and Solari account integration.
+**SolariGuard is our proposed subscription offering.** The current build includes the local dashboard and Chromium inspection flow; the product roadmap adds client distribution, device enrollment, and Solari account integration. Under the application license, a commercial SolariGuard offering would require a [separate written agreement](COMMERCIAL-LICENSING.md).
 
 ## Built for links you would rather check first
 
@@ -59,9 +59,9 @@ A screenshot and findings explain each warning. When a completed check returns *
 
 ## From hackathon to click checkpoint
 
-AionGuard was first built at the **OpenAI Astra Hackathon in New York**. We used Vercel Sandbox when Solari/AWS downtime interrupted our planned setup.
+AionGuard was first built with Vercel Sandbox at the **OpenAI Astra Hackathon in New York**, then migrated to Solari.
 
-We later moved the isolation layer to Solari and redesigned the workflow for faster, more efficient checks: prepare the sandbox before the click, open a fresh browser for each inspection, and reuse the VM between checks. That keeps browser setup out of the click path and brought measured warm inspection to about **1.4 seconds**.
+The Solari workflow prepares the sandbox before the click, opens a fresh browser for each inspection, and reuses the VM between checks. That moves browser setup out of the click path. The measured warm inspection median is **1.414 seconds**; this is not a like-for-like speed or cost comparison with Vercel.
 
 ## Inspection pipeline
 
@@ -87,9 +87,9 @@ Solari is our preferred provider for speed and convenience. Provider adapters ke
 
 ## Supporting evidence: the original click comparison
 
-![Earlier controlled-click comparison: normal click sends 4 destination HTTP requests; the protected browser sends 0. Warning in 1.98 seconds in one prepared-sandbox run.](docs/assets/controlled-click.svg)
+![Earlier Solari controlled-click comparison: normal click sends 4 destination HTTP requests; the protected browser sends 0. Warning in 1.98 seconds in one prepared-sandbox run.](docs/assets/controlled-click.svg)
 
-The graphic shows the earlier [baseline comparison](docs/controlled-click.md): the same phishing link produced **4 destination requests normally, versus 0 with AionGuard**. The newer open/block results above extend that demonstration.
+The graphic shows the earlier **live Solari** [baseline comparison](docs/controlled-click.md): the same phishing link produced **4 destination requests normally, versus 0 with AionGuard**. The newer open/block results above extend that demonstration.
 
 ## Engineering evidence
 
@@ -97,13 +97,15 @@ The graphic shows the earlier [baseline comparison](docs/controlled-click.md): t
 
 ## Build and evaluation
 
-This build runs the open/block/review flow in controlled Chromium against configured destinations. See the [release behavior and deployment scope](docs/link-release.md), [detector evaluation](docs/benchmark.md), and [click-test methodology](docs/controlled-click.md#scope) for coverage, limitations, and reproduction details.
+This build runs the open/block/review flow in controlled Chromium against owned pages. These live tests do not establish real-world detection rates, cloaking or sandbox-evasion resistance, or hostile-page containment. The inspector disables page scripts; content can differ in a normal authenticated browser. VMs are reused after successful checks with no findings, and retired on findings, inspection errors, or resource limits.
+
+See the [release behavior and deployment scope](docs/link-release.md), [detector evaluation](docs/benchmark.md), and [click-test methodology](docs/controlled-click.md#scope) for methodology and reproduction.
 
 ## Watch the original demo
 
 [▶ Watch the 56-second hackathon demo](https://www.youtube.com/watch?v=UJkPWHyTg-U)
 
-The original recording uses **Vercel Sandbox at the OpenAI Astra Hackathon in New York**. The current version uses prepared Solari sandboxes; its open/block results and measurements are documented above.
+This video shows the original **Vercel Sandbox build from the OpenAI Astra Hackathon in New York**. The current Solari implementation is demonstrated by the live open/block evidence and measurements above.
 
 ## Run AionGuard
 
