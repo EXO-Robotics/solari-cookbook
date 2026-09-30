@@ -1,18 +1,18 @@
-# AionGuard × Solari
+# AionGuard
 
-**Inspect the link before your browser visits it.**
+**Inspect before exposure.** A hold-and-inspect checkpoint for suspicious links, powered by Solari.
 
-An ordinary click opens the destination on your machine. Our controlled prototype holds navigation and checks the page in a prepared Solari sandbox first.
+![Conceptual flow: click, hold navigation, inspect in a prepared Solari sandbox, and show a warning while the destination stays held. One controlled comparison measured 4 versus 0 local destination HTTP requests and 1.98 seconds from click to warning.](docs/assets/inspect-before-exposure.png)
 
-![AionGuard flow: an ordinary click sends 4 destination HTTP requests; a protected click holds navigation, inspects in Solari, and shows a warning in 1.98 seconds with 0 local destination HTTP requests. One controlled Chromium comparison.](docs/assets/click-flow.svg)
+A questionable link should get an isolated look before your everyday browser visits it. Our controlled prototype holds the click, inspects the page in Solari, and returns a screenshot with the warning signs.
 
-**4 → 0 local destination HTTP requests. 1.98 seconds from click to warning.** One baseline and one protected click against our owned fixture; the sandbox was ready beforehand. The destination stayed held.
+**Measured: 4 → 0 local destination HTTP requests. Warning in 1.98 seconds.** One baseline and one protected Chromium click against our owned fixture, with the sandbox prepared beforehand. The destination stayed held. The illustration explains the flow; the linked screenshots and network recordings document the run.
 
 [**See the evidence + reproduce it →**](docs/controlled-click.md) · [Try it](#try-it) · [Original hackathon video](#watch-the-original-demo) · [Solari fork](https://github.com/EXO-Robotics/solari-cookbook/tree/main/applications/aionguard)
 
 ## Why Solari?
 
-**Prepare once. Inspect at click time.** Solari lets us get the sandbox ready before a click, reuse the VM between checks, and replace it after a finding. That moves browser setup out of the click path.
+**AionGuard is the checkpoint. Solari runs the inspection.** We prepare the sandbox ahead of time, reuse the VM between checks, and replace it after a finding. Browser setup happens before the user is waiting.
 
 In a separate benchmark, **20 live checks took 1.41 s median / 1.49 s P95** in a prepared sandbox. Those are backend inspection times; the **1.98 s** above measures the controlled browser click through to its warning.
 
@@ -72,7 +72,13 @@ For real Solari checks, add your private key and owned demo URL using the [live 
 
 **Working:** controlled Chromium click interception, remote page inspection, five warning-sign checks, screenshots, prepared VM reuse, flagged retirement, automatic replacement, and downloadable evidence.
 
-**Still to prove:** general browser deployment, safe-link release, hostile-page containment, and detection accuracy on unseen real-world pages. Use harmless owned fixtures only. The challenge corpus exposed misses and false positives; an earlier cold benchmark also found inconsistent cleanup responses. [Evidence and limitations →](docs/benchmark.md)
+**Next:**
+
+1. **Complete the decision loop.** Add policy-controlled release, keeping hold as the default. No findings alone must never authorize navigation.
+2. **Measure detection quality and containment.** Evaluate benign and suspicious pages, publish misses and false positives, and test the isolation boundary.
+3. **Make provider failure recoverable.** Keep Solari as the preferred provider while qualifying alternatives behind the existing adapters. Automatic fallback is not demonstrated.
+
+General browser deployment and signed distribution also remain future work. Use harmless owned fixtures only. The challenge corpus exposed misses and false positives; an earlier cold benchmark found inconsistent cleanup responses. [Evidence and limitations →](docs/benchmark.md)
 
 The fast path stays deterministic. [Astra’s optional second opinion](docs/astra-review-benchmark.md) is measured separately; it cannot authorize navigation or take actions. The workspace also exports [direct click-to-result timings](docs/click-timing.md).
 

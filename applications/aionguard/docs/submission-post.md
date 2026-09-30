@@ -4,9 +4,11 @@ Prepared for the user to post. Nothing has been posted to X or LinkedIn.
 
 ## Main post
 
-Attach [click-social.png](assets/click-social.png).
+Attach [inspect-before-exposure.png](assets/inspect-before-exposure.png).
 
-> AionGuard × Solari: inspect the link before your browser visits it.
+> AionGuard: inspect before exposure.
+>
+> A hold-and-inspect checkpoint, powered by Solari.
 >
 > Controlled test: 4 → 0 local destination HTTP requests. Click → warning: 1.98s, with Solari ready beforehand.
 >
@@ -36,4 +38,4 @@ The 1.98-second result is one automated click-to-rendered-warning run, with prep
 
 ## Image alt text
 
-AionGuard × Solari controlled click demo. Local browser HTTP requests to the destination: ordinary click 4, protected click 0. The flow is click, hold navigation, inspect in a Solari sandbox prepared beforehand, and show a warning while the destination stays held. Click to warning took 1.98 seconds in one controlled Chromium comparison against an owned fixture. Code and reproducible evidence are linked in the post.
+Conceptual illustration of AionGuard, a hold-and-inspect checkpoint powered by Solari. Local browser HTTP requests to the destination: ordinary click 4, protected click 0. The flow is click, hold navigation, inspect in a Solari sandbox prepared beforehand, and show a warning while the destination stays held. Click to warning took 1.98 seconds in one controlled Chromium comparison against an owned fixture. Code and reproducible evidence are linked in the post.

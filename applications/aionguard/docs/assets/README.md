@@ -2,6 +2,10 @@
 
 ## Current Solari presentation
 
+- **`inspect-before-exposure.png`** is the current README and X graphic: an original conceptual illustration of click, hold, remote inspection, and warning. It is not a screenshot or containment proof. The 4-to-0 HTTP request comparison and 1.98-second timing come from the published controlled-click report. [Prompt and provenance](inspect-before-exposure.md).
+
+## Earlier vector presentation
+
 - `click-flow.svg` / `click-flow.png`: README flow chart showing an ordinary click and the controlled AionGuard click. The sandbox is prepared beforehand; navigation remains held after the finding.
 - `click-social.svg` / `click-social.png`: 1600 × 900 image for X, with the measured 4-to-0 local destination HTTP requests and 1.98-second click-to-warning result. One owned fixture, one baseline and one protected click.
 - These are evidence-based diagrams, not application screenshots. Counts and timing are read from `docs/evidence/controlled-click-2026-09-30/report.json` by `scripts/render-presentation.py`. The existing `controlled-click` comparison graph and `warm-latency` distribution remain separate measurements.
