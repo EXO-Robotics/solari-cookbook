@@ -1,56 +1,62 @@
 # AionGuard
 
-**Inspect before exposure.** A hold-and-inspect checkpoint for suspicious links, powered by Solari.
+**Inspect before exposure.**
 
-![Conceptual flow: click, hold navigation, inspect in a prepared Solari sandbox, and show a warning while the destination stays held. One controlled comparison measured 4 versus 0 local destination HTTP requests and 1.98 seconds from click to warning.](docs/assets/inspect-before-exposure.png)
+You get a link you're not sure about. You want to see what's on the other side without opening it in the browser where you're already signed into everything.
 
-A questionable link should get an isolated look before your everyday browser visits it. Our controlled prototype holds the click, inspects the page in Solari, and returns a screenshot with the warning signs.
+That's the idea behind AionGuard: hold the link, take a look in a separate sandbox, and show you what it found.
 
-**Measured: 4 → 0 local destination HTTP requests. Warning in 1.98 seconds.** One baseline and one protected Chromium click against our owned fixture, with the sandbox prepared beforehand. The destination stayed held. The illustration explains the flow; the linked screenshots and network recordings document the run.
+![AionGuard's illustrated flow: click, hold, inspect in a prepared Solari sandbox, and show a warning. One controlled test measured 4 versus 0 local destination HTTP requests and 1.98 seconds from click to warning.](docs/assets/inspect-before-exposure.png)
 
-[**See the evidence + reproduce it →**](docs/controlled-click.md) · [Try it](#try-it) · [Original hackathon video](#watch-the-original-demo) · [Solari fork](https://github.com/EXO-Robotics/solari-cookbook/tree/main/applications/aionguard)
+[See the working demo and evidence](docs/controlled-click.md) · [Try it](#try-it) · [Solari fork](https://github.com/EXO-Robotics/solari-cookbook/tree/main/applications/aionguard)
+
+## Where it started
+
+AionGuard started at the **OpenAI Astra Hackathon in New York**. We used Vercel Sandbox for that demo, then rebuilt the isolation layer around Solari.
+
+The interesting part was getting the wait down. Starting a browser from scratch took about 37 seconds. Getting the sandbox ready ahead of time brought our checks down to about **1.4 seconds**.
+
+That made a bigger idea feel possible: put the inspection between the click and the destination.
+
+## What we've shown so far
+
+We tested the same link to our own demo page in two fresh Chromium profiles. The ordinary browser sent **4 HTTP requests** to the destination. With AionGuard, it sent **0**. Solari inspected the page, and a warning appeared **1.98 seconds after the click**. The destination stayed held.
+
+That's one controlled comparison with a sandbox prepared beforehand. It shows this click path working; it doesn't tell us how well AionGuard catches phishing across the web.
+
+[See the actual screenshots, network counts, and steps to reproduce it.](docs/controlled-click.md) The illustration above explains the flow; it isn't a product screenshot.
 
 ## Why Solari?
 
-**AionGuard is the checkpoint. Solari runs the inspection.** We prepare the sandbox ahead of time, reuse the VM between checks, and replace it after a finding. Browser setup happens before the user is waiting.
+AionGuard handles the checkpoint. Solari gives it somewhere else to open the page.
 
-In a separate benchmark, **20 live checks took 1.41 s median / 1.49 s P95** in a prepared sandbox. Those are backend inspection times; the **1.98 s** above measures the controlled browser click through to its warning.
+We keep a prepared VM ready between checks and launch a fresh browser for each inspection. If a check finds something suspicious, we retire that VM and prepare a replacement. The slow setup happens ahead of time.
 
-## What happens to a link?
+Across **20 checks of one controlled page**, backend inspection took **1.41 s median and 1.49 s P95**. Those times exclude preparation and are separate from the click-to-warning result above.
 
-1. **Prepare ahead.** Solari gets a sandbox ready before the first check.
-2. **Inspect remotely.** A fresh browser captures the page and five rules look for warning signs.
-3. **Show the evidence.** AionGuard returns the findings and a screenshot. A flagged check retires the sandbox and prepares a replacement.
+![Twenty measured inspections in a prepared Solari sandbox](docs/assets/warm-latency.svg)
 
-Checks with no findings reuse the prepared VM. **No findings means “undetermined,” not “safe.”** The current prototype does not automatically release navigation.
+[Full timings, setup cost, and cleanup results](docs/warm-solari.md)
 
-The five checks cover credential phishing, external password forms, executable-download lures, tech-support scams, and ClickFix prompts that ask you to run a command.
+Solari is our preferred provider for speed and convenience. The code uses provider adapters so we can support other environments, though automatic fallback still needs work.
 
-![AionGuard showing a real Solari inspection and its finding](docs/evidence/solari-2026-09-29/detector-ui.png)
+## What does it look for?
 
-## How fast is it?
+Five checks look for signs of credential phishing, password forms that submit elsewhere, executable-download lures, tech-support scams, and ClickFix prompts that ask you to run a command. You get the findings and a screenshot to look at.
 
-![All twenty measured warm inspection times, with median and P95](docs/assets/warm-latency.svg)
+**Finding nothing doesn't mean a page is safe.** For now, navigation stays held either way. Astra can give an [optional second opinion](docs/astra-review-benchmark.md), but it can't release the link or take actions.
 
-| Path | Median | P95 | What was measured |
-| --- | ---: | ---: | --- |
-| Prepared sandbox inspection | **1.414 s** | **1.487 s** | 20 controlled checks |
-| Finding → retirement initiated | **1.552 s*** | — | One separate phishing-finding run |
-| Astra advisory review | **7.652 s** | **8.901 s** | 6 calls on authored structural evidence |
-| Inspect button → result | **1.765 s*** | — | One live ready-sandbox UI check |
-| Intercepted click → warning | **1.981 s*** | — | One controlled Chromium click; 2.370 s including host automation |
+## What's next?
 
-\*Single runs, not medians or percentiles. Retirement finished asynchronously. [UI timing and cold fallback →](docs/click-timing.md)
+The next step is finishing the decision: when should a held link be released, and what evidence should that require? “No findings” alone won't be enough.
 
-The VM was created in **653 ms**. Browser preparation took **36.965 s**, before the measured checks. Preparing once removes that setup from subsequent checks. The flagged VM was replaced, and the final inventory audit found no remaining AionGuard resources.
-
-These are repeated checks of one owned fixture, with trust deliberately adjusted for the reuse test. They measure speed and lifecycle behavior—not real-world detection accuracy. [CSV, JSON, and test details →](docs/warm-solari.md)
+We also need a broader evaluation of missed threats and false alarms, proof of hostile-page containment, and a tested fallback when a provider is unavailable. Our [early tests already show misses and false positives](docs/benchmark.md). This is a prototype for owned test pages, not an extension ready to protect everyday browsing.
 
 ## Watch the original demo
 
-The video was recorded with **Vercel Sandbox at the OpenAI Astra Hackathon in New York**. This submission runs on **Solari**, our preferred provider for speed and convenience. Other VM providers can be supported through adapters.
+[▶ The 56-second hackathon demo](https://www.youtube.com/watch?v=UJkPWHyTg-U)
 
-[▶ Watch the 56-second AionGuard demo](https://www.youtube.com/watch?v=UJkPWHyTg-U)
+This video uses **Vercel Sandbox**, recorded during the OpenAI Astra Hackathon in New York. The Solari results are documented above.
 
 ## Try it
 
@@ -64,24 +70,10 @@ npm run build
 cp .env.example .env
 ```
 
-Set `AIONGUARD_MODE=MOCK` in `.env` for a preview without cloud credentials. Then run `npm start` and open **http://127.0.0.1:4317**. Connect with the private token in `runtime-data/controller-token`.
+For a preview without cloud credentials, set `AIONGUARD_MODE=MOCK` in `.env`, run `npm start`, and open **http://127.0.0.1:4317**. Connect using the private token in `runtime-data/controller-token`.
 
-For real Solari checks, add your private key and owned demo URL using the [live setup guide](docs/quickstart.md). Credentials stay in the local controller.
+To run real inspections against your own harmless test page, follow the [Solari setup guide](docs/quickstart.md). Your credentials stay in the local controller.
 
-## What is ready—and what is next?
-
-**Working:** controlled Chromium click interception, remote page inspection, five warning-sign checks, screenshots, prepared VM reuse, flagged retirement, automatic replacement, and downloadable evidence.
-
-**Next:**
-
-1. **Complete the decision loop.** Add policy-controlled release, keeping hold as the default. No findings alone must never authorize navigation.
-2. **Measure detection quality and containment.** Evaluate benign and suspicious pages, publish misses and false positives, and test the isolation boundary.
-3. **Make provider failure recoverable.** Keep Solari as the preferred provider while qualifying alternatives behind the existing adapters. Automatic fallback is not demonstrated.
-
-General browser deployment and signed distribution also remain future work. Use harmless owned fixtures only. The challenge corpus exposed misses and false positives; an earlier cold benchmark found inconsistent cleanup responses. [Evidence and limitations →](docs/benchmark.md)
-
-The fast path stays deterministic. [Astra’s optional second opinion](docs/astra-review-benchmark.md) is measured separately; it cannot authorize navigation or take actions. The workspace also exports [direct click-to-result timings](docs/click-timing.md).
-
-[Presentation kit](docs/presentation.md) · [Full submission record](docs/solari-submission.md) · [Run the checks](docs/quickstart.md#checks) · [Submission post draft](docs/submission-post.md)
+[Full submission record](docs/solari-submission.md) · [Run the checks](docs/quickstart.md#checks) · [Presentation kit](docs/presentation.md)
 
 MIT licensed.
