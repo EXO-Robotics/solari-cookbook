@@ -173,16 +173,22 @@ describe('warm Solari lifecycle', () => {
   });
   it('closes during preparation without running a page or replacing the VM', async () => {
     let release!: () => void;
+    let entered!: () => void;
+    const started = new Promise<void>((resolve) => {
+      entered = resolve;
+    });
+    const blocked = new Promise<void>((resolve) => {
+      release = resolve;
+    });
     const f = fixture({
         async writeFiles() {
-          await new Promise<void>((resolve) => {
-            release = resolve;
-          });
+          entered();
+          await blocked;
         },
       }),
       p = pool(f.provider);
     const prep = p.prepare();
-    await settle();
+    await started;
     const closed = p.close();
     release();
     await prep;

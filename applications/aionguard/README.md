@@ -1,6 +1,6 @@
 # AionGuard × Solari
 
-This is the runnable AionGuard application inside `EXO-Robotics/solari-cookbook`, a GitHub fork of `solari-sdk/solari-cookbook`. The [polished standalone submission](https://github.com/EXO-Robotics/AionGuard-Solari) remains the primary project presentation. This copy matches standalone commit `d1559591ea70821196c5b7d95c847dc2f0442904`; application source, tests and recorded evidence are unchanged.
+This is the runnable AionGuard application inside `EXO-Robotics/solari-cookbook`, a GitHub fork of `solari-sdk/solari-cookbook`. The [polished standalone submission](https://github.com/EXO-Robotics/AionGuard-Solari) remains the primary project presentation. This copy matches standalone commit `1263b6fbd476e3bea800a1abce72e61d158dcefa`; application source, tests and recorded evidence are unchanged.
 
 **Inspect a suspicious link in Solari. Show the warning signs and the evidence.**
 
