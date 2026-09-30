@@ -222,10 +222,11 @@ export function App() {
         <a className="brand" href="/" aria-label="AionGuard home">
           <span className="brand-mark">A</span>
           <span>
-            AionGuard<small>{detector ? 'LINK THREAT DETECTOR' : 'INVESTIGATION WORKSPACE'}</small>
+            AionGuard
+            <small>{detector ? 'INSPECT BEFORE EXPOSURE' : 'INVESTIGATION WORKSPACE'}</small>
           </span>
         </a>
-        <span className="nav-label">CASE WORK</span>
+        <span className="nav-label">WORKSPACE</span>
         <nav aria-label="Workspace">
           {(['workspace', 'evidence', 'ledger'] as const).map((name, i) => (
             <button
@@ -236,11 +237,11 @@ export function App() {
               <span aria-hidden="true">{['◈', '≡', '↳'][i]}</span>
               {name === 'workspace'
                 ? detector
-                  ? 'Link detector'
+                  ? 'Inspections'
                   : 'Investigation'
                 : name === 'evidence'
                   ? detector
-                    ? 'Inspection evidence'
+                    ? 'Evidence'
                     : 'Evidence library'
                   : 'Action ledger'}
               {name === 'workspace' ? <i aria-hidden="true">01</i> : null}
@@ -258,13 +259,13 @@ export function App() {
       <main>
         <header className="topbar">
           <div className="breadcrumbs">
-            Cases <span>/</span> <strong>{detector ? 'Link detector' : 'PR-014'}</strong>
+            Workspace <span>/</span> <strong>{detector ? 'Inspections' : 'PR-014'}</strong>
           </div>
           <div className="topbar-right">
             <span className={`mode-label ${mode === 'MOCK' ? 'mock' : ''}`}>
-              {mode === 'MOCK' ? 'MOCK · SOFTWARE CHECK' : 'LIVE CONFIGURATION'}
+              {mode === 'MOCK' ? 'MOCK PREVIEW' : 'LIVE CONTROLLER'}
             </span>
-            <span className="avatar">BG</span>
+            <span className="workspace-access">Private workspace</span>
           </div>
         </header>
         {connected && !detector ? (
@@ -318,7 +319,16 @@ export function App() {
           </section>
         ) : null}
         {connected && detector && clickTimings.length > 0 ? (
-          <section className="ready-banner" aria-label="Click to result timing">
+          <details className="timing-details" aria-label="Click to result timing">
+            <summary>
+              Inspection timing{' '}
+              <span>
+                {clickTimings.at(-1)?.mode} ·{' '}
+                {clickTimings.at(-1)?.durationsMs.clickToResultCommit != null
+                  ? `${(clickTimings.at(-1)!.durationsMs.clickToResultCommit! / 1000).toFixed(3)} s`
+                  : 'Request failed'}
+              </span>
+            </summary>
             <div>
               <strong>Click to result</strong>
               <p>
@@ -342,7 +352,7 @@ export function App() {
                 Timing CSV ↓
               </button>
             </div>
-          </section>
+          </details>
         ) : null}
         {error ? (
           <div className="error-banner" role="alert">
@@ -366,43 +376,104 @@ export function App() {
             </p>
           </section>
         ) : !connected ? (
-          <section className="connect-screen">
-            <span className="eyebrow">OPERATOR ACCESS</span>
-            <h1>Evidence before conclusions.</h1>
-            <p>
-              {detector
-                ? 'Inspect a registered URL remotely and review evidence for five common web-threat patterns.'
-                : 'Connect to the local controller to authorize and inspect a bounded investigation.'}
-            </p>
-            <form onSubmit={connect}>
-              <label htmlFor="token">Controller access token</label>
-              <input
-                id="token"
-                type="password"
-                autoComplete="off"
-                value={token}
-                onChange={(e) => setToken(e.target.value)}
-                required
-                minLength={32}
-                placeholder="Paste the local controller token"
-              />
-              <button className="primary" disabled={busy || token.length < 32}>
-                Connect to workspace <span>→</span>
-              </button>
-            </form>
-            <p className="subtle">
-              The token stays in this tab session. The extension uses a separate entry token.
-            </p>
-          </section>
+          <div className="connect-layout">
+            <section className="connect-screen">
+              <span className="eyebrow">LOCAL WORKSPACE</span>
+              <h1>
+                Connect your
+                <br />
+                inspection workspace.
+              </h1>
+              <p>Review a link, follow its inspection, and see the evidence in one place.</p>
+              <form onSubmit={connect}>
+                <label htmlFor="token">Controller access token</label>
+                <input
+                  id="token"
+                  type="password"
+                  autoComplete="off"
+                  value={token}
+                  onChange={(e) => setToken(e.target.value)}
+                  required
+                  minLength={32}
+                  placeholder="Enter your local access token"
+                  aria-describedby="token-help"
+                />
+                <button className="primary" disabled={busy || token.length < 32}>
+                  {busy ? 'Connecting…' : 'Open workspace'} <span>→</span>
+                </button>
+                <p id="token-help" className="subtle">
+                  Find your token in <code>runtime-data/controller-token</code>. It stays in this
+                  tab session.
+                </p>
+              </form>
+            </section>
+            <aside className="connection-aside" aria-label="Inspection workflow">
+              <div className="connection-art" aria-hidden="true">
+                <svg viewBox="0 0 360 240" fill="none">
+                  <rect
+                    x="71"
+                    y="25"
+                    width="236"
+                    height="162"
+                    rx="14"
+                    fill="var(--surface)"
+                    stroke="var(--line)"
+                    strokeWidth="2"
+                  />
+                  <path d="M72 62H306" stroke="var(--line)" />
+                  <circle cx="91" cy="44" r="4" fill="var(--accent)" />
+                  <circle cx="106" cy="44" r="4" fill="var(--line)" />
+                  <circle cx="121" cy="44" r="4" fill="var(--line)" />
+                  <rect x="96" y="85" width="131" height="9" rx="4" fill="var(--line)" />
+                  <rect x="96" y="106" width="179" height="7" rx="3" fill="var(--line)" />
+                  <rect x="96" y="125" width="150" height="7" rx="3" fill="var(--line)" />
+                  <rect x="38" y="158" width="27" height="63" rx="5" fill="var(--text)" />
+                  <rect x="295" y="158" width="27" height="63" rx="5" fill="var(--text)" />
+                  <rect x="50" y="155" width="258" height="19" rx="5" fill="var(--accent)" />
+                  <path
+                    d="M98 156L84 173M144 156L130 173M190 156L176 173M236 156L222 173M282 156L268 173"
+                    stroke="var(--surface)"
+                    strokeWidth="7"
+                  />
+                  <path d="M22 223H338" stroke="var(--line)" strokeWidth="2" />
+                </svg>
+              </div>
+              <span className="eyebrow">THE INSPECTION FLOW</span>
+              <ol className="connection-steps">
+                <li>
+                  <span>01</span>
+                  <div>
+                    <strong>Hold the link</strong>
+                    <p>Keep navigation paused.</p>
+                  </div>
+                </li>
+                <li>
+                  <span>02</span>
+                  <div>
+                    <strong>Inspect remotely</strong>
+                    <p>Collect the page in a separate sandbox.</p>
+                  </div>
+                </li>
+                <li>
+                  <span>03</span>
+                  <div>
+                    <strong>Review the evidence</strong>
+                    <p>See the findings before deciding what comes next.</p>
+                  </div>
+                </li>
+              </ol>
+              <p className="subtle">This workspace controls registered test inspections.</p>
+            </aside>
+          </div>
         ) : !snapshot ? (
           <section className="connect-screen">
             <span className="eyebrow">
               {detector ? 'AIONGUARD / LINK DETECTOR' : 'PR-014 / ACME'}
             </span>
-            <h1>Start with a clean case.</h1>
+            <h1>{detector ? 'Your next inspection starts here.' : 'Start with a clean case.'}</h1>
             <p>
               {detector
-                ? 'Create an inspection case for the registered URL. The detector reports observable warning signs, with reasons and limitations.'
+                ? 'Create a case for your registered test page. Findings, screenshots, and the inspection history will appear here.'
                 : 'A new attempt receives its own evidence ledger and four credits. Existing attempts retain their history.'}
             </p>
             <button className="primary" disabled={busy} onClick={() => void create()}>

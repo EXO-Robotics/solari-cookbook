@@ -1,9 +1,16 @@
 :root {
-  color-scheme: dark;
-  --base: #111813;
-  --text: #e0e9e2;
-  --muted: #879b8d;
-  --accent: #b1edc6;
-  --amber: #d9bc8e;
-  --line: #2a382e;
+  color-scheme: light;
+  --base: #f4f1e8;
+  --surface: #fffdf8;
+  --surface-muted: #ebe8df;
+  --text: #142826;
+  --muted: #59685e;
+  --accent: #b94e25;
+  --accent-hover: #9f3e1b;
+  --accent-soft: #f5e5d9;
+  --amber: #8c6023;
+  --success: #346454;
+  --line: #dcded3;
+  --border: var(--line);
+  --shadow: 0 8px 30px #14282606;
 }

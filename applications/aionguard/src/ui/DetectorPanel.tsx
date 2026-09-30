@@ -68,9 +68,9 @@ export function DetectorPanel({
     <>
       <section className="case-heading">
         <div>
-          <span className="eyebrow">AIONGUARD / BOUNDED WEB INSPECTION</span>
-          <h1>Link threat detector</h1>
-          <p>Five common web-threat patterns. Observable evidence, explicit limits.</p>
+          <span className="eyebrow">LINK INSPECTION</span>
+          <h1>Inspection workspace</h1>
+          <p>Check the destination. Review the findings. Keep the evidence.</p>
         </div>
         <div className="heading-actions">
           <button className="secondary" disabled={busy || active} onClick={create}>
@@ -93,16 +93,19 @@ export function DetectorPanel({
         <span>Cleanup: {cleanupLabel}</span>
         <span className="run-label">{snapshot.identity.runId.slice(0, 16)}…</span>
       </section>
-      <p className="detector-boundary">
-        Direct remote inspection of a registered URL. Safari is not required for this demo; this run
-        does not prove Safari interception or browser protection. Heuristic coverage is limited to
-        five patterns, not a claim about the five most prevalent attacks.
-      </p>
+      <details className="detector-boundary">
+        <summary>About this inspection</summary>
+        <p>
+          Direct remote inspection of a registered URL. Safari is not required for this demo; this
+          run does not prove Safari interception or browser protection. Heuristic coverage is
+          limited to five patterns, not a claim about the five most prevalent attacks.
+        </p>
+      </details>
       {!snapshot.authorization ? (
         <section className="authorization">
           <div>
-            <span className="eyebrow">INSPECTION AUTHORIZATION</span>
-            <h2>Inspect the registered fixture.</h2>
+            <span className="eyebrow">BEFORE YOU BEGIN</span>
+            <h2>Authorize this test page.</h2>
             <p>
               Authorize remote inspection of an owned test fixture. No credentials will be
               submitted, downloads opened, or page JavaScript executed.
@@ -193,7 +196,13 @@ export function DetectorPanel({
                 </div>
               )}
               <div>
-                <strong className="detector-verdict">{classification}</strong>
+                <strong className="detector-verdict" role="status">
+                  {active
+                    ? 'Inspecting the page…'
+                    : snapshot.link.execution === 'PENDING'
+                      ? 'Awaiting inspection'
+                      : classification}
+                </strong>
                 <p>
                   {snapshot.link.observation?.title ||
                     (snapshot.link.execution === 'UNAVAILABLE'
@@ -221,7 +230,7 @@ export function DetectorPanel({
             </div>
           </section>
           <section className="data-section detector-findings">
-            <h2>Findings and reasons</h2>
+            <h2>Warning signs</h2>
             {findings.length ? (
               findings.map((finding) => (
                 <article className="detector-finding" key={`${finding.category}-${finding.ruleId}`}>
@@ -252,8 +261,10 @@ export function DetectorPanel({
               </div>
             ) : null}
           </section>
-          <section className="data-section">
-            <h2>Five-pattern coverage</h2>
+          <details className="data-section coverage-details" open={tab === 'evidence' || undefined}>
+            <summary>
+              Detector coverage <span>5 checks</span>
+            </summary>
             <p className="subtle">Bounded heuristics for an owned-fixture demonstration.</p>
             <div className="detector-coverage">
               {coverage.map(([id, label, description]) => (
@@ -270,7 +281,7 @@ export function DetectorPanel({
                 </article>
               ))}
             </div>
-          </section>
+          </details>
         </>
       )}
       <footer className="workspace-footer">
