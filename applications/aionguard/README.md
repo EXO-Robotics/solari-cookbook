@@ -2,7 +2,9 @@
 
 **Inspect before exposure.**
 
-A background check for links before they open on the devices that matter most.
+**A proposed security add-on for Solari subscriptions.**
+
+AionGuard is the working prototype behind **SolariGuard**: a link-checking service that Solari could offer as a paid add-on or include in a subscription tier. Customers would download the client, connect their Solari account, and enable checks on the devices that matter most.
 
 AionGuard holds a link, opens the destination in a prepared Solari sandbox, and checks the page for warning signs before your browser visits it. When no warning signs are detected, it opens the page. When it finds warning signs, it keeps the link blocked and shows why. If the check cannot complete, keep the link held for review.
 
@@ -28,9 +30,9 @@ One prepared-sandbox run per page; these timings are controlled results, not det
 
 The graphic shows the earlier [baseline comparison](docs/controlled-click.md): the same phishing link produced **4 destination requests normally, versus 0 with AionGuard**. The newer open/block results above extend that demonstration.
 
-## The app: SolariGuard
+## A subscription feature: SolariGuard
 
-**SolariGuard is our proposed product direction for AionGuard:** a downloadable link-checking app powered by a customer's Solari subscription.
+**The customer gets a link-checking app. Solari gets a customer-facing subscription feature powered by its existing sandbox infrastructure.**
 
 The intended experience is simple:
 
@@ -38,7 +40,14 @@ The intended experience is simple:
 2. **Connect a Solari account** to run inspections away from that device.
 3. **Enable link checks.** The client keeps a sandbox prepared, checks destinations before opening them, and shows a screenshot and findings when it catches warning signs.
 
-This could become an optional security app for Solari customers: a practical use for their cloud sandboxes directly in everyday browsing. AionGuard supplies the open-source inspection and navigation controller; Solari supplies the remote execution environment.
+Solari could package the service in either of two ways:
+
+- **Paid add-on:** customers add SolariGuard to an existing subscription for selected devices.
+- **Included tier feature:** a subscription tier includes a defined number of devices and an inspection allowance.
+
+The commercial opportunity is to turn remote sandbox execution into an everyday service customers can understand and use without building their own integration. Prepared sandboxes and reuse underpin the experience; pricing and allowances would need to account for inspection usage and the cost of keeping environments ready.
+
+AionGuard supplies the open-source inspection and navigation controller. Solari supplies the remote execution environment. Account onboarding, billing, device enrollment, and usage limits would complete the subscription offering.
 
 **Available today:** the source, local dashboard, and controlled Chromium open/block/review demonstration. A signed everyday-use client, general browser coverage, and subscription onboarding are the next product steps. SolariGuard is a proposed name and integration, not an announced Solari feature or an included subscription benefit.
 
